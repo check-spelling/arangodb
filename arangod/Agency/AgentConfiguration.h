@@ -242,7 +242,7 @@ struct config_t {
   /// @brief Update an indivdual uuid's endpoint
   bool updateEndpoint(std::string const&, std::string const&);
 
-  /// @brief Update configuration with an other
+  /// @brief Update configuration with another
   void updateConfiguration(velocypack::Slice other);
 };
 

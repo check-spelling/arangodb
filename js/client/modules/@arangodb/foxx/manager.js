@@ -314,7 +314,7 @@ var uninstall = function (mount, options) {
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Replaces a Foxx service on the given mount point by an other one.
+// / @brief Replaces a Foxx service on the given mount point by another one.
 // /
 // / TODO: Long Documentation!
 // //////////////////////////////////////////////////////////////////////////////

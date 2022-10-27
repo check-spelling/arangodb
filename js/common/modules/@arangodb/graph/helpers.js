@@ -92,7 +92,7 @@ function makeClusteredGraph(clusterSizes, intDegree, intDegreeDelta,
                                           extDegree, seed) {
   // This creates a pseudo-random clustered graph. The arguments are:
   // clusterSizes:     array of positive integers, sizes of the subgraphs
-  // intDegree:        average number of edges from a node to an other within
+  // intDegree:        average number of edges from a node to another within
   //                   the same subgraph
   // intDegreeDelta:   the actual number of such edges is random between
   //                   intDegree - intDegreeDelta and intDegree + intDegreeDelta
