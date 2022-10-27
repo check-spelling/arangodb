@@ -68,7 +68,7 @@ let optionsDocumentation = [
   '   - `skipNondeterministic`: if set, nondeterministic tests are skipped.',
   '   - `skipGrey`: if set, grey tests are skipped.',
   '   - `onlyGrey`: if set, only grey tests are executed.',
-  '   - `testBuckets`: split tests in to buckets and execute on, for example',
+  '   - `testBuckets`: split tests into buckets and execute on, for example',
   '       10/2 will split into 10 buckets and execute the third bucket.',
   '',
   '   - `onlyNightly`: execute only the nightly tests',

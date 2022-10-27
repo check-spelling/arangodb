@@ -398,7 +398,7 @@ bool TwoSidedEnumerator<QueueType, PathStoreType, ProviderType,
 
       // Performance Optimization:
       // It seems to be pointless to first push
-      // everything in to the _resultPath object
+      // everything into the _resultPath object
       // and then iterate again to return the path
       // we should be able to return the path in the first go.
       _resultPath.clear();
