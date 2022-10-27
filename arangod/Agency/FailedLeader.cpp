@@ -240,7 +240,7 @@ bool FailedLeader::start(bool& aborts) {
     // _from and _to are added as first and last entries
     // we can keep all others
     // for security we will not use empty strings (empty servers should never
-    // happen) also we will not use any resigend servers in the list (this
+    // happen) also we will not use any resigned servers in the list (this
     // should never happen as well, but if it happens, this situation will
     // repair itself by diverging replicationFactor.
     if (s != _from && s != _to && !s.empty() && s[0] != '_') {

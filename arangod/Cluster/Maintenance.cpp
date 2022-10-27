@@ -492,7 +492,7 @@ static void handleLocalShard(
    * 1) (activeResign) We think we are the leader locally,
    *    but the plan says we are not. (including, we are resigned)
    * 2) (adjustResignState) We are not leading, and not in resigned
-   *     state, but the plan says we should be resigend.
+   *     state, but the plan says we should be resigned.
    *    - This triggers on rebooted servers, that were in resign process
    *    - This triggers if the shard is moved from the server,
    *      before it actually took ownership.

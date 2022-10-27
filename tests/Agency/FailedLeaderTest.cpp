@@ -255,7 +255,7 @@ class FailedLeaderTest
       ASSERT_FALSE(lastGenPlan.empty());
       ASSERT_FALSE(expectedServers.empty());
       // Old leader value is used for lock-checking on the Server
-      // This cannot be done with a resigend leader value
+      // This cannot be done with a resigned leader value
       auto const& oldLeader = unresign(lastGenPlan.front());
       auto const& newLeader = expectedServers.front();
       // Leader Shard is not locked
