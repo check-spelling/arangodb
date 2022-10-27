@@ -151,7 +151,7 @@ class StorageEngine : public ArangodFeature {
   // database, collection and index management
   // -----------------------------------------
 
-  // if not stated other wise functions may throw and the caller has to take
+  // if not stated otherwise functions may throw and the caller has to take
   // care of error handling the return values will be the usual  TRI_ERROR_*
   // codes.
 
