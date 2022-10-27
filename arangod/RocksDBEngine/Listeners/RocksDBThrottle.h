@@ -135,7 +135,7 @@ class RocksDBThrottle : public rocksdb::EventListener {
 
   // this array stores compaction statistics used in throttle calculation.
   //  Index 0 of this array accumulates the current interval's compaction data
-  //  for level 0. Index 1 accumulates accumulates current intervals's
+  //  for level 0. Index 1 accumulates current intervals's
   //  compaction statistics for all other levels.  Remaining intervals contain
   //  most recent interval statistics for the total time period.
   std::unique_ptr<std::vector<ThrottleData_t>> _throttleData;
