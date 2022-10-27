@@ -354,7 +354,7 @@ class ServerState {
   /// A server
   ///   * ~boots~ if it is started on a new database directory without a UUID
   ///   persisted
-  ///   * ~reboots~ if it is started on a pre-existing database directory with a
+  ///   * ~reboots~ if it is started on a preexisting database directory with a
   ///   UUID present
   ///
   /// when integrating into a cluster (via integrateIntoCluster), the server
