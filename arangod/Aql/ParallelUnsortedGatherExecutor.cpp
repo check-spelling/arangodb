@@ -62,7 +62,7 @@ auto ParallelUnsortedGatherExecutor::upstreamCallProduce(
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief Guarantees requiredby this this block:
+/// @brief Guarantees required by this this block:
 ///        1) For every dependency the input is sorted, according to the same
 ///        strategy.
 ///
