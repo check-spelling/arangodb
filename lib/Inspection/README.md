@@ -255,7 +255,7 @@ met the compiler should fail with a static_assert that points that out.
 ### Specializing `Access`
 
 Instead of writing `inspect` functions one can specialize
-`arangodb::inspection::Access`. This not only allows one to work with with 3rd
+`arangodb::inspection::Access`. This not only allows one to work with 3rd
 party libraries (for which adding free functions is usually ruled out), but
 also allows to customize every step of the inspection process. It requires
 writing more boilerplate code though.

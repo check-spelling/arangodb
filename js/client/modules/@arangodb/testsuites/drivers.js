@@ -31,7 +31,7 @@ const functionsDocumentation = {
 const optionsDocumentation = [
   '   - `driversource`: directory of the respective driver',
   '   - `driverScript`: script to invoke inside the driver',
-  '   - `driverScriptInterpreter`: interpreter to invoke script whith',
+  '   - `driverScriptInterpreter`: interpreter to invoke script with',
   '   - `driverOptions`: additional arguments to pass via the commandline'
 ];
 
