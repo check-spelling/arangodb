@@ -326,7 +326,7 @@
           }
           nodeDependency = node; // as we walk the plan this will be next node dependency
         });
-        // materilizer should be there
+        // materializer should be there
         assertTrue(materializeNodeFound);
         let result = AQL_EXECUTE(query);
         assertEqual(4, result.json.length);
