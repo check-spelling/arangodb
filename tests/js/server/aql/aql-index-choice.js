@@ -660,7 +660,7 @@ function BaseTestConfig () {
       });
     },
     
-    testSingleFilterUpperAndLowerBoundWithRedunantCondition: function() {
+    testSingleFilterUpperAndLowerBoundWithRedundantCondition: function() {
       db[cn].ensureIndex({ type: "persistent", fields: ["uid"] });
       // generate the cross product of the given arrays
       const product = (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));

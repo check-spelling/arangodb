@@ -439,7 +439,7 @@
         assertEqual(-1, plan.rules.indexOf(ruleName));
         let materializeNodeFound = false;
         plan.nodes.forEach(function (node) {
-          // should be no redundand calculation nodes for single or oneshard server
+          // should be no redundant calculation nodes for single or oneshard server
           if (!isCluster) {
             assertNotEqual(node.type, "CalculationNode");
           }
