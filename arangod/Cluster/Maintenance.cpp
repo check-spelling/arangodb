@@ -762,7 +762,7 @@ void arangodb::maintenance::diffReplicatedStates(
   }
 }
 
-/// @brief calculate difference between plan and local for for databases
+/// @brief calculate difference between plan and local for databases
 arangodb::Result arangodb::maintenance::diffPlanLocal(
     StorageEngine& engine,
     containers::FlatHashMap<std::string, std::shared_ptr<VPackBuilder>> const&
