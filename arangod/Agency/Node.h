@@ -126,7 +126,7 @@ class SmallBuffer {
 
 /// Any node may either be a branch or a leaf.
 /// Any leaf either represents an array or an element (_isArray variable).
-/// Nodes are are always constructed as element and can become an array through
+/// Nodes are always constructed as element and can become an array through
 /// assignment operator.
 /// toBuilder(Builder&) will create a _vecBuf, when needed as a means to
 /// optimization by avoiding to build it before necessary.
