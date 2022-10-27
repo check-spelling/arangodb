@@ -119,7 +119,7 @@ int _is_cyg_tty(int fd);
 bool terminalKnowsANSIColors();
 
 ////////////////////////////////////////////////////////////////////////////////
-// returns returns the filename in conjunction with a handle
+// returns the filename in conjunction with a handle
 // only visible, if winndef.h was previously included for HANDLE.
 ////////////////////////////////////////////////////////////////////////////////
 
