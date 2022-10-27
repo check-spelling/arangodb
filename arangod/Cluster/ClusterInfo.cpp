@@ -3559,11 +3559,11 @@ Result ClusterInfo::createCollectionsCoordinator(
     precs.emplace_back(AgencyPrecondition("Plan/Version",
                                           AgencyPrecondition::Type::VALUE,
                                           versionBuilder.slice()));
-    // * not in to be cleaned server list
+    // * not in to-be-cleaned-server list
     precs.emplace_back(AgencyPrecondition(
         "Target/ToBeCleanedServers",
         AgencyPrecondition::Type::INTERSECTION_EMPTY, serversBuilder.slice()));
-    // * not in cleaned server list
+    // * not in cleaned-server list
     precs.emplace_back(AgencyPrecondition(
         "Target/CleanedServers", AgencyPrecondition::Type::INTERSECTION_EMPTY,
         serversBuilder.slice()));
