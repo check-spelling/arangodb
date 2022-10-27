@@ -1,5 +1,5 @@
 Every sub directory has to be a plugin directory which is
-inlcluded in to  the installation script  of arango.
+included in to  the installation script  of arango.
 
 The plugins are NOT needed for compilation of any arango component
 
