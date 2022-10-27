@@ -948,7 +948,7 @@ ExecutionState Query::finalize(VPackBuilder& extras) {
 
 /// @brief parse an AQL query
 QueryResult Query::parse() {
-  // only used in case case of failure
+  // only used in case of failure
   QueryResult result;
 
   try {
