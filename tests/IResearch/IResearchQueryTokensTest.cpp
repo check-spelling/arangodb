@@ -234,7 +234,7 @@ class QueryTokens : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test mulptiple match
+    // test multiple match
     {
       std::vector<arangodb::velocypack::Slice> expected = {
           _insertedDocs[36].slice(),  // (duplicate term)
@@ -262,7 +262,7 @@ class QueryTokens : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test mulptiple match via []
+    // test multiple match via []
     {
       std::vector<arangodb::velocypack::Slice> expected = {
           _insertedDocs[36].slice(),  // (duplicate term)

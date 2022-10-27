@@ -8811,7 +8811,7 @@
                     "Documents"
                 ], 
                 "x-examples": [], 
-                "x-filename": "/work/ArangoDB/Documentation/DocuBlocks/Rest/Documents/delete_mutliple_documents.md", 
+                "x-filename": "/work/ArangoDB/Documentation/DocuBlocks/Rest/Documents/delete_multiple_documents.md", 
                 "x-hints": ""
             }, 
             "patch": {

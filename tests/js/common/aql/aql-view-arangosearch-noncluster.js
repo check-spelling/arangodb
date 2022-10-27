@@ -1312,7 +1312,7 @@ function iResearchAqlTestSuite () {
       });
     },
 
-    testMutlipleScorers : function() {
+    testMultipleScorers : function() {
       var result = db._query(
         "LET score = FIRST(FOR doc IN UnitTestsView SEARCH doc.a == 'foo' OPTIONS { waitForSync : true } RETURN BM25(doc)) " +
         "FOR doc IN UnitTestsView SEARCH doc.a == 'foo' FILTER BM25(doc) == score && BM25(doc, 1.2, 0.75) == score RETURN doc"

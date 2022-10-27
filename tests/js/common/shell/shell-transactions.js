@@ -1123,7 +1123,7 @@ function TransactionsInvocationsParametersSuite () {
         return;
       }
 
-      // recreate collection with mutliple shards
+      // recreate collection with multiple shards
       db._drop(cn);
       c = db._create(cn, { numberOfShards: 5 });
 

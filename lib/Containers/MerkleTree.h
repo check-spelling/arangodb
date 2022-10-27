@@ -213,7 +213,7 @@ class MerkleTree : public MerkleTreeBase {
    * @brief Chooses the default range width for a tree of a given depth.
    *
    * Most applications should use either this value or some power-of-two
-   * mulitple of this value. The default is chosen so that each leaf bucket
+   * multiple of this value. The default is chosen so that each leaf bucket
    * initially covers a range of 64 keys.
    *
    * @param depth The same depth value passed to the constructor
