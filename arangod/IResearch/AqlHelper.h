@@ -373,7 +373,7 @@ class ScopedAqlValue : private irs::util::noncopyable {
 ///          bool attributeAccess(AstNode const&) - attribute access
 ///          bool indexAccess(AstNode const&)     - index access
 ///          bool expansion(AstNode const&)       - expansion
-/// @return success and set head the the starting node of path (reference)
+/// @return success and set head the starting node of path (reference)
 ////////////////////////////////////////////////////////////////////////////////
 template<typename T>
 bool visitAttributeAccess(aql::AstNode const*& head, aql::AstNode const* node,

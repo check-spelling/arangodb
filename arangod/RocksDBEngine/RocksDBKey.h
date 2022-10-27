@@ -228,7 +228,7 @@ class RocksDBKey {
   //////////////////////////////////////////////////////////////////////////////
   /// @brief Extracts the collectionId from a key
   ///
-  /// May be called only on the the following key types: Collection.
+  /// May be called only on the following key types: Collection.
   /// Other types will throw.
   //////////////////////////////////////////////////////////////////////////////
   static DataSourceId collectionId(RocksDBKey const&);
@@ -245,7 +245,7 @@ class RocksDBKey {
   //////////////////////////////////////////////////////////////////////////////
   /// @brief Extracts the objectId from a key
   ///
-  /// May be called only on the the following key types: Document and
+  /// May be called only on the following key types: Document and
   /// all index entries. Other types will behave undefined
   //////////////////////////////////////////////////////////////////////////////
   static uint64_t objectId(RocksDBKey const&);

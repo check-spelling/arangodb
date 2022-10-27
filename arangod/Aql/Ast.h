@@ -515,7 +515,7 @@ class Ast {
   /// @brief resolve an attribute access, static version
   /// if isValid is set to true, then the returned value is to be trusted. if
   /// isValid is set to false, then the returned value is not to be trued and
-  /// the the result is equivalent to an AQL `null` value
+  /// the result is equivalent to an AQL `null` value
   static AstNode const* resolveConstAttributeAccess(AstNode const*,
                                                     bool& isValid);
 

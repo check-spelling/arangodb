@@ -163,7 +163,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
   void handleCommandSync();
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief return the configuration of the the replication applier
+  /// @brief return the configuration of the replication applier
   //////////////////////////////////////////////////////////////////////////////
 
   void handleCommandApplierGetConfig();

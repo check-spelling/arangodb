@@ -34,7 +34,7 @@ namespace arangodb {
 /// is a need for an upgrade script. Added column families
 /// can be created automatically by rocksdb.
 /// Do check the RocksDB WAL tailing code and the
-/// counter manager. Maybe the the number of families in the shouldHandle method
+/// counter manager. Maybe the number of families in the shouldHandle method
 /// needs to be changed
 struct RocksDBColumnFamilyManager {
   enum class Family : std::size_t {

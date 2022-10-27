@@ -48,7 +48,7 @@ function TtlSuite () {
         return self.indexOf(value) === index;
       }).length;
       // if there are multiple servers involved, we increase by 4, in order to avoid continuing
-      // in case the the *same* server reports multiple times. this would break the simple
+      // in case the *same* server reports multiple times. this would break the simple
       // "how many times did it run check" in case the jobs are executed in the following order:
       // - job run on server 1
       // - job run on server 2

@@ -69,7 +69,7 @@ class ClientTaskQueue {
    * the data need not be synchronized. Can be used to requeue a failed job,
    * notify another actor that the job is done, etc.
    *
-   * @param server  A reference the the underlying application server
+   * @param server  A reference the underlying application server
    * @param jobData Data describing the job which was just processed
    * @param result  The result status of the job
    */
