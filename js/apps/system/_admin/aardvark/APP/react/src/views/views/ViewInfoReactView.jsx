@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArangoTable, ArangoTD, ArangoTH } from '../../components/arango/table';
-import ToolTip from '../../components/arango/tootip';
+import ToolTippy from '../../components/arango/tooltippy';
 import Checkbox from '../../components/pure-css/form/Checkbox';
 import { isAdminUser as userIsAdmin, usePermissions } from '../../utils/helpers';
 import { SaveButton } from './Actions';
@@ -121,12 +121,12 @@ const ViewInfoReactView = ({ name }) => {
                 </div>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Maximum number of concurrent active writers (segments) that perform a transaction."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
 
@@ -138,12 +138,12 @@ const ViewInfoReactView = ({ name }) => {
                 </div>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Maximum number of writers (segments) cached in the pool."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
 
@@ -155,12 +155,12 @@ const ViewInfoReactView = ({ name }) => {
                 </div>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Maximum memory byte size per writer (segment) before a writer (segment) flush is triggered."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
             </tbody>
@@ -196,12 +196,12 @@ const ViewInfoReactView = ({ name }) => {
                 </div>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Defines how to compress the primary sort data."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
             </tbody>
@@ -227,12 +227,12 @@ const ViewInfoReactView = ({ name }) => {
                 </div>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="An array of objects to describe which document attributes to store in the View index."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
             </tbody>

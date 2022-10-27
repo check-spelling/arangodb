@@ -8,7 +8,7 @@ import { getBooleanFieldSetter } from "../../../../utils/helpers";
 import AutoCompleteMultiSelect from "../../../../components/pure-css/form/AutoCompleteMultiSelect";
 import useSWR from "swr";
 import { getApiRouteForCurrentDB } from "../../../../utils/arangoClient";
-import ToolTip from "../../../../components/arango/tootip";
+import ToolTippy from "../../../../components/arango/tooltippy";
 import { Link, useRouteMatch } from "react-router-dom";
 import NewField from "../../Components/NewField";
 
@@ -166,12 +166,12 @@ const LinkPropertiesInput = ({
             />
           </Cell>
           <Cell size={"1-4"}>
-            <ToolTip
+            <ToolTippy
               title="Process all document attributes."
               setArrow={true}
             >
               <span className="arangoicon icon_arangodb_info" style={{ marginTop: 10 }}></span>
-            </ToolTip>
+            </ToolTippy>
           </Cell>
           <Cell size={"1-4"}/>
           <Cell size={"1-2"}>
@@ -188,12 +188,12 @@ const LinkPropertiesInput = ({
             />
           </Cell>
           <Cell size={"1-4"}>
-            <ToolTip
+            <ToolTippy
               title="For array values track the value position in arrays."
               setArrow={true}
             >
               <span className="arangoicon icon_arangodb_info" style={{ marginTop: 10 }}></span>
-            </ToolTip>
+            </ToolTippy>
           </Cell>
           <Cell size={"1-4"}/>
           <Cell size={"1-2"}>
@@ -206,12 +206,12 @@ const LinkPropertiesInput = ({
             />
           </Cell>
           <Cell size={"1-4"}>
-            <ToolTip
+            <ToolTippy
               title="Store information about value presence to allow use of the EXISTS() function."
               setArrow={true}
             >
               <span className="arangoicon icon_arangodb_info" style={{ marginTop: 10 }}></span>
-            </ToolTip>
+            </ToolTippy>
           </Cell>
           <Cell size={"1-4"}/>
           {
@@ -232,12 +232,12 @@ const LinkPropertiesInput = ({
                   />
                 </Cell>
                 <Cell size={"1-4"}>
-                  <ToolTip
+                  <ToolTippy
                     title="If selected, no exclusive lock is used on the source collection during View index creation."
                     setArrow={true}
                   >
                     <span className="arangoicon icon_arangodb_info" style={{ marginTop: 10 }}></span>
-                  </ToolTip>
+                  </ToolTippy>
                 </Cell>
                 <Cell size={"1-4"}/>
               </>}
