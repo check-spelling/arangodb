@@ -701,7 +701,7 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
 
   // Will take leadership in plan
   // Asserts that dbName and planId exists in plan
-  // NOTE: The plan already contians leadersip of SELF so this is a noop besides
+  // NOTE: The plan already contains leadersip of SELF so this is a noop besides
   // assertions.
   auto takeLeadershipPlan(std::string const& dbName, std::string const& planId,
                           Node& plan) -> void {

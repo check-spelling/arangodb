@@ -288,7 +288,7 @@ const char* notFoundSlice =
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief merge the baby-object results. (all shards version)
-///        results contians the result from all shards in any order.
+///        results contains the result from all shards in any order.
 ///        resultBody will be cleared and contains the merged result after this
 ///        function
 ///        errorCounter will correctly compute the NOT_FOUND counter, all other
