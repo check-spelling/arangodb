@@ -100,7 +100,7 @@ class V8DealerFeature final : public ArangodFeature {
 
   /// @brief loads a JavaScript file in all contexts, only called at startup.
   /// if the builder pointer is not nullptr, then
-  /// the Javascript result(s) are returned as VPack in the builder,
+  /// the JavaScript result(s) are returned as VPack in the builder,
   /// the builder is not cleared and thus should be empty before the call.
   void loadJavaScriptFileInAllContexts(TRI_vocbase_t*, std::string const& file,
                                        VPackBuilder* builder);
