@@ -67,7 +67,7 @@ bool RocksDBKey::containsLocalDocumentId(
     }
 
     default: {
-      // we should never never get here
+      // we should never get here
       TRI_ASSERT(false);
     }
   }
