@@ -1141,7 +1141,7 @@ class IResearchAnalyzerFeatureGetTest : public IResearchAnalyzerFeatureTest {
 
   ~IResearchAnalyzerFeatureGetTest() = default;
 
-  // Need Setup inorder to alow ASSERTs
+  // Need Setup inorder to allow ASSERTs
   void SetUp() override {
     // Prepare a database
     _sysVocbase = server.getFeature<arangodb::SystemDatabaseFeature>().use();
