@@ -41,7 +41,7 @@ function collectionComputedValuesClusterSuite() {
 
       let randValues = {};
 
-      // contact DB servers and verify they have have stored the same RAND()
+      // contact DB servers and verify they have stored the same RAND()
       // values via replication
       getDBServers().forEach(server => {
         if (servers.indexOf(server.id) === -1) {
