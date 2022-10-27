@@ -775,7 +775,7 @@ devel
      satisfies the filter condition, returns `true` if at least one member
      satisfies it.
 
-* Fixed Github issue #16279: assertion failure/crash in AQL query optimizer when
+* Fixed GitHub issue #16279: assertion failure/crash in AQL query optimizer when
   permuting adjacent FOR loops that depended on each other.
 
 * No good reason to fatal error in agency state, when local database entries
@@ -1543,7 +1543,7 @@ devel
   will be enforced.
 
 * APM-78: Added startup security option `--foxx.allow-install-from-remote` to
-  allow installing Foxx apps from remote URLs other than Github. The option is
+  allow installing Foxx apps from remote URLs other than GitHub. The option is
   turned off by default.
 
 * Cancel ongoing RocksDB compactions on server shutdown.
@@ -3458,7 +3458,7 @@ devel
 * Log the actual signal instead of "control-c" and also include the process id
   of the process that sent the signal.
 
-* Fixed Github issue #13665: Improve index selection when there are multiple
+* Fixed GitHub issue #13665: Improve index selection when there are multiple
   candidate indexes.
 
 * When dropping a collection or an index with a larger amount of documents, the
@@ -3583,7 +3583,7 @@ devel
   to any read request. Fixes a wrongly responded 404 from chaos
   tests.
 
-* Fixed Github issue #13632: Query Fails on Upsert with Replace_nth.
+* Fixed GitHub issue #13632: Query Fails on Upsert with Replace_nth.
 
 * Reasonably harden MoveShard against invalid VelocyPack input.
 
@@ -5060,7 +5060,7 @@ devel
   is normally not worth to create them in all databases.
   The `_modules` collection is only used to register custom JavaScript modules,
   for which there exists no API, and `_fishbowl` is used to store the temporary
-  list of Foxx apps retrieved from the Github Foxx store.
+  list of Foxx apps retrieved from the GitHub Foxx store.
   If the option value is `false` (which is the default from v3.8 onwards), the
   two collections will not be created for any new database. The `_fishbowl`
   collection will still be created dynamically when needed. If the option value
@@ -13727,8 +13727,8 @@ v2.8.7 (2016-04-07)
 
 * fix to-boolean conversion for documents in AQL
 
-* expose the User-Agent HTTP header from the ArangoShell since Github seems to
-  require it now, and we use the ArangoShell for fetching Foxx repositories from Github
+* expose the User-Agent HTTP header from the ArangoShell since GitHub seems to
+  require it now, and we use the ArangoShell for fetching Foxx repositories from GitHub
 
 * work with http servers that only send
 
@@ -16748,7 +16748,7 @@ v2.4.0-beta1 (2014-12-26)
 
   To install a new application, a new dialog is now available.
   It provides the features already available in the console application `foxx-manager` plus some more:
-  * install an application from Github
+  * install an application from GitHub
   * install an application from a zip file
   * install an application from ArangoDB's application store
   * create a new application from scratch: this feature uses a generator to

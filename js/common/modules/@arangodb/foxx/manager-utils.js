@@ -79,7 +79,7 @@ function compareMounts (l, r) {
 // / @brief builds a github repository URL
 // //////////////////////////////////////////////////////////////////////////////
 
-function buildGithubUrl (repository, version) {
+function buildGitHubUrl (repository, version) {
   if (version === undefined) {
     version = 'master';
   }
@@ -249,7 +249,7 @@ exports.updateService = updateService;
 exports.getReadableName = getReadableName;
 exports.list = list;
 exports.listDevelopment = listDevelopment;
-exports.buildGithubUrl = buildGithubUrl;
+exports.buildGitHubUrl = buildGitHubUrl;
 exports.validateMount = validateMount;
 exports.zipDirectory = zipDirectory;
 exports.getStorage = getStorage;

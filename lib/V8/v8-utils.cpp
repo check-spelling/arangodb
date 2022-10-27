@@ -1034,7 +1034,7 @@ void JS_Download(v8::FunctionCallbackInfo<v8::Value> const& args) {
 
     SimpleHttpClientParams params(timeout, false, addContentLength);
     params.setSupportDeflate(false);
-    // security by obscurity won't work. Github requires a useragent nowadays.
+    // security by obscurity won't work. GitHub requires a useragent nowadays.
     params.setExposeArangoDB(true);
     if (!jwtToken.empty()) {
       params.setJwt(jwtToken);

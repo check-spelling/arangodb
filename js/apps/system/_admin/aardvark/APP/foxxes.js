@@ -147,7 +147,7 @@ installer.put('/git', function (req) {
   url: joi.string().required(),
   version: joi.string().default('master')
 }).required(), 'A GitHub reference.')
-.summary('Install a Foxx from Github')
+.summary('Install a Foxx from GitHub')
 .description(dd`
   Install a Foxx with user/repository and version.
 `);
