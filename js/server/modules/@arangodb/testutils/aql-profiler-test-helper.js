@@ -702,7 +702,7 @@ function createBinaryTree (vertexCol, edgeCol, numVertices) {
       .map(i => [{from: i, to: 2 * i}, {from: i, to: 2 * i + 1}])
       // flatten
       .reduce((accum, cur) => accum.concat(cur), [])
-      // omit edges to non-existent vertices
+      // omit edges to nonexistent vertices
       .filter(e => e.to <= numVertices)
       // create edge documents
       .map(e => (

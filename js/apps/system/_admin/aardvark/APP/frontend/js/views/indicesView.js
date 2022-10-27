@@ -405,12 +405,12 @@
           var readJob = function (error, data, job) {
             if (error) {
               if (data.responseJSON.code === 404) {
-                // delete non existing aardvark job
+                // delete nonexistent aardvark job
                 arangoHelper.deleteAardvarkJob(job);
               } else if (data.responseJSON.code === 400) {
                 // index job failed -> print error
                 arangoHelper.arangoError('Index creation failed', data.responseJSON.errorMessage);
-                // delete non existing aardvark job
+                // delete nonexistent aardvark job
                 arangoHelper.deleteAardvarkJob(job);
               } else if (data.responseJSON.code === 204) {
                 // job is still in quere or pending

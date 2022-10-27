@@ -1182,7 +1182,7 @@ Result RestReplicationHandler::processRestoreCollection(
                     VPackValue(_vocbase.shardingPrototypeName()));
       }
     } else {
-      // Number of shards. Will be overwritten if not existent
+      // Number of shards. Will be overwritten if nonexistent
       VPackSlice const numberOfShardsSlice =
           parameters.get(StaticStrings::NumberOfShards);
       if (!numberOfShardsSlice.isInteger()) {
@@ -1213,7 +1213,7 @@ Result RestReplicationHandler::processRestoreCollection(
       }
     }
 
-    // Replication Factor. Will be overwritten if not existent
+    // Replication Factor. Will be overwritten if nonexistent
     VPackSlice const replicationFactorSlice =
         parameters.get(StaticStrings::ReplicationFactor);
     // not an error: for historical reasons the write concern is read from the

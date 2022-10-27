@@ -572,7 +572,7 @@ function ValidationBasicsSuite () {
     },
 
     testAQLSchemaGetNoCollection: () => {
-      // schema on non existing collection
+      // schema on nonexistent collection
       try {
         db._query(`RETURN SCHEMA_GET("nonExistingTestCollection")`).toArray();
         fail();

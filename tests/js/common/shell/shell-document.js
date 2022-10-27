@@ -1599,7 +1599,7 @@ function DatabaseDocumentSuite () {
       assertTrue(db._exists(d3));
 
 
-      // non existing collection
+      // nonexistent collection
       try {
         db._exists("UnitTestsNonExistingCollection/1");
       }

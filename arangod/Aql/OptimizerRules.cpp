@@ -7471,7 +7471,7 @@ static bool isAllowedIntermediateSortLimitNode(ExecutionNode* node) {
     case ExecutionNode::SUBQUERY_START:
     case ExecutionNode::SUBQUERY_END:
     // TODO: As soon as materialize does no longer have to filter out
-    //  non-existent documents, move MATERIALIZE to the allowed nodes!
+    //  nonexistent documents, move MATERIALIZE to the allowed nodes!
     case ExecutionNode::MATERIALIZE:
     case ExecutionNode::MUTEX:
       return false;

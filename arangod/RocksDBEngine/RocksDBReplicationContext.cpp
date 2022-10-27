@@ -231,7 +231,7 @@ void RocksDBReplicationContext::releaseIterators(TRI_vocbase_t& vocbase,
     }
   } else {
     LOG_TOPIC("5a0a1", ERR, Logger::REPLICATION)
-        << "trying to delete non-existent iterator";
+        << "trying to delete nonexistent iterator";
   }
 }
 

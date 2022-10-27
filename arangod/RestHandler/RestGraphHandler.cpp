@@ -116,9 +116,9 @@ Result RestGraphHandler::executeGharial() {
   // TODO Add tests for this, especially with existing collections & vertices
   // where the collection is only missing in the graph.
   // TODO The existing tests seem to be inconsistent about this:
-  // e.g., deleting a non-existent vertex collection is expected to throw
+  // e.g., deleting a nonexistent vertex collection is expected to throw
   // TRI_ERROR_GRAPH_VERTEX_COL_DOES_NOT_EXIST but reading a vertex of a
-  // non-existent collection is expected to throw
+  // nonexistent collection is expected to throw
   // ERROR_ARANGO_DATA_SOURCE_NOT_FOUND.
   // This is commented out until the tests are changed.
   // TODO The existing API seems to ignore the type of the collection for

@@ -369,7 +369,7 @@ Result modifyLinks(std::unordered_set<DataSourceId>& modified, ViewType& view,
           << "request for removal of a stale link to a missing collection '"
           << id << "', ignoring";
 
-      continue;  // skip adding removal requests to stale links to non-existent
+      continue;  // skip adding removal requests to stale links to nonexistent
                  // collections (already dropped)
     }
 

@@ -1139,7 +1139,7 @@ function SimpleQueryByExampleSuite () {
     },
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief test: byExample, using non existing system attribute
+// / @brief test: byExample, using nonexistent system attribute
 // //////////////////////////////////////////////////////////////////////////////
 
     testByExampleNonExisting: function () {
