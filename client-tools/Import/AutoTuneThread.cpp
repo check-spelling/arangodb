@@ -133,7 +133,7 @@ void AutoTuneThread::paceSends() {
 
   std::this_thread::sleep_until(_nextSend);
 
-  // if the previous send thread thread was found really quickly,
+  // if the previous send thread was found really quickly,
   //  assume arangodb is absorbing data faster than current rate.
   //  try doubling rate by halving pace time for subsequent send.
   if (!nextReset && _pace / 2 < _nextSend - now) {
