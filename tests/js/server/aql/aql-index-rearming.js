@@ -636,7 +636,7 @@ function VPackIndexRearmingSuite (unique) {
     
     testVPackLookupBySingleAttributeWithOredConditions1 : function () {
       // OR-ed conditions, using the same index for the same ranges.
-      // however, that that the 2 ranges are equivalent is not detected
+      // however, that the 2 ranges are equivalent is not detected
       // at query compile time, because the range expressions are too
       // complex to be merged.
       const q = `FOR i IN 0..${n - 2} FOR doc IN ${cn} FILTER (doc.value1 >= ${pad} && doc.value1 < ${pad2}) || (doc.value1 >= ${pad} && doc.value1 < ${pad2}) RETURN doc`;
