@@ -256,9 +256,9 @@ inline int compareDoubleValues(double lhs, double rhs) {
 
 /// @brief compare two nodes
 /// @return range from -1 to +1 depending:
-///  - -1 LHS being  less then   RHS,
+///  - -1 LHS being  less than   RHS,
 ///  -  0 LHS being     equal    RHS
-///  -  1 LHS being greater then RHS
+///  -  1 LHS being greater than RHS
 int arangodb::aql::CompareAstNodes(AstNode const* lhs, AstNode const* rhs,
                                    bool compareUtf8) {
   TRI_ASSERT(lhs != nullptr);
