@@ -165,7 +165,7 @@ class TestLambdaSkipExecutor;
 
 /*
  *  Determine whether an executor cannot bypass subquery skips.
- *  This is if exection of this Executor does have side-effects
+ *  This is if execution of this Executor does have side-effects
  *  other then it's own result.
  */
 

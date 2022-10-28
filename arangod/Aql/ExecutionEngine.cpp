@@ -121,7 +121,7 @@ struct LimitFullCountChecker final
 }  // namespace
 
 /**
- * @brief Create AQL blocks from a list of ExectionNodes
+ * @brief Create AQL blocks from a list of ExecutionNodes
  * Only works in cluster mode
  *
  * @param nodes The list of Nodes => Blocks

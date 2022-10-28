@@ -85,7 +85,7 @@ class ShardLocking {
   // @brief prepare a shardlocking for the new query.
   explicit ShardLocking(QueryContext& query) : _query(query) {}
 
-  // @brief Every ExectionNode that is send to a Database server needs to be
+  // @brief Every ExecutionNode that is send to a Database server needs to be
   // passed through this method this class will check if a collection (or more)
   // is used, and will adapt the locking. The given snippetId is used to
   // determine in which snippet this node is used. This will also check for
