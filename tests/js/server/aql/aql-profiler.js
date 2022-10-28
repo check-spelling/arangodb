@@ -556,7 +556,7 @@ function ahuacatlProfilerTestSuite () {
       const query = 'FOR i IN 1..@rows FILTER 1 == 0 RETURN i';
 
       // Also if we have no results, we do send a drop-all to dependecies
-      // potentielly we have modifiaction nodes that need to be executed.
+      // potentielly we have modification nodes that need to be executed.
 
       const genNodeList = () => [
         {type: SingletonBlock, calls: 1, items: 0, filtered: 0},
