@@ -114,7 +114,7 @@ class QueryLevenhsteinMatch : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // distance 1, defatul limit
+    // distance 1, default limit
     {
       std::vector<arangodb::velocypack::Slice> expected = {
           _insertedDocs[26].slice(),
@@ -265,7 +265,7 @@ class QueryLevenhsteinMatch : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // distance 2, defatul limit
+    // distance 2, default limit
     {
       std::vector<arangodb::velocypack::Slice> expected = {
           _insertedDocs[26].slice(), _insertedDocs[27].slice(),

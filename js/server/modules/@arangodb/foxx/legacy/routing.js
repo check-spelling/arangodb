@@ -136,7 +136,7 @@ function buildFileAsset (app, path, basePath, asset) {
     type = mimeTypes.lookup(asset.files[0]) || MIME_DEFAULT;
   }
 
-  // use built-in defaulti content-type
+  // use built-in default content-type
   else {
     type = MIME_DEFAULT;
   }
