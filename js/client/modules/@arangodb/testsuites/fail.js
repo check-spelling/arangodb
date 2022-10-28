@@ -27,7 +27,7 @@
 const functionsDocumentation = {
   'fail'   : 'this job will always produce a failed result',
   'fail2'  : 'this job will always produce a failed result',
-  'success': 'this job will always produce a sucessfull result'
+  'success': 'this job will always produce a successfull result'
 };
 
 const optionsDocumentation = [
