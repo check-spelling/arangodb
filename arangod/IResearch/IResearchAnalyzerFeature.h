@@ -577,7 +577,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   void cleanupAnalyzers(irs::string_ref database);
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief store the definition for the speicifed pool in the corresponding
+  /// @brief store the definition for the specified pool in the corresponding
   ///        vocbase
   /// @note on success will modify the '_key' of the pool
   //////////////////////////////////////////////////////////////////////////////
