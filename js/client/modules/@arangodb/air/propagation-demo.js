@@ -179,7 +179,7 @@ function demand_propagation_demo_program(resultField) {
            voted to halt, no updates have happened, or the maximum number
            of "global supersteps" has been reached.
 
-           The execution of `initProgam` and `updateProgram` are lockstepped: *All*
+           The execution of `initProgram` and `updateProgram` are lockstepped: *All*
            vertices have to finish running `initProgram` before `updateProgram` is started,
            and *all* vertices have to finish their i-th iteration of `updateProgram`
            before the next one is started.

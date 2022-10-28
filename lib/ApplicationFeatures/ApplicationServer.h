@@ -58,7 +58,7 @@ namespace application_features {
 //
 // `collectOptions`
 //
-// Creates the prgramm options for a feature. Features are not
+// Creates the program options for a feature. Features are not
 // allowed to open files or sockets, create threads or allocate
 // other resources. This method will be called regardless of whether
 // to feature is enabled or disabled. There is no defined order in
