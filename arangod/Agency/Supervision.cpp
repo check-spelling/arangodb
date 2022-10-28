@@ -1330,7 +1330,7 @@ void Supervision::run() {
           {
             MUTEX_LOCKER(locker, _lock);
 
-            // Only modifiy this condition with extreme care:
+            // Only modify this condition with extreme care:
             // Supervision needs to wait until the agent has finished leadership
             // preparation or else the local agency snapshot might be behind its
             // last state.
