@@ -417,7 +417,7 @@ class MerkleTree : public MerkleTreeBase {
    * of keys in each partition is roughly the same.
    *
    * @param count The number of partitions to return
-   * @return Vector of (inclusive) ranges that partiion the keyspace
+   * @return Vector of (inclusive) ranges that partition the keyspace
    */
   std::vector<std::pair<std::uint64_t, std::uint64_t>> partitionKeys(
       std::uint64_t count) const;

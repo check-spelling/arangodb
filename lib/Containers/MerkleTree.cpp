@@ -1064,7 +1064,7 @@ MerkleTree<Hasher, BranchingBits>::partitionKeys(std::uint64_t count) const {
       result.emplace_back(rangeStart, rangeEnd);
       remaining -= rangeCount;
       if (remaining == 0 || result.size() == count) {
-        // if we just finished the last partiion, shortcut out
+        // if we just finished the last partition, shortcut out
         break;
       }
       rangeCount = 0;
