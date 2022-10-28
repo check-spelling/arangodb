@@ -50,7 +50,7 @@ namespace arangodb::tests::aql {
 using TestParam = std::tuple<size_t,         // The input data 0 -> number
                              ExecutorState,  // The upstream state
                              AqlCall,        // The client Call,
-                             bool  // flag to decide if we need to do couting
+                             bool  // flag to decide if we need to do counting
                              >;
 
 class IdExecutorTestCombiner : public AqlExecutorTestCaseWithParam<TestParam> {
