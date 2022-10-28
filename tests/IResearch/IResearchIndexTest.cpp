@@ -545,7 +545,7 @@ TEST_F(IResearchIndexTest, test_async_index) {
     EXPECT_TRUE(viewImpl->properties(updateJson->slice(), true, false).ok());
   }
 
-  // `catch` doesn't support cuncurrent checks
+  // `catch` doesn't support concurrent checks
   bool resThread0 = false;
   bool resThread1 = false;
 
