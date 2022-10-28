@@ -127,7 +127,7 @@ class Vertex {
     TRI_ASSERT(active());
 
     // make sure that Vertex has the smallest possible size, especially
-    // that the bitfield for _acitve and _keyLength takes up only 16 bits in
+    // that the bitfield for _active and _keyLength takes up only 16 bits in
     // total.
     static_assert(sizeof(Vertex<V, E>) ==
                       sizeof(char const*) + sizeof(Edge<E>*) +
