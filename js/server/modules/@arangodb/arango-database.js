@@ -56,7 +56,7 @@ ArangoDatabase.prototype._PRINT = function (context) {
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief strng representation of a database
+// / @brief string representation of a database
 // //////////////////////////////////////////////////////////////////////////////
 
 ArangoDatabase.prototype.toString = function (seen, path, names, level) {
