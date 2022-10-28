@@ -239,7 +239,7 @@ aql::AqlValue aqlFnTokens(aql::ExpressionContext* expressionContext,
           THROW_ARANGO_EXCEPTION_MESSAGE(TRI_ERROR_INTERNAL, message);
         }
       }
-      // we read all numers as doubles because ArangoSearch indexes
+      // we read all numbers as doubles because ArangoSearch indexes
       // all numbers as doubles, so do we there, as our goal is to
       // return same tokens as will be in index for this specific number
       numeric_analyzer->reset(value.getNumber<double>());
