@@ -751,7 +751,7 @@ struct DMIDMasterContext : public MasterContext {
   }
 
   /**
-   * Initilizes the global leader aggregator with 1 for every vertex with a
+   * Initializes the global leader aggregator with 1 for every vertex with a
    * higher number of followers than the average.
    */
   void initializeGL() {
