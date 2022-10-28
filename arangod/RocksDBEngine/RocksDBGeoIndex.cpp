@@ -57,7 +57,7 @@ using namespace arangodb;
 //
 // A geo index is a specific type of index, which indexes one or two
 // attributes in the documents of a collection for its "geo content".
-// "Geo content" can be locations on earth (longitude/lattitude), or can
+// "Geo content" can be locations on earth (longitude/latitude), or can
 // be "geojson" objects like polygons. Simplified a lot, the index then allows
 // to quickly find stuff which is "close to the indexed geo content" on earth.
 //
