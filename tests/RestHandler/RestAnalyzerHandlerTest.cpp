@@ -390,7 +390,7 @@ TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols) {
                slice.get(arangodb::StaticStrings::ErrorNum).getNumber<int>()}));
 }
 
-// TODO: is this the smae test as above?
+// TODO: is this the same test as above?
 TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols_2) {
   grantOnDb(arangodb::StaticStrings::SystemDatabase, arangodb::auth::Level::RW);
 
