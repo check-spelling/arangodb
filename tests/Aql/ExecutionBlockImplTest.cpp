@@ -1314,7 +1314,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    *        Each entry in the array goes into one line and is writen into
    * outReg.
    *
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param data The data to be written, needs to be an array.
    * @param outReg The register to be written to
    * @return std::unique_ptr<ExecutionBlock> ready to use ProducerBlock.
@@ -1402,7 +1402,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    *        It simply takes one input row and copies it into the output
    *
    * @param asserter A call asserter, that will invoke getCalled on every call
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param maxReg The number of registers in input and output. (required for
    * forwarding of data)
    * @return std::unique_ptr<ExecutionBlock> ready to use ForwardingBlock.
@@ -1440,7 +1440,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    * produce call
    * @param skipAsserter A call asserter, that will invoke getCalled on every
    * skip call
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param maxReg The number of registers in input and output. (required for
    * forwarding of data)
    * @return std::unique_ptr<ExecutionBlock> ready to use ForwardingBlock.

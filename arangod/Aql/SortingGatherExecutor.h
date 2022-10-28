@@ -166,7 +166,7 @@ class SortingGatherExecutor {
    *
    * @param inputRange Range of all input dependencies
    * @return std::optional<std::tuple<AqlCall, size_t>>  optional call for the
-   * dependnecy requiring input
+   * dependency requiring input
    */
   [[nodiscard]] auto requiresMoreInput(
       MultiAqlItemBlockInputRange const& inputRange, AqlCall const& clientCall)
