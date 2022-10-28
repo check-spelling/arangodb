@@ -71,7 +71,7 @@ struct ExpressionExecutionContext final : irs::attribute {
   explicit operator bool() const noexcept { return ctx; }
 
   // FIXME change 'ctx' to be 'arangodb::aql::ExpressionContext'
-  // once IResearchView will be able to evaluate epxressions
+  // once IResearchView will be able to evaluate expressions
   // with loop variable in SEARCH expressions
   ViewExpressionContextBase* ctx{};
 };

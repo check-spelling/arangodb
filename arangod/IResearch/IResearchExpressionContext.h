@@ -51,7 +51,7 @@ class IResearchViewNode;
 ///////////////////////////////////////////////////////////////////////////////
 /// @struct ViewExpressionContextBase
 /// @brief FIXME remove this struct once IResearchView will be able to evaluate
-///        epxressions with loop variable in SEARCH expressions.
+///        expressions with loop variable in SEARCH expressions.
 ///        simon: currently also used in tests
 ///////////////////////////////////////////////////////////////////////////////
 struct ViewExpressionContextBase : public arangodb::aql::ExpressionContext {
