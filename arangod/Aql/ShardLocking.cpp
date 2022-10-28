@@ -63,7 +63,7 @@ void ShardLocking::addNode(ExecutionNode const* baseNode, size_t snippetId,
         auto errorCode = TRI_ERROR_NO_ERROR;
         if (col->isDisjoint()) {
           // if disjoint smart edge collection, we must insert an
-          // artifical key with two colons, to pretend it is a real
+          // artificial key with two colons, to pretend it is a real
           // smart graph key
           errorCode = col->getCollection()->getResponsibleShard(
               forceOneShardAttributeValue +
