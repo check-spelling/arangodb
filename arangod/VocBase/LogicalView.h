@@ -99,7 +99,7 @@ class LogicalView : public LogicalDataSource {
 
   //////////////////////////////////////////////////////////////////////////////
   /// @brief calls the callback on every view found for the specified vocbase
-  /// @param callback if false is returned then enumiration stops
+  /// @param callback if false is returned then enumeration stops
   /// @return full enumeration finished successfully
   //////////////////////////////////////////////////////////////////////////////
   static bool enumerate(
