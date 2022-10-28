@@ -907,7 +907,7 @@ continueBaseInstall:
   ;Use the entire tree produced by the INSTALL target.  Keep the
   ;list of directories here in sync with the RMDir commands below.
   SetOutPath "$INSTDIR"
-  ; SetRegView controlls where die regkeys are written to
+  ; SetRegView controls where die regkeys are written to
   ; SetRegView 32 writes the keys into Wow6432
   SetRegView ${BITS}
 
@@ -1124,7 +1124,7 @@ FunctionEnd
 
 Section "Uninstall"
   call un.ReadSettings
-  ; SetRegView controlls where die regkeys are written to
+  ; SetRegView controls where die regkeys are written to
   ; SetRegView 32 writes the keys into Wow6432
   ; this variable was defined by eld and included in NSIS.template.in
   ; we probably need this for the install/uninstall software list.
