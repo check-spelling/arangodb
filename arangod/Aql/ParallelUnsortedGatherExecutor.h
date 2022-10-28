@@ -69,7 +69,7 @@ class ParallelUnsortedGatherExecutor {
    * @param output place to write rows to
    * @return std::tuple<ExecutorState, Stats, AqlCall, size_t>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   AqlCall: Request to upstream
    *   size:t: Dependency to request
    */
@@ -84,7 +84,7 @@ class ParallelUnsortedGatherExecutor {
    * @param call skip request form consumer
    * @return std::tuple<ExecutorState, Stats, AqlCall, size_t>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   size_t: Number of rows skipped
    *   AqlCall: Request to upstream
    *   size:t: Dependency to request
