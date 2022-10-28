@@ -752,7 +752,7 @@ std::string transaction::Methods::name(DataSourceId cid) const {
 }
 
 /// @brief read all master pointers, using skip and limit.
-/// The resualt guarantees that all documents are contained exactly once
+/// The result guarantees that all documents are contained exactly once
 /// as long as the collection is not modified.
 OperationResult transaction::Methods::any(std::string const& collectionName,
                                           OperationOptions const& options) {
