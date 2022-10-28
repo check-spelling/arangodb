@@ -944,7 +944,7 @@ function ahuacatlTypesFunctionsTestSuite () {
       assertEqual(actual.length, 1);
       assertEqual(actual[0].length, 1);
       var value = actual[0][0];
-      // Double precission
+      // Double precision
       assertEqual(expected.toPrecision(5), value.toPrecision(5));
     },
 
