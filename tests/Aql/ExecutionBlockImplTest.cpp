@@ -633,7 +633,7 @@ TEST_P(ExecutionBlockImplExecuteSpecificTest, test_toplevel_offset_only_call) {
   AqlCall fullCall{};
   fullCall.offset = 20;
   // This test simulates a simple "skipSome" call on the old API.
-  // It is releveant in any intermediate state.
+  // It is relevant in any intermediate state.
   fullCall.softLimit = 0u;
   size_t nrCalls = 0;
 
