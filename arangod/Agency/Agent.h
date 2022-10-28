@@ -554,7 +554,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   //        The map holds all current poll promises.
   //        key,value: expiry time of this poll, the promise
   //        When expired or when any change to commitIndex, promise is
-  //        fullfilled All rest handlers will receive the same vpack, They need
+  //        fulfilled All rest handlers will receive the same vpack, They need
   //        to sort out, what is sent to client
   std::mutex _promLock;
   index_t _lowestPromise;
