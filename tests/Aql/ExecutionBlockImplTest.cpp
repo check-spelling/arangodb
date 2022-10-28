@@ -286,7 +286,7 @@ class SharedExecutionBlockImplTest {
       EXPECT_EQ(clientCall.hardLimit, expectedCall.hardLimit);
       EXPECT_EQ(clientCall.needsFullCount(), expectedCall.needsFullCount());
       if (input.hasDataRow()) {
-        // We expact only the empty initial row, so just consume it
+        // We expect only the empty initial row, so just consume it
         auto const [state, row] = input.nextDataRow();
         EXPECT_EQ(state, ExecutorState::DONE);
         EXPECT_TRUE(row.isInitialized());

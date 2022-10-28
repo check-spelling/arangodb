@@ -857,7 +857,7 @@ const replicatedLogSuite = function () {
 
 
     // This test excludes all participants from quorum. This is uncommittable. Wait for the leader to complain.
-    // then allow two servers. We exepect the log to commit this config.
+    // then allow two servers. We expect the log to commit this config.
     testExcludeAllServers: function () {
       const {logId, servers} = createReplicatedLogAndWaitForLeader(database);
 

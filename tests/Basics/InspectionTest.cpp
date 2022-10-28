@@ -3063,7 +3063,7 @@ TEST(VPackWithStatus, statust_test_deserialize_fail) {
 
   auto res = deserializeWithErrorT<ErrorTTest>(testSlice);
 
-  ASSERT_FALSE(res.ok()) << fmt::format("Did not detect the error we exepct");
+  ASSERT_FALSE(res.ok()) << fmt::format("Did not detect the error we expect");
 
   EXPECT_EQ(res.error().error(), "Found unexpected attribute 'fehler'");
 }
