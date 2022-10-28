@@ -620,7 +620,7 @@ function Sessions (applicationContext, options) {
   this._applicationContext = applicationContext;
   this._options = options || {};
 
-  if (!this._options.hasOwnProperty('minUpdateResoultion')) {
+  if (!this._options.hasOwnProperty('minUpdateResolution')) {
     this._options.minUpdateResolution = 10;
   }
 
