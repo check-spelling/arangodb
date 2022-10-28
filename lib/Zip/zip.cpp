@@ -19,7 +19,7 @@
    better overview of some functions.
    Oct-2009 - Mathias Svensson - Added zipRemoveExtraInfoBlock to strip extra
    field data from its ZIP64 data
-                                 It is used when recreting zip archive with RAW
+                                 It is used when recreating zip archive with RAW
    when deleting items from a zip.
                                  ZIP64 data is automatically added to items that
    needs it, and existing ZIP64 data need to be removed.
