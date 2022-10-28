@@ -924,7 +924,7 @@ void Conductor::finishedWorkerFinalize(VPackSlice data) {
 
 bool Conductor::canBeGarbageCollected() const {
   // we don't want to block other operations for longer, so if we can't
-  // immediately acuqire the mutex here, we assume a conductor cannot be
+  // immediately acquire the mutex here, we assume a conductor cannot be
   // garbage-collected. the same conductor will be probed later anyway, so we
   // should be fine
   TRY_MUTEX_LOCKER(guard, _callbackMutex);
