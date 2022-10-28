@@ -2592,7 +2592,7 @@ Future<OperationResult> transaction::Methods::truncateLocal(
             // known servers here. if we do, we will not be able to
             // send the commit/abort to the follower later. However, we
             // still need to send the commit/abort to the follower at
-            // transaction end, because the follower may be responsbile
+            // transaction end, because the follower may be responsible
             // for _other_ shards as well.
             // it does not matter if we later commit the writes of the shard
             // from which we just removed the follower, because the follower
@@ -3213,7 +3213,7 @@ Future<Result> Methods::replicateOperations(
           // known servers here. if we do, we will not be able to
           // send the commit/abort to the follower later. However, we
           // still need to send the commit/abort to the follower at
-          // transaction end, because the follower may be responsbile
+          // transaction end, because the follower may be responsible
           // for _other_ shards as well.
           // it does not matter if we later commit the writes of the shard
           // from which we just removed the follower, because the follower
