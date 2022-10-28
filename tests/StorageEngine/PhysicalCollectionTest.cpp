@@ -241,7 +241,7 @@ class MockIndex : public Index {
   bool _needsReversal;
 };
 
-TEST_F(PhysicalCollectionTest, test_index_ordeing) {
+TEST_F(PhysicalCollectionTest, test_index_ordering) {
   TRI_vocbase_t vocbase(TRI_vocbase_type_e::TRI_VOCBASE_TYPE_NORMAL,
                         testDBInfo(server));
   auto json = arangodb::velocypack::Parser::fromJson("{ \"name\": \"test\" }");
