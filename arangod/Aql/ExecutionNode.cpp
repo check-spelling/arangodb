@@ -1972,7 +1972,7 @@ CostEstimate LimitNode::estimateCost() const {
 
   // arbitrary cost value for skipping a single document
   // skipping over a document is not fully free, because in the RocksDB
-  // case, we need to move iterarors forward, invoke the comparator etc.
+  // case, we need to move iterators forward, invoke the comparator etc.
   double const skipCost = 0.000001;
 
   size_t estimatedNrItems = estimate.estimatedNrItems;
