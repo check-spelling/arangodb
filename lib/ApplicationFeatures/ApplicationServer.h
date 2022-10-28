@@ -388,7 +388,7 @@ class ApplicationServerT : public ApplicationServer {
   }
 
   // Returns true if a feature denoted by `Feature` is created before other
-  // feautures denoted by `OtherFeatures`.
+  // features denoted by `OtherFeatures`.
   template<typename Feature, typename... OtherFeatures>
   static constexpr bool isCreatedAfter() noexcept {
     return (std::greater{}(id<Feature>(), id<OtherFeatures>()) && ...);
