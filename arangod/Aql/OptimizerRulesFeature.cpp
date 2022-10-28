@@ -307,7 +307,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::optimizeTraversalsRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // optimize unneccessary filters already applied by the traversal
+  // optimize unnecessary filters already applied by the traversal
   registerRule("remove-filter-covered-by-traversal",
                removeFiltersCoveredByTraversal,
                OptimizerRule::removeFiltersCoveredByTraversal,
@@ -330,7 +330,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::removeUnnecessaryCalculationsRule2,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // optimize unneccessary filters already applied by the traversal. Only ever
+  // optimize unnecessary filters already applied by the traversal. Only ever
   // does something if previous rules remove all filters using the path variable
   registerRule("remove-redundant-path-var", removeTraversalPathVariable,
                OptimizerRule::removeTraversalPathVariable,

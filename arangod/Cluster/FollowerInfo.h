@@ -167,7 +167,7 @@ class FollowerInfo {
   uint64_t getFollowingTermId(ServerID const& s) const noexcept;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief clear follower list, no changes in agency necesary
+  /// @brief clear follower list, no changes in agency necessary
   //////////////////////////////////////////////////////////////////////////////
 
   void clear();

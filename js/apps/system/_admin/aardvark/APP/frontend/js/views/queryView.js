@@ -1982,7 +1982,7 @@
               }
 
               if (geometry.type === 'Point' || geometry.type === 'MultiPoint') {
-                // reverse neccessary if we are using GeoJSON order
+                // reverse necessary if we are using GeoJSON order
                 // L.marker(geo.coordinates.reverse()).addTo(self.maps[counter]);
                 try {
                   geojson = new L.GeoJSON(geometry, {
