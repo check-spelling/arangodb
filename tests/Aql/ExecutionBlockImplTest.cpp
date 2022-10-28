@@ -1311,7 +1311,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    * @brief Create a Producing ExecutionBlock
    *        For every input row this block will write the array given in data
    *        into the output once.
-   *        Each entry in the array goes into one line and is writen into
+   *        Each entry in the array goes into one line and is written into
    * outReg.
    *
    * @param dependency The dependency of this block (produces input)
