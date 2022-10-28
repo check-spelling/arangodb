@@ -100,7 +100,7 @@ struct config_t {
   /// @brief move constructor
   config_t(config_t&&) = delete;
 
-  /// @brief assignement operator
+  /// @brief assignment operator
   config_t& operator=(config_t const&);
 
   /// @brief move assignment operator

@@ -83,10 +83,10 @@ class Store {
   /// @brief Move constructor
   Store(Store&& other);
 
-  // @brief Copy assignent
+  // @brief Copy assignment
   Store& operator=(Store const& rhs);
 
-  // @brief Move assigment
+  // @brief Move assignment
   Store& operator=(Store&& rhs);
 
   /// @brief Apply entry in query, query must be an array of individual

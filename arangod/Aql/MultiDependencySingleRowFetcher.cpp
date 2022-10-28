@@ -438,7 +438,7 @@ void MultiDependencySingleRowFetcher::reportSkipForDependency(
         // In the current implementation we get the fullCount guaranteed in
         // one go. If this assert triggers, we can easily transform the
         // following code into an increment of branchFullCount instead of
-        // assignement.
+        // assignment.
 
         // NOTE: The following assert does not hold true in all
         // FILTER LIMIT cases over subqueries. We may have buffered subquery
