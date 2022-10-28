@@ -1528,7 +1528,7 @@ bool TRI_SuspendExternalProcess(ExternalId pid) {
 
 bool TRI_ContinueExternalProcess(ExternalId pid) {
   LOG_TOPIC("45884", DEBUG, arangodb::Logger::FIXME)
-      << "continueing process: " << pid._pid;
+      << "continuing process: " << pid._pid;
 
 #ifndef _WIN32
   return 0 == kill(pid._pid, SIGCONT);
