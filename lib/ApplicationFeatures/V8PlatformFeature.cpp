@@ -136,7 +136,7 @@ static void gcEpilogueCallback(v8::Isolate* isolate, v8::GCType type,
 static void oomCallback(char const* location, bool isHeapOOM) {
   if (isHeapOOM) {
     LOG_TOPIC("fd5c4", FATAL, arangodb::Logger::V8)
-        << "out of heap hemory in V8 (" << location << ")";
+        << "out of heap memory in V8 (" << location << ")";
   } else {
     LOG_TOPIC("5d980", FATAL, arangodb::Logger::V8)
         << "out of memory in V8 (" << location << ")";

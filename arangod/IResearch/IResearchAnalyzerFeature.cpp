@@ -2312,7 +2312,7 @@ Result IResearchAnalyzerFeature::loadAnalyzers(
           equalAnalyzer(*(entry.second), itr->second->type(),
                         itr->second->properties(), itr->second->features())) {
         itr->second = entry.second;  // reuse old analyzer pool to avoid
-                                     // duplicates in memmory
+                                     // duplicates in memory
         const_cast<Analyzers::key_type&>(itr->first) =
             entry.first;  // point key at old pool
       } else if (itr->second->revision() == entry.second->revision()) {
