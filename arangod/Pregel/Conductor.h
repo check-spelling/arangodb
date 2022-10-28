@@ -126,7 +126,7 @@ class Conductor : public std::enable_shared_from_this<Conductor> {
 
   // Work in Progress: Move data incrementally into this
   // struct; sort it into categories and make it (de)serialisable
-  // with the Inspecotr framework
+  // with the Inspector framework
   ConductorStatus _status;
 
   bool _startGlobalStep();
