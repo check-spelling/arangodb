@@ -72,7 +72,7 @@ class GraphManager {
       const TRI_vocbase_t& vocbase, std::string const& name);
 
   ////////////////////////////////////////////////////////////////////////////////
-  /// @brief checks wheter a graph exists or not
+  /// @brief checks whether a graph exists or not
   ////////////////////////////////////////////////////////////////////////////////
   bool graphExists(std::string const& graphName) const;
 

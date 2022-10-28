@@ -87,7 +87,7 @@ class DocumentProducingNode {
     _count = other->_count;
   }
 
-  /// @brief wheter or not the node can be used for counting
+  /// @brief whether or not the node can be used for counting
   bool doCount() const;
 
   [[nodiscard]] bool useCache() const noexcept { return _useCache; }
