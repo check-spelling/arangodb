@@ -2840,7 +2840,7 @@ Result IResearchAnalyzerFeature::storeAnalyzer(AnalyzerPool& pool) {
     if (!vocbase) {
       return {
           TRI_ERROR_INTERNAL,
-          "failure to find vocbase while persising arangosearch analyzer '" +
+          "failure to find vocbase while persisting arangosearch analyzer '" +
               pool.name() + "'"};
     }
 
