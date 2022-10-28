@@ -48,7 +48,7 @@ class RocksDBSavePoint {
   TRI_voc_document_operation_e operationType() const { return _operationType; }
 
   /// @brief this is going to be called if at least one Put or Delete
-  /// has made it into the underyling WBWI. if so, on rollback we must
+  /// has made it into the underlying WBWI. if so, on rollback we must
   /// perform a full rebuild
   void tainted() { _tainted = true; }
 
