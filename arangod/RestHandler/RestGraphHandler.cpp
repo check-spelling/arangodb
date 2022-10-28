@@ -844,7 +844,7 @@ Result RestGraphHandler::documentModify(graph::Graph& graph,
       _request->parsedValue(StaticStrings::WaitForSyncString, false);
   bool returnNew = _request->parsedValue(StaticStrings::ReturnNewString, false);
   bool returnOld = _request->parsedValue(StaticStrings::ReturnOldString, false);
-  // Note: the default here differs from the one in the RestDoumentHandler
+  // Note: the default here differs from the one in the RestDocumentHandler
   bool keepNull = _request->parsedValue(StaticStrings::KeepNullString, true);
 
   // extract the revision, if single document variant and header given:

@@ -319,7 +319,7 @@ function CollectionTruncateFailuresSuite() {
         assertEqual(e.errorNum, ERRORS.ERROR_DEBUG.code);
       }
 
-      // All docments should be removed through intermediate commits.
+      // All documents should be removed through intermediate commits.
       // We have two packs that fill up those commits.
       // Now validate that we endup with an empty collection.
       assertEqual(c.count(), 0);

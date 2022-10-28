@@ -322,7 +322,7 @@ const replicatedLogSuite = function () {
           `Leader has to be one of ${JSON.stringify([followers[0], followers[1]])}, but is ${serverId}`);
 
       }
-      // All docments inserted into the log still have to be readable!
+      // All documents inserted into the log still have to be readable!
       for (const [index, expected] of Object.entries(expectedDocumentsInserted)) {
         assertEqual(log.at(index).payload, expected);
       }
@@ -335,7 +335,7 @@ const replicatedLogSuite = function () {
         assertTrue(quorum.result.quorum.quorum.indexOf(leader) === -1);
       }
 
-      // All docments inserted into the log still have to be readable!
+      // All documents inserted into the log still have to be readable!
       for (const [index, expected] of Object.entries(expectedDocumentsInserted)) {
         assertEqual(log.at(index).payload, expected);
       }

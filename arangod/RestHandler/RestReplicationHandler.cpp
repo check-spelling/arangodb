@@ -199,7 +199,7 @@ static Result restoreDataParser(char const* ptr, char const* pos,
     // compact format
     type = REPLICATION_MARKER_DOCUMENT;
     // for a valid document marker without envelope, doc points to the actual
-    // docuemnt
+    // document
     doc = slice;
   } else {
     // enveloped (old) format. each document is wrapped into a
@@ -220,7 +220,7 @@ static Result restoreDataParser(char const* ptr, char const* pos,
         if (!value.isObject()) {
           type = REPLICATION_INVALID;
         } else {
-          // for a valid document marker, doc points to the actual docuemnt
+          // for a valid document marker, doc points to the actual document
           doc = value;
         }
       } else if (type == REPLICATION_MARKER_REMOVE) {

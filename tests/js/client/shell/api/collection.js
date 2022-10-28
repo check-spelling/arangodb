@@ -484,7 +484,7 @@ function readingSuite () {
       // delete a few documents, this should change counts;
       let body = "{ \"collection\" : \"" + cn + "\", \"example\": { \"test\" : 5 } }";
       doc = arango.PUT_RAW("/_api/simple/remove-by-example", body);
-      // should delete 2 docuemnts:
+      // should delete 2 documents:
       assertEqual(doc.parsedBody['deleted'], 2);
       body = "{ \"collection\" : \"" + cn + "\", \"example\": { \"test3\" : 1 } }";
       doc = arango.PUT_RAW("/_api/simple/remove-by-example", body);

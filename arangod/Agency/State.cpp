@@ -212,7 +212,8 @@ bool State::persistConf(index_t index, term_t term, uint64_t millis,
     configuration.add("cfg", config);
   }
 
-  // Multi docment transaction for log entry and configuration replacement -----
+  // Multi document transaction for log entry and configuration replacement
+  // -----
   TRI_ASSERT(_vocbase != nullptr);
 
   transaction::StandaloneContext ctx(*_vocbase);
