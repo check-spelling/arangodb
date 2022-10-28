@@ -44,7 +44,7 @@ function strongly_connected_components_program(resultField) {
     // TODO: Karpott.
     maxGSS: 150,
     globalAccumulators: {
-      // Converged is signalle by a vetex that found
+      // Converged is signal by a vetex that found
       // that its min_f = min_b and hence determined its
       // SCC
       converged: {
