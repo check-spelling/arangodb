@@ -3403,7 +3403,7 @@ pre.gv-object-view {
   font-weight: 400;
   text-align: left; }
 
-.dygraph-axis-label.dygraph-axis-label-x, .dygraph-axis-label.dygraph-axit-label-y {
+.dygraph-axis-label.dygraph-axis-label-x, .dygraph-axis-label.dygraph-axis-label-y {
   color: #666666;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
