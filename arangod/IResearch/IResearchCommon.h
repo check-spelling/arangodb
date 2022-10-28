@@ -192,7 +192,7 @@ struct StaticStrings {
 
   ////////////////////////////////////////////////////////////////////////////////
   /// @brief the name of the field in the IResearch View definition denoting the
-  ///        number of completed consolidtions before cleanup is run
+  ///        number of completed consolidations before cleanup is run
   ////////////////////////////////////////////////////////////////////////////////
   static constexpr std::string_view CleanupIntervalStep{"cleanupIntervalStep"};
 
