@@ -345,7 +345,7 @@ void DaemonFeature::remapStandardFileDescriptors() {
     FATAL_ERROR_EXIT();
   }
 
-  // the following calls silently close and repoen the given fds
+  // the following calls silently close and reopen the given fds
   // to avoid concurrency issues
   if (dup2(fd, STDIN_FILENO) != STDIN_FILENO) {
     LOG_TOPIC("3d2ca", FATAL, arangodb::Logger::FIXME)
