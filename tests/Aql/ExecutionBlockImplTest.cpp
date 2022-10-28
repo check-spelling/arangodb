@@ -1460,7 +1460,7 @@ class ExecutionBlockImplExecuteIntegrationTest
         output.advanceRow();
       }
       // Do forward a softLimit call only.
-      // Do not oeverfetch here.
+      // Do not overfetch here.
       AqlCall request{};
       request.softLimit = output.getClientCall().getLimit();
       return {inputRange.upstreamState(), NoStats{}, request};
@@ -1864,7 +1864,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
       call.didSkip(1);
     }
     // Do forward a softLimit call only.
-    // Do not oeverfetch here.
+    // Do not overfetch here.
     AqlCall request;
     if (call.getOffset() > 0) {
       request.softLimit = call.getOffset();
