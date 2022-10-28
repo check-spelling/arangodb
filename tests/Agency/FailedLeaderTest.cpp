@@ -2551,7 +2551,7 @@ TEST_F(FailedLeaderTest,
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_all_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_all_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";
@@ -2615,7 +2615,7 @@ TEST_F(
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_leader_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_leader_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";
@@ -2680,7 +2680,7 @@ TEST_F(
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_follower_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_follower_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";
