@@ -39,7 +39,7 @@ exports.vertex_degrees_program = vertex_degrees_program;
 exports.vertex_degrees = vertex_degrees;
 exports.test = test;
 
-/* returns a program that compputes the vertex degree of every vertex */
+/* returns a program that computes the vertex degree of every vertex */
 function vertex_degrees_program(resultField) {
     return {
         resultField: resultField,
