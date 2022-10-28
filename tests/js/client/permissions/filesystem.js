@@ -458,7 +458,7 @@ function testSuite() {
       fail();
     }
     catch (err) {
-      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'Temfile-access to ' + dn + ' wasn\'t forbidden');
+      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'Tempfile-access to ' + dn + ' wasn\'t forbidden');
     }
   }
   function tryGetTempFileAllowed(dn) {
