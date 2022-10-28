@@ -787,7 +787,7 @@ std::unique_ptr<IndexIterator> RocksDBGeoIndex::iteratorForCondition(
   // is not necessary, > would be missing entries.
   params.cover.worstIndexedLevel = _coverParams.worstIndexedLevel;
   if (params.cover.bestIndexedLevel > _coverParams.bestIndexedLevel) {
-    // it is unnessesary to use a better level than configured
+    // it is unnecessary to use a better level than configured
     params.cover.bestIndexedLevel = _coverParams.bestIndexedLevel;
   }
 
