@@ -223,7 +223,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
       EXPECT_TRUE(vocbase.views().empty());
     }
 
-    // authorzed (RW user)
+    // authorized (RW user)
     {
       arangodb::auth::UserMap userMap;
       auto& user = userMap
@@ -814,7 +814,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
           EXPECT_FALSE(slice.isObject());
         }
 
-        // authorzed (RW user)
+        // authorized (RW user)
         {
           arangodb::auth::UserMap userMap;
           auto& user = userMap.emplace("", arangodb::auth::User::newUser("", "",
@@ -1014,7 +1014,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
        slice.get(arangodb::StaticStrings::ErrorNum).getNumber<int>());
         }
 
-        // authorzed (RO view)
+        // authorized (RO view)
         {
           arangodb::auth::UserMap userMap;
           auto& user = userMap.emplace("", arangodb::auth::User::newUser("", "",
@@ -1204,7 +1204,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
        slice.get(arangodb::StaticStrings::ErrorNum).getNumber<int>());
         }
 
-        // authorzed (RO view)
+        // authorized (RO view)
         {
           arangodb::auth::UserMap userMap;
           auto& user = userMap.emplace("", arangodb::auth::User::newUser("", "",
