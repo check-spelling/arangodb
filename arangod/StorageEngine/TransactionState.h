@@ -285,7 +285,7 @@ class TransactionState : public std::enable_shared_from_this<TransactionState> {
   [[nodiscard]] virtual TRI_voc_tick_t lastOperationTick() const noexcept = 0;
 
   void acceptAnalyzersRevision(
-      QueryAnalyzerRevisions const& analyzersRevsion) noexcept;
+      QueryAnalyzerRevisions const& analyzersRevision) noexcept;
 
   [[nodiscard]] QueryAnalyzerRevisions const& analyzersRevision()
       const noexcept {
