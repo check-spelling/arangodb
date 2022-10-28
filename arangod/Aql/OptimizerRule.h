@@ -194,7 +194,7 @@ struct OptimizerRule {
 
     removeUnnecessaryFiltersRule2,
 
-    // try to find sort blocks which are superseeded by indexes
+    // try to find sort blocks which are superseded by indexes
     useIndexForSortRule,
 
     // sort values used in IN comparisons of remaining filters

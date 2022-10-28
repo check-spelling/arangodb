@@ -291,7 +291,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::removeUnnecessaryFiltersRule2,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // try to find sort blocks which are superseeded by indexes
+  // try to find sort blocks which are superseded by indexes
   registerRule("use-index-for-sort", useIndexForSortRule,
                OptimizerRule::useIndexForSortRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
