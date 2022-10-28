@@ -1191,12 +1191,12 @@ bool IResearchFeature::queue(ThreadGroup id,
     }
   } catch (std::exception const& e) {
     LOG_TOPIC("c1b64", WARN, arangodb::iresearch::TOPIC)
-        << "Caught exception while sumbitting a task to thread group '"
+        << "Caught exception while submitting a task to thread group '"
         << std::to_string(std::underlying_type_t<ThreadGroup>(id))
         << "' error '" << e.what() << "'";
   } catch (...) {
     LOG_TOPIC("c1b65", WARN, arangodb::iresearch::TOPIC)
-        << "Caught an exception while sumbitting a task to thread group '"
+        << "Caught an exception while submitting a task to thread group '"
         << std::to_string(std::underlying_type_t<ThreadGroup>(id)) << "'";
   }
 
