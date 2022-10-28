@@ -414,7 +414,7 @@ void AqlFunctionFeature::addGeoFunctions() {
   add({"GEO_AREA", ".|.", flags, &functions::GeoArea});
 
   // (point0, point1, lower, upper[, includeLower = true, includeUpper = true,
-  // ellipsoid = "shpere"])
+  // ellipsoid = "sphere"])
   add({"GEO_IN_RANGE", ".,.,.,.|.,.,.", flags, &functions::GeoInRange});
 }
 
