@@ -325,7 +325,7 @@ class testRunner {
   postRun() { return {state: true}; } // after each test
   preStop() { return {state: true}; } // before shutting down the SUT
   postStop() { return {state: true}; } // after shutting down the SUT
-  alive() { return true; } // after each testrun, check whether the SUT is alaive and well
+  alive() { return true; } // after each testrun, check whether the SUT is alive and well
   translateResult(testName) { return testName; } // if you want to manipulate test file names...
   // //////////////////////////////////////////////////////////////////////////////
   // / @brief checks whether the SUT is alive and well:
