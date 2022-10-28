@@ -54,10 +54,10 @@ typedef struct TRI_csv_parser_s {
   bool _useBackslash;
 
   char* _begin;    // beginning of the input buffer
-  char* _start;    // start of the unproccessed part
+  char* _start;    // start of the unprocessed part
   char* _written;  // pointer to currently written character
   char* _current;  // pointer to currently processed character
-  char* _stop;     // end of unproccessed part
+  char* _stop;     // end of unprocessed part
   char* _end;      // end of the input buffer
 
   size_t _row;
