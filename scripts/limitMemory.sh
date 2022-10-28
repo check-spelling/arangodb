@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# limit memory useage for process
+# limit memory usage for process
 # using control groups https://en.wikipedia.org/wiki/Cgroups
 
 # @author Jan Christoph Uhde
