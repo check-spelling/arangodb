@@ -55,7 +55,7 @@ struct AqlCall {
 
   /**
    * @brief We need to implement this wrappter class only for a MSVC compiler
-   * insufficency: For some reason (see bug-report here:
+   * insufficiency: For some reason (see bug-report here:
    * https://developercommunity.visualstudio.com/content/problem/1031281/improper-c4244-warning-in-variant-code.html)
    * the MSVC compiler decides on every operator<< usage if this implementation
    * could be used. This causes every operator<<(numberType) to test this
