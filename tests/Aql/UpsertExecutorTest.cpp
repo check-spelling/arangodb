@@ -797,7 +797,7 @@ TEST_P(UpsertExecutorIntegrationTest, upsert_alternate_insert_upsert) {
   std::string from = basics::StringUtils::itoa(1);
   std::string to = basics::StringUtils::itoa(numDocs() + numDocs());
   // We alternate between inserts and updates
-  // If number is disible by two, we divide it by two. (in key range = update)
+  // If number is disable by two, we divide it by two. (in key range = update)
   // If not, we divide, round floor and add 1000 (out of key range = insert)
   std::string query =
       R"aql(FOR preMod IN )aql" + from + R"aql(..)aql" + to +
