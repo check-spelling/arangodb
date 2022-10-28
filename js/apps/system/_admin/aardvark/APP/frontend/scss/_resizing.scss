@@ -317,7 +317,7 @@
             width: ((($int-width / 2) - 8px) * 1.4);
           }
 
-          .absolut {
+          .absolute {
             //line-height: ($int-height2 * 2 / 3) - 10px;
             line-height: 40px;
             padding-top: 15px;
@@ -466,7 +466,7 @@
               width: ((($int-width / 2) - 8px) * 1.4);
             }
 
-            .absolut {
+            .absolute {
               width: ($int-width - (($int-width / 2) * 1.4)) - 6px;
             }
           }
@@ -486,7 +486,7 @@
       font-size: $tendency-name-font;
     }
 
-    .absolut {
+    .absolute {
       font-size: $tendency-name-font;
       font-weight: $tendency-name-weight;
     }
