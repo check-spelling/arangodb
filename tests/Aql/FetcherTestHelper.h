@@ -234,7 +234,7 @@ CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
       testing::Range(static_cast<uint64_t>(0),                                \
                      static_cast<uint64_t>(std::pow(2, 3))));
 
-// Section Third Pattern, 1 input, and alternating relevant irrelvant shadow
+// Section Third Pattern, 1 input, and alternating relevant irrelevant shadow
 // rows
 #define TEST_SHADOWROW_PATTERN_3(FetcherWrapper, TestName)                    \
   class TestName : public testing::TestWithParam<uint64_t> {                  \
@@ -282,7 +282,7 @@ CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
       testing::Range(static_cast<uint64_t>(0),                                \
                      static_cast<uint64_t>(std::pow(2, 4))));
 
-// Section Fourth Pattern, 1 input, and alternating relevant irrelvant shadow
+// Section Fourth Pattern, 1 input, and alternating relevant irrelevant shadow
 // rows
 #define TEST_SHADOWROW_PATTERN_4(FetcherWrapper, TestName)                    \
   class TestName : public testing::TestWithParam<uint64_t> {                  \
