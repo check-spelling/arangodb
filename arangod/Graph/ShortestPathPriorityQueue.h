@@ -368,7 +368,7 @@ class ShortestPathPriorityQueue {
     _heap[0].swap(_heap.back());
     // Throw away the POINTER (might be moved before).
     _heap.pop_back();
-    // Find the lokkup of new value
+    // Find the lookup of new value
     auto it = _lookup.find(_heap[0]->getKey());
     TRI_ASSERT(it != _lookup.end());
     it->second = static_cast<std::ptrdiff_t>(_popped);
