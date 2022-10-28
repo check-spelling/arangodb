@@ -1050,7 +1050,7 @@ RestStatus RestAdminClusterHandler::handleCancelJob() {
           return RestStatus::DONE;
         }
 
-        // This tranaction aims at killing a job that is todo or pending.
+        // This transaction aims at killing a job that is todo or pending.
         // A todo job could be pending in the meantime however a pending
         // job can never be todo again. Response ist evaluated in 412 result
         // below.

@@ -7473,7 +7473,7 @@ int32_t AnalyzerModificationTransaction::getPendingCount() noexcept {
 AnalyzersRevision::Revision AnalyzerModificationTransaction::buildingRevision()
     const noexcept {
   TRI_ASSERT(_buildingRevision !=
-             AnalyzersRevision::LATEST);  // unstarted transation access
+             AnalyzersRevision::LATEST);  // unstarted transaction access
   return _buildingRevision;
 }
 
