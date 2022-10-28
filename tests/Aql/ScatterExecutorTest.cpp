@@ -170,7 +170,8 @@ namespace {
 template<typename T>
 auto ArrayPermutations(std::vector<T> base) -> std::vector<std::vector<T>> {
   std::vector<std::vector<T>> res;
-  // This is not correct we would need faculity of base, but we are in a test...
+  // This is not correct we would need the factorial of the base, but we are in
+  // a test...
   res.reserve(base.size());
   do {
     res.emplace_back(base);
