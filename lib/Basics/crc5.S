@@ -149,7 +149,7 @@ x8:     crc32q  -8(%rsi),%rax
 x0:     ret
 
 /* The following code starts off by doing up to 120 bytes   */
-/* inline (branch to one of the yNN lables) in a simple way */
+/* inline (branch to one of the yNN labels) in a simple way */
 /* (it then drops into main triple-stream loop)             */
 
         .align 32
