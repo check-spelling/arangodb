@@ -233,7 +233,7 @@ ATOMICITY
 
 In the course of program evolution, debugging and tuning,
 a counter may desire implementation with weaker concurrency requirements.
-That is accomplished by explicitly specifing the atomicity.
+That is accomplished by explicitly specifying the atomicity.
 For example, suppose it is discovered that a counter
 
     counter::simplex<int> red_count;
