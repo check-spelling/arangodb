@@ -327,7 +327,7 @@ auto EnumeratePathsExecutor<FinderType>::getVertexId(InputVertex const& vertex,
           builder.clear();
           builder.add(VPackValue(idString));
           id = builder.slice();
-          // Guranteed by extractIdValue
+          // Guaranteed by extractIdValue
           TRI_ASSERT(::isValidId(id));
         } catch (...) {
           // _id or _key not present... ignore this error and fall through
