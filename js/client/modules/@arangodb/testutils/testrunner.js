@@ -320,7 +320,7 @@ class testRunner {
   // //////////////////////////////////////////////////////////////////////////////
   preStart() { return {state: true}; } // before launching the SUT
   startFailed() { return {state: true}; } // if launching the SUT failed..
-  postStart() { return {state: true}; } // after successfull launch of the SUT
+  postStart() { return {state: true}; } // after successful launch of the SUT
   preRun() { return {state: true}; } // before each test
   postRun() { return {state: true}; } // after each test
   preStop() { return {state: true}; } // before shutting down the SUT

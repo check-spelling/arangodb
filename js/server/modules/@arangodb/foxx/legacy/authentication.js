@@ -220,11 +220,11 @@ function createStandardChangePasswordHandler (users, opts) {
 
   return function (req, res) {
     var password = req.body()[options.passwordField],
-      successfull = false;
+      successful = false;
 
     if (is.existy(req.currentSession)) {
-      successfull = users.setPassword(req.currentSession.identifier, password);
-      if (successfull) {
+      successful = users.setPassword(req.currentSession.identifier, password);
+      if (successful) {
         options.onSuccess(req, res);
       } else {
         options.onError(req, res);
