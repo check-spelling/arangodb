@@ -500,8 +500,8 @@ void OptimizerRulesFeature::addRules() {
 #ifdef USE_ENTERPRISE
   // apply late materialization for offset infos
   registerRule("late-materialization-offset-info",
-               lateMaterialiationOffsetInfoRule,
-               OptimizerRule::lateMaterialiationOffsetInfoRule,
+               lateMaterializationOffsetInfoRule,
+               OptimizerRule::lateMaterializationOffsetInfoRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled,
                                         OptimizerRule::Flags::EnterpriseOnly));
 #endif

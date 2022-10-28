@@ -351,7 +351,7 @@ struct OptimizerRule {
     lateDocumentMaterializationRule,
 
 #ifdef USE_ENTERPRISE
-    lateMaterialiationOffsetInfoRule,
+    lateMaterializationOffsetInfoRule,
 #endif
 
     // splice subquery into the place of a subquery node
