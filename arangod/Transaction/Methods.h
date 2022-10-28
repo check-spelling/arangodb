@@ -147,7 +147,7 @@ class Methods {
       DataSourceRegistrationCallback const& callback);
 
   /// @brief add a callback to be called for state change events
-  /// @param callback nullptr and empty functers are ignored, treated as success
+  /// @param callback nullptr and empty functors are ignored, treated as success
   /// @return success
   bool addStatusChangeCallback(StatusChangeCallback const* callback);
   bool removeStatusChangeCallback(StatusChangeCallback const* callback);
