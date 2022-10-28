@@ -596,7 +596,7 @@ describe('Rule optimize-traversals', () => {
     const symetricOperators = [
       ` == `, ` < `, ` <= `, ` != `
     ];
-    const asymetricOperators = [
+    const asymmetricOperators = [
       ` IN `, ` NOT IN `
     ];
 
@@ -680,8 +680,8 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, true);
       });
 
-      it('asymetric operators with path array access left (NOT ANY)', () => {
-        const ops = multiplyArray(modifiers.concat([``]), asymetricOperators);
+      it('asymmetric operators with path array access left (NOT ANY)', () => {
+        const ops = multiplyArray(modifiers.concat([``]), asymmetricOperators);
         const conditions = multiplyArrays(arrayStarts, ops, constValues);
         checkDoesOptimize(conditions, true);
       });
@@ -698,14 +698,14 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, false);
       });
 
-      it('asymetric operators with path array access right', () => {
-        const ops = multiplyArray(([``, ` ANY`].concat(modifiers)), asymetricOperators);
+      it('asymmetric operators with path array access right', () => {
+        const ops = multiplyArray(([``, ` ANY`].concat(modifiers)), asymmetricOperators);
         const conditions = multiplyArrays(constValues, ops, arrayStarts);
         checkDoesOptimize(conditions, false);
       });
 
-      it('asymetric operators with ANY and path array access left', () => {
-        const ops = multiplyArray([` ANY`], asymetricOperators);
+      it('asymmetric operators with ANY and path array access left', () => {
+        const ops = multiplyArray([` ANY`], asymmetricOperators);
         const conditions = multiplyArrays(arrayStarts, ops, constValues);
         checkDoesOptimize(conditions, false);
       });
@@ -718,8 +718,8 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, false);
       });
 
-      it('functions asymetric operators with array access', () => {
-        let ops = multiplyArray([``, ` ANY`].concat(modifiers), asymetricOperators);
+      it('functions asymmetric operators with array access', () => {
+        let ops = multiplyArray([``, ` ANY`].concat(modifiers), asymmetricOperators);
         let conditions = multiplyArrays(arrayStarts, ops, functValues);
         checkDoesOptimize(conditions, false);
         conditions = multiplyArrays(functValues, ops, arrayStarts);
@@ -734,8 +734,8 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, false);
       });
 
-      it('functions asymetric operators with point access', () => {
-        let ops = multiplyArray([``, ` ANY`].concat(modifiers), asymetricOperators);
+      it('functions asymmetric operators with point access', () => {
+        let ops = multiplyArray([``, ` ANY`].concat(modifiers), asymmetricOperators);
         let conditions = multiplyArrays(singleStarts, ops, functValues);
         checkDoesOptimize(conditions, false);
         conditions = multiplyArrays(functValues, ops, singleStarts);
