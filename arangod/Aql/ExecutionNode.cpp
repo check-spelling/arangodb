@@ -861,7 +861,7 @@ bool ExecutionNode::doWalk(WalkerWorkerBase<ExecutionNode>& worker,
               auto peek = n->getFirstDependency();
               if (peek->getType() == ASYNC) {
                 // Only Async nodes shall be flattened
-                // So yes we found the combination we want to falten here
+                // So yes we found the combination we want to flatten here
 
                 // Remember where we started the flattening process
                 parallelStarter.emplace_back(n);
