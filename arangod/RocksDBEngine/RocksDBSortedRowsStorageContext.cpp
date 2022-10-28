@@ -149,7 +149,7 @@ RocksDBSortedRowsStorageContext::getIterator() {
   // will only read its own keys (i.e. the keys with its own context id
   // prefix). and all RangeDeleted must be from a different context id.
   readOptions.ignore_range_deletions = true;
-  // try to use readhead
+  // try to use readahead
   readOptions.adaptive_readahead = true;
 
   std::unique_ptr<rocksdb::Iterator> iterator(
