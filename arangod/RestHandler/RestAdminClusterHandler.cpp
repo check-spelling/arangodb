@@ -296,7 +296,7 @@ std::string const RestAdminClusterHandler::ShardStatistics = "shardStatistics";
 std::string const RestAdminClusterHandler::FailureOracle = "failureOracle";
 
 RestStatus RestAdminClusterHandler::execute() {
-  // here we first do a glboal check, which is based on the setting in startup
+  // here we first do a global check, which is based on the setting in startup
   // option
   // `--cluster.api-jwt-policy`:
   // - "jwt-all"    = JWT required to access all operations

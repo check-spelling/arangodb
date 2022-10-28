@@ -574,7 +574,7 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
   }
 
   auto planId() const -> std::string {
-    // This is a gobal collection known in the test files.
+    // This is a global collection known in the test files.
     // It is required to have 6 shards, 2 per DBServer
     return "2010088";
   }
