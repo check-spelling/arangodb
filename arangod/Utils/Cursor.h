@@ -111,7 +111,7 @@ class Cursor {
 
   /**
    * @brief Dump the cursor result, async version. The caller needs to be
-   * contiueable
+   * continuable
    *
    * @param result The Builder to write the result to
    * @param continueHandler The function that is posted on scheduler to contiue
