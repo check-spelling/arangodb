@@ -2396,7 +2396,7 @@
             'query parsing',
             'abstract syntax tree optimizations',
             'loading collections',
-            'instanciation of initial execution plan',
+            'instantiation of initial execution plan',
             'execution plan optimization and permutation',
             'query execution',
             'query finalization'
