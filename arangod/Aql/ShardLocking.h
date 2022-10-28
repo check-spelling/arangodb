@@ -88,8 +88,8 @@ class ShardLocking {
   // @brief Every ExectionNode that is send to a Database server needs to be
   // passed through this method this class will check if a collection (or more)
   // is used, and will adapt the locking. The given snippetId is used to
-  // determin in which snippet this node is used. This will also check for shard
-  // restrictions on the given node.
+  // determine in which snippet this node is used. This will also check for
+  // shard restrictions on the given node.
   void addNode(ExecutionNode const* node, size_t snippetId,
                bool pushToSingleServer);
 
