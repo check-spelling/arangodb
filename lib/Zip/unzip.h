@@ -280,7 +280,7 @@ extern int ZEXPORT unzGetCurrentFileInfo
         char* szComment, uLong commentBufferSize));
 /*
   Get Info about the current file
-  if pfile_info!=NULL, the *pfile_info structure will contain somes info about
+  if pfile_info!=NULL, the *pfile_info structure will contain some info about
         the current file
   if szFileName!=NULL, the filemane string will be copied in szFileName
             (fileNameBufferSize is the size of the buffer)
@@ -352,7 +352,7 @@ extern int ZEXPORT unzReadCurrentFile OF((unzFile file, voidp buf,
   buf contain buffer where data must be copied
   len the size of buf.
 
-  return the number of byte copied if somes bytes are copied
+  return the number of byte copied if some bytes are copied
   return 0 if the end of file was reached
   return <0 with error code if there is an error
     (UNZ_ERRNO for IO error, or zLib error for uncompress error)
