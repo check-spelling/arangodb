@@ -2441,7 +2441,7 @@ std::string TRI_GetTempPath() {
             << "failed to create a temporary directory - giving up!";
         FATAL_ERROR_ABORT();
       }
-      // sleep for a random amout of time and try again soon
+      // sleep for a random amount of time and try again soon
       // with this, we try to avoid races between multiple processes
       // that try to create temp directories at the same time
       std::this_thread::sleep_for(std::chrono::milliseconds(
