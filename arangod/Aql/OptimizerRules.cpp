@@ -1068,7 +1068,7 @@ bool optimizeTraversalPathVariable(
     // order to not optimize away our path variable, and then being unable
     // to access the non-existing attribute, we simply activate the
     // production of vertices. this prevents us from running into errors
-    // trying to access an attribute of an optimzed-away variable later
+    // trying to access an attribute of an optimized-away variable later
     producePathsVertices = true;
   }
 
