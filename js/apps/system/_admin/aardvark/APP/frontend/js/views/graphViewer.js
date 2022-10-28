@@ -156,7 +156,7 @@
     },
 
     resize: function () {
-      // adjust container widht + height
+      // adjust container width + height
       $('#graph-container').width($('.centralContent').width());
       $('#graph-container').height($('.centralRow').height() - 155);
     },
