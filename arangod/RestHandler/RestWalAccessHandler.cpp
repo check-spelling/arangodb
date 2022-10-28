@@ -93,7 +93,7 @@ RequestLane RestWalAccessHandler::lane() const {
       if (_request->parsedValue("withHardLock", false)) {
         // We have the QueryParameter usingHardLock set to something that
         // evaluates to true. We need to push this onto HIGH priority lanes in
-        // order to unlock the hardlock we have accuired
+        // order to unlock the hardlock we have acquired
         return RequestLane::CLUSTER_INTERNAL;
       } else {
         return RequestLane::SERVER_REPLICATION_CATCHUP;
