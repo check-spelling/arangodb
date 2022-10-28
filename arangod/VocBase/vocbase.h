@@ -253,7 +253,7 @@ struct TRI_vocbase_t {
   void setIsOwnAppsDirectory(bool value) { _isOwnAppsDirectory = value; }
 
   /// @brief increase the reference counter for a database.
-  /// will return true if the refeence counter was increased, false otherwise
+  /// will return true if the reference counter was increased, false otherwise
   /// in case false is returned, the database must not be used
   bool use();
 
