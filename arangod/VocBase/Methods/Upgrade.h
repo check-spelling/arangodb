@@ -59,7 +59,7 @@ struct UpgradeResult {
 };
 
 /// Code to create and initialize databases
-/// Replaces ugrade-database.js for good
+/// Replaces upgrade-database.js for good
 struct Upgrade {
   friend class arangodb::UpgradeFeature;
 
