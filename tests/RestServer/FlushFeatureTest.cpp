@@ -125,7 +125,7 @@ class FlushFeatureTest
 // -----------------------------------------------------------------------------
 
 TEST_F(FlushFeatureTest, test_subscription_retention) {
-  struct TestFlushSubscripion : arangodb::FlushSubscription {
+  struct TestFlushSubscription : arangodb::FlushSubscription {
     TRI_voc_tick_t tick() const noexcept override { return _tick; }
 
     TRI_voc_tick_t _tick{};
@@ -140,7 +140,7 @@ TEST_F(FlushFeatureTest, test_subscription_retention) {
   feature.prepare();
 
   {
-    auto subscription = std::make_shared<TestFlushSubscripion>();
+    auto subscription = std::make_shared<TestFlushSubscription>();
     feature.registerFlushSubscription(subscription);
 
     auto const subscriptionTick = engine.currentTick();
