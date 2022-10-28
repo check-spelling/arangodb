@@ -278,7 +278,7 @@ function ClusterTransactionSuite() {
     },*/
     
   ////////////////////////////////////////////////////////////////////////////////
-  /// @brief fail the follower, transaction should succeeed regardless
+  /// @brief fail the follower, transaction should succeed regardless
   ////////////////////////////////////////////////////////////////////////////////
     testFailFollower: function () {
       assertTrue(waitForSynchronousReplication("_system"));
