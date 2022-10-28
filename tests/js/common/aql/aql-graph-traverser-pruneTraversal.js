@@ -265,7 +265,7 @@ function pruneTraversalSuite() {
 
       // The first traversal will find A, C, E
       // The Primary Index Scan in the middle is actually
-      // a noop and only enforces a walk thorugh DBServer
+      // a noop and only enforces a walk through DBServer
       // The Second traversal will find:
       // A => C,E
       // C => [] // it shall prune the startvertex
