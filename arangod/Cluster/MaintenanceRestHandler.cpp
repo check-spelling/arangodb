@@ -112,7 +112,7 @@ RestStatus MaintenanceRestHandler::postAction() {
         }
       } else if (ex == "proceed") {
         LOG_TOPIC("6c38a", DEBUG, Logger::MAINTENANCE)
-            << "Maintenance is prceeded " << dur.count() << " seconds";
+            << "Maintenance is proceeded " << dur.count() << " seconds";
         server().getFeature<MaintenanceFeature>().proceed();
       } else {
         es << "invalid POST command";
