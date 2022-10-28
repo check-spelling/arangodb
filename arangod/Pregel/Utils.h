@@ -100,7 +100,7 @@ class Utils {
   static std::string const recoveryMethodKey;
 
   /// Tells workers to store the result into the collections
-  /// otherwise dicard results
+  /// otherwise discard results
   static std::string const storeResultsKey;
 
   /// Holds aggregated values
