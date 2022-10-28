@@ -245,7 +245,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// @brief Check if everything up to a given index has been committed:
   bool isCommitted(index_t last_entry) const override;
 
-  /// @brief Convencience size of agency
+  /// @brief Convenience size of agency
   size_t size() const;
 
   Supervision& supervision() { return *_supervision; }
