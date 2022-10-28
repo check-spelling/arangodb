@@ -83,7 +83,7 @@ macro(check_mic_cxx_compiler_flag _FLAG _RESULT)
          set(${_RESULT} 1 CACHE INTERNAL "Test ${_FLAG}")
          message(STATUS "Performing Test Check MIC C++ Compiler flag ${_FLAG} - Success")
          file(APPEND ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/CMakeOutput.log
-            "Performing MIC C++ Compiler Flag Test ${_FLAG} succeded with the following output:\n"
+            "Performing MIC C++ Compiler Flag Test ${_FLAG} succeeded with the following output:\n"
             "${OUTPUT}\n"
             "COMMAND: ${MIC_CXX} -mmic -c -o ${_tmpdir}/src.o ${_FLAG} ${_tmpdir}/src.cpp\n"
             )
