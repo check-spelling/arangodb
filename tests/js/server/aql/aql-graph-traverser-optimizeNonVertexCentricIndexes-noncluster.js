@@ -76,7 +76,7 @@ function optimizeNonVertexCentricIndexesSuite() {
       edges.EF = ec.save({_key: 'EF', _from: vertices.E, _to: vertices.F, foo: 'E', bar: true})._id;
       edges.EG = ec.save({_key: 'EG', _from: vertices.E, _to: vertices.G, foo: 'F', bar: false})._id;
 
-      // Adding these edges to make the estimate for the edge-index extremly bad
+      // Adding these edges to make the estimate for the edge-index extremely bad
       let badEdges = [];
       for (let j = 0; j < 1000; ++j) {
         badEdges.push({_from: vertices.FOO, _to: vertices.BAR, foo: 'foo' + j, bar: j});
