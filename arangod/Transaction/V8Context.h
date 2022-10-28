@@ -76,7 +76,7 @@ class V8Context final : public Context {
                                                         bool embeddable);
 
   /// @brief create a V8 transaction context if we are in a V8 isolate, and a
-  /// standlone transaction context otherwise
+  /// standalone transaction context otherwise
   static std::shared_ptr<transaction::Context> CreateWhenRequired(
       TRI_vocbase_t& vocbase, bool embeddable);
 
