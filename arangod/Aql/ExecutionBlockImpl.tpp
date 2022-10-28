@@ -1076,7 +1076,7 @@ auto ExecutionBlockImpl<Executor>::shadowRowForwardingSubqueryEnd(
     // need to forward them
     return ExecState::SHADOWROWS;
   } else if (_outputItemRow->isFull()) {
-    // Fullfilled the call
+    // Fulfilled the call
     // Need to return!
     return ExecState::DONE;
   } else {
