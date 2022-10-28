@@ -1902,7 +1902,7 @@ rhsValue = rhsNormNode.value;
 
         if (byRange(filter, *lhsAttr, *lhsValue, lhsInclude, *rhsValue,
                     rhsInclude, ctx, filterCtx)) {
-          // successsfully parsed as range
+          // successfully parsed as range
           return true;
         }
       }
