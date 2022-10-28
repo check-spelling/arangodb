@@ -113,7 +113,7 @@ struct LogMessage {
 
   /// @brief id of log topic
   size_t const _topicId;
-  /// @biref the actual log message
+  /// @brief the actual log message
   std::string _message;
   /// @brief byte offset where actual message starts (i.e. excluding prologue)
   uint32_t _offset;
