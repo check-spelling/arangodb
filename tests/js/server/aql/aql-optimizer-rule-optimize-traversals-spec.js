@@ -593,7 +593,7 @@ describe('Rule optimize-traversals', () => {
       return res;
     };
 
-    const symetricOperators = [
+    const symmetricOperators = [
       ` == `, ` < `, ` <= `, ` != `
     ];
     const asymmetricOperators = [
@@ -636,8 +636,8 @@ describe('Rule optimize-traversals', () => {
     const queryStart = `FOR v,e,p IN 1..3 OUTBOUND 'circles/A' GRAPH '${graphName}' FILTER `;
     const queryEnd = ` RETURN {v,e,p}`;
 
-    const symOperatorsWithModifiers = multiplyArray(modifiers, symetricOperators);
-    const noOptSymOperators = multiplyArray([` ANY`], symetricOperators);
+    const symOperatorsWithModifiers = multiplyArray(modifiers, symmetricOperators);
+    const noOptSymOperators = multiplyArray([` ANY`], symmetricOperators);
 
     const checkDoesOptimize = (conditions, shouldOptimize) => {
       for (let c of conditions) {
@@ -664,9 +664,9 @@ describe('Rule optimize-traversals', () => {
     const singleStarts = multiplyArray(singleCompStart, valuePostFixes);
 
     describe('should optimize', () => {
-      it('symetric operators for point access vs constants', () => {
-        const conditions = multiplyArrays(singleStarts, symetricOperators, constValues)
-          .concat(multiplyArrays(constValues, symetricOperators, singleStarts));
+      it('symmetric operators for point access vs constants', () => {
+        const conditions = multiplyArrays(singleStarts, symmetricOperators, constValues)
+          .concat(multiplyArrays(constValues, symmetricOperators, singleStarts));
         checkDoesOptimize(conditions, true);
       });
 
@@ -710,8 +710,8 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, false);
       });
 
-      it('functions symetric operators with array access', () => {
-        let ops = multiplyArray([``, ` ANY`].concat(modifiers), symetricOperators);
+      it('functions symmetric operators with array access', () => {
+        let ops = multiplyArray([``, ` ANY`].concat(modifiers), symmetricOperators);
         let conditions = multiplyArrays(arrayStarts, ops, functValues);
         checkDoesOptimize(conditions, false);
         conditions = multiplyArrays(functValues, ops, arrayStarts);
@@ -726,8 +726,8 @@ describe('Rule optimize-traversals', () => {
         checkDoesOptimize(conditions, false);
       });
 
-      it('functions symetric operators with point access', () => {
-        let ops = multiplyArray([``, ` ANY`].concat(modifiers), symetricOperators);
+      it('functions symmetric operators with point access', () => {
+        let ops = multiplyArray([``, ` ANY`].concat(modifiers), symmetricOperators);
         let conditions = multiplyArrays(singleStarts, ops, functValues);
         checkDoesOptimize(conditions, false);
         conditions = multiplyArrays(functValues, ops, singleStarts);
@@ -745,7 +745,7 @@ describe('Rule optimize-traversals', () => {
       it('other access referencing traversal output', () => {
         // Build all combinations of v,e,p
         const starters = multiplyArray(outputStart.concat(arrayCmpStart).concat(singleCompStart), valuePostFixes);
-        const conditions = multiplyArrays(starters, symetricOperators, starters);
+        const conditions = multiplyArrays(starters, symmetricOperators, starters);
         checkDoesOptimize(conditions, false);
       });
     });
