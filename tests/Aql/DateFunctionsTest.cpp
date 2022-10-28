@@ -234,7 +234,7 @@ class DateFunctionsTestDateDiff : public ::testing::Test {
   // 123 milliseconds
   std::string const earlierDate;
   std::string const laterDate;
-  // Exact milisecond difference
+  // Exact millisecond difference
   double dateDiffMillis;
   // Average number of days per month in the given dates
   double avgDaysPerMonth;
