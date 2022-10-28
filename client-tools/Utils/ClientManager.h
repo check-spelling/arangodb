@@ -89,7 +89,7 @@ class ClientManager {
    * @brief Conditionally prefixes a relative URI with database-specific path
    * @param  data     Pointer to `ClientFeature` instance
    * @param  location Relative URI to prefix, if it does not begin with "/_db/"
-   * @return          Propertly prefixed URI
+   * @return          Properly prefixed URI
    */
   static std::string rewriteLocation(void* data, std::string const& location);
 
