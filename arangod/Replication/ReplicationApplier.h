@@ -64,7 +64,7 @@ class ReplicationApplier {
   /// @brief test if the replication applier is running
   bool isActive() const;
 
-  /// @brief test if the repication applier is performing initial sync
+  /// @brief test if the replication applier is performing initial sync
   bool isInitializing() const;
 
   /// @brief test if the replication applier is shutting down

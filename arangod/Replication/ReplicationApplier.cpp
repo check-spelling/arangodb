@@ -167,7 +167,7 @@ bool ReplicationApplier::isActive() const {
   return _state.isActive();
 }
 
-/// @brief test if the repication applier is performing initial sync
+/// @brief test if the replication applier is performing initial sync
 bool ReplicationApplier::isInitializing() const {
   READ_LOCKER_EVENTUAL(readLocker, _statusLock);
   return _state.isInitializing();

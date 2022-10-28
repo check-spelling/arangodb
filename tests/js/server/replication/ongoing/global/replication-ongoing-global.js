@@ -1441,6 +1441,6 @@ jsunity.run(ReplicationOtherDBSuite);
 
 // TODO Add test for:
 // Accessing globalApplier in non system database.
-// Try to setup global repliaction in non system database.
+// Try to setup global replication in non system database.
 
 return jsunity.done();
