@@ -298,7 +298,7 @@ class TransactionState : public std::enable_shared_from_this<TransactionState> {
   [[nodiscard]] bool isInaccessibleCollection(std::string_view cname);
 #endif
 
-  /// @brief roll a new transaction ID on the coordintor. Use this method
+  /// @brief roll a new transaction ID on the coordinator. Use this method
   /// with care, it should only be used when retrying in a synchronized
   /// fashion after a fast-path locking detected a dead-lock situation.
   /// Only allowed on coordinators.

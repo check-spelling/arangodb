@@ -440,7 +440,7 @@ TEST_F(NodeWalkerTest, simple_query_walker_nested_flatten_all) {
   tester.addExpectedBefore(localBranch_1_2);
   // Now add snippet to go back to coordinator
   tester.addExpectedBefore(firstDBServerToCoordinator);
-  // Before doing the coordiantor we have to branch back to second dbserver
+  // Before doing the coordinator we have to branch back to second dbserver
   tester.addExpectedBefore(secondCoordinatorToDBServer);
   // Visit each branch before completing the server
   tester.addExpectedBefore(localBranch_2_1);
