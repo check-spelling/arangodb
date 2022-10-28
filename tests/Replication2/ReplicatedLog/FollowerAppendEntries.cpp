@@ -396,7 +396,7 @@ TEST_F(FollowerAppendEntriesTest, rewrite_log) {
   }
 }
 
-TEST_F(FollowerAppendEntriesTest, deuplicate_append_entries_test) {
+TEST_F(FollowerAppendEntriesTest, duplicate_append_entries_test) {
   auto log = makeDelayedFollower("follower", LogTerm{5}, "leader");
   auto follower = log->getFollower();
   auto persisted =
