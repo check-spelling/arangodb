@@ -230,7 +230,7 @@ auto ShortestPathExecutor::fetchPath(AqlItemBlockInputRange& input) -> bool {
   return false;
 }
 auto ShortestPathExecutor::pathLengthAvailable() -> size_t {
-  // Subtraction must not undeflow
+  // Subtraction must not underflow
   TRI_ASSERT(_posInPath <= _path->length());
   return _path->length() - _posInPath;
 }
