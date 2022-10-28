@@ -86,7 +86,7 @@ struct IResearchLinkHelper {
   //////////////////////////////////////////////////////////////////////////////
   /// @brief validate and copy required fields from the 'definition' into
   ///        'normalized'
-  /// @note missing analyzers will be created if exceuted on db-server
+  /// @note missing analyzers will be created if executed on db-server
   /// @note engine == nullptr then SEGFAULT in Methods constructor during insert
   /// @note true == inRecovery() then AnalyzerFeature will not allow persistence
   //////////////////////////////////////////////////////////////////////////////
