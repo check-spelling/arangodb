@@ -2144,7 +2144,7 @@ std::unique_ptr<ExecutionBlock> CalculationNode::createBlock(
                                                : RegIdSet{});
 
   if (_outVariable->type() == Variable::Type::Const) {
-    // we have a const variable, so we can simply use an IdExector to forward
+    // we have a const variable, so we can simply use an IdExecutor to forward
     // the rows.
     auto executorInfos = IdExecutorInfos(false, outputRegister);
     return std::make_unique<ExecutionBlockImpl<

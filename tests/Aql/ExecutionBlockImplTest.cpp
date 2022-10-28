@@ -1771,7 +1771,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest, test_produce_using_two) {
   ValidateResult(secondRegBuilder, skipped, block, outRegSecond);
 }
 
-// Explicitly test call forwarding, on exectors.
+// Explicitly test call forwarding, on executors.
 // We use two pass-through producers, that simply copy over input and assert an
 // calls. On top of them we have a 1000 line producer. We expect the result to
 // be identical to the 1000 line producer only.
@@ -1813,7 +1813,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
   ValidateResult(builder, skipped, block, outReg);
 }
 
-// Explicitly test call forwarding, on exectors.
+// Explicitly test call forwarding, on executors.
 // We use one pass-through producer, that simply copy over input and assert an
 // calls. And we have one non-passthrough below it, that requests all data from
 // upstream, and internally does skipping. On top of them we have a 1000 line
