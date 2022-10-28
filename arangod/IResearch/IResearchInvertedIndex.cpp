@@ -200,7 +200,7 @@ struct CoveringValue {
   const irs::payload* value{};
 };
 
-/// @brief Represents virtual "vector" of stored values in the irsesearch index
+/// @brief Represents virtual "vector" of stored values in the iresearch index
 class CoveringVector final : public IndexIteratorCoveringData {
  public:
   explicit CoveringVector(IResearchInvertedIndexMeta const& meta) {
