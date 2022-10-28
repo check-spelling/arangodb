@@ -324,7 +324,7 @@ arangodb::Result getEngineStatsFromDBServers(ClusterFeature&,
 class ClusterMethods {
  public:
   // wrapper Class for static functions.
-  // Cannot be instanciated.
+  // Cannot be instantiated.
   ClusterMethods() = delete;
   ~ClusterMethods() = delete;
 

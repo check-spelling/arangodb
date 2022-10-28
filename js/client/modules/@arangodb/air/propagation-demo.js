@@ -155,7 +155,7 @@ function demand_propagation_demo_program(resultField) {
                 "valueType": "bool"
             }
         },
-        /* Vertex accumulators are instanciated per vertex
+        /* Vertex accumulators are instantiated per vertex
            for each run of the algorithm */
         "vertexAccumulators": {
             "demandSumBuckets": {

@@ -2596,7 +2596,7 @@ TEST_F(IResearchViewTest, test_instantiate) {
     EXPECT_TRUE((false == !view));
   }
 
-  // intantiate view from old version
+  // instantiate view from old version
   {
     auto json = arangodb::velocypack::Parser::fromJson(
         "{ \"name\": \"testView\", \"type\": \"arangosearch\", \"version\": 0 "

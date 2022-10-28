@@ -193,7 +193,7 @@ Result ExecutionEngine::createBlocks(std::vector<ExecutionNode*> const& nodes,
         // send all following requests to the same servers, and not the newly
         // responsible servers.
         // otherwise we potentially would try to get data from a query from
-        // server B while the query was only instanciated on server A.
+        // server B while the query was only instantiated on server A.
         for (auto const& serverToSnippet : serversForRemote->second) {
           std::string const& serverID = serverToSnippet.first;
           for (std::string const& snippetId : serverToSnippet.second) {

@@ -44,7 +44,7 @@
 //     must have an empty() method to indicate that the instance is
 //     empty.
 //     If using fasthash64 on all bytes of the object is not
-//     a suitable hash function, one has to instanciate the template
+//     a suitable hash function, one has to instantiate the template
 //     with two hash function types as 3rd and 4th argument. If
 //     std::equal_to<Key> is not implemented or does not behave correctly,
 //     one has to supply a comparison class as well.
