@@ -1727,7 +1727,7 @@ TEST_F(IResearchViewTest, test_vocbase_inventory) {
       "{ \"name\": \"testView\", \"type\": \"arangosearch\", \"id\": 101, "
       "  \"links\": { "
       "    \"testCollection\": { "
-      "      \"incudeAllFields\":true, "
+      "      \"includeAllFields\":true, "
       "      \"analyzers\": [\"inPlace\"], "
       "      \"analyzerDefinitions\": [ { \"name\" : \"inPlace\", "
       "\"type\":\"identity\", \"properties\":{}, \"features\":[] } ]"
