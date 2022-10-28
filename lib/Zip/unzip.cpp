@@ -63,7 +63,7 @@
   Oct-2009 - Mathias Svensson - Applied some bug fixes from paches recived from
   Gilles Vollant
         Oct-2009 - Mathias Svensson - Applied support to unzip files with
-  compression mathod BZIP2 (bzip2 lib is required)
+  compression method BZIP2 (bzip2 lib is required)
                                 Patch created by Daniel Borca
 
   Jan-2010 - back to unzip and minizip 1.0 name scheme, with compatibility layer
