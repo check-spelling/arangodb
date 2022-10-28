@@ -87,7 +87,7 @@ function clusterSubqueriesTestSuite () {
     tearDown: clean,
 
     // This test validates that all input values `x` are
-    // transportet to the input register of the subquery
+    // transported to the input register of the subquery
     // This is done via successful initializeCursor calls
     testSimpleInitializeCursor: function () {
       let docs = [];
