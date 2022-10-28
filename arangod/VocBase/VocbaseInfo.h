@@ -137,7 +137,7 @@ class CreateDatabaseInfo {
 
  private:
   Result extractUsers(VPackSlice const& users);
-  Result extractOptions(VPackSlice const& options, bool extactId = true,
+  Result extractOptions(VPackSlice const& options, bool extractId = true,
                         bool extractName = true);
   Result checkOptions();
 
