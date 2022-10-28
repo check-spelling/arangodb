@@ -330,7 +330,7 @@ class RocksDBCuckooIndexEstimator {
   // This function guarantees the following:
   // If this fingerprint is stored already, the slot will be
   // pointing to this fingerprint.
-  // If this fingerprint is NOT storead already the returned slot
+  // If this fingerprint is NOT stored already the returned slot
   // will be empty and can be filled with the fingerprint
   // In order to create an empty slot this function tries to
   // cuckoo neighboring elements, if that does not succeed
