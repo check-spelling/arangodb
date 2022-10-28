@@ -128,10 +128,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
                           testDBInfo(server.server()));
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.setRequestType(arangodb::rest::RequestType::POST);
     request._payload.openObject();
@@ -167,8 +167,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -202,8 +202,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -236,8 +236,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((
           slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
@@ -259,10 +259,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.addSuffix("testView");
     request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
@@ -291,8 +291,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -327,8 +327,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -365,8 +365,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((slice.hasKey("result") && slice.get("result").isBoolean() &&
                    true == slice.get("result").getBoolean()));
@@ -384,10 +384,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.addSuffix("testView");
     request.addSuffix("rename");
@@ -420,8 +420,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -458,8 +458,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -505,8 +505,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -545,8 +545,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((
           slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
@@ -570,10 +570,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.addSuffix("testView");
     request.addSuffix("properties");
@@ -606,8 +606,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -642,8 +642,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -687,8 +687,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::SERVER_ERROR,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -727,8 +727,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((
           slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
@@ -762,7 +762,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
           EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-       responce.responseCode()); auto slice = responce._payload.slice();
+       response.responseCode()); auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::Code) &&
        slice.get(arangodb::StaticStrings::Code).isNumber<size_t>() &&
@@ -796,7 +796,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
           EXPECT_EQ(arangodb::rest::ResponseCode::SERVER_ERROR,
-       responce.responseCode()); auto slice = responce._payload.slice();
+       response.responseCode()); auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::Code) &&
        slice.get(arangodb::StaticStrings::Code).isNumber<size_t>() &&
@@ -826,8 +826,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
-          EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-          auto slice = responce._payload.slice();
+          EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+          auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
        slice.get(arangodb::StaticStrings::DataSourceName).isString() &&
@@ -857,10 +857,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.addSuffix("testView");
     request.setRequestType(arangodb::rest::RequestType::GET);
@@ -889,8 +889,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -935,8 +935,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -974,8 +974,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((
           slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
@@ -999,7 +999,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
           EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-       responce.responseCode()); auto slice = responce._payload.slice();
+       response.responseCode()); auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::Code) &&
        slice.get(arangodb::StaticStrings::Code).isNumber<size_t>() &&
@@ -1026,8 +1026,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
-          EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-          auto slice = responce._payload.slice();
+          EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+          auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
        slice.get(arangodb::StaticStrings::DataSourceName).isString() &&
@@ -1047,10 +1047,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.addSuffix("testView");
     request.addSuffix("properties");
@@ -1080,8 +1080,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1125,8 +1125,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1164,8 +1164,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE((
           slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
@@ -1189,7 +1189,7 @@ TEST_F(RestViewHandlerTest, test_auth) {
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
           EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-       responce.responseCode()); auto slice = responce._payload.slice();
+       response.responseCode()); auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::Code) &&
        slice.get(arangodb::StaticStrings::Code).isNumber<size_t>() &&
@@ -1216,8 +1216,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
           auto status = handler.execute();
           EXPECT_EQ(arangodb::RestStatus::DONE, status);
-          EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-          auto slice = responce._payload.slice();
+          EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+          auto slice = response._payload.slice();
           EXPECT_TRUE(slice.isObject());
           EXPECT_EQ(slice.hasKey(arangodb::StaticStrings::DataSourceName) &&
        slice.get(arangodb::StaticStrings::DataSourceName).isString() &&
@@ -1241,10 +1241,10 @@ TEST_F(RestViewHandlerTest, test_auth) {
     ASSERT_FALSE(!logicalView2);
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::RestViewHandler handler(server.server(), requestPtr.release(),
-                                      responcePtr.release());
+                                      responsePtr.release());
 
     request.setRequestType(arangodb::rest::RequestType::GET);
 
@@ -1272,8 +1272,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
       EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN,
-                responce.responseCode());
-      auto slice = responce._payload.slice();
+                response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1322,8 +1322,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
 
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1369,8 +1369,8 @@ TEST_F(RestViewHandlerTest, test_auth) {
           true);  // remove second view to make test result deterministic
       auto status = handler.execute();
       EXPECT_EQ(arangodb::RestStatus::DONE, status);
-      EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-      auto slice = responce._payload.slice();
+      EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+      auto slice = response._payload.slice();
       EXPECT_TRUE(slice.isObject());
       EXPECT_TRUE(
           (slice.hasKey(arangodb::StaticStrings::Code) &&

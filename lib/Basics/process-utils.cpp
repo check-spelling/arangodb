@@ -746,7 +746,7 @@ ProcessInfo TRI_ProcessInfoH(HANDLE processHandle, TRI_pid_t pid) {
   if (GetProcessMemoryInfo(processHandle, (PPROCESS_MEMORY_COUNTERS)&pmc,
                            pmc.cb)) {
     result._majorPageFaults = pmc.PageFaultCount;
-    // there is not any corresponce to minflt in linux
+    // there is not any corresponse to minflt in linux
     result._minorPageFaults = 0;
 
     // from MSDN:

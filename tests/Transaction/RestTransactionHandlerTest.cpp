@@ -59,8 +59,8 @@ class RestTransactionHandlerTest : public ::testing::Test {
 
   std::unique_ptr<GeneralRequestMock> requestPtr;
   GeneralRequestMock& request;
-  std::unique_ptr<GeneralResponseMock> responcePtr;
-  GeneralResponseMock& responce;
+  std::unique_ptr<GeneralResponseMock> responsePtr;
+  GeneralResponseMock& response;
   arangodb::RestTransactionHandler handler;
   velocypack::Parser parser;
 
@@ -70,10 +70,10 @@ class RestTransactionHandlerTest : public ::testing::Test {
         mgr(transaction::ManagerFeature::manager()),
         requestPtr(std::make_unique<GeneralRequestMock>(vocbase)),
         request(*requestPtr),
-        responcePtr(std::make_unique<GeneralResponseMock>()),
-        responce(*responcePtr),
+        responsePtr(std::make_unique<GeneralResponseMock>()),
+        response(*responsePtr),
         handler(setup.server.server(), requestPtr.release(),
-                responcePtr.release()),
+                responsePtr.release()),
         parser(request._payload) {
     EXPECT_TRUE(vocbase.collections(false).empty());
   }
@@ -88,8 +88,8 @@ TEST_F(RestTransactionHandlerTest, parsing_errors) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -114,8 +114,8 @@ TEST_F(RestTransactionHandlerTest, collection_not_found_ro) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -140,8 +140,8 @@ TEST_F(RestTransactionHandlerTest, collection_not_found_write) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -166,8 +166,8 @@ TEST_F(RestTransactionHandlerTest, collection_not_found_exclusive) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -200,8 +200,8 @@ TEST_F(RestTransactionHandlerTest, simple_transaction_abort) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -225,8 +225,8 @@ TEST_F(RestTransactionHandlerTest, simple_transaction_abort) {
 
   status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -248,8 +248,8 @@ TEST_F(RestTransactionHandlerTest, simple_transaction_abort) {
 
   status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -281,8 +281,8 @@ TEST_F(RestTransactionHandlerTest, simple_transaction_and_commit) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -306,8 +306,8 @@ TEST_F(RestTransactionHandlerTest, simple_transaction_and_commit) {
 
   status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -347,8 +347,8 @@ TEST_F(RestTransactionHandlerTest, permission_denied_read_only) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -389,8 +389,8 @@ TEST_F(RestTransactionHandlerTest, permission_denied_forbidden) {
 
   arangodb::RestStatus status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  VPackSlice slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  VPackSlice slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
