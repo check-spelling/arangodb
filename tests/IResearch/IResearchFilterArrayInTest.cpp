@@ -1705,7 +1705,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryIn) {
                         expected);
   }
 
-  // Auxilary check lambdas. Need them to check root part of expected filterd
+  // Auxilary check lambdas. Need them to check root part of expected filtered
   // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkAny = [](irs::Or& actual, irs::score_t boost) {
@@ -3715,7 +3715,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryNotIn) {
         "analyzer(boost(x NONE != d.a.b.c.e.f, 3.5), 'test_analyzer') RETURN d",
         expected, &ctx);
   }
-  // Auxilary check lambdas. Need them to check root part of expected filterd
+  // Auxilary check lambdas. Need them to check root part of expected filtered
   // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkNotAny = [](irs::Or& actual, irs::score_t boost) {
