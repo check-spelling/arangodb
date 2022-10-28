@@ -617,7 +617,7 @@ function aggregateDebugger(instanceInfo, options) {
     }
   }
   if (tearDownTimeout <= 0) {
-    print(RED+"killing debugger since it did not finish its busines in 180s"+RESET);
+    print(RED+"killing debugger since it did not finish its business in 180s"+RESET);
     killExternal(instanceInfo.debuggerInfo.pid.pid, termSignal);
     print(statusExternal(instanceInfo.debuggerInfo.pid.pid, false));
   }
