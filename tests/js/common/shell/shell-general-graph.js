@@ -255,7 +255,7 @@ function GeneralGraphCreationSuite() {
     },
 
     test_collectionRenameCollectionsWithModule2: function () {
-      // tests orpahns rename in one graph
+      // tests orphans rename in one graph
       if ((cluster && cluster.isCluster && cluster.isCluster()) || (!cluster || !cluster.isCluster)) {
         return;
       }
