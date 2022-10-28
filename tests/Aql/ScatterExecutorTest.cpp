@@ -453,7 +453,7 @@ TEST_P(RandomOrderTest, handling_of_consecutive_shadow_rows) {
   testee.addDependency(&producer);
 
   // First call. actually there are only shadowRows following, we would be able
-  // to plainly forward everything, however this is not suppoert yet
+  // to plainly forward everything, however this is not support yet
   // so we need to ask once for every relevant shadow row (depth 0)
   for (auto const& client : getCallOrder()) {
     SCOPED_TRACE("Testing client " + client);
