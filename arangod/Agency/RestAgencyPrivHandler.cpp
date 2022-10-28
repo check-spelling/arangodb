@@ -174,7 +174,8 @@ RestStatus RestAgencyPrivHandler::execute() {
     } else {
       term_t term = 0;
       term_t prevLogTerm = 0;
-      std::string id;  // leaderId for appendEntries, cadidateId for requestVote
+      std::string
+          id;  // leaderId for appendEntries, candidateId for requestVote
       arangodb::consensus::index_t prevLogIndex, leaderCommit;
       if (suffixes[0] == "appendEntries") {  // appendEntries
         if (_request->requestType() != rest::RequestType::POST) {
