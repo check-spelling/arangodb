@@ -240,7 +240,7 @@ lp128:
         crc32q  288(%rsi),%r11
         crc32q  296(%rsi),%r11
 
-/*  Next chunk muliplies %eax by X^1024 mod poly by looking */
+/*  Next chunk multiplies %eax by X^1024 mod poly by looking */
 /* up each byte in the table crct2 pointed to by %rcx       */
 
         movzx   %al,%edx
