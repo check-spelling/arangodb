@@ -43,7 +43,7 @@ function optimizerClusterSingleDocumentTestSuite () {
   var cn1 = "UnitTestsCollection";
   var c1;
 
-  var cn2 = "UnitTestsCollectionEmty";
+  var cn2 = "UnitTestsCollectionEmpty";
   var c2;
 
   var cn3 = "UnitTestsCollectionModify";
