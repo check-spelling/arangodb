@@ -112,7 +112,7 @@ v8::Handle<v8::Object> WrapView(v8::Isolate* isolate,
   TRI_ASSERT(!view->vocbase().isDangling());
   view->vocbase()
       .forceUse();  // increase the reference-counter for the database (will be
-                    // decremented by 'value' distructor above, valid for both
+                    // decremented by 'value' destructor above, valid for both
                     // new and existing mappings)
 
   result->SetInternalField(  // required for TRI_UnwrapClass(...)
