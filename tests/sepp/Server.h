@@ -38,7 +38,7 @@ struct Server {
          std::string databaseDirectory);
   ~Server();
 
-  void start(char const* exectuable);
+  void start(char const* executable);
 
   TRI_vocbase_t* vocbase();
 

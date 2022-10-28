@@ -65,13 +65,13 @@ struct Server::Impl {
        std::string databaseDirectory);
   ~Impl();
 
-  void start(char const* exectuable);
+  void start(char const* executable);
 
   TRI_vocbase_t* vocbase() { return _vocbase; }
 
  private:
   void setupServer(std::string const& name, int& result);
-  void runServer(char const* exectuable);
+  void runServer(char const* executable);
 
   std::shared_ptr<arangodb::options::ProgramOptions> _options;
   RocksDBOptionsProvider const& _optionsProvider;
@@ -104,8 +104,8 @@ Server::Impl::~Impl() {
   }
 }
 
-void Server::Impl::start(char const* exectuable) {
-  _serverThread = std::thread(&Impl::runServer, this, exectuable);
+void Server::Impl::start(char const* executable) {
+  _serverThread = std::thread(&Impl::runServer, this, executable);
   using arangodb::application_features::ApplicationServer;
 
   // wait for server
@@ -186,8 +186,8 @@ void Server::Impl::setupServer(std::string const& name, int& result) {
       }});
 }
 
-void Server::Impl::runServer(char const* exectuable) {
-  std::vector<std::string> args{exectuable, "--database.directory",
+void Server::Impl::runServer(char const* executable) {
+  std::vector<std::string> args{executable, "--database.directory",
                                 _databaseDirectory, "--server.endpoint",
                                 "tcp://127.0.0.1:8530"};
   std::vector<char*> argv;
@@ -218,7 +218,7 @@ Server::Server(arangodb::RocksDBOptionsProvider const& optionsProvider,
 
 Server::~Server() = default;
 
-void Server::start(char const* exectuable) { _impl->start(exectuable); }
+void Server::start(char const* executable) { _impl->start(executable); }
 
 TRI_vocbase_t* Server::vocbase() { return _impl->vocbase(); }
 
