@@ -350,7 +350,7 @@ function wccRegressionTestSuite() {
              * 1) The Smallest ID in B, needs to have a a long Distance to all contact points to A.
              * 2) The ContactPoints A -> B need to have the second Smallest IDs
              * This now creates the following Effect:
-             * The contact points only communitcate in the beginning, as they will not see smaller IDs
+             * The contact points only communicate in the beginning, as they will not see smaller IDs
              * until the SmallestID arrives.
              * In the implementation showing this Bug, the INBOUND connection was not retained,
              * so as soon as the Smallest ID arrived at B it was not communicated back into the A
