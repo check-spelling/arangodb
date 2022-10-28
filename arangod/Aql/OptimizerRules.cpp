@@ -7271,7 +7271,7 @@ static std::unique_ptr<Condition> buildGeoCondition(ExecutionPlan* plan,
   return cond;
 }
 
-// applys the optimization for a candidate
+// applies the optimization for a candidate
 static bool applyGeoOptimization(ExecutionPlan* plan, LimitNode* ln,
                                  GeoIndexInfo const& info) {
   TRI_ASSERT(info.collection != nullptr);
