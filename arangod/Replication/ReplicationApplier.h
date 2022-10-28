@@ -76,7 +76,7 @@ class ReplicationApplier {
   /// @brief set the applier state to stopped
   void markThreadStopped();
 
-  /// @brief perform a complete replication dump and then tail continiously
+  /// @brief perform a complete replication dump and then tail continuously
   void startReplication();
 
   /// @brief switch to tailing mode, DO NOT USE EXTERNALLY

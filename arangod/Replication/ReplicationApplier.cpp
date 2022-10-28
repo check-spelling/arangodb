@@ -343,7 +343,7 @@ void ReplicationApplier::doStart(
   _state._phase = activity;
 }
 
-/// @brief perform a complete replication dump and then tail continiously
+/// @brief perform a complete replication dump and then tail continuously
 void ReplicationApplier::startReplication() {
   if (!applies()) {
     return;

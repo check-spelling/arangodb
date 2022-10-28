@@ -4339,7 +4339,7 @@ arangodb::Result hotBackupCoordinator(ClusterFeature& feature,
       // About this code:
       // it first creates async requests to lock all dbservers.
       //    the corresponding lock ids are stored int the map lockJobIds.
-      // Then we continously abort all trx while checking all the above jobs
+      // Then we continuously abort all trx while checking all the above jobs
       //    for completion.
       // If a job was completed then its id is removed from lockJobIds
       //  and the server is added to the lockedServers list.
