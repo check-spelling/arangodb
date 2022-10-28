@@ -63,7 +63,7 @@ function loadAgencyConfig() {
 
 
 /**
- * @brief Sort shard keys according to their numbers omitting startign 's'
+ * @brief Sort shard keys according to their numbers omitting starting 's'
  *
  * @param keys      Keys
  */
