@@ -735,7 +735,7 @@ Function skip_page
 FunctionEnd
 
 Function UpgradeExisting
-  ; Check whether we acutally should upgrade:
+  ; Check whether we actually should upgrade:
   !insertmacro StripBackslash DATADIR
   !insertmacro StripSlash DATADIR
   DetailPrint "Checking whether an existing database needs upgrade: "
