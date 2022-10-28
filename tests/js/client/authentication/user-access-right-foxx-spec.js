@@ -106,7 +106,7 @@ describe('User Rights Management', () => {
                   RETURN service.checksum
                 `).toArray().length;
                 expect(size).to.equal(1, `${name} could not register foxx service with sufficient rights`);
-                // The service should return the user we acces it as:
+                // The service should return the user we access it as:
                 let res = arango.PUT(mount, '');
                 expect(res.hello._documents[0]).to.be.equal(name);
               } catch (e) {

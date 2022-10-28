@@ -7519,7 +7519,7 @@ void arangodb::aql::sortLimitRule(Optimizer* opt,
           if (firstSortNode) {
             auto& mainLimitNode = *ExecutionNode::castTo<LimitNode*>(limitNode);
             // if we don't have remote breaker we could just replace the limit
-            // node otherwise we must have new node to constrain accesss to the
+            // node otherwise we must have new node to constrain access to the
             // sort node with only offset+limit documents
             if (!hasRemoteBeforeSort) {
               plan->unlinkNode(limitNode);

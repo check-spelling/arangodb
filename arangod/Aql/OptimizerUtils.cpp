@@ -634,9 +634,9 @@ void captureArrayFilterArgumentExpressions(
           }
           auto var = node->getAttributeAccessForVariable(true);
           if (var) {
-            auto acessedVar = static_cast<Variable const*>(var->getData());
-            TRI_ASSERT(acessedVar);
-            if (acessedVar->needsRegister() && acessedVar != indexVariable) {
+            auto accessedVar = static_cast<Variable const*>(var->getData());
+            TRI_ASSERT(accessedVar);
+            if (accessedVar->needsRegister() && accessedVar != indexVariable) {
               captureNonConstExpression(
                   ast, varInfo, const_cast<AstNode*>(node), path, result);
             }
@@ -662,9 +662,9 @@ void captureArrayFilterArgumentExpressions(
             }
             return false;
           } else if (node->type == NODE_TYPE_REFERENCE) {
-            auto acessedVar = static_cast<Variable const*>(node->getData());
-            TRI_ASSERT(acessedVar);
-            if (acessedVar->needsRegister() && acessedVar != indexVariable) {
+            auto accessedVar = static_cast<Variable const*>(node->getData());
+            TRI_ASSERT(accessedVar);
+            if (accessedVar->needsRegister() && accessedVar != indexVariable) {
               captureNonConstExpression(
                   ast, varInfo, const_cast<AstNode*>(node), path, result);
             }
