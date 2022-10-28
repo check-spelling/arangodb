@@ -357,7 +357,7 @@ class LogicalCollection : public LogicalDataSource {
 
   /// @brief Persist the connected physical collection.
   ///        This should be called AFTER the collection is successfully
-  ///        created and only on Sinlge/DBServer
+  ///        created and only on Single/DBServer
   void persistPhysicalCollection();
 
   /// lock protecting the status and name
