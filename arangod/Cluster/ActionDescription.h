@@ -137,19 +137,19 @@ struct ActionDescription final {
 
   /**
    * @brief Dump to JSON(vpack)
-   * @return       JSON Velocypack of all paramters
+   * @return       JSON Velocypack of all parameters
    */
   VPackBuilder toVelocyPack() const;
 
   /**
    * @brief Dump to JSON(vpack)
-   * @return       JSON Velocypack of all paramters
+   * @return       JSON Velocypack of all parameters
    */
   void toVelocyPack(VPackBuilder&) const;
 
   /**
    * @brief Dump to JSON(string)
-   * @return       JSON string of all paramters
+   * @return       JSON string of all parameters
    */
   std::string toJson() const;
 

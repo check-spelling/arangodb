@@ -307,7 +307,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
   uint64_t determineChunkSize() const;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief Get correct replication applier, based on global paramerter
+  /// @brief Get correct replication applier, based on global parameter
   //////////////////////////////////////////////////////////////////////////////
   ReplicationApplier* getApplier(bool& global);
 
