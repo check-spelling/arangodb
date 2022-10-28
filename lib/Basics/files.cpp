@@ -392,7 +392,7 @@ std::string TRI_ResolveSymbolicLink(std::string path, bool& hadError,
     if (written) {
       path = std::string(buff.data(), buff.size());
     } else {
-      // error occured while resolving
+      // error occurred while resolving
       hadError = true;
       break;
     }

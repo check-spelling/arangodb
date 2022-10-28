@@ -438,8 +438,9 @@ Result executeTransactionJS(v8::Isolate* isolate,
         rv = std::get<2>(rvTuple);
       } else {
         // some general error we don't know about
-        rv = Result(TRI_ERROR_TRANSACTION_INTERNAL,
-                    "an unknown error occured while executing the transaction");
+        rv =
+            Result(TRI_ERROR_TRANSACTION_INTERNAL,
+                   "an unknown error occurred while executing the transaction");
       }
     }
   } catch (arangodb::basics::Exception const& ex) {

@@ -407,7 +407,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   /// @brief emplace an analyzer as per the specified parameters
   /// @param result the result of the successful emplacement (out-param)
   ///               first - the emplaced pool
-  ///               second - if an insertion of an new analyzer occured
+  ///               second - if an insertion of an new analyzer occurred
   /// @param name analyzer name (already normalized)
   /// @param type the underlying IResearch analyzer type
   /// @param properties the configuration for the underlying IResearch type

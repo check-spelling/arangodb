@@ -520,8 +520,8 @@ RestStatus RestCollectionHandler::handleCommandPut() {
     return waitForFuture(
         _activeTrx->truncateAsync(coll->name(), opts)
             .thenValue([this, coll, opts](OperationResult&& opres) {
-              // Will commit if no error occured.
-              // or abort if an error occured.
+              // Will commit if no error occurred.
+              // or abort if an error occurred.
               // result stays valid!
               Result res = _activeTrx->finish(opres.result);
               if (opres.fail()) {

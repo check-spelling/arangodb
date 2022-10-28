@@ -116,7 +116,7 @@ void RocksDBSortedRowsStorageContext::ingestAll() {
     }
 
     if (!s.ok()) {
-      // an error occured. now let the SstFileMethods do the cleanup
+      // an error occurred. now let the SstFileMethods do the cleanup
       res.reset(rocksutils::convertStatus(s));
       _methods->cleanUpFiles(fileNames);
     } else {

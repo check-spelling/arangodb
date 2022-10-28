@@ -4343,7 +4343,7 @@ arangodb::Result hotBackupCoordinator(ClusterFeature& feature,
       //    for completion.
       // If a job was completed then its id is removed from lockJobIds
       //  and the server is added to the lockedServers list.
-      // Once lockJobIds is empty or an error occured we exit the loop
+      // Once lockJobIds is empty or an error occurred we exit the loop
       //  and continue on the normal path (as if all servers would have been
       //  locked or error-exit)
 

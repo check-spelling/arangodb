@@ -98,7 +98,7 @@ const waitForReplication = function() {
     expect(time()).to.be.below(timeOut, `Replication did not succeed for ${delay} seconds`);
 
     const state = replication.globalApplier.state().state;
-    expect(state.lastError.errorNum).to.equal(0, `Error occured on follower: ${JSON.stringify(state.lastError)}`);
+    expect(state.lastError.errorNum).to.equal(0, `Error occurred on follower: ${JSON.stringify(state.lastError)}`);
     expect(state.running).to.equal(true, "Follower is not running");
     
     if (compareTicks(state.lastAppliedContinuousTick, lastLogTick) >= 0 ||

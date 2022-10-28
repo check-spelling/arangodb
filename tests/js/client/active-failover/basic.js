@@ -259,7 +259,7 @@ function checkForFailover(leader) {
     internal.wait(5.0);
   } while (i-- > 0);
   print("Timing out, current leader value: ", nextLeaderUUID);
-  throw "No failover occured";
+  throw "No failover occurred";
 }
 
 function waitUntilHealthStatusIs(isHealthy, isFailed) {

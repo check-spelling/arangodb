@@ -173,7 +173,7 @@ function iterateTestResults(options, results, state, handlers) {
       }
     }
   } catch (x) {
-    print("Exception occured in running tests: " + x.message + "\n" + x.stack);
+    print("Exception occurred in running tests: " + x.message + "\n" + x.stack);
   }
 }
 

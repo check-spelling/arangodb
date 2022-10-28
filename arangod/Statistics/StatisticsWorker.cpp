@@ -1085,8 +1085,8 @@ void StatisticsWorker::saveSlice(VPackSlice slice,
 
   arangodb::OperationResult result = trx.insert(collection, slice, opOptions);
 
-  // Will commit if no error occured.
-  // or abort if an error occured.
+  // Will commit if no error occurred.
+  // or abort if an error occurred.
   // result stays valid!
   res = trx.finish(result.result);
   if (res.fail()) {
