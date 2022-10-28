@@ -1377,7 +1377,7 @@ ExecutionBlockImpl<Executor>::executeWithoutTrace(
       // We get woken up on upstream, but we have not reported our
       // local skip value to downstream
       // In the sideEffect executor we need to apply the skip values on the
-      // incomming stack, which has not been modified yet.
+      // incoming stack, which has not been modified yet.
       // NOTE: We only apply the skipping on subquery level.
       TRI_ASSERT(_skipped.subqueryDepth() == ctx.stack.subqueryLevel() + 1);
       for (size_t i = 0; i < ctx.stack.subqueryLevel(); ++i) {
