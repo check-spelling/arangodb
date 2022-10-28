@@ -768,7 +768,7 @@ function pointsTestSuite() {
     },
 
     ////////////////////////////////////////////////////////////////////////////////
-    /// @brief test simple annulus on sphere (a donut) using refernces
+    /// @brief test simple annulus on sphere (a donut) using references
     ////////////////////////////////////////////////////////////////////////////////
 
     testContainsAnnulus5: function () {
