@@ -1824,7 +1824,7 @@ AstNode* Ast::createNodeAggregateFunctionCall(std::string_view functionName,
     }
   }
 
-  // TODO - we should consider to introduce a NODE_TYPE_AGGREATE_FCALL type
+  // TODO - we should consider to introduce a NODE_TYPE_AGGREGATE_FCALL type
   AstNode* node = createNode(NODE_TYPE_FCALL);
 
   // Register a pointer to the function.
