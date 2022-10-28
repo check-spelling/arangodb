@@ -34,7 +34,7 @@ class ExecContext;
 
 /// @brief Indicates whether we want to observe writes performed within the
 /// current (sub) transaction. This is only relevant for AQL queries.
-/// AQL queries are performed transcationally, i.e., either all changes are
+/// AQL queries are performed transactionally, i.e., either all changes are
 /// visible or none (ignoring intermediate commits). A query should observe
 /// (only) the state of the db/transaction at the time the query was started,
 /// e.g., documents that are inserted as part of the current query should not
