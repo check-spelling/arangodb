@@ -874,7 +874,7 @@ if (NOT WINDOWS)
 endif ()
 
 # ------------------------------------------------------------------------------
-# IMPLICIT INCLUDES AND LIBIRARY DIRECTORIES
+# IMPLICIT INCLUDES AND LIBRARY DIRECTORIES
 # ------------------------------------------------------------------------------
 
 function(CREATE_FLAGS OUTPUT GLUE)
