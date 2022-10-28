@@ -304,7 +304,7 @@ arangodb::Result reportInCurrent(
     ReplicatedStateStatusMapByDatabase const& localStates);
 
 /**
- * @brief            Schedule synchroneous replications
+ * @brief            Schedule synchronous replications
  *
  * @param  plan      Plan's snapshot
  * @param  current   Current's snapshot
