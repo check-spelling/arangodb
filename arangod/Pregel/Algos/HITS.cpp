@@ -59,7 +59,7 @@ struct HITSComputation
       MessageIterator<SenderMessage<double>> const& messages) override {
     double auth = 0.0;
     double hub = 0.0;
-    // we don't know our incoming neighbours in step 0, therfore we need step 0
+    // we don't know our incoming neighbours in step 0, therefore we need step 0
     // as 'initialization' before actually starting to converge
     if (globalSuperstep() <= 1) {
       auth = 1.0;
