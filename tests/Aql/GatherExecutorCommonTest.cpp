@@ -285,7 +285,7 @@ class ResultMaps {
       TRI_ASSERT(startIndex == 0);
       return 1;
     }
-    // If we get here we are requried to ahve at least one shadowRow
+    // If we get here we are required to ahve at least one shadowRow
     TRI_ASSERT(startIndex < _subqueryData.size());
     {
       auto const& [value, depth] = _subqueryData[startIndex];
@@ -912,7 +912,7 @@ TEST_P(CommonGatherExecutorTest, skip_main_query_sub_1) {
 /**
  * @brief Simulates:
  * SCATTER
- * EnumerateList (skip over dep 0, requrie data from dep 2)
+ * EnumerateList (skip over dep 0, require data from dep 2)
  * GATHER
  */
 TEST_P(CommonGatherExecutorTest, skip_over_first_branch) {
@@ -944,7 +944,7 @@ TEST_P(CommonGatherExecutorTest, skip_over_first_branch) {
  * EnumerateList (skip 3, produce 2)
  * SubqueryStart
  * SCATTER
- * EnumerateList (skip over dep 0, requrie data from dep 2)
+ * EnumerateList (skip over dep 0, require data from dep 2)
  * GATHER
  */
 TEST_P(CommonGatherExecutorTest, skip_over_subquery) {
