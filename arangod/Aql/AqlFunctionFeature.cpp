@@ -563,7 +563,7 @@ void AqlFunctionFeature::addMiscFunctions() {
   // NEAR, WITHIN, WITHIN_RECTANGLE and FULLTEXT are replaced by the AQL
   // optimizer with collection-/index-based subqueries. they are all
   // marked as deterministic and cacheable here as they are just
-  // placeholders for collection/index accesses nowaways.
+  // placeholders for collection/index accesses nowadays.
   add({"NEAR", ".h,.,.|.,.", Function::makeFlags(FF::Cacheable),
        &functions::NotImplemented});
   add({"WITHIN", ".h,.,.,.|.", Function::makeFlags(FF::Cacheable),
