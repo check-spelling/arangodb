@@ -716,7 +716,7 @@ void registerUpgradeTasks(ArangodServer& server) {
     task.description = "store collection name in ArangoSearch Link`s metadata";
     task.systemFlag = methods::Upgrade::Flags::DATABASE_ALL;
     // will be run only by cluster bootstrap and database init (latter case it
-    // will just do nothing but flags don`t allow to distinguih cases)
+    // will just do nothing but flags don`t allow to distinguish cases)
     task.clusterFlags = methods::Upgrade::Flags::CLUSTER_DB_SERVER_LOCAL |
                         methods::Upgrade::Flags::CLUSTER_LOCAL;  // db-server
     task.databaseFlags = methods::Upgrade::Flags::DATABASE_EXISTING |
