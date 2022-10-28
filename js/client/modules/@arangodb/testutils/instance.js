@@ -702,7 +702,7 @@ class instance {
 
   waitForExitAfterDebugKill() {
     // Crashutils debugger kills our instance, but we neet to get
-    // testing.js sapwned-PID-monitoring adjusted.
+    // testing.js spawned-PID-monitoring adjusted.
     print("waiting for exit - " + this.pid);
     try {
       let ret = statusExternal(this.pid, false);
