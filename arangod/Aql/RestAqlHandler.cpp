@@ -95,7 +95,7 @@ RestAqlHandler::RestAqlHandler(ArangodServer& server, GeneralRequest* request,
 //  }
 void RestAqlHandler::setupClusterQuery() {
   // We should not intentionally call this method
-  // on the wrong server. So fail during maintanence.
+  // on the wrong server. So fail during maintenance.
   // On user setup reply gracefully.
   TRI_ASSERT(ServerState::instance()->isDBServer());
   if (ADB_UNLIKELY(!ServerState::instance()->isDBServer())) {

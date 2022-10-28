@@ -102,7 +102,7 @@ RestStatus MaintenanceRestHandler::postAction() {
         if (body.get("duration").isNumber()) {
           dur = std::chrono::seconds(body.get("duration").getNumber<int64_t>());
           if (dur.count() <= 0 || dur.count() > 300) {
-            es << "invalid mainenance pause duration: " << dur.count()
+            es << "invalid maintenance pause duration: " << dur.count()
                << " seconds";
           }
           // Pause maintenance

@@ -88,7 +88,7 @@ class DocumentStateHandlersFactory
  public:
   DocumentStateHandlersFactory(ArangodServer& server, AgencyCache& agencyCache,
                                network::ConnectionPool* connectionPool,
-                               MaintenanceFeature& maintenaceFeature,
+                               MaintenanceFeature& maintenanceFeature,
                                DatabaseFeature& databaseFeature);
   auto createAgencyHandler(GlobalLogIdentifier gid)
       -> std::shared_ptr<IDocumentStateAgencyHandler> override;
