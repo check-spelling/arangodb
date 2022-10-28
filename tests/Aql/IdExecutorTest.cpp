@@ -254,7 +254,7 @@ TEST_P(IdExecutorTestCombiner, test_produce_datarange_singleRowFetcher) {
  * The output row has the following copy types
  *   DoNotCopy << This is actually used in production, however we cannot test
  * that we actually do something with it DoCopy  << This is to assert that
- * copying is performaed
+ * copying is performed
  */
 
 static auto inputs = testing::Values(0,  // Test empty input
