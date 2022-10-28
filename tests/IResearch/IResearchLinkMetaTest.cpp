@@ -198,7 +198,7 @@ TEST_F(IResearchLinkMetaTest, test_defaults) {
 TEST_F(IResearchLinkMetaTest, test_readDefaults) {
   auto json = VPackParser::fromJson("{}");
 
-  // without active vobcase
+  // without active vocbase
   {
     arangodb::iresearch::IResearchLinkMeta meta;
     std::string tmpString;
@@ -567,7 +567,7 @@ TEST_F(IResearchLinkMetaTest, test_readCustomizedValuesCluster) {
 }
 
 TEST_F(IResearchLinkMetaTest, test_writeDefaults) {
-  // without active vobcase (not fullAnalyzerDefinition)
+  // without active vocbase (not fullAnalyzerDefinition)
   {
     arangodb::iresearch::IResearchLinkMeta meta;
     arangodb::velocypack::Builder builder;
@@ -595,7 +595,7 @@ TEST_F(IResearchLinkMetaTest, test_writeDefaults) {
                  std::string("identity") == tmpSlice.at(0).copyString()));
   }
 
-  // without active vobcase (with fullAnalyzerDefinition)
+  // without active vocbase (with fullAnalyzerDefinition)
   {
     arangodb::iresearch::IResearchLinkMeta meta;
     arangodb::velocypack::Builder builder;
@@ -777,7 +777,7 @@ TEST_F(IResearchLinkMetaTest, test_writeCustomizedValues) {
   // do not inherit fields to match jSon inheritance
   overrideNone->_fields.clear();
 
-  // without active vobcase (not fullAnalyzerDefinition)
+  // without active vocbase (not fullAnalyzerDefinition)
   {
     std::unordered_set<std::string_view> expectedFields = {"a", "b", "c"};
     std::unordered_set<std::string_view> expectedOverrides = {"default", "all",
@@ -889,7 +889,7 @@ TEST_F(IResearchLinkMetaTest, test_writeCustomizedValues) {
     EXPECT_TRUE(expectedAnalyzers.empty());
   }
 
-  // without active vobcase (with fullAnalyzerDefinition)
+  // without active vocbase (with fullAnalyzerDefinition)
   {
     std::unordered_set<std::string_view> expectedFields = {"a", "b", "c"};
     std::unordered_set<std::string_view> expectedOverrides = {"default", "all",
