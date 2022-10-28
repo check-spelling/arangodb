@@ -56,7 +56,7 @@ struct ASCCComputation final
   void compute(
       MessageIterator<SenderMessage<uint64_t>> const& messages) override {
     if (isActive() == false) {
-      // color was already determinded or vertex was trimmed
+      // color was already determined or vertex was trimmed
       return;
     }
 
