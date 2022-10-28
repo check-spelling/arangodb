@@ -42,7 +42,7 @@ using namespace arangodb::pregel::algos;
 struct SLPAWorkerContext : public WorkerContext {
   uint32_t mod = 1;
   void preGlobalSuperstep(uint64_t gss) override {
-    // lets switch the order randomly, but ensure equal listenting time
+    // lets switch the order randomly, but ensure equal listening time
     if (gss % 2 == 0) {
       mod = RandomGenerator::interval(UINT32_MAX);
     }
