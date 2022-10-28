@@ -517,7 +517,7 @@ auto SortingGatherExecutor::limitReached() const noexcept -> bool {
       upstreamCall.softLimit = clientCall.offset + clientCall.softLimit;
       if (rowsLeftToWrite() < upstreamCall.softLimit) {
         // Do not overfetch
-        // NOTE: We cannnot use std::min as the numbers have different types ;(
+        // NOTE: We cannot use std::min as the numbers have different types ;(
         upstreamCall.softLimit = rowsLeftToWrite();
       }
 
@@ -527,7 +527,7 @@ auto SortingGatherExecutor::limitReached() const noexcept -> bool {
     } else {
       if (rowsLeftToWrite() < upstreamCall.hardLimit) {
         // Do not overfetch
-        // NOTE: We cannnot use std::min as the numbers have different types ;(
+        // NOTE: We cannot use std::min as the numbers have different types ;(
         upstreamCall.hardLimit = rowsLeftToWrite();
       }
       // In case the client needs a fullCount we do it as well, for all rows
