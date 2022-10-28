@@ -62,7 +62,7 @@ function MergeStatisticSamples(samples) {
   const empty = samples.length === 0;
   const minTime = empty ? 0 : Math.floor(_.min(sampleTimes));
   const maxTime = empty ? 0 : Math.ceil(_.max(sampleTimes));
-  // the statisics samples are stored every 10 seconds, so our bucketSize should be a multiple of 10
+  // the statistics samples are stored every 10 seconds, so our bucketSize should be a multiple of 10
   const bucketSize = 10;
   const numBuckets = Math.ceil((maxTime - minTime) / bucketSize);
   
