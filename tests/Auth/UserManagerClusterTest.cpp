@@ -122,7 +122,7 @@ TEST_F(UserManagerClusterTest, regression_forgotten_update) {
     um->userExists("unknown user");
     FAIL();
   } catch (arangodb::basics::Exception const& e) {
-    // This Execption indicates that we got past the version
+    // This Exception indicates that we got past the version
     // checks and would contact DBServer now.
     // This is not under test here, we only want to test that we load
     // the plan
@@ -150,7 +150,7 @@ TEST_F(UserManagerClusterTest, cacheRevalidationShouldKeepVersionsInLine) {
     um->triggerCacheRevalidation();
     FAIL();
   } catch (arangodb::basics::Exception const& e) {
-    // This Execption indicates that we got past the version
+    // This Exception indicates that we got past the version
     // checks and would contact DBServer now.
     // This is not under test here, we only want to test that we load
     // the plan
@@ -189,7 +189,7 @@ TEST_F(UserManagerClusterTest,
     um->userExists("unknown user");
     FAIL();
   } catch (arangodb::basics::Exception const& e) {
-    // This Execption indicates that we got past the version
+    // This Exception indicates that we got past the version
     // checks and would contact DBServer now.
     // This is not under test here, we only want to test that we load
     // the plan
@@ -227,7 +227,7 @@ TEST_F(UserManagerClusterTest, triggerGlobalReloadShouldUpdateClusterVersion) {
     um->userExists("unknown user");
     FAIL();
   } catch (arangodb::basics::Exception const& e) {
-    // This Execption indicates that we got past the version
+    // This Exception indicates that we got past the version
     // checks and would contact DBServer now.
     // This is not under test here, we only want to test that we load
     // the plan

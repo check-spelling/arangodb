@@ -835,7 +835,7 @@ void Logger::log(char const* logid, char const* function, char const* file,
                                                  level, topicId, msg._message);
          });
 } catch (...) {
-  // logging itself must never cause an exeption to escape
+  // logging itself must never cause an exception to escape
 }
 
 void Logger::append(LogGroup& group, std::unique_ptr<LogMessage> msg,
