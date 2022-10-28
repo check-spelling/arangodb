@@ -409,7 +409,7 @@ TEST_F(IndexEstimatorTest, test_truncate_logic) {
   ASSERT_EQ(est.appliedSeq(), expected);
   ASSERT_EQ(0.1, est.computeEstimate());
 
-  // multiple turncate
+  // multiple truncate
   est.bufferTruncate(currentSeq++);
   est.bufferTruncate(currentSeq++);
   est.bufferTruncate(currentSeq++);
