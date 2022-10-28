@@ -959,14 +959,14 @@ void Agent::advanceCommitIndex() {
     if (index > ci) {
       CONDITION_LOCKER(guard, _waitForCV);
       LOG_TOPIC("e24a9", TRACE, Logger::AGENCY)
-          << "Critical mass for commiting " << ci + 1 << " through " << index
+          << "Critical mass for committing " << ci + 1 << " through " << index
           << " to read db";
 
       // Change _readDB and _commitIndex atomically together:
       _readDB.applyLogEntries(slices, ci, t, true);
 
       LOG_TOPIC("e24aa", DEBUG, Logger::AGENCY)
-          << "Critical mass for commiting " << ci + 1 << " through " << index
+          << "Critical mass for committing " << ci + 1 << " through " << index
           << " to read db, done";
 
       _commitIndex = index;
