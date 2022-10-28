@@ -114,7 +114,7 @@ class Cursor {
    * continuable
    *
    * @param result The Builder to write the result to
-   * @param continueHandler The function that is posted on scheduler to contiue
+   * @param continueHandler The function that is posted on scheduler to continue
    * this execution.
    *
    * @return First: ExecutionState either DONE or WAITING. On Waiting we need to
