@@ -254,7 +254,7 @@ static void handlePlanShard(
     VPackSlice const& ldb, std::string const& dbname,
     std::string const& colname, std::string const& shname,
     std::string const& serverId, std::string const& leaderId,
-    containers::FlatHashSet<std::string>& commonShrds,
+    containers::FlatHashSet<std::string>& commonShards,
     containers::FlatHashSet<std::string>& indis,
     MaintenanceFeature::errors_t& errors,
     containers::FlatHashSet<DatabaseID>& makeDirty, bool& callNotify,
@@ -276,7 +276,7 @@ static void handlePlanShard(
 
   bool shouldBeLeading = serverId == leaderId;
 
-  commonShrds.emplace(shname);
+  commonShards.emplace(shname);
 
   auto const lcol = ldb.get(shname);
   if (lcol.isObject()) {  // Have local collection with that name
@@ -436,7 +436,7 @@ static void handlePlanShard(
 static void handleLocalShard(
     std::string const& dbname, std::string const& colname,
     VPackSlice const& cprops, VPackSlice const& shardMap,
-    containers::FlatHashSet<std::string>& commonShrds,
+    containers::FlatHashSet<std::string>& commonShards,
     containers::FlatHashSet<std::string>& indis, std::string const& serverId,
     std::vector<std::shared_ptr<ActionDescription>>& actions,
     containers::FlatHashSet<DatabaseID>& makeDirty, bool& callNotify,
@@ -455,11 +455,11 @@ static void handleLocalShard(
 
   std::shared_ptr<ActionDescription> description;
 
-  auto it = commonShrds.find(colname);
+  auto it = commonShards.find(colname);
 
   auto localLeader = cprops.get(THE_LEADER).stringView();
   bool const isLeading = localLeader.empty();
-  if (it == commonShrds.end()) {
+  if (it == commonShards.end()) {
     if (replicationVersion != replication::Version::TWO) {
       // This collection is not planned anymore, can drop it
       description = std::make_shared<ActionDescription>(
@@ -473,9 +473,9 @@ static void handleLocalShard(
     return;
   }
   // We dropped out before
-  TRI_ASSERT(it != commonShrds.end());
+  TRI_ASSERT(it != commonShards.end());
   // The shard exists in both Plan and Local
-  commonShrds.erase(it);  // it not a common shard?
+  commonShards.erase(it);  // it not a common shard?
 
   std::string plannedLeader;
   if (shardMap.get(colname).isArray()) {
@@ -784,7 +784,7 @@ arangodb::Result arangodb::maintenance::diffPlanLocal(
   // Sie betreten den funktionalen Sektor.
   arangodb::Result result;
   containers::FlatHashSet<std::string>
-      commonShrds;  // Intersection collections plan&local
+      commonShards;  // Intersection collections plan&local
   containers::FlatHashSet<std::string>
       indis;  // Intersection indexes plan&local
   containers::FlatHashMap<std::string, replication::Version>
@@ -903,7 +903,7 @@ arangodb::Result arangodb::maintenance::diffPlanLocal(
                     handlePlanShard(engine, planIndex, cprops, ldb, dbname,
                                     pcol.key.copyString(),
                                     shard.key.copyString(), serverId,
-                                    shard.value[0].copyString(), commonShrds,
+                                    shard.value[0].copyString(), commonShards,
                                     indis, errors, makeDirty, callNotify,
                                     actions, shardActionMap, rv->second);
                     break;
@@ -920,7 +920,7 @@ arangodb::Result arangodb::maintenance::diffPlanLocal(
     }
   }
 
-  // At this point commonShrds contains all shards that eventually reside on
+  // At this point commonShards contains all shards that eventually reside on
   // this server, are in Plan and their database is present
 
   // Compare local to plan -----------------------------------------------------
@@ -948,7 +948,7 @@ arangodb::Result arangodb::maintenance::diffPlanLocal(
           TRI_ASSERT(rv != replicationVersion.end());
 
           handleLocalShard(ldbname, colname, lcol.value, shardMap.slice(),
-                           commonShrds, indis, serverId, actions, makeDirty,
+                           commonShards, indis, serverId, actions, makeDirty,
                            callNotify, shardActionMap, rv->second);
         }
       }
