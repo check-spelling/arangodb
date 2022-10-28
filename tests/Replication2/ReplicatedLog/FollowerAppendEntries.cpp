@@ -164,7 +164,7 @@ TEST_F(FollowerAppendEntriesTest, missing_prev_log_index) {
   }
 }
 
-TEST_F(FollowerAppendEntriesTest, missmatch_prev_log_term) {
+TEST_F(FollowerAppendEntriesTest, mismatch_prev_log_term) {
   auto log = makeFollower("follower", LogTerm{5}, "leader");
   auto follower = log->getFollower();
 
