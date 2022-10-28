@@ -143,7 +143,7 @@ class Version {
   // get endianness
   static std::string getEndianness();
 
-  // get plaform
+  // get platform
   static std::string getPlatform();
 
   // get build date
