@@ -811,7 +811,7 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
 
   // Modify the internal collection type in Plan.
   // This is basically used to simulate a Database Upgrade
-  // as the value is not modifyable by the user.
+  // as the value is not modifiable by the user.
   auto changeInternalCollectionTypePlan(
       std::string const& dbName, std::string const& planId,
       LogicalCollection::InternalValidatorType type, Node& plan) -> void {
