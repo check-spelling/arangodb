@@ -153,7 +153,7 @@ double ShortestPathOptions::estimateCost(size_t& nrItems) const {
   size_t baseCreateItems = 0;
   double baseCost = costForLookupInfoList(_baseLookupInfos, baseCreateItems);
   // We use the "seven-degrees-of-seperation" rule.
-  // This theory asumes that the shortest path is at most 7 steps of length
+  // This theory assumes that the shortest path is at most 7 steps of length
 
   nrItems = static_cast<size_t>(std::pow(baseCreateItems, 7));
   return std::pow(baseCost, 7);
