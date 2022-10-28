@@ -247,7 +247,7 @@ class QueryStartsWith : public QueryTest {
       }
     }
 
-    // execution outside arangosearch (true) via expresssion
+    // execution outside arangosearch (true) via expression
     {
       auto queryResult = arangodb::tests::executeQuery(
           _vocbase, "LET x = NOOPT(['a', 'ab']) RETURN starts_with('abc', x)");
@@ -266,7 +266,7 @@ class QueryStartsWith : public QueryTest {
       }
     }
 
-    // execution outside arangosearch (true) via expresssion
+    // execution outside arangosearch (true) via expression
     {
       auto queryResult = arangodb::tests::executeQuery(
           _vocbase,
@@ -286,7 +286,7 @@ class QueryStartsWith : public QueryTest {
       }
     }
 
-    // execution outside arangosearch (false) via expresssion
+    // execution outside arangosearch (false) via expression
     {
       auto queryResult = arangodb::tests::executeQuery(
           _vocbase,
@@ -306,7 +306,7 @@ class QueryStartsWith : public QueryTest {
       }
     }
 
-    // execution outside arangosearch (true) via expresssion
+    // execution outside arangosearch (true) via expression
     {
       auto queryResult = arangodb::tests::executeQuery(
           _vocbase,

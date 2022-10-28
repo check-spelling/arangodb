@@ -1706,7 +1706,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryIn) {
   }
 
   // Auxilary check lambdas. Need them to check root part of expected filterd
-  // direct == check is not possible as we will have byExpresssion filters
+  // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkAny = [](irs::Or& actual, irs::score_t boost) {
     EXPECT_EQ(1, actual.size());
@@ -3716,7 +3716,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryNotIn) {
         expected, &ctx);
   }
   // Auxilary check lambdas. Need them to check root part of expected filterd
-  // direct == check is not possible as we will have byExpresssion filters
+  // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkNotAny = [](irs::Or& actual, irs::score_t boost) {
     EXPECT_EQ(1, actual.size());
