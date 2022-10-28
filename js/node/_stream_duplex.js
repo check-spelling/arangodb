@@ -21,7 +21,7 @@
 
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
-// prototypally inherits from Readable, and then parasitically from
+// prototypically inherits from Readable, and then parasitically from
 // Writable.
 
 module.exports = Duplex;
