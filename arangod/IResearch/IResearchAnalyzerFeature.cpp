@@ -405,7 +405,7 @@ bool equalAnalyzer(AnalyzerPool const& pool, irs::string_ref type,
     return false;
   }
 
-  // first check non-normalizeable portion of analyzer definition
+  // first check non-normalizable portion of analyzer definition
   // to rule out need to check normalization of properties
   if (type != pool.type() || features != pool.features()) {
     return false;
