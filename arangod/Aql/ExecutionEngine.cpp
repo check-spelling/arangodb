@@ -64,7 +64,7 @@ using namespace arangodb::aql;
 // 2. Limit with fullCount:true cannot be within a subquery.
 // 3. Between the “root()” of the Plan (which in most cases is the RETURN
 //    Node) and the LIMIT with fullCount:true no other LIMIT is allowed
-//    (exception the ContrainedSort case now)
+//    (exception the ConstrainedSort case now)
 struct LimitFullCountChecker final
     : public WalkerWorker<ExecutionNode, WalkerUniqueness::Unique> {
   size_t subqueryRecursionCounter{0};
