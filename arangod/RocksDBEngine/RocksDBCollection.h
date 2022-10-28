@@ -220,7 +220,7 @@ class RocksDBCollection final : public RocksDBMetaCollection {
 
   /// @brief create hash-cache
   void setupCache() const;
-  /// @brief destory hash-cache
+  /// @brief destroy hash-cache
   void destroyCache() const;
 
   /// is this collection using a cache
