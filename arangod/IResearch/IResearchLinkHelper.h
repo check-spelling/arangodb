@@ -65,7 +65,7 @@ struct IResearchLinkHelper {
   static velocypack::Builder emptyIndexSlice(uint64_t objectId);
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief compare two link definitions for equivalience if used to create a
+  /// @brief compare two link definitions for equivalence if used to create a
   ///        link instance
   //////////////////////////////////////////////////////////////////////////////
   static bool equal(ArangodServer& server, velocypack::Slice lhs,
