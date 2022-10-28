@@ -323,7 +323,7 @@
       _instances[sigmaInstance.id] = new Lasso(sigmaInstance, renderer, settings);
     }
 
-    // Listen for sigmaInstance kill event, and remove the lasso isntance
+    // Listen for sigmaInstance kill event, and remove the lasso instance
     sigmaInstance.bind('kill', function () {
       if (_instances[sigmaInstance.id] instanceof Lasso) {
         _instances[sigmaInstance.id].clear();

@@ -237,7 +237,7 @@ void ActionBase::toVelocyPack(VPackBuilder& builder) const {
     _description.toVelocyPack(builder);
   }
 
-}  // MaintanceAction::toVelocityPack
+}  // MainstanceAction::toVelocityPack
 
 VPackBuilder ActionBase::toVelocyPack() const {
   VPackBuilder builder;
