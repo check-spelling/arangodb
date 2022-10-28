@@ -709,7 +709,7 @@ function GenericAqlSetupPathSuite(type) {
     }
   };
 
-  // We only need to permuate JS and API based tests for a
+  // We only need to permutate JS and API based tests for a
   // single tye, as they do not distinguish the different types
   const lastTypeTestCase = type === "Plain" ? testCases.length : 3;
 
