@@ -35,7 +35,7 @@ namespace algos {
 /// neighbours are.
 /// Each vertex sends the community ID to all neighbours. Stores the ID he
 /// received
-/// most frequently. Tries to avoid osscilation, usually won't converge so
+/// most frequently. Tries to avoid oscillation, usually won't converge so
 /// specify a
 /// maximum superstep number.
 struct LabelPropagation : public SimpleAlgorithm<LPValue, int8_t, uint64_t> {
