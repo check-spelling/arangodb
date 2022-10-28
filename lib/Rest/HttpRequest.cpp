@@ -562,7 +562,7 @@ void HttpRequest::setHeaderV2(std::string&& key, std::string&& value) {
     // This can be much more elaborated as the can specify weights on encodings
     // However, for now just toggle on deflate if deflate is requested
     if (StaticStrings::EncodingDeflate == value) {
-      // FXIME: cannot use substring search, Java driver chokes on deflated
+      // FIXME: cannot use substring search, Java driver chokes on deflated
       // response
       // if (value.find(StaticStrings::EncodingDeflate) != std::string::npos) {
       _acceptEncoding = EncodingType::DEFLATE;
