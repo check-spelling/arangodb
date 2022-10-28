@@ -277,9 +277,9 @@ auto PathValidator<ProviderType, PathStore, vertexUniqueness, edgeUniqueness>::
     }
 
     // evaluate expression
-    bool satifiesCondition =
+    bool satisfiesCondition =
         evaluateVertexExpression(vertexExpr, vertexBuilder.slice());
-    if (!satifiesCondition) {
+    if (!satisfiesCondition) {
       if (_options.bfsResultHasToIncludeFirstVertex() && step.isFirst()) {
         res.combine(ValidationResult::Type::PRUNE);
       } else {
