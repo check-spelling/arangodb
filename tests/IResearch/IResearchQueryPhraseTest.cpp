@@ -1839,7 +1839,7 @@ void testLevenshteinMatch(
     EXPECT_EQ(i, expected.size());
   }
 
-  // test custom analyzer with levenshtein_match via [] via vaiable
+  // test custom analyzer with levenshtein_match via [] via variable
   if (flags & (kAnalyzerTest | kAnalyzerUserTest)) {
     std::vector<arangodb::velocypack::Slice> expected = {
         insertedDocs[6].slice(),  insertedDocs[10].slice(),
