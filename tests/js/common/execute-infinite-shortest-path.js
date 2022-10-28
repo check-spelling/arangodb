@@ -53,7 +53,7 @@ function main (args) {
 
   try {
     try {
-      // Drop the graph if it exsits
+      // Drop the graph if it exists
       graph = new Graph(graph_name);
       require('internal').print('FOUND: ');
       require('internal').printObject(graph);
