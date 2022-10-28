@@ -176,7 +176,7 @@ describe('User Rights Management', () => {
                 if (dbLevel['rw'].has(name)) {
                   expect(rootTestCollection()).to.equal(true, 'Collection creation reported success, but collection was not found afterwards.');
                 } else {
-                  expect(rootTestCollection()).to.equal(false, `${name} was able to create a collection with insufficent rights`);
+                  expect(rootTestCollection()).to.equal(false, `${name} was able to create a collection with insufficient rights`);
                 }
               } else {
                 try {

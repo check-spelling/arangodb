@@ -215,7 +215,7 @@ describe('User Rights Management', () => {
                       checkError(e);
                       return;
                     }
-                    expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                    expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                   }
                 });
 
@@ -237,7 +237,7 @@ describe('User Rights Management', () => {
                         checkError(e);
                         return;
                       }
-                      expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                      expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                     }
                   });
                   
@@ -261,7 +261,7 @@ describe('User Rights Management', () => {
                         return;
                       }
                       if (!dbLevel['rw'].has(name)) {
-                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                       }
                     }
                   });
@@ -296,7 +296,7 @@ describe('User Rights Management', () => {
                         return;
                       }
                       if (!dbLevel['rw'].has(name)) {
-                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                       }
                     }
                   });
@@ -334,7 +334,7 @@ describe('User Rights Management', () => {
                           return;
                         }
                         if(!dbLevel['rw'].has(name)) {
-                          expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                          expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                         }
                       }
                     });
@@ -364,7 +364,7 @@ describe('User Rights Management', () => {
                           checkError(e);
                           return;
                         }
-                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                        expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                       }
                     });
                 }

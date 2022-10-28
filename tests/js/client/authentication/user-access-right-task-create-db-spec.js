@@ -173,7 +173,7 @@ describe('User Rights Management', () => {
                 if (systemLevel['rw'].has(name)) {
                   expect(rootTestDB()).to.equal(true, 'DB creation reported success, but DB was not found afterwards.');
                 } else {
-                  expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficent rights`);
+                  expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficient rights`);
                 }
               } else {
                 try {

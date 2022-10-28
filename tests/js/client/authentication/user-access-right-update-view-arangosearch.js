@@ -300,7 +300,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
           }
 
           assertFalse(rootTestView(testViewRename),
-            `${name} was able to rename a view with insufficent rights`);
+            `${name} was able to rename a view with insufficient rights`);
 
         }
       },
@@ -316,7 +316,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
         } else {
           try {
             db._view(testViewName).properties({}, false);
-            assertFail(`${name} was able to update a view with insufficent rights`);
+            assertFail(`${name} was able to update a view with insufficient rights`);
           } catch (e) {
             checkError(e);
           }
@@ -352,7 +352,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
               { locale: "de.UTF-8", stopwords: [ ] },
               [ "frequency", "norm", "position" ]);
 
-            assertFalse(true, `${name} was able to change analyzer although we had insufficent rights`);
+            assertFalse(true, `${name} was able to change analyzer although we had insufficient rights`);
           } catch (e) {
             assertEqual(e.errorNum, errors.ERROR_FORBIDDEN.code,
               "Expected to get forbidden error number, but got another one");
@@ -375,7 +375,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
         } else {
           try {
             db._view(testViewName).properties({ "cleanupIntervalStep": 1 }, true);
-            assertFail(`${name} was able to update a view with insufficent rights`);
+            assertFail(`${name} was able to update a view with insufficient rights`);
           } catch (e) {
             checkError(e);
           }
@@ -393,7 +393,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
         } else {
           try {
             db._view(testViewName).properties({ "cleanupIntervalStep": 1 }, false);
-            assertFail(`${name} was able to update a view with insufficent rights`);
+            assertFail(`${name} was able to update a view with insufficient rights`);
           } catch (e) {
             checkError(e);
           }
@@ -426,7 +426,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
               }
             }, true);
 
-            assertFail(`${name} was able to update a view with insufficent rights`);
+            assertFail(`${name} was able to update a view with insufficient rights`);
           } catch (e) {
             checkError(e);
           }
@@ -460,7 +460,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
                 }
               }
             }, false);
-            assertFail(`${name} was able to update a view with insufficent rights`);
+            assertFail(`${name} was able to update a view with insufficient rights`);
           } catch (e) {
             checkError(e);
           }
@@ -496,7 +496,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
                 }
               }, true);
 
-              assertFail(`${name} was able to update a view with insufficent rights`);
+              assertFail(`${name} was able to update a view with insufficient rights`);
             } catch (e) {
               checkError(e);
               return;

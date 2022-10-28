@@ -295,7 +295,7 @@ describe('User Rights Management', () => {
                     checkError(e);
                     return;
                   } finally {
-                    expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficent rights`);
+                    expect(rootTestView(testViewName)).to.equal(false, `${name} was able to create a view with insufficient rights`);
                   }
                   expect(false).to.equal(true, `${name} managed to register a task with insufficient rights`);
                 }

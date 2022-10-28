@@ -184,7 +184,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                 }
-                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
               }
             });
 
@@ -219,7 +219,7 @@ describe('User Rights Management', () => {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
                 }
-                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
               }
             });
           });

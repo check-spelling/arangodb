@@ -238,7 +238,7 @@ describe('User Rights Management', () => {
                   } else {
                     tasks.register(task);
                     wait(keySpaceId, name);
-                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
                   }
                 } else {
                   try {
@@ -285,7 +285,7 @@ describe('User Rights Management', () => {
                   } else {
                     tasks.register(task);
                     wait(keySpaceId, `${name}_existing_collections`);
-                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
                   }
                 } else {
                   try {
