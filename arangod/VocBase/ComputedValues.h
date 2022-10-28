@@ -205,7 +205,7 @@ class ComputedValues {
   // individual instructions for computed values
   std::vector<ComputedValue> _values;
 
-  // the size_t value indiciates the position of the computation inside
+  // the size_t value indicates the position of the computation inside
   // the _values vector
   containers::FlatHashMap<std::string, std::size_t> _attributesForInsert;
   containers::FlatHashMap<std::string, std::size_t> _attributesForUpdate;
