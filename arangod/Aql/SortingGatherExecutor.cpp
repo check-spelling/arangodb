@@ -420,7 +420,7 @@ auto SortingGatherExecutor::skipRowsRange(typename Fetcher::DataRange& input,
 
   // skip offset
   while (!input.isDone() && call.getOffset() > 0) {
-    // During offset phase we have the guarntee
+    // During offset phase we have the guarantee
     // that the rows we need to skip have been fetched
     // We will fetch rows as data from upstream for
     // all rows we need to skip here.

@@ -396,7 +396,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver2short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver3short);
             } else {
@@ -434,7 +434,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver1short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver3short);
             } else {
@@ -472,7 +472,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver1short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver2short);
             } else {
@@ -620,7 +620,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver2short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver3short);
             } else {
@@ -658,7 +658,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver1short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver3short);
             } else {
@@ -710,7 +710,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver1short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver2short);
             } else {
@@ -770,7 +770,7 @@ TEST_F(
             VPackSlice secondFollower = followers.at(1);
             ASSERT_TRUE(secondFollower.isString());
 
-            // We do not guarentee any ordering here
+            // We do not guarantee any ordering here
             if (firstFollower.stringView() == dbserver2short) {
               ASSERT_EQ(secondFollower.copyString(), dbserver3short);
             } else {
