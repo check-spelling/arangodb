@@ -595,7 +595,7 @@ void AqlFunctionFeature::addMiscFunctions() {
 #endif
 
   // this is an internal function that is only here for testing. it cannot
-  // be invoked by end users, because refering to internal functions from user
+  // be invoked by end users, because referring to internal functions from user
   // queries will pretend these functions do not exist.
   add({"INTERNAL", "", Function::makeFlags(FF::Internal),
        &functions::NotImplemented});

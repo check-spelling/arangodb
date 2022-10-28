@@ -186,7 +186,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -295,7 +295,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -412,7 +412,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1093,7 +1093,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1178,7 +1178,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1244,7 +1244,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         assertEqual("CalculationNode", plan.nodes[2].type, query);
@@ -1305,7 +1305,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a ReturnNode refering to it.
+        // a calculation node and the 4th is a ReturnNode referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         assertEqual("CalculationNode", plan.nodes[2].type, query);
@@ -1451,7 +1451,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1549,7 +1549,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1643,7 +1643,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
@@ -1721,7 +1721,7 @@ function optimizerIndexesMultiTestSuite () {
         assertEqual("ReturnNode", nodeTypes[nodeTypes.length - 1], query);
 
         // This is somewhat fragile, we test whether the 3rd node is
-        // a calculation node and the 4th is a filter refering to it.
+        // a calculation node and the 4th is a filter referring to it.
         // Furthermore, we check the type of expression in the CalcNode
         // and the number of subnodes:
         if (filtercheck !== null) {
