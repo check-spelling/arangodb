@@ -59,7 +59,7 @@ class MaintenanceRestHandler : public RestBaseHandler {
   };
 
  protected:
-  /// @brief POST conrol maintenance feature
+  /// @brief POST control maintenance feature
   RestStatus postAction();
 
   /// @brief PUT method adds an Action to the worklist (or executes action
