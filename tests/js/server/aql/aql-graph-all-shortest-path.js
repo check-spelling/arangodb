@@ -186,7 +186,7 @@ const createGraph = () => {
             if (pathNum === 1) {
               const additional = `vertex_${pathNum}_3`;
               vertices.push({_key: additional});
-              // Add an aditional step only on the second path to have differnt path lengths
+              // Add an additional step only on the second path to have differnt path lengths
               e1s.push({_from: `${vName}/${key}`, _to: `${vName}/${additional}`, weight});
               e1s.push({_from: `${vName}/${additional}`, _to: target, weight});
             } else {
