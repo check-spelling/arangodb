@@ -38,7 +38,7 @@ EnVar::SetHKLM
 EnVar::Check         VariableName Path
 
   Checks for a Path in the specified VariableName. Passing "null" as a Path makes
-  it check for the existance of VariableName. Passing "null" for both makes it
+  it check for the existence of VariableName. Passing "null" for both makes it
   check for write access to the current environment.
 
 EnVar::AddValue      VariableName Path
