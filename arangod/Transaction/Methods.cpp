@@ -3122,7 +3122,7 @@ Future<Result> Methods::replicateOperations(
         << ", server:" << f;
   }
 
-  // If any would-be-follower refused to follow there are two possiblities:
+  // If any would-be-follower refused to follow there are two possibilities:
   // (1) there is a new leader in the meantime, or
   // (2) the follower was restarted and forgot that it is a follower.
   // Unfortunately, we cannot know which is the case.
