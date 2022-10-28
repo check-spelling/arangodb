@@ -3024,7 +3024,7 @@ TEST_F(IResearchFilterBooleanTest, BinaryOr) {
     );
   }
 
-  // noneterministic expression -> wrap it
+  // nondeterministic expression -> wrap it
   {
     TRI_vocbase_t vocbase(TRI_vocbase_type_e::TRI_VOCBASE_TYPE_NORMAL,
                           testDBInfo(server.server()));
@@ -3128,7 +3128,7 @@ TEST_F(IResearchFilterBooleanTest, BinaryOr) {
     }
   }
 
-  // noneterministic expression -> wrap it, boost
+  // nondeterministic expression -> wrap it, boost
   {
     TRI_vocbase_t vocbase(TRI_vocbase_type_e::TRI_VOCBASE_TYPE_NORMAL,
                           testDBInfo(server.server()));
@@ -6703,7 +6703,7 @@ TEST_F(IResearchFilterBooleanTest, BinaryAnd) {
     );
   }
 
-  // noneterministic expression -> wrap it
+  // nondeterministic expression -> wrap it
   {
     TRI_vocbase_t vocbase(TRI_vocbase_type_e::TRI_VOCBASE_TYPE_NORMAL,
                           testDBInfo(server.server()));

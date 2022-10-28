@@ -51,7 +51,7 @@ function aqlSkippingClusterTestsuite () {
      * In an AQL cluster query, when gathering unsorted data in combination with a LIMIT with non-zero offset,
      * if this offset exactly matches the number of documents in the first shards consumed, the rest of the documents
      * was not returned.
-     * The test is undeterministic, but has a high chance to detect this problem.
+     * The test is nondeterministic, but has a high chance to detect this problem.
      * This can only trigger when we skip a shard with the exact number of documents left in it,
      * AND the shard returning DONE with that skip.
      * Because of this, this problem didn't occur in 3.5, as the UnsortingGather dependencies were always RemoteNodes,
