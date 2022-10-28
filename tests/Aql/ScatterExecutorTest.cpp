@@ -595,7 +595,7 @@ TEST_P(RandomOrderTest, shadowrows_with_different_call_types) {
 class ScatterExecutionBlockTest : public SharedScatterExecutionBlockTest,
                                   public ::testing::Test {};
 
-// Here we do a more specific ordering of calls, as we need to rearange
+// Here we do a more specific ordering of calls, as we need to rearrange
 // multidepthCalls
 
 TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
