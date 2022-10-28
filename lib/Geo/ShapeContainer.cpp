@@ -689,7 +689,7 @@ bool intersectRectPolygon(S2LatLngRect const* rect, S2Polygon const* poly) {
   return poly->Intersects(&rectPoly);
 }
 
-bool insersectMultiPointsRegion(S2MultiPointRegion const* points,
+bool intersectMultiPointsRegion(S2MultiPointRegion const* points,
                                 S2Region const* region) {
   for (int i = 0; i < points->num_points(); ++i) {
     if (region->Contains(points->point(i))) {
@@ -728,7 +728,7 @@ bool ShapeContainer::intersects(S2LatLngRect const* other) const {
 
     case ShapeContainer::Type::S2_MULTIPOINT: {
       S2MultiPointRegion* self = static_cast<S2MultiPointRegion*>(_data);
-      return insersectMultiPointsRegion(self, other);
+      return intersectMultiPointsRegion(self, other);
     }
 
     case ShapeContainer::Type::S2_MULTIPOLYLINE: {
@@ -808,7 +808,7 @@ bool ShapeContainer::intersects(ShapeContainer const* cc) const {
             "instable and thus not supported.");
       }
       auto pts = static_cast<S2MultiPointRegion const*>(cc->_data);
-      return insersectMultiPointsRegion(pts, _data);
+      return intersectMultiPointsRegion(pts, _data);
     }
     case ShapeContainer::Type::S2_MULTIPOLYLINE: {
       auto lines = static_cast<S2MultiPolyline const*>(cc->_data);
