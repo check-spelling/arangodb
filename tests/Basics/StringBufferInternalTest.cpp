@@ -250,7 +250,7 @@ TEST(CStringBufferTest, tst_erase_frnt2) {
   EXPECT_TRUE(1UL == TRI_LengthStringBuffer(&sb));
   EXPECT_TRUE(std::string("f") == sb._buffer);
 
-  // clang 5.1 failes without the cast
+  // clang 5.1 fails without the cast
   EXPECT_TRUE('f' == sb._buffer[0]);
   EXPECT_TRUE('\0' == sb._buffer[1]);
   EXPECT_TRUE('\0' == sb._buffer[2]);
@@ -281,7 +281,7 @@ TEST(CStringBufferTest, tst_erase_frnt3) {
   EXPECT_TRUE((499UL) == l);
   EXPECT_TRUE((499UL) == TRI_LengthStringBuffer(&sb));
 
-  // clang 5.1 failes without the cast
+  // clang 5.1 fails without the cast
   EXPECT_TRUE(((unsigned int)'a') == (unsigned int)sb._buffer[498]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[499]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[500]);
@@ -293,7 +293,7 @@ TEST(CStringBufferTest, tst_erase_frnt3) {
   EXPECT_TRUE((498UL) == l);
   EXPECT_TRUE((498UL) == TRI_LengthStringBuffer(&sb));
 
-  // clang 5.1 failes without the cast
+  // clang 5.1 fails without the cast
   EXPECT_TRUE(((unsigned int)'a') == (unsigned int)sb._buffer[497]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[498]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[499]);
@@ -306,7 +306,7 @@ TEST(CStringBufferTest, tst_erase_frnt3) {
   EXPECT_TRUE((0UL) == l);
   EXPECT_TRUE((0UL) == TRI_LengthStringBuffer(&sb));
 
-  // clang 5.1 failes without the cast
+  // clang 5.1 fails without the cast
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[0]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[1]);
   EXPECT_TRUE(((unsigned int)'\0') == (unsigned int)sb._buffer[496]);

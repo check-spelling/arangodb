@@ -356,7 +356,7 @@ class SharedExecutionBlockImplTest {
   }
 
   /**
-   * @brief Generate a call that failes whenever it is actually called.
+   * @brief Generate a call that fails whenever it is actually called.
    *        Used to check that SKIP is not invoked
    *
    * @return SkipCall The always failing call to be used for the executor.
@@ -371,7 +371,7 @@ class SharedExecutionBlockImplTest {
   }
 
   /**
-   * @brief Generate a call that failes whenever it is actually called.
+   * @brief Generate a call that fails whenever it is actually called.
    *        Used to check that produce is not invoked
    *
    * @return ProduceCall The always failing call to be used for the executor.
