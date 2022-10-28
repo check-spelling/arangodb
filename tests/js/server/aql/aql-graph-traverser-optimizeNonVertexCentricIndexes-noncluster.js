@@ -87,7 +87,7 @@ function optimizeNonVertexCentricIndexesSuite() {
     tearDownAll: gh.cleanup,
 
     tearDown: () => {
-      // After each test get rid of all superflous indexes.
+      // After each test get rid of all superfluous indexes.
       var idxs = db[en].getIndexes();
       for (let i = 2; i < idxs.length; ++i) {
         db[en].dropIndex(idxs[i].id);
