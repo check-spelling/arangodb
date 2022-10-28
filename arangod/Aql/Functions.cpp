@@ -4403,7 +4403,7 @@ AqlValue functions::DateCompare(ExpressionContext* expressionContext,
   // Otherwise we fall down to the next part.
   // As soon as we are below the endRange
   // we bail out.
-  // So all Fall throughs here are intentional
+  // So all Fallthroughs here are intentional
   switch (rangeStart) {
     case YEAR:
       // Always check for the year
