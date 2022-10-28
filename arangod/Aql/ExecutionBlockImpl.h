@@ -174,7 +174,7 @@ class ExecutionBlockImpl final : public ExecutionBlock {
   /**
    * @brief Construct a new ExecutionBlock
    *        This API is subject to change, we want to make it as independent of
-   *        AQL / Query interna as possible.
+   *        AQL / Query internal as possible.
    *
    * @param engine The AqlExecutionEngine holding the query and everything
    *               required for the execution.

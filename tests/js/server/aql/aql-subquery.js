@@ -336,7 +336,7 @@ function ahuacatlSubqueryTestSuite () {
     },
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief this tests a rather complex interna of AQL execution combinations
+/// @brief this tests a rather complex internal of AQL execution combinations
 /// A subquery should only be executed if it has an input row, a count is supposed
 /// to count empty subqueries (e.g. no data row arrived)
 /// However in this case, the entire subquery is not executed once,
