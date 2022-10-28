@@ -152,7 +152,7 @@ function DocumentShardingSuite() {
       }
     },
 
-    testDistributeShardsLikeWithDiffentKeyAttribute : function () {
+    testDistributeShardsLikeWithDifferentKeyAttribute : function () {
       let c1 = db._create(name1, { shardingStrategy: hash, numberOfShards: 5, shardKeys: ["one"] });
       let c2 = db._create(name2, { distributeShardsLike: name1, shardKeys: ["two"] });
       assertEqual(hash, c1.properties()["shardingStrategy"]);
@@ -174,7 +174,7 @@ function DocumentShardingSuite() {
       });
     },
 
-    testDistributeShardsLikeWithDiffentKeyAttributes : function () {
+    testDistributeShardsLikeWithDifferentKeyAttributes : function () {
       let c1 = db._create(name1, { shardingStrategy: hash, numberOfShards: 5, shardKeys: ["one", "two"] });
       let c2 = db._create(name2, { distributeShardsLike: name1, shardKeys: ["three", "four"] });
       assertEqual(hash, c1.properties()["shardingStrategy"]);
@@ -196,7 +196,7 @@ function DocumentShardingSuite() {
       });
     },
 
-    testDistributeShardsLikeWithDiffentNumberOfKeyAttributes : function () {
+    testDistributeShardsLikeWithDifferentNumberOfKeyAttributes : function () {
       let c1 = db._create(name1, { shardingStrategy: hash, numberOfShards: 5, shardKeys: ["one", "two"] });
       try {
         db._create(name2, { distributeShardsLike: name1, shardKeys: ["three"] });
