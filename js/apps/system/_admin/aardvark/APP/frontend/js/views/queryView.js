@@ -2534,12 +2534,12 @@
             }
           });
 
-          var percentagea = 0;
+          var percentages = 0;
           if (totala > 0) {
-            percentagea = hitsa / totala * 100;
+            percentages = hitsa / totala * 100;
           }
 
-          if (percentagea >= 95) {
+          if (percentages >= 95) {
             found = true;
             toReturn.defaultType = 'graph';
             toReturn.graphInfo = 'object';
