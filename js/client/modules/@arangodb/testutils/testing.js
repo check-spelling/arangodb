@@ -87,7 +87,7 @@ let optionsDocumentation = [
   '   - `arangosearch`: if set to true enable the ArangoSearch-related tests',
   '   - `minPort`: minimum port number to use',
   '   - `maxPort`: maximum port number to use',
-  '   - `forceJson`: don\'t use vpack - for better debugability',
+  '   - `forceJson`: don\'t use vpack - for better debuggability',
   '   - `vst`: attempt to connect to the SUT via vst',
   '   - `http2`: attempt to connect to the SUT via http2',
   '   - `dbServers`: number of DB-Servers to use',
