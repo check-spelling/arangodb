@@ -3336,7 +3336,7 @@ AqlValue functions::Split(ExpressionContext* expressionContext, AstNode const&,
     if (uCount == nrResults) {
       valueToSplit = uResults[nrResults - 1];
     } else {
-      // should not go beyound the last match!
+      // should not go beyond the last match!
       TRI_ASSERT(false);
       break;
     }
@@ -3548,7 +3548,7 @@ AqlValue functions::RegexSplit(ExpressionContext* expressionContext,
     if (uCount == nrResults) {
       valueToSplit = uResults[nrResults - 1];
     } else {
-      // should not go beyound the last match!
+      // should not go beyond the last match!
       TRI_ASSERT(false);
       break;
     }
