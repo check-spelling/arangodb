@@ -1756,7 +1756,7 @@ bool AstNode::canRunOnDBServer(bool isOneShard) const {
     return false;
   }
 
-  // everyhing else can run everywhere
+  // everything else can run everywhere
   setFlag(DETERMINED_RUNONDBSERVER, VALUE_RUNONDBSERVER);
   return true;
 }

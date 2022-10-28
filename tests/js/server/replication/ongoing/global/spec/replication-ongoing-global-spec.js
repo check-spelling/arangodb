@@ -179,7 +179,7 @@ const cleanUpAllData = function () {
     // We ignore every error here, correctness needs to be validated during tests.
   }
 
-  // Validate everthing is as expected.
+  // Validate everything is as expected.
   testDBDoesNotExist(dbName);
   testCollectionDoesNotExists(docColName);
   testCollectionDoesNotExists(edgeColName);

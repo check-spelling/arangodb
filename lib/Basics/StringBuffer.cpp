@@ -259,7 +259,7 @@ void TRI_ResetStringBuffer(TRI_string_buffer_t* self) {
 char* TRI_StealStringBuffer(TRI_string_buffer_t* self) {
   char* result = self->_buffer;
 
-  // reset everthing
+  // reset everything
   self->_buffer = nullptr;
   self->_current = nullptr;
   self->_len = 0;
