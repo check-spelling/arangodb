@@ -156,7 +156,7 @@ function ClusterCollectionSuite () {
 
     testCreateValidReplicationFactor : function () {
       let c;
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 1; i < 3; i++) {
         c = db._create("UnitTestsClusterCrud", {
@@ -178,7 +178,7 @@ function ClusterCollectionSuite () {
 
     testCreateValidMinReplicationFactor : function () {
       let c;
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 1; i < 3; i++) {
         c = db._create("UnitTestsClusterCrud", {
@@ -203,7 +203,7 @@ function ClusterCollectionSuite () {
 ////////////////////////////////////////////////////////////////////////////////
 
     testCreateValidMinReplicationFactorSmaller : function () {
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 2; i < 3; i++) {
         let c = db._create("UnitTestsClusterCrud", {
