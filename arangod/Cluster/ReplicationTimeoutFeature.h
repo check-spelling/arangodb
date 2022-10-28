@@ -53,7 +53,7 @@ class ReplicationTimeoutFeature : public ArangodFeature {
   // seconds)
   double _timeoutFactor;
   double _timeoutPer4k;
-  // mininum wait time for sync replication (default: 900 seconds)
+  // minimum wait time for sync replication (default: 900 seconds)
   double _lowerLimit;
   // maximum wait time for sync replication (default: 3600 seconds)
   double _upperLimit;
