@@ -183,7 +183,7 @@ void VPackFeature::start() {
   }
 #endif
 
-  // read ipnut
+  // read input
   std::string input = basics::FileUtils::slurp(_inputFile);
 
   bool const inputIsJson = (_inputType == "json" || _inputType == "json-hex" ||
