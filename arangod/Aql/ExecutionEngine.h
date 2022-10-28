@@ -125,7 +125,7 @@ class ExecutionEngine {
   /// @brief get the register the final result of the query is stored in
   RegisterId resultRegister() const;
 
-  /// @brief accessor to the memory recyler for AqlItemBlocks
+  /// @brief accessor to the memory recycler for AqlItemBlocks
   AqlItemBlockManager& itemBlockManager();
 
   ///  @brief collected execution stats
