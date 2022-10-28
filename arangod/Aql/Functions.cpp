@@ -601,7 +601,7 @@ double valueToNumber(VPackSlice const& slice, bool& isValid) {
         }
         ++behind;
       }
-      // A string only containing whitespae-characters is valid and should
+      // A string only containing whitespace-characters is valid and should
       // return 0.0
       // It throws in std::stod
       isValid = true;
