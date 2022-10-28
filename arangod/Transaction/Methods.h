@@ -134,8 +134,8 @@ class Methods {
   /// @brief definition from TransactionState::StatusChangeCallback
   /// @param status the new status of the transaction
   ///               will match trx.state()->status() for top-level transactions
-  ///               may not match trx.state()->status() for embeded transactions
-  ///               since their staus is not updated from RUNNING
+  ///               may not match trx.state()->status() for embedded
+  ///               transactions since their staus is not updated from RUNNING
   typedef std::function<void(transaction::Methods& trx,
                              transaction::Status status)>
       StatusChangeCallback;
