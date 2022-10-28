@@ -141,7 +141,7 @@ function agencyInspector(obj) {
     INFO('    ' + database);
     report.Databases[database] = {};
     if (!plan.Collections.hasOwnProperty(database)) {
-      WARN('found planned database "' + database + '" without planned collectinos');
+      WARN('found planned database "' + database + '" without planned collections');
     }
     if (!current.Databases.hasOwnProperty(database)) {
       WARN('found planned database "' + database + '" missing in "Current"');
