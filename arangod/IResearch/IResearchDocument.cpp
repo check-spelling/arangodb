@@ -773,7 +773,7 @@ void FieldIterator<IndexMetaStruct>::next() {
       // Filter will add a new part. But even if filter decided
       // to skip field - we must track it as seen and not emit null
       // for explicitly discarded values. Like skipping non-array fields
-      // for expansion fields in the index as the field is definately not
+      // for expansion fields in the index as the field is definitely not
       // missing.
       fieldSeen(_nameBuffer);
       if (!filterRes) {
