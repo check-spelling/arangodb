@@ -928,7 +928,7 @@ void V8DealerFeature::loadJavaScriptFileInAllContexts(TRI_vocbase_t* vocbase,
     CONDITION_LOCKER(guard, _contextCondition);
 
     while (_nrInflightContexts > 0) {
-      // wait until all pending context creation requests have been satisified
+      // wait until all pending context creation requests have been satisfied
       guard.wait(10000);
     }
 

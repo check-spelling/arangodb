@@ -1288,7 +1288,7 @@ function ReplicationOtherDBSuite () {
           }
           internal.wait(0.5, false);
         }
-        assertFalse(true, 'required condition not satisified: ' + String(cb));
+        assertFalse(true, 'required condition not satisfied: ' + String(cb));
       };
 
       setupReplication();
