@@ -2522,7 +2522,7 @@ std::vector<log_t> Agent::logs(index_t begin, index_t end) const {
 void Agent::syncActiveAndAcknowledged() {
   // We reset the list of last Acknowledged indexes, to contain
   // at least every peer. If there is a new peer it will be inserted
-  // with lastAckknowledged NOW for index 0.
+  // with lastAcknowledged NOW for index 0.
   {
     _tiLock.assertNotLockedByCurrentThread();
     MUTEX_LOCKER(tiLocker, _tiLock);
