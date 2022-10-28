@@ -350,7 +350,7 @@ TEST_F(NetworkConnectionPoolTest, checking_expiration) {
   pool.drainConnections();
 }
 
-TEST_F(NetworkConnectionPoolTest, checking_expiration_multiple_endpints) {
+TEST_F(NetworkConnectionPoolTest, checking_expiration_multiple_endpoints) {
   ConnectionPool::Config config(server.getFeature<metrics::MetricsFeature>());
   config.numIOThreads = 1;
   config.maxOpenConnections = 2;

@@ -83,7 +83,7 @@ function connectToServer(leader) {
   db._flushCache();
 };
 
-// getEndponts works with any server
+// getEndpoints works with any server
 function getClusterEndpoints() {
   //let jwt = crypto.jwtEncode(options['server.jwt-secret'], {'server_id': 'none', 'iss': 'arangodb'}, 'HS256');
   var res = request.get({
