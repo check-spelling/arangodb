@@ -673,6 +673,6 @@ TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
   } while (std::next_permutation(callOrder.begin(), callOrder.end()));
 }
 
-// TODO add test for initilaize cursor
+// TODO add test for initialize cursor
 
 }  // namespace arangodb::tests::aql

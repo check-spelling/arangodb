@@ -425,7 +425,7 @@ struct DMIDComputation
            */
           /** RESTART */
           /** set MemDeg back to initial value */
-          initilaizeMemDeg();
+          initializeMemDeg();
         }
         /** ANOTHER ROUND */
         /**
@@ -560,7 +560,7 @@ struct DMIDComputation
   /**
    * Initialize the MembershipDegree vector.
    **/
-  void initilaizeMemDeg() {
+  void initializeMemDeg() {
     DMIDValue* vertexState = mutableVertexData();
 
     VertexSumAggregator const* vecGL =

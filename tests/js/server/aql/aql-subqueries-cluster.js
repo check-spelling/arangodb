@@ -89,7 +89,7 @@ function clusterSubqueriesTestSuite () {
     // This test validates that all input values `x` are
     // transportet to the input register of the subquery
     // This is done via successful initializeCursor calls
-    testSimpleInitialzeCursor: function () {
+    testSimpleInitializeCursor: function () {
       let docs = [];
       // We add 5 times each of the values 0 -> 19
       // In the query we will just use 1->10
