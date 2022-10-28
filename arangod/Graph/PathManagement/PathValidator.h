@@ -46,7 +46,7 @@ class ValidationResult;
  *
  * - EdgeUniqueness, like vertex Uniqueness, and sometimes Edge and Vertex
  * Uniqueness enforce each other. (e.g. => VertexUniqueness == PATH =>
- * EdgeUniquess PATH || NONE.
+ * EdgeUniqueness PATH || NONE.
  *
  * - Prune Condition.
  * - PostFilter Condition.
