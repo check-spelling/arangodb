@@ -90,8 +90,8 @@ function recoverySuite () {
       checkView("UnitTestsRecoveryView", "i1");
 
       var result = db._query("FOR doc IN UnitTestsRecoveryView SEARCH doc.c >= 0 COLLECT WITH COUNT INTO length RETURN length").toArray();
-      var epxectedResult = db._query("FOR doc IN UnitTestsRecoveryDummy FILTER doc.c >= 0 COLLECT WITH COUNT INTO length RETURN length").toArray();
-      assertEqual(epxectedResult[0], result[0]);
+      var expectedResult = db._query("FOR doc IN UnitTestsRecoveryDummy FILTER doc.c >= 0 COLLECT WITH COUNT INTO length RETURN length").toArray();
+      assertEqual(expectedResult[0], result[0]);
     }
   };
 }

@@ -1537,7 +1537,7 @@ class ExecutionBlockImplExecuteIntegrationTest
   /**
    * @brief Helper method to validate the result
    *        It will take into account the call used as Parameter
-   *        and slice the expectated outcome to it.
+   *        and slice the expected outcome to it.
    *
    * It asserts the following:
    *   1. skipped == offset() + (data.length - hardLimit [fullcount])
