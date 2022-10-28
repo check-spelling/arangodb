@@ -8354,7 +8354,7 @@ void arangodb::aql::asyncPrefetchRule(Optimizer* opt,
   if (!checker.containsModificationNode) {
     // here we only set a flag that this plan should use async prefetching.
     // The actual prefetching is performed on node level and therefore also
-    // enbabled/disabled on the nodes. However, this is not done here but in
+    // enabled/disabled on the nodes. However, this is not done here but in
     // a post-processing step so we can operate on the finalized query (e.g.,
     // after subquery-splicing)
     plan->enableAsyncPrefetching();
