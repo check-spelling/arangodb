@@ -102,7 +102,7 @@ class ShardLocking {
 
   // The list of servers that will participate in this query as leaders for at
   // least one shard. Only these servers need to be informed by the coordinator.
-  // Note: As a side effec this will create the ShardMapping on the first call.
+  // Note: As a side effect this will create the ShardMapping on the first call.
   // This function needs to be called before you can get any shardInformation
   // below.
   std::vector<ServerID> getRelevantServers();
