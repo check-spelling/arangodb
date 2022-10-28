@@ -2584,7 +2584,7 @@
         if (check) {
           _.each(result, function (obj) {
             if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
-              // not a document and not suitable for tabluar display
+              // not a document and not suitable for tabular display
               return;
             }
 
