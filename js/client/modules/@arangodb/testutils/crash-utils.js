@@ -622,7 +622,7 @@ function aggregateDebugger(instanceInfo, options) {
     print(statusExternal(instanceInfo.debuggerInfo.pid.pid, false));
   }
   if (!fs.exists(instanceInfo.debuggerInfo.file)) {
-    print("Failed to generate the debbugers output file for " +
+    print("Failed to generate the debuggers output file for " +
           JSON.stringify(instanceInfo.getStructure()) + '\n');
     return "";
   }
