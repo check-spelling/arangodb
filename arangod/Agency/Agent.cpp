@@ -740,7 +740,7 @@ void Agent::sendAppendEntriesRPC() {
           continue;
         }
         if (snapshotTerm == 0) {
-          // No shapshot yet
+          // No snapshot yet
           needSnapshot = false;
         }
       }

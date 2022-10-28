@@ -307,7 +307,7 @@ arangodb::Result reportInCurrent(
  * @brief            Schedule synchroneous replications
  *
  * @param  plan      Plan's snapshot
- * @param  current   Current's scnapshot
+ * @param  current   Current's snapshot
  * @param  local     Local snapshot
  * @param  serverId  My server's uuid
  * @param  feature   Maintenance feature

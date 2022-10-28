@@ -32,7 +32,7 @@
 #include "VocBase/Identifiers/RevisionId.h"
 
 namespace rocksdb {
-class Snaspshot;
+class Snapshot;
 }
 
 namespace arangodb {
