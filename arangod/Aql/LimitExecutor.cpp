@@ -147,7 +147,7 @@ auto LimitExecutor::produceRows(AqlItemBlockInputRange& inputRange,
       auto numRowsWritten = size_t{0};
 
       while (inputRange.hasDataRow()) {
-        // This block is passhthrough.
+        // This block is passthrough.
         static_assert(
             Properties::allowsBlockPassthrough == BlockPassthrough::Enable,
             "For LIMIT with passthrough to work, there must be "

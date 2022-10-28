@@ -245,7 +245,7 @@ TEST_P(IdExecutorTestCombiner, test_produce_datarange_singleRowFetcher) {
  * 4) Call limit == data, fullCount: true
  * 5) Unlimited call
  *
- * All other cases are excluded by Passhtrough.
+ * All other cases are excluded by Passthrough.
  *
  * This executor is templated by two fetcher types:
  *   ConstFetcher

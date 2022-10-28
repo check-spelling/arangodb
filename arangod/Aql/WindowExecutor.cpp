@@ -164,7 +164,7 @@ void AccuWindowExecutor::initializeCursor() { resetAggregators(); }
 
 std::tuple<ExecutorState, NoStats, AqlCall> AccuWindowExecutor::produceRows(
     AqlItemBlockInputRange& inputRange, OutputAqlItemRow& output) {
-  // This block is passhthrough.
+  // This block is passthrough.
   static_assert(Properties::allowsBlockPassthrough == BlockPassthrough::Enable,
                 "For WINDOW with passthrough to work, there must be "
                 "exactly enough space for all input in the output.");
