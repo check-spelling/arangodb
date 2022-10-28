@@ -24,7 +24,7 @@
 // In order to implement a new IndexIterator the following functions need to be
 // implemented.
 //
-// typeName() returns a string descibing the type of the indexIterator
+// typeName() returns a string describing the type of the indexIterator
 //
 // The next() function of the IndexIterator expects a callback taking
 // LocalDocumentIds that are created from RevisionIds. In addition it expects a
