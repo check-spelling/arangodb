@@ -991,16 +991,16 @@ bool AnalyzerPool::init(irs::string_ref const& type,
     }
   } catch (basics::Exception& e) {
     LOG_TOPIC("62062", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "': " << e.code() << " "
         << e.what();
   } catch (std::exception& e) {
     LOG_TOPIC("a9196", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("7524a", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "'";
   }
 
@@ -1052,18 +1052,18 @@ AnalyzerPool::CacheType::ptr AnalyzerPool::get() const noexcept {
     return _cache.emplace(_type, _properties);
   } catch (basics::Exception const& e) {
     LOG_TOPIC("c9256", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "': " << e.code() << " "
         << e.what();
   } catch (std::exception& e) {
     LOG_TOPIC("93baf", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("08db9", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "'";
   }
@@ -1787,15 +1787,15 @@ AnalyzerPool::ptr IResearchAnalyzerFeature::get(
     TRI_set_errno(TRI_ERROR_INTERNAL);
   } catch (basics::Exception const& e) {
     LOG_TOPIC("29eff", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "': " << e.code() << " " << e.what();
   } catch (std::exception const& e) {
     LOG_TOPIC("ce8d5", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("5505f", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "'";
   }
 

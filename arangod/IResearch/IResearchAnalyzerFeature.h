@@ -564,7 +564,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   //////////////////////////////////////////////////////////////////////////////
   /// @brief load the analyzers for the specific database, analyzers read from
   ///        the corresponding collection if they have not been loaded yet
-  /// @param database the database to load analizers for (nullptr == all)
+  /// @param database the database to load analyzers for (nullptr == all)
   /// @note on coordinator and db-server reload is also done if the database has
   ///       changed analyzers revision in agency
   //////////////////////////////////////////////////////////////////////////////

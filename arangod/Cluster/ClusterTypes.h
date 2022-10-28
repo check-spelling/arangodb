@@ -141,7 +141,7 @@ struct AnalyzersRevision {
 /// Stores current database revision
 /// and _system database revision (analyzers from _system are accessible from
 /// other databases) If at some point we will decide to allow cross-database
-/// anayzer usage this could became more complicated. But for now  we keep it
+/// analyzer usage this could became more complicated. But for now  we keep it
 /// simple - store just two members
 struct QueryAnalyzerRevisions {
   constexpr QueryAnalyzerRevisions(AnalyzersRevision::Revision current,

@@ -850,7 +850,7 @@ TEST_F(IResearchFilterFunctionTest, Analyzer) {
   // wrong argument type
   assertFilterFail(
       vocbase(),
-      "FOR d IN collection FILTER ANALYZER(d.foo == 'abc', 'invalid analzyer') "
+      "FOR d IN collection FILTER ANALYZER(d.foo == 'abc', 'invalid analyzer') "
       "RETURN d");
   assertFilterFail(
       vocbase(),
@@ -5126,7 +5126,7 @@ TEST_F(IResearchFilterFunctionTest, Phrase) {
                    "FOR d IN myView FILTER phrase(d['name'], [ 'quick' ], "
                    "'invalid_analyzer') RETURN d");
 
-  // wrong analylzer
+  // wrong analyzer
   assertFilterFail(
       vocbase(),
       "FOR d IN myView FILTER analyzer(phrase(d.name, 'quick'), ['d']) RETURN "
