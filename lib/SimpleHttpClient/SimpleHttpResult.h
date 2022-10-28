@@ -220,7 +220,7 @@ class SimpleHttpResult final {
   void addHeaderField(char const*, size_t, char const*, size_t);
 
  protected:
-  // header informtion
+  // header information
   std::string _returnMessage;
   size_t _contentLength;
   int _returnCode;

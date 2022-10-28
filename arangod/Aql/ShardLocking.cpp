@@ -340,7 +340,7 @@ std::vector<ServerID> ShardLocking::getRelevantServers() {
 
 void ShardLocking::serializeIntoBuilder(
     ServerID const& server, arangodb::velocypack::Builder& builder) const {
-  // We NEED to have some lock infomration for every server, wo do not allow
+  // We NEED to have some lock information for every server, wo do not allow
   // servers that are basically not responsible for data here.
   auto lockInfo = _serverToLockTypeToShard.find(server);
   TRI_ASSERT(lockInfo != _serverToLockTypeToShard.end());
