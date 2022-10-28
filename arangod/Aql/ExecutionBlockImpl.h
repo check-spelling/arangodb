@@ -140,7 +140,7 @@ class ExecutionBlockImpl final : public ExecutionBlock {
   // Used in getSome/skipSome implementation. deprecated
   enum class InternalState { FETCH_DATA, FETCH_SHADOWROWS, DONE };
 
-  // Used in execute implmentation
+  // Used in execute implementation
   // Defines the internal state this executor is in.
   enum class ExecState {
     // We need to check the client call to define the next state (inital state)
