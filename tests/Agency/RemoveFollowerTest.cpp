@@ -424,7 +424,7 @@ TEST_F(
       .start(aborts);
 }
 
-TEST_F(RemoveFollowerTest, all_good_should_remove_folower) {
+TEST_F(RemoveFollowerTest, all_good_should_remove_flower) {
   TestStructType createTestStructure = [&](Slice const& s,
                                            std::string const& path) {
     std::unique_ptr<Builder> builder = std::make_unique<Builder>();
