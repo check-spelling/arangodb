@@ -49,7 +49,7 @@ struct adjacencyChecker {
     return (Max > Min) && (1 == (underlying_t(Max) - underlying_t(Min))) &&
            checkAdjacency<Min, Types...>();
   }
-};  // adjacencyCheker
+};  // adjacencyChecker
 
 }  // namespace iresearch
 }  // namespace arangodb
