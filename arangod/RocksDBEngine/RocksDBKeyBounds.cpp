@@ -148,7 +148,7 @@ RocksDBKeyBounds RocksDBKeyBounds::FulltextIndexPrefix(uint64_t objectId,
   internals.reserve(2 * (sizeof(uint64_t) + word.size()) + 1);
   uint64ToPersistent(internals.buffer(), objectId);
   internals.buffer().append(word.data(), word.length());
-  // no sperator byte, so we match all suffixes
+  // no separator byte, so we match all suffixes
 
   internals.separate();
 
