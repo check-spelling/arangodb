@@ -100,7 +100,7 @@
     var hueRange = getHueRange(options.hue),
         hue = randomWithin(hueRange);
 
-    // Instead of storing red as two seperate ranges,
+    // Instead of storing red as two separate ranges,
     // we group them, using negative numbers
     if (hue < 0) {hue = 360 + hue;}
 
