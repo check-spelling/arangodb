@@ -350,7 +350,7 @@ ShadowAqlItemRow createInvalidRow<ShadowAqlItemRow>() {
 TYPED_TEST(AqlItemRowsCommonEqTest, row_eq_operators) {
   using RowType = TypeParam;
   // We use the same value (and shadow row depth) for all rows, so we surely
-  // test identicality.
+  // test identically.
   SharedAqlItemBlockPtr block =
       buildBlock<1>(this->itemBlockManager, {{{0}}, {{0}}});
   SharedAqlItemBlockPtr otherBlock =
