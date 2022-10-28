@@ -801,7 +801,7 @@ const replicatedLogSuite = function () {
       const errorCode = "TargetLeaderInvalid";
       waitFor(replicatedLogSupervisionError(database, logId, errorCode));
 
-      // nothing should have happend
+      // nothing should have happened
       waitFor(replicatedLogIsReady(database, logId, term, servers, leader));
       replicatedLogDeleteTarget(database, logId);
     },
@@ -820,7 +820,7 @@ const replicatedLogSuite = function () {
       const errorCode = "TargetLeaderInvalid";
       waitFor(replicatedLogSupervisionError(database, logId, errorCode));
       //
-      // nothing should have happend
+      // nothing should have happened
       waitFor(replicatedLogIsReady(database, logId, term, servers, leader));
       replicatedLogDeleteTarget(database, logId);
     },

@@ -239,7 +239,7 @@ function vertexCentricIndexSuite() {
       } catch (e) {
         assertEqual(arangodb.errors.ERROR_BAD_PARAMETER.code, e.errorNum);
       }
-      // Nothing happend
+      // Nothing happened
       let after = collection.getIndexes();
       assertEqual(before.length, after.length);
     },
@@ -252,7 +252,7 @@ function vertexCentricIndexSuite() {
       } catch (e) {
         assertEqual(arangodb.errors.ERROR_BAD_PARAMETER.code, e.errorNum);
       }
-      // Nothing happend
+      // Nothing happened
       let after = collection.getIndexes();
       assertEqual(before.length, after.length);
     },
@@ -265,7 +265,7 @@ function vertexCentricIndexSuite() {
       } catch (e) {
         assertEqual(arangodb.errors.ERROR_BAD_PARAMETER.code, e.errorNum);
       }
-      // Nothing happend
+      // Nothing happened
       let after = collection.getIndexes();
       assertEqual(before.length, after.length);
     }
