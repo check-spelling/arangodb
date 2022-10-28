@@ -40,7 +40,7 @@ static_assert(sizeof(uint32_t) == sizeof(unsigned long),
 #elif __linux__
 #include <endian.h>
 #else
-#pragma messsage("unsupported os or compiler")
+#pragma message("unsupported os or compiler")
 #endif
 
 namespace arangodb {
@@ -61,7 +61,7 @@ static constexpr bool isLittleEndian() { return true; }
 static constexpr bool isLittleEndian() { return false; }
 #endif
 #else
-#pragma messsage("unsupported os or compiler")
+#pragma message("unsupported os or compiler")
 #endif
 
 template<typename T, size_t size>
