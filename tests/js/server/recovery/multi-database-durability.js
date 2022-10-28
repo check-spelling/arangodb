@@ -61,7 +61,7 @@ function runSetup () {
         for (i = 0; i < 10000; i += 2) {
           c.remove('test' + i);
         }
-        c.update('test1', { value2: 1 }, { waitForSync: true }); // enfore sync
+        c.update('test1', { value2: 1 }, { waitForSync: true }); // enforce sync
       }
     });
   });
