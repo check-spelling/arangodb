@@ -21,7 +21,7 @@
    field data from its ZIP64 data
                                  It is used when recreting zip archive with RAW
    when deleting items from a zip.
-                                 ZIP64 data is automaticly added to items that
+                                 ZIP64 data is automatically added to items that
    needs it, and existing ZIP64 data need to be removed.
    Oct-2009 - Mathias Svensson - Added support for BZIP2 as compression mode
    (bzip2 lib is required)
