@@ -259,7 +259,7 @@ AstNode* replaceNearOrWithin(AstNode* funAstNode, ExecutionNode* calcNode,
   //  FOR d IN col
   //    SORT DISTANCE(d.lat, d.long, param.lat, param.lon) // NEAR
   //    // FILTER DISTANCE(d.lat, d.long, param.lat, param.lon) < param.radius
-  //    //WHITHIN MERGE(d, { param.distname : DISTANCE(d.lat, d.long, param.lat,
+  //    //WITHIN MERGE(d, { param.distname : DISTANCE(d.lat, d.long, param.lat,
   //    param.lon)}) LIMIT param.limit // NEAR RETURN d MERGE {param.distname :
   //    calculated_distance}
   // )

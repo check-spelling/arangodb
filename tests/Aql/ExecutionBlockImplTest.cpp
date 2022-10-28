@@ -453,7 +453,7 @@ class ExecutionBlockImplExecuteSpecificTest
    * ExecutionBlockImpl.execute(call),
    *
    * @param prod The Produce call that should be used within the Lambda Executor
-   * @param skip The Skip call that should be used wiithin the Lambda Executor
+   * @param skip The Skip call that should be used within the Lambda Executor
    * (only used for non-passthrough)
    * @param call The AqlCall that should be applied on the Executors.
    * @return std::tuple<ExecutionState, size_t, SharedAqlItemBlockPtr>  Response
