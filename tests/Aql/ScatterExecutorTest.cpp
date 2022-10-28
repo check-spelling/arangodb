@@ -636,7 +636,7 @@ TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
   }
   // Every client will ask every block alone.
   ASSERT_EQ(callOrder.size(), clientIds.size() * blockDeque.size());
-  // Now we do all permutation of potentiall call ordering
+  // Now we do all permutation of potentially call ordering
   do {
     auto producer = createProducer(blockDeque);
     ExecutionBlockImpl<ScatterExecutor> testee{
