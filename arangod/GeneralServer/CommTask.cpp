@@ -431,7 +431,7 @@ void CommTask::executeRequest(std::unique_ptr<GeneralRequest> request,
   rest::ContentType const respType = request->contentTypeResponse();
 
   // check if "x-arango-queue-time-seconds" header was set, and its value
-  // is above the current dequeing time
+  // is above the current dequeuing time
   if (::queueTimeViolated(*request)) {
     sendErrorResponse(rest::ResponseCode::PRECONDITION_FAILED, respType,
                       messageId, TRI_ERROR_QUEUE_TIME_REQUIREMENT_VIOLATED);

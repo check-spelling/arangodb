@@ -66,7 +66,7 @@ class SupervisedScheduler final : public Scheduler {
   uint64_t getLastLowPriorityDequeueTime() const noexcept override;
 
   /// @brief set the time it took for the last low prio item to be dequeued
-  /// (time between queuing and dequeing) [ms]
+  /// (time between queuing and dequeuing) [ms]
   void setLastLowPriorityDequeueTime(uint64_t time) noexcept;
 
   constexpr static uint64_t const NumberOfQueues = 4;
@@ -233,7 +233,7 @@ class SupervisedScheduler final : public Scheduler {
   metrics::Gauge<uint64_t>& _ongoingLowPriorityGauge;
 
   /// @brief amount of time it took for the last low prio item to be dequeued
-  /// (time between queuing and dequeing) [ms].
+  /// (time between queuing and dequeuing) [ms].
   /// this metric is only updated probabilistically
   metrics::Gauge<uint64_t>& _metricsLastLowPriorityDequeueTime;
 
