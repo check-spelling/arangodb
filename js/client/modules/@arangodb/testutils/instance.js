@@ -706,7 +706,7 @@ class instance {
     print("waiting for exit - " + this.pid);
     try {
       let ret = statusExternal(this.pid, false);
-      // OK, something has gone wrong, process still alive. anounce and force kill:
+      // OK, something has gone wrong, process still alive. announce and force kill:
       if (ret.status !== "ABORTED") {
         print(RED+`was expecting the process ${this.pid} to be gone, but ${JSON.stringify(ret)}` + RESET);
         killExternal(this.pid, abortSignal);
