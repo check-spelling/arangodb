@@ -802,7 +802,7 @@ auto checkReplicatedLog(SupervisionContext& ctx, Log const& log,
   // Check whether a specific participant is configured in Target to become
   // the leader. This requires that participant to be flagged to always be
   // part of a quorum; once that change is committed, the leader can be
-  // switched if the target.leader participant is healty.
+  // switched if the target.leader participant is healthy.
   //
   // This operation can fail and
   // TODO: Report if leaderInTarget fails.

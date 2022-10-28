@@ -271,7 +271,7 @@ class FailedLeaderTest
         AssertOldEmptyObject(pre.get(path));
       }
       {
-        // New leader is healty
+        // New leader is healthy
         auto path = "/arango/Supervision/Health/" + newLeader + "/Status";
         ASSERT_TRUE(pre.hasKey(path));
         AssertOldIsString(pre.get(path), "GOOD");
