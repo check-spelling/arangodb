@@ -936,7 +936,7 @@ function IResearchFeatureDDLTestSuite () {
       db._dropDatabase(databaseNameView);
       analyzers.remove(systemAnalyzerName, true);
     },
-    // Commented as this situation is not documented (user should not do this), will be adressed later
+    // Commented as this situation is not documented (user should not do this), will be addressed later
     //testLinkWithAnalyzerFromOtherDbByAnalyzerDefinitions: function() {
     //  let databaseNameAnalyzer = "testDatabaseAnalyzer";
     //  let databaseNameView = "testDatabaseView";
