@@ -177,7 +177,7 @@ struct DMIDComputation
    */
   void superstep1(MessageIterator<DMIDMessage> const& messages) {
     float weightedInDegree = 0.0;
-    /** vertices that need a reply containing this vertexs weighted indegree */
+    /** vertices that need a reply containing this vertices weighted indegree */
     std::unordered_set<PregelID> predecessors;
 
     for (DMIDMessage const* message : messages) {
