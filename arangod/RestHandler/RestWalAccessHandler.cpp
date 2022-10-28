@@ -84,7 +84,7 @@ RestWalAccessHandler::RestWalAccessHandler(ArangodServer& server,
 RequestLane RestWalAccessHandler::lane() const {
   std::vector<std::string> suffixes = _request->decodedSuffixes();
   if (ServerState::instance()->isDBServer()) {
-    // If we are on a datqbase server this API can only be called internally.
+    // If we are on a database server this API can only be called internally.
     // Hence, we can give it a different priority. We do not want to do
     // this on a SingleServer as it is not necessary there.
     if (!suffixes.empty() && suffixes[0] == "tail") {
