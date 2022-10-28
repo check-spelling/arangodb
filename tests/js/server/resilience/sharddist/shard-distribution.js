@@ -95,7 +95,7 @@ function ShardDistributionTest({replVersion}) {
     return nr;
   };
 
-  const sortShardsNumericly = function (l, r) {
+  const sortShardsNumerically = function (l, r) {
     return shardNumber(l) - shardNumber(r);
   };
 
@@ -104,8 +104,8 @@ function ShardDistributionTest({replVersion}) {
     const dist = JSON.parse(all.body).results;
     const orig = dist[colName].Current;
     const fol = dist[followCollection].Current;
-    const origShards = Object.keys(orig).sort(sortShardsNumericly);
-    const folShards = Object.keys(fol).sort(sortShardsNumericly);
+    const origShards = Object.keys(orig).sort(sortShardsNumerically);
+    const folShards = Object.keys(fol).sort(sortShardsNumerically);
     // Now we have all shard names sorted in alphabetical ordering.
     // It needs to be guaranteed that leader + follower of each shard in this ordering is identical.
     expect(origShards).to.have.length.of(folShards.length);
