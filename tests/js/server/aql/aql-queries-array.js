@@ -94,7 +94,7 @@ function ArrayIndexSuite () {
     assertEqual(actual.stats.scannedFull, 0);
     assertEqual(actual.json.length, 10);
     for (var i = 0; i < actual.json.length; ++i) {
-      assertEqual(parseInt(actual.json[i]) % 10, 0, "A tenth _key is not divisble by ten: " + actual);
+      assertEqual(parseInt(actual.json[i]) % 10, 0, "A tenth _key is not divisible by ten: " + actual);
     }
 
     bindVars.tag = "duplicate";
@@ -106,7 +106,7 @@ function ArrayIndexSuite () {
     assertEqual(actual.json.length, 34);
     var last = -1;
     for (i = 0; i < actual.length; ++i) {
-      assertEqual(parseInt(actual.json[i]) % 3, 0, "A duplicate _key is not divisble by 3: " + actual);
+      assertEqual(parseInt(actual.json[i]) % 3, 0, "A duplicate _key is not divisible by 3: " + actual);
       assertTrue(last < parseInt(actual.json[i]));
       last = parseInt(actual.json[i]);
     }
@@ -138,7 +138,7 @@ function ArrayIndexSuite () {
     for (var i = 0; i < actual.json.length; ++i) {
       var key = parseInt(actual.json[i]);
       if (key % 3 !== 0) {
-        assertEqual(key % 10, 0, "A tenth _key is not divisble by ten: " + actual.json[i]);
+        assertEqual(key % 10, 0, "A tenth _key is not divisible by ten: " + actual.json[i]);
       }
       assertTrue(last < actual.json[i], last + " < " + actual.json[i]);
       last = actual.json[i];

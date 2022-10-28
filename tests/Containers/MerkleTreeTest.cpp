@@ -1274,7 +1274,7 @@ TEST_F(MerkleTreeGrowTests, test_grow_left_with_shift) {
   // Then we grow to the right until the width is 2^(18+24) = 2^42.
   // The next grow operation after that needs to shift, since then
   // the size of a bucket becomes 2^24 and with the next grow operation
-  // the difference initialRangeMin - rangeMin would no longer be divisble
+  // the difference initialRangeMin - rangeMin would no longer be divisible
   // by the bucket size.
   growLeft(rangeMin - 1);
   for (int i = 0; i < 17; ++i) {
@@ -1391,7 +1391,7 @@ TEST_F(MerkleTreeGrowTests, test_grow_right_with_shift) {
   // Then we grow to the right until the width is 2^(18+24) = 2^42.
   // The next grow operation after that needs to shift, since then
   // the size of a bucket becomes 2^24 and with the next grow operation
-  // the difference initialRangeMin - rangeMin would no longer be divisble
+  // the difference initialRangeMin - rangeMin would no longer be divisible
   // by the bucket size.
   growLeft(rangeMin - 1);
   for (int i = 0; i < 17; ++i) {
