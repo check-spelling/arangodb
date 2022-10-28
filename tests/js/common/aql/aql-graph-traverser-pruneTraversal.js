@@ -248,7 +248,7 @@ function pruneTraversalSuite() {
     };
 
     testObj[`testMultipleCoordinatorParts${name}`] = () => {
-      // This is intendent to test Cluster to/from VPack function of traverser Nodes
+      // This is intended to test Cluster to/from VPack function of traverser Nodes
       // On SingleServer this tests pruning on the startVertex
       const q = `
         WITH ${vn}
