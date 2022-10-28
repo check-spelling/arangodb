@@ -2664,7 +2664,7 @@ const executeParallelQuery = (makeQuery, expectedTotalNumberOfNodes = -1) => {
   }
   assertTrue(expectedResults.size > 0, `Test setup error, non-multithreaded query did not yield any results`);
 
-  // By this time the expected results contains all allowed results, each with an assigend counter of 0.
+  // By this time the expected results contains all allowed results, each with an assigned counter of 0.
   // The target is to assert later, that only those allowed results are seen, and each is seen exactly ${numberOfStartNodes} many times.
   const res = db._query(query);
 
@@ -3062,7 +3062,7 @@ function testSmallCircleFilterOptimization(testGraph) {
   const nonOptimizableFilters = [
     `DOCUMENT(v.docId).color == "blue"`,
     `DOCUMENT(e.docId).color == "blue"`,
-    /* ASSSERT has side-effects on false so it should not be optimized */
+    /* ASSERT has side-effects on false so it should not be optimized */
     `ASSERT(v.color == "blue", "Color is not blue")`,
     `DATE_YEAR(p.vertices[1].timestamp) == DATE_YEAR(DATE_ADD(p.vertices[0].timestamp, 1, "y"))`,
     `DATE_YEAR(p.vertices[1].timestamp) == DATE_YEAR(DATE_ADD(DOCUMENT("${testGraph.vertex('A')}").timestamp, 1, "y"))`

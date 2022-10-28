@@ -146,7 +146,7 @@ int sslRand(int32_t*);
 //////////////////////////////////////////////////////////////////////////
 /// @brief RSA private key signing
 ///
-/// Will return 0 on sucess non-zero else
+/// Will return 0 on success non-zero else
 //////////////////////////////////////////////////////////////////////////
 
 int rsaPrivSign(std::string const& pem, std::string const& msg,

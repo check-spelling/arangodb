@@ -1187,7 +1187,7 @@ ResultT<TRI_voc_tick_t> SynchronizeShard::catchupWithReadLock(
     auto readLockGuard = arangodb::scopeGuard([&, this]() noexcept {
       try {
         // Always cancel the read lock.
-        // Reported seperately
+        // Reported separately
         NetworkFeature& nf = _feature.server().getFeature<NetworkFeature>();
         network::ConnectionPool* pool = nf.pool();
         auto res = cancelReadLockOnLeader(pool, ep, getDatabase(), lockJobId,
@@ -1297,7 +1297,7 @@ Result SynchronizeShard::catchupWithExclusiveLock(
   auto readLockGuard = arangodb::scopeGuard([&, this]() noexcept {
     try {
       // Always cancel the read lock.
-      // Reported seperately
+      // Reported separately
       NetworkFeature& nf = _feature.server().getFeature<NetworkFeature>();
       network::ConnectionPool* pool = nf.pool();
       auto res = cancelReadLockOnLeader(pool, ep, getDatabase(), lockJobId,
@@ -1361,7 +1361,7 @@ Result SynchronizeShard::catchupWithExclusiveLock(
   // if we get a checksum mismatch, it means that we got different counts of
   // documents on the leader and the follower, which can happen if collection
   // counts are off for whatever reason.
-  // under many cicrumstances the counts will have been auto-healed by the
+  // under many circumstances the counts will have been auto-healed by the
   // initial or the incremental replication before, so in many cases we will not
   // even get into this if case
   if (res.is(TRI_ERROR_REPLICATION_WRONG_CHECKSUM)) {

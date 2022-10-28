@@ -395,7 +395,7 @@ void ComputedValues::mergeComputedAttributes(
     if (cv.overwrite() || !keysWritten.contains(cv.name())) {
       // update "failOnWarning" flag for each computation
       cvec.failOnWarning(cv.failOnWarning());
-      // update "name" vlaue for each computation (for errors/warnings)
+      // update "name" value for each computation (for errors/warnings)
       cvec.setName(cv.name());
       // inject document into temporary variable (@doc)
       cvec.setVariable(cv.tempVariable(), input);

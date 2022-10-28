@@ -918,7 +918,7 @@
           d3.select('.dashboard-bar-chart-title .percentage')
             .html(currentA + ' (' + currentP + ' %)');
 
-          d3.select('.dashboard-bar-chart-title .absolut')
+          d3.select('.dashboard-bar-chart-title .absolute')
             .html(data[0]);
 
           nv.utils.windowResize(self.residentChart.update);
@@ -944,7 +944,7 @@
             // update labels
             d3.select('.dashboard-bar-chart-title .percentage')
               .html(currentA + ' (' + currentP + ' %)');
-            d3.select('.dashboard-bar-chart-title .absolut')
+            d3.select('.dashboard-bar-chart-title .absolute')
               .html(data[0]);
 
             // update data

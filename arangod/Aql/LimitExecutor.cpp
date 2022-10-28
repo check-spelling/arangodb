@@ -134,7 +134,7 @@ auto LimitExecutor::produceRows(AqlItemBlockInputRange& inputRange,
   TRI_ASSERT(call.getOffset() == 0);
   while (inputRange.skippedInFlight() > 0 || inputRange.hasDataRow()) {
     if (remainingOffset() > 0) {
-      // First we skip in the input row until we fullfill our local offset.
+      // First we skip in the input row until we fulfill our local offset.
       auto const didSkip = inputRange.skip(remainingOffset());
       // Need to forward the
       _counter += didSkip;
@@ -147,7 +147,7 @@ auto LimitExecutor::produceRows(AqlItemBlockInputRange& inputRange,
       auto numRowsWritten = size_t{0};
 
       while (inputRange.hasDataRow()) {
-        // This block is passhthrough.
+        // This block is passthrough.
         static_assert(
             Properties::allowsBlockPassthrough == BlockPassthrough::Enable,
             "For LIMIT with passthrough to work, there must be "
@@ -214,7 +214,7 @@ auto LimitExecutor::skipRowsRange(AqlItemBlockInputRange& inputRange,
   auto stats = LimitStats{};
   while (inputRange.skippedInFlight() > 0) {
     if (remainingOffset() > 0) {
-      // First we skip in the input row until we fullfill our local offset.
+      // First we skip in the input row until we fulfill our local offset.
       auto const didSkip = inputRange.skip(remainingOffset());
       // Need to forward the
       _counter += didSkip;

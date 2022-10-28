@@ -90,7 +90,7 @@ struct ModificationExecutorInfos {
   ProducesResults _producesResults;
   ConsultAqlWriteFilter _consultAqlWriteFilter;
   IgnoreErrors _ignoreErrors;
-  DoCount _doCount;  // count statisitics
+  DoCount _doCount;  // count statistics
   // bool _returnInheritedResults;
   IsReplace _isReplace;                            // needed for upsert
   IgnoreDocumentNotFound _ignoreDocumentNotFound;  // needed for update replace

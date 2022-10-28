@@ -433,7 +433,7 @@ TEST_F(StoreTestAPI, precondition) {
                                 {"a":{"intersectionEmpty":["pi",3.1415926535]}}]])");
     ASSERT_EQ(consensus::apply_ret_t::APPLIED, res.front());
     res = write(R"([[{"a":[12,"Pi",3.14159265359,true,false]},
-                                  {"a":{"instersectionEmpty":[]}}]])");
+                                  {"a":{"intersectionEmpty":[]}}]])");
     ASSERT_EQ(consensus::apply_ret_t::PRECONDITION_FAILED, res.front());
   }
 }

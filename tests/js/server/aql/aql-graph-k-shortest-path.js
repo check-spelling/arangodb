@@ -157,7 +157,7 @@ const createGraph = () => {
             // source -> v
             e1s.push({_from: source, _to: `${vName}/${key}`, weight});
             if (pathNum < 3) {
-              // Add INBOUND shortcut 0 <- 2 in e2 (we intentionally go to path 6-8 to not interfer with the original paths)
+              // Add INBOUND shortcut 0 <- 2 in e2 (we intentionally go to path 6-8 to not interfere with the original paths)
               e2s.push({_from: `${vName}/vertex_${pathNum + 6}_0`, _to: `${vName}/${key}`, weight});
             }
           } else if (pathNum < 9) {
@@ -196,7 +196,7 @@ const createGraph = () => {
             if (pathNum === 1) {
               const additional = `vertex_${pathNum}_3`;
               vertices.push({_key: additional});
-              // Add an aditional step only on the second path to have differnt path lengths
+              // Add an additional step only on the second path to have different path lengths
               e1s.push({_from: `${vName}/${key}`, _to: `${vName}/${additional}`, weight});
               e1s.push({_from: `${vName}/${additional}`, _to: target, weight});
             } else {

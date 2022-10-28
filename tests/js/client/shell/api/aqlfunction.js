@@ -40,7 +40,7 @@ let api = "/_api/aqlfunction";
 ////////////////////////////////////////////////////////////////////////////////;
 // error handling ;
 ////////////////////////////////////////////////////////////////////////////////;
-function error_handlinSuite () {
+function error_handlingSuite () {
   return {
     test_add_function__without_name: function() {
       let body = "{ \"code\" : \"function () { return 1; }\" }";
@@ -277,7 +277,7 @@ function retrieving_functionSuite () {
   };
 }
 
-jsunity.run(error_handlinSuite);
+jsunity.run(error_handlingSuite);
 jsunity.run(adding_and_deleting_functionSuite);
 jsunity.run(retrieving_functionSuite);
 return jsunity.done();

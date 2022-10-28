@@ -237,7 +237,7 @@ describe('User Rights Management', () => {
                     expect(!rootTestCollection(testEdgeColName)).to.equal(true, 'Graph drop reported success, but edge collection was found afterwards.');
                     expect(!rootTestCollection(testVertexColName)).to.equal(true, 'Graph drop reported success, but vertex collection was found afterwards.');
                   } else {
-                    expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficent rights`);
+                    expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficient rights`);
                   }
                 } else {
                   try {
@@ -288,7 +288,7 @@ describe('User Rights Management', () => {
                     expect(!rootTestCollection(testEdgeColName)).to.equal(true, 'Graph drop reported success, but edge collection was found afterwards.');
                     expect(!rootTestCollection(testVertexColName)).to.equal(true, 'Graph drop reported success, but vertex collection was found afterwards.');
                   } else {
-                    expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficent rights`);
+                    expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficient rights`);
                   }
                 } else {
                   try {

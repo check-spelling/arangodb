@@ -244,19 +244,19 @@ TEST_F(RestAnalyzerHandlerTest, test_create_non_object_body) {
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
 
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
 
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openArray();
   request._payload.close();
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -279,10 +279,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_no_name) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("type", arangodb::velocypack::Value("identity"));
@@ -293,8 +293,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_no_name) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -317,10 +317,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_no_permission) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", VPackValue("unknownVocbase::testAnalyzer"));
@@ -331,8 +331,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_no_permission) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -355,10 +355,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add(
@@ -371,8 +371,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -390,16 +390,16 @@ TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols) {
                slice.get(arangodb::StaticStrings::ErrorNum).getNumber<int>()}));
 }
 
-// TODO: is this the smae test as above?
+// TODO: is this the same test as above?
 TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols_2) {
   grantOnDb(arangodb::StaticStrings::SystemDatabase, arangodb::auth::Level::RW);
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", VPackValue("::testAnalyzer"));
@@ -410,8 +410,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_invalid_symbols_2) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -434,10 +434,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_name_collision) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", arangodb::velocypack::Value("emptyAnalyzer"));
@@ -449,8 +449,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_name_collision) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -473,10 +473,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_duplicate_matching) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", VPackValue("testAnalyzer1"));
@@ -486,8 +486,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_duplicate_matching) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE((slice.hasKey("name") && slice.get("name").isString() &&
                arangodb::StaticStrings::SystemDatabase + "::testAnalyzer1" ==
@@ -506,10 +506,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_not_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", VPackValue("testAnalyzer2"));
@@ -520,8 +520,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_not_authorized) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -544,10 +544,10 @@ TEST_F(RestAnalyzerHandlerTest, test_create_success) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::POST);
   request._payload.openObject();
   request._payload.add("name", arangodb::velocypack::Value("testAnalyzer3"));
@@ -558,8 +558,8 @@ TEST_F(RestAnalyzerHandlerTest, test_create_success) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::CREATED, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE((slice.hasKey("name") && slice.get("name").isString() &&
                arangodb::StaticStrings::SystemDatabase + "::testAnalyzer3" ==
@@ -578,17 +578,17 @@ TEST_F(RestAnalyzerHandlerTest, test_get_static_known) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("identity");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -612,18 +612,18 @@ TEST_F(RestAnalyzerHandlerTest, test_get_static_unknown) {
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   TRI_ASSERT(requestPtr != nullptr);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  TRI_ASSERT(responcePtr != nullptr);
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  TRI_ASSERT(responsePtr != nullptr);
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -646,18 +646,18 @@ TEST_F(RestAnalyzerHandlerTest, test_get_known) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix(arangodb::StaticStrings::SystemDatabase +
                     "::testAnalyzer1");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -690,48 +690,48 @@ TEST_F(RestAnalyzerHandlerTest, test_get_custom) {
     TRI_vocbase_t& vocbase = *dbFeature.useDatabase("FooDb2");
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::iresearch::RestAnalyzerHandler handler(
-        server.server(), requestPtr.release(), responcePtr.release());
+        server.server(), requestPtr.release(), responsePtr.release());
     request.setRequestType(arangodb::rest::RequestType::GET);
     request.addSuffix("FooDb::testAnalyzer1");
 
     auto status = handler.execute();
     EXPECT_EQ(arangodb::RestStatus::DONE, status);
     // user has access but analyzer should not be visible
-    EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
+    EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
   }
   {
     TRI_vocbase_t& vocbase = *dbFeature.useDatabase("FooDb2");
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::iresearch::RestAnalyzerHandler handler(
-        server.server(), requestPtr.release(), responcePtr.release());
+        server.server(), requestPtr.release(), responsePtr.release());
     request.setRequestType(arangodb::rest::RequestType::GET);
     request.addSuffix(arangodb::StaticStrings::SystemDatabase +
                       "::testAnalyzer1");
     auto status = handler.execute();
     EXPECT_EQ(arangodb::RestStatus::DONE, status);
     // system should be visible
-    EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
+    EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
   }
   {
     TRI_vocbase_t& vocbase = *dbFeature.useDatabase("FooDb2");
     auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
     auto& request = *requestPtr;
-    auto responcePtr = std::make_unique<GeneralResponseMock>();
-    auto& responce = *responcePtr;
+    auto responsePtr = std::make_unique<GeneralResponseMock>();
+    auto& response = *responsePtr;
     arangodb::iresearch::RestAnalyzerHandler handler(
-        server.server(), requestPtr.release(), responcePtr.release());
+        server.server(), requestPtr.release(), responsePtr.release());
     request.setRequestType(arangodb::rest::RequestType::GET);
     request.addSuffix("::testAnalyzer1");
     auto status = handler.execute();
     EXPECT_EQ(arangodb::RestStatus::DONE, status);
     // system should be visible
-    EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
+    EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
   }
 }
 
@@ -741,17 +741,17 @@ TEST_F(RestAnalyzerHandlerTest, test_get_known_not_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("testAnalyzer1");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -774,17 +774,17 @@ TEST_F(RestAnalyzerHandlerTest, test_get_unknown_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -807,17 +807,17 @@ TEST_F(RestAnalyzerHandlerTest, test_get_unknown_not_authorized) {
             arangodb::auth::Level::NONE);
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -844,17 +844,17 @@ TEST_F(RestAnalyzerHandlerTest,
                         unknownDBInfo(server.server()));
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -882,17 +882,17 @@ TEST_F(RestAnalyzerHandlerTest,
                         unknownDBInfo(server.server()));
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -915,10 +915,10 @@ TEST_F(RestAnalyzerHandlerTest, test_list_system_database_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
 
   std::set<std::string> expected = {
@@ -941,8 +941,8 @@ TEST_F(RestAnalyzerHandlerTest, test_list_system_database_authorized) {
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -977,10 +977,10 @@ TEST_F(RestAnalyzerHandlerTest, test_list_system_database_not_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
 
   std::set<std::string> expected = {
@@ -990,8 +990,8 @@ TEST_F(RestAnalyzerHandlerTest, test_list_system_database_not_authorized) {
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1035,10 +1035,10 @@ TEST_F(RestAnalyzerHandlerTest, test_list_non_system_database_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
   grantOnDb(
       {{"testVocbase"s, arangodb::auth::Level::RO},
@@ -1065,8 +1065,8 @@ TEST_F(RestAnalyzerHandlerTest, test_list_non_system_database_authorized) {
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1105,10 +1105,10 @@ TEST_F(RestAnalyzerHandlerTest, test_list_non_system_database_not_authorized) {
   TRI_vocbase_t& vocbase = *dbFeature.useDatabase("testVocbase");
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
 
   grantOnDb(
@@ -1135,8 +1135,8 @@ TEST_F(RestAnalyzerHandlerTest, test_list_non_system_database_not_authorized) {
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1174,10 +1174,10 @@ TEST_F(RestAnalyzerHandlerTest,
   TRI_vocbase_t& vocbase = *dbFeature.useDatabase("testVocbase");
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
 
   grantOnDb(
@@ -1203,8 +1203,8 @@ TEST_F(RestAnalyzerHandlerTest,
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1242,10 +1242,10 @@ TEST_F(RestAnalyzerHandlerTest,
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::GET);
 
   grantOnDb(
@@ -1259,8 +1259,8 @@ TEST_F(RestAnalyzerHandlerTest,
   };
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1297,16 +1297,16 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_invalid_params) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::BAD, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1330,17 +1330,17 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_unknown_analyzer) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix("unknown");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::NOT_FOUND, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1364,17 +1364,17 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_not_authorized) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix("testAnalyzer1");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::FORBIDDEN, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1404,10 +1404,10 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_still_in_use) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix("testAnalyzer2");
   request.values().emplace("force", "false");
@@ -1420,8 +1420,8 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_still_in_use) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::CONFLICT, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::CONFLICT, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1450,10 +1450,10 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_still_in_use_force) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix("testAnalyzer2");
   request.values().emplace("force", "true");
@@ -1466,8 +1466,8 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_still_in_use_force) {
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&
@@ -1493,17 +1493,17 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_with_db_name) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix(arangodb::StaticStrings::SystemDatabase +
                     "::testAnalyzer1");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
   auto analyzer =
       analyzers.get(arangodb::StaticStrings::SystemDatabase + "::testAnalyzer1",
                     arangodb::QueryAnalyzerRevisions::QUERY_LATEST);
@@ -1515,17 +1515,17 @@ TEST_F(RestAnalyzerHandlerTest, test_remove_success) {
 
   auto requestPtr = std::make_unique<GeneralRequestMock>(_system_vocbase);
   auto& request = *requestPtr;
-  auto responcePtr = std::make_unique<GeneralResponseMock>();
-  auto& responce = *responcePtr;
+  auto responsePtr = std::make_unique<GeneralResponseMock>();
+  auto& response = *responsePtr;
   arangodb::iresearch::RestAnalyzerHandler handler(
-      server.server(), requestPtr.release(), responcePtr.release());
+      server.server(), requestPtr.release(), responsePtr.release());
   request.setRequestType(arangodb::rest::RequestType::DELETE_REQ);
   request.addSuffix("testAnalyzer1");
 
   auto status = handler.execute();
   EXPECT_EQ(arangodb::RestStatus::DONE, status);
-  EXPECT_EQ(arangodb::rest::ResponseCode::OK, responce.responseCode());
-  auto slice = responce._payload.slice();
+  EXPECT_EQ(arangodb::rest::ResponseCode::OK, response.responseCode());
+  auto slice = response._payload.slice();
   EXPECT_TRUE(slice.isObject());
   EXPECT_TRUE(
       (slice.hasKey(arangodb::StaticStrings::Code) &&

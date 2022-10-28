@@ -1395,7 +1395,7 @@ bool ImportHelper::truncateCollection() {
   }
 
   std::string const url = "/_api/collection/" + _collectionName + "/truncate";
-  std::string data = "";  // never send an completly empty string
+  std::string data = "";  // never send an completely empty string
   std::unique_ptr<SimpleHttpResult> result(_httpClient->request(
       rest::RequestType::PUT, url, data.c_str(), data.size()));
 

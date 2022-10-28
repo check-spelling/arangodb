@@ -396,7 +396,7 @@ function optimizerRuleTestSuite() {
 
     ////////////////////////////////////////////////////////////////////////////////
     /// @brief test in detail that this rule has an effect, but the sort is kept in
-    //    place since the index can't fullfill all of the sorting criteria.
+    //    place since the index can't fulfill all of the sorting criteria.
     ////////////////////////////////////////////////////////////////////////////////
     testSortMoreThanIndexed: function () {
       var query = "FOR v IN " + colName + " FILTER v.a == 1 SORT v.a, v.c RETURN [v.a, v.b, v.c]";
@@ -466,7 +466,7 @@ function optimizerRuleTestSuite() {
     },
 
     ////////////////////////////////////////////////////////////////////////////////
-    /// @brief test in detail that an index range fullfills everything the sort does, 
+    /// @brief test in detail that an index range fulfills everything the sort does, 
     //   and thus the sort is removed.
     ////////////////////////////////////////////////////////////////////////////////
 
@@ -546,7 +546,7 @@ function optimizerRuleTestSuite() {
     },
 
     ////////////////////////////////////////////////////////////////////////////////
-    /// @brief test in detail that an index range fullfills everything the sort does, 
+    /// @brief test in detail that an index range fulfills everything the sort does, 
     //   and thus the sort is removed; multi-dimensional indexes are utilized.
     ////////////////////////////////////////////////////////////////////////////////
 

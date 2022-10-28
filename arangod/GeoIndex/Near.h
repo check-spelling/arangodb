@@ -145,7 +145,7 @@ class NearUtils {
   void estimateDensity(S2Point const& found);
 
   /// Call only when current scan intervals contain no more results
-  /// will internall track already returned intervals and not return
+  /// will internally track already returned intervals and not return
   /// new ones without calling updateBounds
   std::vector<geo::Interval> intervals();
 

@@ -322,7 +322,7 @@ const replicatedLogSuite = function () {
           `Leader has to be one of ${JSON.stringify([followers[0], followers[1]])}, but is ${serverId}`);
 
       }
-      // All docments inserted into the log still have to be readable!
+      // All documents inserted into the log still have to be readable!
       for (const [index, expected] of Object.entries(expectedDocumentsInserted)) {
         assertEqual(log.at(index).payload, expected);
       }
@@ -335,7 +335,7 @@ const replicatedLogSuite = function () {
         assertTrue(quorum.result.quorum.quorum.indexOf(leader) === -1);
       }
 
-      // All docments inserted into the log still have to be readable!
+      // All documents inserted into the log still have to be readable!
       for (const [index, expected] of Object.entries(expectedDocumentsInserted)) {
         assertEqual(log.at(index).payload, expected);
       }
@@ -801,7 +801,7 @@ const replicatedLogSuite = function () {
       const errorCode = "TargetLeaderInvalid";
       waitFor(replicatedLogSupervisionError(database, logId, errorCode));
 
-      // nothing should have happend
+      // nothing should have happened
       waitFor(replicatedLogIsReady(database, logId, term, servers, leader));
       replicatedLogDeleteTarget(database, logId);
     },
@@ -820,7 +820,7 @@ const replicatedLogSuite = function () {
       const errorCode = "TargetLeaderInvalid";
       waitFor(replicatedLogSupervisionError(database, logId, errorCode));
       //
-      // nothing should have happend
+      // nothing should have happened
       waitFor(replicatedLogIsReady(database, logId, term, servers, leader));
       replicatedLogDeleteTarget(database, logId);
     },
@@ -857,7 +857,7 @@ const replicatedLogSuite = function () {
 
 
     // This test excludes all participants from quorum. This is uncommittable. Wait for the leader to complain.
-    // then allow two servers. We exepect the log to commit this config.
+    // then allow two servers. We expect the log to commit this config.
     testExcludeAllServers: function () {
       const {logId, servers} = createReplicatedLogAndWaitForLeader(database);
 

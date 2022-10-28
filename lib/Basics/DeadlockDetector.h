@@ -251,7 +251,7 @@ class DeadlockDetector {
 
       // we ourselves should be present in the threads list
       TRI_ASSERT((*it).second.first.find(tid) != (*it).second.first.end());
-      // if there's only only thread registered, it must be us
+      // if there's only one thread registered, it must be us
       wasLast = ((*it).second.first.size() == 1);
 
       if (!wasLast) {

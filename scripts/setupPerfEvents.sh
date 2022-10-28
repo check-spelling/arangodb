@@ -10,7 +10,7 @@
 #
 #   sudo ./setupPerfEvents.sh
 #
-# Now you are able to recrod the event with:
+# Now you are able to record the event with:
 #
 #   sudo perf record -e "probe_arangod:*" -aR
 #

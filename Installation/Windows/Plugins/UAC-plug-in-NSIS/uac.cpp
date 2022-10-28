@@ -452,7 +452,7 @@ LRESULT CALLBACK OuterWndProc(HWND hwnd,UINT msg,WPARAM wp,LPARAM lp)
 		case SOSI_PROCESSDUPHANDLE:
 			if (!OG().hInnerProcess && lp)
 			{
-				//TODO: Verfiy that this handle has the correct PID?
+				//TODO: Verify that this handle has the correct PID?
 				TRACEF("OWM_SETOUTERSTATE:SOSI_PROCESSDUPHANDLE got %X\n",lp);
 				OG().hInnerProcess=(HANDLE)lp;
 				return 0x666;
@@ -595,7 +595,7 @@ DWORD Inner_InitSharedData()
 		EnablePrivilege(SE_DEBUG_NAME,HadDbgPriv,NULL);
 
 		
-		//The handle we get from ShExecEx can only be syncronized with (NT6+), so we give the outer process a handle with DUP_HANDLE rights so it can give us access to its shared memory
+		//The handle we get from ShExecEx can only be synchronized with (NT6+), so we give the outer process a handle with DUP_HANDLE rights so it can give us access to its shared memory
 		if (0x666!=SendMessage(G().hwndOuter,OWM_SETOUTERSTATE,SOSI_PROCESSDUPHANDLE,(LPARAM)hOuterProcess))return ERROR_INVALID_WINDOW_HANDLE;
 		//Wait for a very unlikely racecond.
 		while(SendMessage(G().hwndOuter,OWM_ISREADYFORINIT,0,0)!=0x666)Sleep(50);

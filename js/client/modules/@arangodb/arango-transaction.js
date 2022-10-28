@@ -135,7 +135,7 @@ exports.ArangoTransaction = ArangoTransaction;
 
 function ArangoTransactionCollection(trx, coll) {
   if (!trx || !coll || !coll.isArangoCollection) {
-    throw "invaliid input";
+    throw "invalid input";
   }
   this._transaction = trx;
   this._collection = coll;

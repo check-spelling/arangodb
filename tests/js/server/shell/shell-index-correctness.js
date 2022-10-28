@@ -263,7 +263,7 @@ function IndexCorrectnessSuite() {
                   "FOR x IN " + cn + " FILTER x.v >= 4 RETURN x").length, 3);
     },
     
-    // RoccksDB engine will use fillIndex outside of transactions
+    // RocksDB engine will use fillIndex outside of transactions
     // we need to test this with >5000 documents
     testFillIndex: function() {
       let arr = [];

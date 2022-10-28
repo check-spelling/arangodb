@@ -45,9 +45,9 @@ using namespace arangodb::aql;
  * This test class is supposed to test
  * the data flow in gather executors.
  * Those executors have the very special case that they have more then 1
- * dependency so those dependencies can be asekd in any order, and it is unclear
+ * dependency so those dependencies can be asked in any order, and it is unclear
  * at which state which dependency returns.
- * They all need to be syncronized in subquery situations.
+ * They all need to be synchronized in subquery situations.
  *
  * This test will combine over all GATHER types that we have.
  * It will NOT check if the returned Rows are correct by the definition
@@ -285,7 +285,7 @@ class ResultMaps {
       TRI_ASSERT(startIndex == 0);
       return 1;
     }
-    // If we get here we are requried to ahve at least one shadowRow
+    // If we get here we are required to ahve at least one shadowRow
     TRI_ASSERT(startIndex < _subqueryData.size());
     {
       auto const& [value, depth] = _subqueryData[startIndex];
@@ -413,7 +413,7 @@ class CommonGatherExecutorTest
 
   /**
    * @brief Generate the data values.
-   *        Every entry in the vector is a seperate subquery run
+   *        Every entry in the vector is a separate subquery run
    *        in the set every possible value is stored exactly once.
    *
    * @param block The block where we inject dependencies
@@ -912,7 +912,7 @@ TEST_P(CommonGatherExecutorTest, skip_main_query_sub_1) {
 /**
  * @brief Simulates:
  * SCATTER
- * EnumerateList (skip over dep 0, requrie data from dep 2)
+ * EnumerateList (skip over dep 0, require data from dep 2)
  * GATHER
  */
 TEST_P(CommonGatherExecutorTest, skip_over_first_branch) {
@@ -944,7 +944,7 @@ TEST_P(CommonGatherExecutorTest, skip_over_first_branch) {
  * EnumerateList (skip 3, produce 2)
  * SubqueryStart
  * SCATTER
- * EnumerateList (skip over dep 0, requrie data from dep 2)
+ * EnumerateList (skip over dep 0, require data from dep 2)
  * GATHER
  */
 TEST_P(CommonGatherExecutorTest, skip_over_subquery) {

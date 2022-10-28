@@ -918,7 +918,7 @@ function complexFilteringSuite() {
         // 2 Edge Lookups (A)
         // 4 Edge Lookups (2 B) (2 D)
         // 2 Primary Lookups (C, F)
-        // It may be that B or D are fetched accidentially
+        // It may be that B or D are fetched accidentally
         // they may be inserted in the vertexToFetch list, which
         // lazy loads all vertices in it.
         if (stats.scannedIndex !== 8) {

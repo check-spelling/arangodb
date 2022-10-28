@@ -139,7 +139,7 @@ std::string ActionDescription::toJson() const {
   return toVelocyPack().toJson();
 }
 
-/// @brief non discrimantory properties.
+/// @brief non discriminatory properties.
 std::shared_ptr<VPackBuilder> const ActionDescription::properties() const {
   return _properties;
 }

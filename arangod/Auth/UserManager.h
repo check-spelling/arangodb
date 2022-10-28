@@ -184,7 +184,7 @@ class UserManager {
   /// Caches permissions and other user info
   UserMap _userCache;
 #ifdef USE_ENTERPRISE
-  /// iterface to external authentication systems like LDAP
+  /// interface to external authentication systems like LDAP
   std::unique_ptr<arangodb::auth::Handler> _authHandler;
 #endif
 };

@@ -195,7 +195,7 @@ class RestVocbaseBaseHandler : public RestBaseHandler {
 
   /**
    * @brief Helper to create a new Transaction for a single collection. The
-   * helper method will will lock the collection accordingly. It will
+   * helper method will lock the collection accordingly. It will
    * additionally check if there is a transaction-id header and will make use of
    * an existing transaction if a transaction id is specified. it can also start
    * a new transaction lazily if requested.

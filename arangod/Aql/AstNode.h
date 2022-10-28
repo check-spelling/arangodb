@@ -644,7 +644,7 @@ std::ostream& operator<<(std::ostream&, arangodb::aql::AstNode const&);
  * If you cannot follow this pattern, for instance if you do not have access
  * to the Ast or to the node's ancestors, then you might be able to get away
  * with temporarily unlocking the node and modifying it in place. This could
- * create correctness issues in our optmization code though, so do this with
+ * create correctness issues in our optimization code though, so do this with
  * extreme caution. The correct way to do this is via the
  * `TEMPORARILY_UNLOCK_NODE(node)` macro. It will relock the node when the macro
  * instance goes out of scope.

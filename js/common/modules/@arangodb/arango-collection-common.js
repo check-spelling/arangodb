@@ -65,7 +65,7 @@ ArangoCollection.STATUS_LOADED = 3;
 ArangoCollection.STATUS_DELETED = 5;
 
 /// note: the following collection statuses are not used by arangod anymore.
-/// they are only here for backwards-compatibility, but they will be rmeoved
+/// they are only here for backwards-compatibility, but they will be removed
 /// in a future version
 ArangoCollection.STATUS_NEW_BORN = 1;
 ArangoCollection.STATUS_UNLOADED = 2;

@@ -991,7 +991,7 @@ class FilterNode : public ExecutionNode {
   Variable const* _inVariable;
 };
 
-/// @brief this is an auxilliary struct for processed sort criteria information
+/// @brief this is an auxiliary struct for processed sort criteria information
 struct SortInformation {
   enum Match {
     unequal,                // criteria are unequal

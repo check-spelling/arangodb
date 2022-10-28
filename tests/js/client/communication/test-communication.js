@@ -585,7 +585,7 @@ function GenericAqlSetupPathSuite(type) {
     }
   };
 
-  // This is list of pairs [name, arnagosh-code, writesData]
+  // This is list of pairs [name, arangosh-code, writesData]
   // We need to run all non-duplicate permutations of these pairs
   const USE_EXCLUSIVE = 1;
   const NON_EXCLUSIVE = 2;
@@ -709,7 +709,7 @@ function GenericAqlSetupPathSuite(type) {
     }
   };
 
-  // We only need to permuate JS and API based tests for a
+  // We only need to permutate JS and API based tests for a
   // single tye, as they do not distinguish the different types
   const lastTypeTestCase = type === "Plain" ? testCases.length : 3;
 

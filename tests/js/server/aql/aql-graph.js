@@ -864,7 +864,7 @@ function ahuacatlQueryNeighborsTestSuite() {
         assertEqual(actual, []);
       }
 
-      // Inclunding Data
+      // Including Data
       actual = getRawQueryResults(queryStart + v3 + queryEndData);
       actual = actual.map(function (x) {
         assertTrue(x.hasOwnProperty("_key"), "Neighbor has a _key");
@@ -927,7 +927,7 @@ function ahuacatlQueryNeighborsTestSuite() {
         assertEqual(actual, []);
       }
 
-      // Inclunding Data
+      // Including Data
       actual = getRawQueryResults(queryStart + v3 + queryEndData);
       actual = actual.map(function (x) {
         assertTrue(x.hasOwnProperty("_key"), "Neighbor has a _key");

@@ -123,7 +123,7 @@ void testTerm(TRI_vocbase_t& vocbase,
     ASSERT_TRUE(result.result.is(TRI_ERROR_BAD_PARAMETER));
   }
 
-  // test invalid input for term (wrong interger in an array)
+  // test invalid input for term (wrong integer in an array)
   {
     auto result = arangodb::tests::executeQuery(
         vocbase,
@@ -860,7 +860,7 @@ void testWildcard(
     ASSERT_TRUE(result.result.is(TRI_ERROR_BAD_PARAMETER));
   }
 
-  // test invalid input for wildcard (wrong interger in an array) via []
+  // test invalid input for wildcard (wrong integer in an array) via []
   {
     auto result = arangodb::tests::executeQuery(
         vocbase,
@@ -1839,7 +1839,7 @@ void testLevenshteinMatch(
     EXPECT_EQ(i, expected.size());
   }
 
-  // test custom analyzer with levenshtein_match via [] via vaiable
+  // test custom analyzer with levenshtein_match via [] via variable
   if (flags & (kAnalyzerTest | kAnalyzerUserTest)) {
     std::vector<arangodb::velocypack::Slice> expected = {
         insertedDocs[6].slice(),  insertedDocs[10].slice(),

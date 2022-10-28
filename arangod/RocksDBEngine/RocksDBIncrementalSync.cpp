@@ -910,7 +910,7 @@ Result handleSyncKeysRocksDB(DatabaseInitialSyncer& syncer,
             }
 
             markers.emplace_back(docKey);
-            // don't bother hashing if we have't found lower key
+            // don't bother hashing if we haven't found lower key
             if (foundLowKey) {
               tempBuilder.clear();
               tempBuilder.add(VPackValue(docKey));

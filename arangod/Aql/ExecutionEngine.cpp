@@ -64,7 +64,7 @@ using namespace arangodb::aql;
 // 2. Limit with fullCount:true cannot be within a subquery.
 // 3. Between the “root()” of the Plan (which in most cases is the RETURN
 //    Node) and the LIMIT with fullCount:true no other LIMIT is allowed
-//    (exception the ContrainedSort case now)
+//    (exception the ConstrainedSort case now)
 struct LimitFullCountChecker final
     : public WalkerWorker<ExecutionNode, WalkerUniqueness::Unique> {
   size_t subqueryRecursionCounter{0};
@@ -121,7 +121,7 @@ struct LimitFullCountChecker final
 }  // namespace
 
 /**
- * @brief Create AQL blocks from a list of ExectionNodes
+ * @brief Create AQL blocks from a list of ExecutionNodes
  * Only works in cluster mode
  *
  * @param nodes The list of Nodes => Blocks
@@ -193,7 +193,7 @@ Result ExecutionEngine::createBlocks(std::vector<ExecutionNode*> const& nodes,
         // send all following requests to the same servers, and not the newly
         // responsible servers.
         // otherwise we potentially would try to get data from a query from
-        // server B while the query was only instanciated on server A.
+        // server B while the query was only instantiated on server A.
         for (auto const& serverToSnippet : serversForRemote->second) {
           std::string const& serverID = serverToSnippet.first;
           for (std::string const& snippetId : serverToSnippet.second) {
@@ -508,7 +508,7 @@ struct DistributedQueryInstanciator final
   /// @brief Builds the Engines necessary for the query execution
   ///        For Coordinator Parts:
   ///        * Creates the ExecutionBlocks
-  ///        * Injects all Parts but the First one into QueryRegistery
+  ///        * Injects all Parts but the First one into QueryRegistry
   ///        For DBServer Parts
   ///        * Creates one Query-Entry for each Snippet per Shard (multiple on
   ///        the same DB) Each Snippet knows all details about locking.
@@ -713,7 +713,7 @@ std::pair<ExecutionState, size_t> ExecutionEngine::skipSome(size_t atMost) {
       AqlCallList{AqlCall::SimulateSkipSome(atMost)}};
   auto const [state, skipped, block] = execute(std::move(compatibilityStack));
   // We cannot be triggered within a subquery from earlier versions.
-  // Also we cannot produce anything ourselfes here.
+  // Also we cannot produce anything ourselves here.
   TRI_ASSERT(block == nullptr);
   return {state, skipped.getSkipCount()};
 }

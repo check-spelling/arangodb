@@ -63,7 +63,7 @@ function loadAgencyConfig() {
 
 
 /**
- * @brief Sort shard keys according to their numbers omitting startign 's'
+ * @brief Sort shard keys according to their numbers omitting starting 's'
  *
  * @param keys      Keys
  */
@@ -141,7 +141,7 @@ function agencyInspector(obj) {
     INFO('    ' + database);
     report.Databases[database] = {};
     if (!plan.Collections.hasOwnProperty(database)) {
-      WARN('found planned database "' + database + '" without planned collectinos');
+      WARN('found planned database "' + database + '" without planned collections');
     }
     if (!current.Databases.hasOwnProperty(database)) {
       WARN('found planned database "' + database + '" missing in "Current"');
@@ -641,7 +641,7 @@ function getServerData(arango) {
       arango.reconnect(current, '_system');
     }
   }
-  INFO('... dignostics collected.');
+  INFO('... diagnostics collected.');
   return report;
 }
 

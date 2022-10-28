@@ -335,7 +335,7 @@ describe('_admin/metrics', () => {
           res[key] = res[key] || {};
           res[key][labels.get("le")] = parseFloat(count);
         } else {
-          // evertyhing else
+          // everything else
           // We ignore other labels for now.
           res[key] = parseFloat(count);
         }

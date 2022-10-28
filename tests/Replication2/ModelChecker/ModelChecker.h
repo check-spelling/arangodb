@@ -575,7 +575,7 @@ struct RandomEnumerator {
     // weaknesses. It'd be much better to use a splittable PRNG like the one
     // proposed in https://doi.org/10.1145/2578854.2503784.
     // Additionally, I guess using only 32bit random numbers might be too small,
-    // so maybe using at least std::mt19937_64 would be preferrable - but I
+    // so maybe using at least std::mt19937_64 would be preferable - but I
     // didn't want to touch RandomGenerator/RandomDevice for now.
 
     auto gen = std::mt19937(randomParameters.seed);

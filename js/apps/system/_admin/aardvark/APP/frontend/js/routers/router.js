@@ -141,7 +141,7 @@
             this.documentView.cleanupEditor();
           }
 
-          if (this.lastRoute === '#dasboard' || window.location.hash.substr(0, 5) === '#node') {
+          if (this.lastRoute === '#dashboard' || window.location.hash.substr(0, 5) === '#node') {
             // dom graph cleanup
             d3.selectAll('svg > *').remove();
           }

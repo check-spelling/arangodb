@@ -301,7 +301,7 @@ Sometimes there may be a need to create your own type info system. This may be u
 
 [section Getting type infos at runtime]
 [type_index_my_type_index_register_class]
-[type_index_my_type_index_type_id_runtime_implmentation]
+[type_index_my_type_index_type_id_runtime_implementation]
 [type_index_my_type_index_type_id_runtime_classes]
 [type_index_my_type_index_type_id_runtime_test]
 [endsect]

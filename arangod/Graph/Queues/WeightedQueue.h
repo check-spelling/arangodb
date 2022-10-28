@@ -64,7 +64,7 @@ class WeightedQueue {
     // the correct position in the heap (incl. rebalancing of other elements)
     // The heap structure guarantees that the first element in the queue
     // is the "largest" element (in our case it is the smallest, as we inverted
-    // the comperator)
+    // the comparator)
     std::push_heap(_queue.begin(), _queue.end(), _cmpHeap);
   }
 
@@ -92,7 +92,7 @@ class WeightedQueue {
     if (!isEmpty()) {
       // The heap structure guarantees that the first element in the queue
       // is the "largest" element (in our case it is the smallest, as we
-      // inverted the comperator)
+      // inverted the comparator)
       auto const& first = _queue.front();
       return first.isProcessable();
     }

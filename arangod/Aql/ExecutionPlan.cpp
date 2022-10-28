@@ -751,7 +751,7 @@ ExecutionNode* ExecutionPlan::createCalculation(Variable* out,
 
   // cppcheck-suppress knownConditionTrueFalse
   if (containsCollection) {
-    // we found at least one occurence of NODE_TYPE_COLLECTION
+    // we found at least one occurrence of NODE_TYPE_COLLECTION
     // now replace them with proper (FOR doc IN collection RETURN doc)
     // subqueries
     auto visitor = [this, &previous](AstNode* node) {
@@ -1521,7 +1521,7 @@ ExecutionNode* ExecutionPlan::fromNodeFilter(ExecutionNode* previous,
 
     // note: if isTrue() is false above, it is not necessarily the case that
     // isFalse() is true next. The reason is that isTrue() and isFalse() only
-    // return true in case of absolulete certainty. this requires expressions
+    // return true in case of absolute certainty. this requires expressions
     // to be based on query compile-time values only, but it will not work
     // for expressions that need to be evaluated at query runtime
     if (expression->isFalse()) {

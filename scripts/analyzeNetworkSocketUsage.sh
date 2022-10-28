@@ -2,7 +2,7 @@
 # we first count open sockets in total on the system:
 echo "open sockets: "
 F="/tmp/$$_netstat.log"
-# we store it in a temporary file, since gatherng this information may become expensive if
+# we store it in a temporary file, since gathering this information may become expensive if
 # its more then some thousand connections:
 netstat -n |grep ^tcp > $F
 C=$(wc -l < "$F")
@@ -17,7 +17,7 @@ if test "$C" -gt 1024; then
         # count the connections to one ip:port
 	SC=$(grep "$sockets" $F |wc -l)
 	if test "$SC" -gt "16"; then
-            # if the connection outoes a sane figure, we want to count & output them:
+            # if the connection outputs a sane figure, we want to count & output them:
 	    echo "$sockets - $SC"
             # and here we want to know which processes are attached to them.
             # this will output one line per active connection, so this may become much:

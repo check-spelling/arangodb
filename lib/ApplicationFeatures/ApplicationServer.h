@@ -58,7 +58,7 @@ namespace application_features {
 //
 // `collectOptions`
 //
-// Creates the prgramm options for a feature. Features are not
+// Creates the program options for a feature. Features are not
 // allowed to open files or sockets, create threads or allocate
 // other resources. This method will be called regardless of whether
 // to feature is enabled or disabled. There is no defined order in
@@ -388,7 +388,7 @@ class ApplicationServerT : public ApplicationServer {
   }
 
   // Returns true if a feature denoted by `Feature` is created before other
-  // feautures denoted by `OtherFeatures`.
+  // features denoted by `OtherFeatures`.
   template<typename Feature, typename... OtherFeatures>
   static constexpr bool isCreatedAfter() noexcept {
     return (std::greater{}(id<Feature>(), id<OtherFeatures>()) && ...);

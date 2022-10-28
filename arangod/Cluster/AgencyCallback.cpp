@@ -205,7 +205,7 @@ bool AgencyCallback::executeByCallbackOrTimeout(double maxTimeout) {
     // the timeout to occur
     if (!_cv.wait(static_cast<uint64_t>(maxTimeout * 1000000.0))) {
       LOG_TOPIC("1514e", DEBUG, Logger::CLUSTER)
-          << "Waiting done and nothing happended. Refetching to be sure";
+          << "Waiting done and nothing happened. Refetching to be sure";
       // mop: watches have not triggered during our sleep...recheck to be sure
       refetchAndUpdate(false, true);  // Force a check
       return true;

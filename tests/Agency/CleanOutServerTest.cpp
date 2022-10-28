@@ -453,7 +453,7 @@ TEST_F(CleanOutServerTest,
 }
 
 TEST_F(CleanOutServerTest,
-       cleanout_server_should_fail_if_replicatation_factor_is_too_big_2) {
+       cleanout_server_should_fail_if_replication_factor_is_too_big_2) {
   TestStructureType createTestStructure = [&](VPackSlice const& s,
                                               std::string const& path) {
     std::unique_ptr<VPackBuilder> builder;
@@ -500,7 +500,7 @@ TEST_F(CleanOutServerTest,
 }
 
 TEST_F(CleanOutServerTest,
-       cleanout_server_should_fail_if_replicatation_factor_is_too_big_3) {
+       cleanout_server_should_fail_if_replication_factor_is_too_big_3) {
   TestStructureType createTestStructure = [&](VPackSlice const& s,
                                               std::string const& path) {
     std::unique_ptr<VPackBuilder> builder;

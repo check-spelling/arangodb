@@ -169,7 +169,7 @@ Future<network::Response> beginTransactionRequest(TransactionState& state,
                                    reqOpts, std::move(headers));
 }
 
-/// check the transaction cluster response with desited TID and status
+/// check the transaction cluster response with desired TID and status
 Result checkTransactionResult(TransactionId desiredTid,
                               transaction::Status desStatus,
                               network::Response const& resp) {
@@ -489,7 +489,7 @@ Future<Result> beginTransactionOnLeaders(
     // Run slowPath
     for (ServerID const& leader : leaders) {
 #ifdef ARANGODB_ENABLE_MAINTAINER_MODE
-      // If the serverBefore has a smaller ID we allways contact by increasing
+      // If the serverBefore has a smaller ID we always contact by increasing
       // ID here.
       TRI_ASSERT(TransactionState::ServerIdLessThan(serverBefore, leader));
       serverBefore = leader;

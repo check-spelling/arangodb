@@ -79,7 +79,7 @@ function testSuite() {
     },
     
     testInstallViaFoxxAPIOld: function() {
-      // note: installing from Github is still allowed here
+      // note: installing from GitHub is still allowed here
       const urls = [
         "http://some.other.domain/foo/bar",
         "https://some.other.domain/foo/bar",
@@ -102,7 +102,7 @@ function testSuite() {
     },
     
     testInstallViaFoxxAPINew: function() {
-      // note: installing from Github is still allowed here
+      // note: installing from GitHub is still allowed here
       const urls = [
         "http://some.other.domain/foo/bar",
         "https://some.other.domain/foo/bar",

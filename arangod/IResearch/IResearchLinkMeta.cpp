@@ -537,7 +537,7 @@ bool FieldMeta::json(ArangodServer& server, velocypack::Builder& builder,
   if (!mask || mask->_fields) {  // fields are not inherited from parent
     velocypack::Builder fieldsBuilder;
     Mask fieldMask(true);      // output all non-matching fields
-    auto subDefaults = *this;  // make modifable copy
+    auto subDefaults = *this;  // make modifiable copy
 
     subDefaults._fields
         .clear();  // do not inherit fields and overrides from this field
@@ -566,7 +566,7 @@ bool FieldMeta::json(ArangodServer& server, velocypack::Builder& builder,
   if (!_nested.empty()) {
     velocypack::Builder fieldsBuilder;
     Mask fieldMask(true);      // output all non-matching fields
-    auto subDefaults = *this;  // make modifable copy
+    auto subDefaults = *this;  // make modifiable copy
     fieldsBuilder.openObject();
 
     for (auto& entry : _nested) {

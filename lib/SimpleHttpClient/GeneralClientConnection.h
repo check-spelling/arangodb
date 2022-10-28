@@ -210,7 +210,7 @@ class GeneralClientConnection {
   //////////////////////////////////////////////////////////////////////////////
 
   virtual bool readClientConnection(arangodb::basics::StringBuffer&,
-                                    bool& porgress) = 0;
+                                    bool& progress) = 0;
 
   //////////////////////////////////////////////////////////////////////////////
   /// @brief return whether the connection is readable

@@ -55,7 +55,7 @@ class BackupFeature : public ArangoBackupFeature {
 
   /**
    * @brief Construct a list of the valid operations, using the given separator
-   * @return A strifigied list of valid operations
+   * @return A stringified list of valid operations
    */
   static std::string operationList(std::string const& separator);
 

@@ -239,7 +239,7 @@ void ApplicationServer::initiateSoftShutdown() {
   LOG_TOPIC("aa452", TRACE, Logger::STARTUP)
       << "ApplicationServer::initiateSoftShutdown";
 
-  // fowards the begin shutdown signal to all features
+  // forwards the begin shutdown signal to all features
   for (auto it = _orderedFeatures.rbegin(); it != _orderedFeatures.rend();
        ++it) {
     ApplicationFeature& feature = it->get();
@@ -290,7 +290,7 @@ void ApplicationServer::beginShutdown() {
 
   // now we can execute the actual shutdown sequence
 
-  // fowards the begin shutdown signal to all features
+  // forwards the begin shutdown signal to all features
   for (auto it = _orderedFeatures.rbegin(); it != _orderedFeatures.rend();
        ++it) {
     ApplicationFeature& feature = it->get();

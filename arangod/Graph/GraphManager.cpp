@@ -819,7 +819,7 @@ Result GraphManager::checkCreateGraphPermissions(Graph const* graph) const {
     for (auto const& it : graph->edgeCollections()) {
       if (!checkCollectionAccess(it)) {
         return {TRI_ERROR_FORBIDDEN,
-                "Createing Graphs requires RW access on the database (" +
+                "Creating Graphs requires RW access on the database (" +
                     databaseName + ")"};
       }
     }
@@ -828,7 +828,7 @@ Result GraphManager::checkCreateGraphPermissions(Graph const* graph) const {
     for (auto const& it : graph->vertexCollections()) {
       if (!checkCollectionAccess(it)) {
         return {TRI_ERROR_FORBIDDEN,
-                "Createing Graphs requires RW access on the database (" +
+                "Creating Graphs requires RW access on the database (" +
                     databaseName + ")"};
       }
     }
@@ -837,7 +837,7 @@ Result GraphManager::checkCreateGraphPermissions(Graph const* graph) const {
         << logprefix << "No write access to " << databaseName << "."
         << StaticStrings::GraphCollection;
     return {TRI_ERROR_ARANGO_READ_ONLY,
-            "Createing Graphs requires RW access on the database (" +
+            "Creating Graphs requires RW access on the database (" +
                 databaseName + ")"};
   }
 

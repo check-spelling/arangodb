@@ -601,7 +601,7 @@ double valueToNumber(VPackSlice const& slice, bool& isValid) {
         }
         ++behind;
       }
-      // A string only containing whitespae-characters is valid and should
+      // A string only containing whitespace-characters is valid and should
       // return 0.0
       // It throws in std::stod
       isValid = true;
@@ -2125,7 +2125,7 @@ AqlValue functions::FindLast(ExpressionContext* expressionContext,
   }
 
   maxEnd = uBuf.length();
-  int emptySearchCludge = 0;
+  int emptySearchKludge = 0;
   if (parameters.size() == 4) {
     AqlValue const& optionalEndMax =
         extractFunctionParameterValue(parameters, 3);
@@ -2134,12 +2134,12 @@ AqlValue functions::FindLast(ExpressionContext* expressionContext,
       if ((maxEnd < startOffset) || (maxEnd < 0)) {
         return AqlValue(AqlValueHintInt(-1));
       }
-      emptySearchCludge = 1;
+      emptySearchKludge = 1;
     }
   }
 
   if (searchLen == 0) {
-    return AqlValue(AqlValueHintInt(maxEnd + emptySearchCludge));
+    return AqlValue(AqlValueHintInt(maxEnd + emptySearchKludge));
   }
   if (uBuf.length() == 0) {
     return AqlValue(AqlValueHintInt(-1));
@@ -2850,7 +2850,7 @@ AqlValue functions::Substitute(ExpressionContext* expressionContext,
     // lastStart is the place up to we searched the source string
     lastStart = pos + mLen;
 
-    // we try to search the next occurance of this string
+    // we try to search the next occurrence of this string
     auto& search = searchVec[which];
     pos = search->next(status);
     if (U_FAILURE(status)) {
@@ -3307,7 +3307,7 @@ AqlValue functions::Split(ExpressionContext* expressionContext, AstNode const&,
 
     if ((copyThisTime > 0) &&
         ((copyThisTime == nrResults) || isEmptyExpression)) {
-      // ICU will give us a traling empty string we don't care for if we split
+      // ICU will give us a trailing empty string we don't care for if we split
       // with empty strings.
       copyThisTime--;
     }
@@ -3328,7 +3328,7 @@ AqlValue functions::Split(ExpressionContext* expressionContext, AstNode const&,
       totalCount++;
     }
 
-    if (((uCount != nrResults)) ||  // fetch any / found less then N
+    if (((uCount != nrResults)) ||  // fetch any / found less than N
         ((limitNumber >= 0) && (totalCount >= limitNumber))) {  // fetch N
       break;
     }
@@ -3336,7 +3336,7 @@ AqlValue functions::Split(ExpressionContext* expressionContext, AstNode const&,
     if (uCount == nrResults) {
       valueToSplit = uResults[nrResults - 1];
     } else {
-      // should not go beyound the last match!
+      // should not go beyond the last match!
       TRI_ASSERT(false);
       break;
     }
@@ -3520,7 +3520,7 @@ AqlValue functions::RegexSplit(ExpressionContext* expressionContext,
 
     if ((copyThisTime > 0) &&
         ((copyThisTime == nrResults) || isEmptyExpression)) {
-      // ICU will give us a traling empty string we don't care for if we split
+      // ICU will give us a trailing empty string we don't care for if we split
       // with empty strings.
       copyThisTime--;
     }
@@ -3540,7 +3540,7 @@ AqlValue functions::RegexSplit(ExpressionContext* expressionContext,
       totalCount++;
     }
 
-    if (uCount != nrResults ||  // fetch any / found less then N
+    if (uCount != nrResults ||  // fetch any / found less than N
         (limitNumber >= 0 && totalCount >= limitNumber)) {  // fetch N
       break;
     }
@@ -3548,7 +3548,7 @@ AqlValue functions::RegexSplit(ExpressionContext* expressionContext,
     if (uCount == nrResults) {
       valueToSplit = uResults[nrResults - 1];
     } else {
-      // should not go beyound the last match!
+      // should not go beyond the last match!
       TRI_ASSERT(false);
       break;
     }
@@ -4403,7 +4403,7 @@ AqlValue functions::DateCompare(ExpressionContext* expressionContext,
   // Otherwise we fall down to the next part.
   // As soon as we are below the endRange
   // we bail out.
-  // So all Fall throughs here are intentional
+  // So all Fallthroughs here are intentional
   switch (rangeStart) {
     case YEAR:
       // Always check for the year

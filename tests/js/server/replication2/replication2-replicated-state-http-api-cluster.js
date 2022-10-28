@@ -184,7 +184,7 @@ const replicatedStateSuite = function (stateType) {
         // Explicitly set the leader, just use the existing one
         const result = setLeader(database, stateId, leader);
         assertEqual({}, result);
-        // Wait for it to trickle down the the log target
+        // Wait for it to trickle down the log target
         lh.waitFor(lpreds.replicatedLogLeaderTargetIs(database, stateId, leader));
         // The plan shouldn't have changed
         assertTrue(lpreds.replicatedLogLeaderPlanIs(database, stateId, leader));

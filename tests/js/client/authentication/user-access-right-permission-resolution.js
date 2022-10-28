@@ -116,7 +116,7 @@ function PermissionResolutionSuite () {
 /// @brief test creating a new user
 ////////////////////////////////////////////////////////////////////////////////
 
-    testAcessLevelFallbacks : function () {
+    testAccessLevelFallbacks : function () {
       for (const user of userSet) {
         createUser(user);
 

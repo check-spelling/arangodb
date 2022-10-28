@@ -101,7 +101,7 @@ class Syncer : public std::enable_shared_from_this<Syncer> {
     double time() const noexcept { return _time; }
 
    private:
-    /// @brief the shared syncer we use to check if sychronization was
+    /// @brief the shared syncer we use to check if synchronization was
     /// externally aborted
     std::shared_ptr<Syncer const> _syncer;
 

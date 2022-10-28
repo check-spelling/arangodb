@@ -746,7 +746,7 @@ ProcessInfo TRI_ProcessInfoH(HANDLE processHandle, TRI_pid_t pid) {
   if (GetProcessMemoryInfo(processHandle, (PPROCESS_MEMORY_COUNTERS)&pmc,
                            pmc.cb)) {
     result._majorPageFaults = pmc.PageFaultCount;
-    // there is not any corresponce to minflt in linux
+    // there is not any corresponse to minflt in linux
     result._minorPageFaults = 0;
 
     // from MSDN:
@@ -1528,7 +1528,7 @@ bool TRI_SuspendExternalProcess(ExternalId pid) {
 
 bool TRI_ContinueExternalProcess(ExternalId pid) {
   LOG_TOPIC("45884", DEBUG, arangodb::Logger::FIXME)
-      << "continueing process: " << pid._pid;
+      << "continuing process: " << pid._pid;
 
 #ifndef _WIN32
   return 0 == kill(pid._pid, SIGCONT);

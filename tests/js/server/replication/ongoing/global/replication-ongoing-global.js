@@ -163,7 +163,7 @@ const compare = function (leaderFunc, leaderFunc2, followerFuncOngoing, follower
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Base Test Config. Identitical part for _system and other DB
+// / @brief Base Test Config. Identical part for _system and other DB
 // //////////////////////////////////////////////////////////////////////////////
 
 function BaseTestConfig () {
@@ -1288,7 +1288,7 @@ function ReplicationOtherDBSuite () {
           }
           internal.wait(0.5, false);
         }
-        assertFalse(true, 'required condition not satisified: ' + String(cb));
+        assertFalse(true, 'required condition not satisfied: ' + String(cb));
       };
 
       setupReplication();
@@ -1441,6 +1441,6 @@ jsunity.run(ReplicationOtherDBSuite);
 
 // TODO Add test for:
 // Accessing globalApplier in non system database.
-// Try to setup global repliaction in non system database.
+// Try to setup global replication in non system database.
 
 return jsunity.done();

@@ -198,7 +198,7 @@ var searchJson = function (name) {
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief searchs for an available Foxx services
+// / @brief searches for an available Foxx services
 // //////////////////////////////////////////////////////////////////////////////
 
 var search = function (name) {
@@ -303,7 +303,7 @@ function availableJson (matchEngine) {
 // //////////////////////////////////////////////////////////////////////////////
 
 var update = function () {
-  let url = utils.buildGithubUrl(getFishbowlUrl());
+  let url = utils.buildGitHubUrl(getFishbowlUrl());
   let filename = fs.getTempFile('bundles', false);
   let internal = require('internal');
     
@@ -437,7 +437,7 @@ var installationInfo = function (serviceInfo) {
   if (!versionInfo.type) {
     url = versionInfo.location;
   } else if (versionInfo.type === 'github') {
-    url = utils.buildGithubUrl(versionInfo.location, versionInfo.tag);
+    url = utils.buildGitHubUrl(versionInfo.location, versionInfo.tag);
   } else {
     throw new Error(`Unknown location type ${versionInfo.type}`);
   }

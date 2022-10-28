@@ -165,7 +165,7 @@ class TestLambdaSkipExecutor;
 
 /*
  *  Determine whether an executor cannot bypass subquery skips.
- *  This is if exection of this Executor does have side-effects
+ *  This is if execution of this Executor does have side-effects
  *  other then it's own result.
  */
 
@@ -737,8 +737,8 @@ auto ExecutionBlockImpl<Executor>::executeFetcher(ExecutionContext& ctx,
   } else if constexpr (executorHasSideEffects<Executor>) {
     // If the executor has side effects, we cannot bypass any subqueries
     // by skipping them. So we need to fetch all shadow rows in order to
-    // trigger this Executor with everthing from above.
-    // NOTE: The Executor needs to discard shadowRows, and do the accouting.
+    // trigger this Executor with everything from above.
+    // NOTE: The Executor needs to discard shadowRows, and do the accounting.
     static_assert(std::is_same_v<AqlCall, std::decay_t<decltype(aqlCall)>>);
     auto fetchAllStack = ctx.stack.createEquivalentFetchAllShadowRowsStack();
     fetchAllStack.pushCall(
@@ -1076,7 +1076,7 @@ auto ExecutionBlockImpl<Executor>::shadowRowForwardingSubqueryEnd(
     // need to forward them
     return ExecState::SHADOWROWS;
   } else if (_outputItemRow->isFull()) {
-    // Fullfilled the call
+    // Fulfilled the call
     // Need to return!
     return ExecState::DONE;
   } else {
@@ -1265,10 +1265,10 @@ auto ExecutionBlockImpl<Executor>::executeFastForward(
  *
  * We progress within the states in the following way:
  *   There is a nextState method that determines the next state based on the
- * call, it can only lead to: SKIP, PRODUCE, FASTFORWAD, DONE
+ * call, it can only lead to: SKIP, PRODUCE, FASTFORWARD, DONE
  *
  *   On the first call we will use nextState to get to our starting point.
- *   After any of SKIP, PRODUCE,, FASTFORWAD, DONE We either go to
+ *   After any of SKIP, PRODUCE,, FASTFORWARD, DONE We either go to
  *   1. FASTFORWARD (if executor is done)
  *   2. DONE (if output is full)
  *   3. UPSTREAM if executor has More, (Invariant: input fully consumed)
@@ -1377,7 +1377,7 @@ ExecutionBlockImpl<Executor>::executeWithoutTrace(
       // We get woken up on upstream, but we have not reported our
       // local skip value to downstream
       // In the sideEffect executor we need to apply the skip values on the
-      // incomming stack, which has not been modified yet.
+      // incoming stack, which has not been modified yet.
       // NOTE: We only apply the skipping on subquery level.
       TRI_ASSERT(_skipped.subqueryDepth() == ctx.stack.subqueryLevel() + 1);
       for (size_t i = 0; i < ctx.stack.subqueryLevel(); ++i) {
@@ -2109,7 +2109,7 @@ auto ExecutionBlockImpl<Executor>::testInjectInputRange(DataRange range,
   _lastRange = std::move(range);
   _skipped = skipped;
   if constexpr (std::is_same_v<Fetcher, MultiDependencySingleRowFetcher>) {
-    // Make sure we have initialized the Fetcher / Dependencides properly
+    // Make sure we have initialized the Fetcher / Dependencies properly
     initOnce();
     // Now we need to initialize the SkipCounts, to simulate that something
     // was skipped.
@@ -2123,7 +2123,7 @@ ExecutionBlockImpl<Executor>::ExecutionContext::ExecutionContext(
     ExecutionBlockImpl& block, AqlCallStack const& callstack)
     : stack(callstack), clientCallList(this->stack.popCall()) {
   if constexpr (std::is_same_v<Executor, SubqueryEndExecutor>) {
-    // In subqeryEndExecutor we actually manage two calls.
+    // In subqueryEndExecutor we actually manage two calls.
     // The clientCall defines what will go into the Executor.
     // on SubqueryEnd this call is generated based on the call from downstream
 

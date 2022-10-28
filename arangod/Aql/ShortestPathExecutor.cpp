@@ -230,7 +230,7 @@ auto ShortestPathExecutor::fetchPath(AqlItemBlockInputRange& input) -> bool {
   return false;
 }
 auto ShortestPathExecutor::pathLengthAvailable() -> size_t {
-  // Subtraction must not undeflow
+  // Subtraction must not underflow
   TRI_ASSERT(_posInPath <= _path->length());
   return _path->length() - _posInPath;
 }
@@ -299,7 +299,7 @@ bool ShortestPathExecutor::getVertexId(
           builder.clear();
           builder.add(VPackValue(idString));
           id = builder.slice();
-          // Guranteed by extractIdValue
+          // Guaranteed by extractIdValue
           TRI_ASSERT(::isValidId(id));
         } catch (...) {
           // _id or _key not present... ignore this error and fall through

@@ -574,7 +574,7 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
   }
 
   auto planId() const -> std::string {
-    // This is a gobal collection known in the test files.
+    // This is a global collection known in the test files.
     // It is required to have 6 shards, 2 per DBServer
     return "2010088";
   }
@@ -701,8 +701,8 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
 
   // Will take leadership in plan
   // Asserts that dbName and planId exists in plan
-  // NOTE: The plan already contians leadersip of SELF so this is a noop besides
-  // assertions.
+  // NOTE: The plan already contains leadership of SELF so this is a noop
+  // besides assertions.
   auto takeLeadershipPlan(std::string const& dbName, std::string const& planId,
                           Node& plan) -> void {
     return setLeadershipPlan(dbName, planId, PLAN_LEADERSHIP_TYPE::SELF, plan);
@@ -811,7 +811,7 @@ class MaintenanceTestActionPhaseOne : public SharedMaintenanceTest {
 
   // Modify the internal collection type in Plan.
   // This is basically used to simulate a Database Upgrade
-  // as the value is not modifyable by the user.
+  // as the value is not modifiable by the user.
   auto changeInternalCollectionTypePlan(
       std::string const& dbName, std::string const& planId,
       LogicalCollection::InternalValidatorType type, Node& plan) -> void {

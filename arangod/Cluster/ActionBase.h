@@ -185,7 +185,7 @@ class ActionBase {
     return std::chrono::system_clock::time_point() + _actionDone.load();
   }
 
-  /// @brief check if worker lables match ours
+  /// @brief check if worker labels match ours
   bool matches(std::unordered_set<std::string> const& options) const;
 
   std::string const static FAST_TRACK;

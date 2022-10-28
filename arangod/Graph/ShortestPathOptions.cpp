@@ -152,8 +152,8 @@ void ShortestPathOptions::toVelocyPackIndexes(VPackBuilder& builder) const {
 double ShortestPathOptions::estimateCost(size_t& nrItems) const {
   size_t baseCreateItems = 0;
   double baseCost = costForLookupInfoList(_baseLookupInfos, baseCreateItems);
-  // We use the "seven-degrees-of-seperation" rule.
-  // This theory asumes that the shortest path is at most 7 steps of length
+  // We use the "seven-degrees-of-separation" rule.
+  // This theory assumes that the shortest path is at most 7 steps of length
 
   nrItems = static_cast<size_t>(std::pow(baseCreateItems, 7));
   return std::pow(baseCost, 7);
@@ -220,7 +220,7 @@ void ShortestPathOptions::fetchVerticesCoordinator(ListType const& vertexIds) {
 auto ShortestPathOptions::estimateDepth() const noexcept -> uint64_t {
   // We certainly have no clue how the depth actually is.
   // So we return a "random" number here.
-  // By the six degrees of seperation rule, which defines most vertices in a
+  // By the six degrees of separation rule, which defines most vertices in a
   // naturally created graph are 6 steps away from each other, 7 seems to be a
   // quite good worst-case estimate.
   return 7;

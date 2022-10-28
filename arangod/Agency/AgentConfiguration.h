@@ -100,7 +100,7 @@ struct config_t {
   /// @brief move constructor
   config_t(config_t&&) = delete;
 
-  /// @brief assignement operator
+  /// @brief assignment operator
   config_t& operator=(config_t const&);
 
   /// @brief move assignment operator
@@ -239,10 +239,10 @@ struct config_t {
   /// @brief
   std::string startup() const;
 
-  /// @brief Update an indivdual uuid's endpoint
+  /// @brief Update an individual uuid's endpoint
   bool updateEndpoint(std::string const&, std::string const&);
 
-  /// @brief Update configuration with an other
+  /// @brief Update configuration with another
   void updateConfiguration(velocypack::Slice other);
 };
 

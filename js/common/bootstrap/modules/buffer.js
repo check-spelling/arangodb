@@ -692,22 +692,22 @@ global.DEFINE_MODULE('buffer', (function () {
    *  - invert all the bits
    *  - add one to the result
    *
-   * Of course, this doesn't quite work in Javascript. Take for example the value
+   * Of course, this doesn't quite work in JavaScript. Take for example the value
    * of -128. This could be represented in 16 bits (big-endian) as 0xff80. But of
-   * course, Javascript will do the following:
+   * course, JavaScript will do the following:
    *
    * > ~0xff80
    * -65409
    *
-   * Whoh there, Javascript, that's not quite right. But wait, according to
-   * Javascript that's perfectly correct. When Javascript ends up seeing the
+   * Whoh there, JavaScript, that's not quite right. But wait, according to
+   * JavaScript that's perfectly correct. When JavaScript ends up seeing the
    * constant 0xff80, it has no notion that it is actually a signed number. It
    * assumes that we've input the unsigned value 0xff80. Thus, when it does the
    * binary negation, it casts it into a signed value, (positive 0xff80). Then
    * when you perform binary negation on that, it turns it into a negative number.
    *
    * Instead, we're going to have to use the following general formula, that works
-   * in a rather Javascript friendly way. I'm glad we don't support this kind of
+   * in a rather JavaScript friendly way. I'm glad we don't support this kind of
    * weird numbering scheme in the kernel.
    *
    * (BIT-MAX - (unsigned)val + 1) * -1
@@ -879,7 +879,7 @@ global.DEFINE_MODULE('buffer', (function () {
    *      we do the following computation:
    *         mb + val + 1, where
    *         mb   is the maximum unsigned value in that byte size
-   *         val  is the Javascript negative integer
+   *         val  is the JavaScript negative integer
    *
    *
    * As a concrete value, take -128. In signed 16 bits this would be 0xff80. If

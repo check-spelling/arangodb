@@ -274,7 +274,7 @@ void LoggerFeature::collectOptions(std::shared_ptr<ProgramOptions> options) {
                                           arangodb::options::Flags::Dynamic));
 
   options->addOption(
-      "--log.force-direct", "do not start a seperate thread for logging",
+      "--log.force-direct", "do not start a separate thread for logging",
       new BooleanParameter(&_forceDirect),
       arangodb::options::makeDefaultFlags(arangodb::options::Flags::Uncommon));
 

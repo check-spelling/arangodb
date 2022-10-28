@@ -2,7 +2,7 @@
 /*global assertEqual */
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief tests for query language, tenary operator
+/// @brief tests for query language, ternary operator
 ///
 /// @file
 ///

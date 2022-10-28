@@ -896,7 +896,7 @@ void ClusterInfo::loadClusterId() {
   }
 }
 
-/// @brief create a new collecion object from the data, using the cache if
+/// @brief create a new collection object from the data, using the cache if
 /// possible
 ClusterInfo::CollectionWithHash ClusterInfo::buildCollection(
     bool isBuilding, AllCollections::const_iterator existingCollections,
@@ -3559,11 +3559,11 @@ Result ClusterInfo::createCollectionsCoordinator(
     precs.emplace_back(AgencyPrecondition("Plan/Version",
                                           AgencyPrecondition::Type::VALUE,
                                           versionBuilder.slice()));
-    // * not in to be cleaned server list
+    // * not in to-be-cleaned-server list
     precs.emplace_back(AgencyPrecondition(
         "Target/ToBeCleanedServers",
         AgencyPrecondition::Type::INTERSECTION_EMPTY, serversBuilder.slice()));
-    // * not in cleaned server list
+    // * not in cleaned-server list
     precs.emplace_back(AgencyPrecondition(
         "Target/CleanedServers", AgencyPrecondition::Type::INTERSECTION_EMPTY,
         serversBuilder.slice()));
@@ -3720,7 +3720,7 @@ Result ClusterInfo::createCollectionsCoordinator(
 
       if (res.successful()) {
         // Note that this is not strictly necessary, just to avoid an
-        // unneccessary request when we're sure that we don't need it anymore.
+        // unnecessary request when we're sure that we don't need it anymore.
         deleteCollectionGuard.cancel();
         if (VPackSlice resultsSlice = res.slice().get("results");
             resultsSlice.length() > 0) {
@@ -3792,8 +3792,8 @@ Result ClusterInfo::createCollectionsCoordinator(
       return TRI_ERROR_SHUTTING_DOWN;
     }
 
-    // Wait for Callbacks to be triggered, it is sufficent to wait for the first
-    // non, done
+    // Wait for Callbacks to be triggered, it is sufficient to wait for the
+    // first non, done
     TRI_ASSERT(agencyCallbacks.size() == infos.size());
     for (size_t i = 0; i < infos.size(); ++i) {
       if (infos[i].state == ClusterCollectionCreationState::INIT) {
@@ -7473,7 +7473,7 @@ int32_t AnalyzerModificationTransaction::getPendingCount() noexcept {
 AnalyzersRevision::Revision AnalyzerModificationTransaction::buildingRevision()
     const noexcept {
   TRI_ASSERT(_buildingRevision !=
-             AnalyzersRevision::LATEST);  // unstarted transation access
+             AnalyzersRevision::LATEST);  // unstarted transaction access
   return _buildingRevision;
 }
 

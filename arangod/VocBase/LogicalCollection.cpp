@@ -778,7 +778,7 @@ Result LogicalCollection::appendVPack(velocypack::Builder& build,
     build.add(StaticStrings::DataSourceDeleted, VPackValue(deleted()));
     build.add(StaticStrings::DataSourceSystem, VPackValue(system()));
   }
-  // TODO is this still releveant or redundant in keyGenerator?
+  // TODO is this still relevant or redundant in keyGenerator?
   build.add(StaticStrings::AllowUserKeys, VPackValue(_allowUserKeys));
 
   // keyoptions

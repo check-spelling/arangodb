@@ -112,7 +112,7 @@ auto AqlExecuteResult::fromVelocyPack(velocypack::Slice const slice,
     using namespace std::string_literals;
     return Result(
         TRI_ERROR_TYPE_ERROR,
-        "When deserializating AqlExecuteResult: Expected object, got "s +
+        "When deserializing AqlExecuteResult: Expected object, got "s +
             slice.typeName());
   }
 

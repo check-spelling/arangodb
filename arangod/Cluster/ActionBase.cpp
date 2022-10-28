@@ -78,7 +78,7 @@ ActionBase::~ActionBase() = default;
 
 void ActionBase::notify() {
   LOG_TOPIC("df020", DEBUG, Logger::MAINTENANCE)
-      << "Job " << _description << " notifing maintenance";
+      << "Job " << _description << " notifying maintenance";
   auto& server = _feature.server();
   if (server.hasFeature<ClusterFeature>()) {
     server.getFeature<ClusterFeature>().notify();
@@ -237,7 +237,7 @@ void ActionBase::toVelocyPack(VPackBuilder& builder) const {
     _description.toVelocyPack(builder);
   }
 
-}  // MaintanceAction::toVelocityPack
+}  // MainstanceAction::toVelocityPack
 
 VPackBuilder ActionBase::toVelocyPack() const {
   VPackBuilder builder;

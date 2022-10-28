@@ -178,7 +178,7 @@ void assertDistanceFunctionFail(char const* x, char const* y,
   }
 }
 
-TEST(DistanceFuncton, CosineSimilarityTest) {
+TEST(DistanceFunction, CosineSimilarityTest) {
   // preparing
   arangodb::aql::AstNode node(NODE_TYPE_FCALL);
   arangodb::aql::Function f("COSINE_SIMILARITY", &functions::CosineSimilarity);
@@ -248,7 +248,7 @@ TEST(DistanceFuncton, CosineSimilarityTest) {
                              node);
 }
 
-TEST(DistanceFuncton, L1DistanceTest) {
+TEST(DistanceFunction, L1DistanceTest) {
   // preparing
   arangodb::aql::AstNode node(NODE_TYPE_FCALL);
   arangodb::aql::Function f("L1_DISTANCE", &functions::L1Distance);
@@ -273,7 +273,7 @@ TEST(DistanceFuncton, L1DistanceTest) {
   assertDistanceFunctionFail("[[1,1,1,1]]", "[[1,1,1,1]]", node);
 }
 
-TEST(DistanceFuncton, L2DistanceTest) {
+TEST(DistanceFunction, L2DistanceTest) {
   // preparing
   arangodb::aql::AstNode node(NODE_TYPE_FCALL);
   arangodb::aql::Function f("L2_DISTANCE", &functions::L2Distance);

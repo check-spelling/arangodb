@@ -321,8 +321,8 @@ Result arangodb::registerUserFunction(TRI_vocbase_t& vocbase,
       VPackSlice oldSlice = result.slice().get(StaticStrings::Old);
       replacedExisting = !(oldSlice.isNone() || oldSlice.isNull());
     }
-    // Will commit if no error occured.
-    // or abort if an error occured.
+    // Will commit if no error occurred.
+    // or abort if an error occurred.
     // result stays valid!
     res = trx.finish(result.result);
   }

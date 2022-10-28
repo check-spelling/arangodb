@@ -42,7 +42,7 @@ using namespace arangodb::pregel::algos;
 struct SLPAWorkerContext : public WorkerContext {
   uint32_t mod = 1;
   void preGlobalSuperstep(uint64_t gss) override {
-    // lets switch the order randomly, but ensure equal listenting time
+    // lets switch the order randomly, but ensure equal listening time
     if (gss % 2 == 0) {
       mod = RandomGenerator::interval(UINT32_MAX);
     }
@@ -95,7 +95,7 @@ struct SLPAComputation : public VertexComputation<SLPAValue, int8_t, uint64_t> {
     }
 
     // Normally the SLPA algo only lets one vertex by one listen sequentially,
-    // which is not really well parallizable. Additionally I figure
+    // which is not really well parallelizable. Additionally I figure
     // since a speaker only speaks to neighbours and the speaker order is random
     // we can get away with letting some nodes listen in turn
     SLPAWorkerContext const* ctx =

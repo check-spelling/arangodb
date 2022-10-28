@@ -79,7 +79,7 @@ class InputRangeTest : public AqlExecutorTestCase<> {
             value.emplace_back(i);
           }
         } else {
-          // We alternate between dependendies to emplace rows
+          // We alternate between dependenties to emplace rows
           chosenRows[depNr % _numberDependencies].emplace_back(i);
           ++depNr;
         }

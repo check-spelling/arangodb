@@ -834,7 +834,7 @@ std::shared_ptr<transaction::Context> Manager::leaseManagedTrx(
       if (isSideUser) {
         // number of side users is atomically increased under the bucket's read
         // lock. due to us holding the bucket's read lock here, there can be no
-        // other threads concurrently aborting/commiting the transaction (these
+        // other threads concurrently aborting/committing the transaction (these
         // operations acquire the write lock on the transaction's bucket).
         mtrx.sideUsers.fetch_add(1, std::memory_order_relaxed);
         // note: we are intentionally _not_ acquiring the lock on the
@@ -918,7 +918,7 @@ void Manager::returnManagedTrx(TransactionId tid, bool isSideUser) noexcept {
     if (isSideUser) {
       // number of side users is atomically decreased under the bucket's read
       // lock. due to us holding the bucket's read lock here, there can be no
-      // other threads concurrently aborting/commiting the transaction (these
+      // other threads concurrently aborting/committing the transaction (these
       // operations acquire the write lock on the transaction's bucket).
       auto previous =
           it->second.sideUsers.fetch_sub(1, std::memory_order_relaxed);

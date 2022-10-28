@@ -172,8 +172,8 @@ describe('User Rights Management', () => {
                   'to': [ testVertexColName ]
                 }]);
                 expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
               } else {
                 try {
                   graphModule._create(testGraphName, [{
@@ -184,7 +184,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                 }
-                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
               }
             });
 
@@ -203,8 +203,8 @@ describe('User Rights Management', () => {
                   'to': [ testVertexColName ]
                 }]);
                 expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
               } else {
                 try {
                   graphModule._create(testGraphName, [{
@@ -219,7 +219,7 @@ describe('User Rights Management', () => {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
                 }
-                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
               }
             });
           });

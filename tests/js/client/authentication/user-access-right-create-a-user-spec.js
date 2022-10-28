@@ -118,7 +118,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                 }
-                expect(rootTestUser()).to.equal(false, `${name} was able to create a user with insufficent rights`);
+                expect(rootTestUser()).to.equal(false, `${name} was able to create a user with insufficient rights`);
               }
             });
           });

@@ -93,7 +93,7 @@ arangodb::Result writeSettings(VPackSlice slice, rocksdb::WriteBatch& batch) {
 
 namespace arangodb {
 
-/// Constructor needs to be called synchrunously,
+/// Constructor needs to be called synchronously,
 /// will load counts from the db and scan the WAL
 RocksDBSettingsManager::RocksDBSettingsManager(RocksDBEngine& engine)
     : _engine(engine),

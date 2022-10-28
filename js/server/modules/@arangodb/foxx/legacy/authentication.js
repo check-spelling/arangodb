@@ -220,11 +220,11 @@ function createStandardChangePasswordHandler (users, opts) {
 
   return function (req, res) {
     var password = req.body()[options.passwordField],
-      successfull = false;
+      successful = false;
 
     if (is.existy(req.currentSession)) {
-      successfull = users.setPassword(req.currentSession.identifier, password);
-      if (successfull) {
+      successful = users.setPassword(req.currentSession.identifier, password);
+      if (successful) {
         options.onSuccess(req, res);
       } else {
         options.onError(req, res);
@@ -620,7 +620,7 @@ function Sessions (applicationContext, options) {
   this._applicationContext = applicationContext;
   this._options = options || {};
 
-  if (!this._options.hasOwnProperty('minUpdateResoultion')) {
+  if (!this._options.hasOwnProperty('minUpdateResolution')) {
     this._options.minUpdateResolution = 10;
   }
 

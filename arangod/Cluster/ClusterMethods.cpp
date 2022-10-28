@@ -288,7 +288,7 @@ const char* notFoundSlice =
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief merge the baby-object results. (all shards version)
-///        results contians the result from all shards in any order.
+///        results contains the result from all shards in any order.
 ///        resultBody will be cleared and contains the merged result after this
 ///        function
 ///        errorCounter will correctly compute the NOT_FOUND counter, all other
@@ -2360,7 +2360,7 @@ void fetchVerticesFromEngines(
   // TODO map id => ServerID if possible
   // And go fast-path
 
-  // slow path, sharding not deducable from _id
+  // slow path, sharding not deductible from _id
   transaction::BuilderLeaser leased(&trx);
   leased->openObject();
   leased->add("keys", VPackValue(VPackValueType::Array));
@@ -4339,11 +4339,11 @@ arangodb::Result hotBackupCoordinator(ClusterFeature& feature,
       // About this code:
       // it first creates async requests to lock all dbservers.
       //    the corresponding lock ids are stored int the map lockJobIds.
-      // Then we continously abort all trx while checking all the above jobs
+      // Then we continuously abort all trx while checking all the above jobs
       //    for completion.
       // If a job was completed then its id is removed from lockJobIds
       //  and the server is added to the lockedServers list.
-      // Once lockJobIds is empty or an error occured we exit the loop
+      // Once lockJobIds is empty or an error occurred we exit the loop
       //  and continue on the normal path (as if all servers would have been
       //  locked or error-exit)
 

@@ -357,7 +357,7 @@ class LogicalCollection : public LogicalDataSource {
 
   /// @brief Persist the connected physical collection.
   ///        This should be called AFTER the collection is successfully
-  ///        created and only on Sinlge/DBServer
+  ///        created and only on Single/DBServer
   void persistPhysicalCollection();
 
   /// lock protecting the status and name
@@ -455,7 +455,7 @@ class LogicalCollection : public LogicalDataSource {
   // @brief Collection type
   TRI_col_type_e const _type;
 
-  // @brief Current state of this colletion
+  // @brief Current state of this collection
   std::atomic<TRI_vocbase_col_status_e> _status;
 
   /// @brief is this a global collection on a DBServer

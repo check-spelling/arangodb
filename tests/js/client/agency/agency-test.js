@@ -750,7 +750,7 @@ function agencyTestSuite () {
                                     {"a":{"intersectionEmpty":["pi",3.1415926535]}}]]);
       assertEqual(res.statusCode, 200);
       res = accessAgency("write", [[{"a":[12,"Pi",3.14159265359,true,false]},
-                                    {"a":{"instersectionEmpty":[]}}]]);
+                                    {"a":{"intersectionEmpty":[]}}]]);
       assertEqual(res.statusCode, 412);
 
     },

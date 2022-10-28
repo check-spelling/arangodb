@@ -120,8 +120,8 @@ class PatternTestWrapper {
 /// Where to split is defined by the piecesBitMap handed it.
 /// If the `n-th` bit piecesBitMap is set, we will add a split after Row `n`.
 /// e.g. we will now have a block from 0 -> n and a block from n+1 -> end
-/// we can apply multiple of these splits, ulimate case, split block into single
-/// line blocks.
+/// we can apply multiple of these splits, ultimate case, split block into
+/// single line blocks.
 static std::vector<std::pair<arangodb::aql::ExecutionState,
                              arangodb::aql::SharedAqlItemBlockPtr>>
 CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
@@ -234,7 +234,7 @@ CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
       testing::Range(static_cast<uint64_t>(0),                                \
                      static_cast<uint64_t>(std::pow(2, 3))));
 
-// Section Third Pattern, 1 input, and alternating relevant irrelvant shadow
+// Section Third Pattern, 1 input, and alternating relevant irrelevant shadow
 // rows
 #define TEST_SHADOWROW_PATTERN_3(FetcherWrapper, TestName)                    \
   class TestName : public testing::TestWithParam<uint64_t> {                  \
@@ -282,7 +282,7 @@ CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
       testing::Range(static_cast<uint64_t>(0),                                \
                      static_cast<uint64_t>(std::pow(2, 4))));
 
-// Section Foruth Pattern, 1 input, and alternating relevant irrelvant shadow
+// Section Fourth Pattern, 1 input, and alternating relevant irrelevant shadow
 // rows
 #define TEST_SHADOWROW_PATTERN_4(FetcherWrapper, TestName)                    \
   class TestName : public testing::TestWithParam<uint64_t> {                  \

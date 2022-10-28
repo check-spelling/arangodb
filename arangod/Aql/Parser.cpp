@@ -118,7 +118,7 @@ void Parser::parse() {
   TRI_ASSERT(scopes->numActive() == 0);
 }
 
-/// @brief parse the query and retun parse details
+/// @brief parse the query and return parse details
 QueryResult Parser::parseWithDetails() {
   parse();
 

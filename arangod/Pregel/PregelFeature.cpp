@@ -389,7 +389,7 @@ void PregelFeature::validateOptions(std::shared_ptr<ProgramOptions> options) {
                                              _minParallelism, _maxParallelism);
 
     LOG_TOPIC("5a607", WARN, Logger::PREGEL)
-        << "invalid values for Pregel paralellism values. adjusting them to: "
+        << "invalid values for Pregel parallelism values. adjusting them to: "
            "min: "
         << _minParallelism << ", max: " << _maxParallelism
         << ", default: " << _defaultParallelism;

@@ -154,7 +154,7 @@ function BaseTestConfig() {
 
               assertEqual("p", traversal.pathOutVariable.name);
               // execute the queries but don't check the results.
-              // we execute the queries here to ensure that there are no runtime crashses (e.g.
+              // we execute the queries here to ensure that there are no runtime crashes (e.g.
               // nullptr accesses due to optimized-away path variables etc.)
               let result = db._query(query, bind).toArray();
               assertTrue(Array.isArray(result));

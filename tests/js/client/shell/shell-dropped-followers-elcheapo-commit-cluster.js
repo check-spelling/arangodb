@@ -171,7 +171,7 @@ function dropFollowersElCheapoSuite() {
       }
 
       // Now the follower is in the knownServers list and each shard has
-      // got some documents written with a high likelyhood
+      // got some documents written with a high likelihood
       // Now activate a failure point on the leader to make it drop a follower
       // with the next request:
       switchConnectionToLeader(collInfo);
@@ -244,7 +244,7 @@ function dropFollowersElCheapoSuite() {
       }
 
       // Now the follower is in the knownServers list and each shard has
-      // got some documents written with a high likelyhood
+      // got some documents written with a high likelihood
       // Now activate a failure point on the leader to make it drop a follower
       // with the next request:
       switchConnectionToLeader(collInfo);

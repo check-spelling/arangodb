@@ -3048,7 +3048,7 @@ void RocksDBEngine::getStatistics(VPackBuilder& builder) const {
     addIntAllCf(rocksdb::DB::Properties::kCompressionRatioAtLevelPrefix +
                 std::to_string(i));
   }
-  // caution:  you must read rocksdb/db/interal_stats.cc carefully to
+  // caution:  you must read rocksdb/db/internal_stats.cc carefully to
   //           determine if a property is for whole database or one column
   //           family
   addIntAllCf(rocksdb::DB::Properties::kNumImmutableMemTable);

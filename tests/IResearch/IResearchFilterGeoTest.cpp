@@ -277,7 +277,7 @@ TEST_F(IResearchFilterGeoFunctionsTest, GeoIntersects) {
       R"(FOR d IN myView FILTER GEO_INTERSECTS(d['name'], {foo:[1,2]}) RETURN d)");
   assertFilterFail(
       vocbase(),
-      R"(FOR d IN myView FILTER GEO_INTERSECTS(d['name'], { "type": "Pointt", "coordinates": [ 1, 2 ] }) RETURN d)");
+      R"(FOR d IN myView FILTER GEO_INTERSECTS(d['name'], { "type": "Point_", "coordinates": [ 1, 2 ] }) RETURN d)");
 }
 
 TEST_F(IResearchFilterGeoFunctionsTest, GeoContains) {
@@ -440,7 +440,7 @@ TEST_F(IResearchFilterGeoFunctionsTest, GeoContains) {
       R"(FOR d IN myView FILTER GEO_CONTAINS(d['name'], {foo:[1,2]}) RETURN d)");
   assertFilterFail(
       vocbase(),
-      R"(FOR d IN myView FILTER GEO_CONTAINS(d['name'], { "type": "Pointt", "coordinates": [ 1, 2 ] }) RETURN d)");
+      R"(FOR d IN myView FILTER GEO_CONTAINS(d['name'], { "type": "Point_", "coordinates": [ 1, 2 ] }) RETURN d)");
 }
 
 TEST_F(IResearchFilterGeoFunctionsTest, GeoDistance) {
@@ -798,7 +798,7 @@ TEST_F(IResearchFilterGeoFunctionsTest, GeoDistance) {
       R"(FOR d IN myView FILTER GEO_DISTANCE(d['name'], {foo:[1,2]}) < 5000 RETURN d)");
   assertExpressionFilter(
       vocbase(),
-      R"(FOR d IN myView FILTER GEO_DISTANCE(d['name'], { "type": "Pointt", "coordinates": [ 1, 2 ] }) < 5000 RETURN d)");
+      R"(FOR d IN myView FILTER GEO_DISTANCE(d['name'], { "type": "Point_", "coordinates": [ 1, 2 ] }) < 5000 RETURN d)");
 
   // wrong distance
   assertExpressionFilter(
@@ -1082,7 +1082,7 @@ TEST_F(IResearchFilterGeoFunctionsTest, GeoInRange) {
       R"(FOR d IN myView FILTER GEO_IN_RANGE(d.name, true, 0, 5000, true, true) RETURN d)");
   assertFilterFail(
       vocbase(),
-      R"(FOR d IN myView FILTER GEO_IN_RANGE(d.name, { "type": "Pointt", "coordinates": [ 1, 2 ] }, 0, 5000, true, true) RETURN d)");
+      R"(FOR d IN myView FILTER GEO_IN_RANGE(d.name, { "type": "Point_", "coordinates": [ 1, 2 ] }, 0, 5000, true, true) RETURN d)");
 
   // wrong third arg
   assertFilterFail(

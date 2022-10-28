@@ -113,7 +113,7 @@ function test_custom_vertex_accumulator_not_defined() {
   return finalResult;
 }
 
-/* returns a program that compputes the vertex degree of every vertex */
+/* returns a program that computes the vertex degree of every vertex */
 function global_accumulators_test_program(resultField) {
   return {
     resultField: resultField,

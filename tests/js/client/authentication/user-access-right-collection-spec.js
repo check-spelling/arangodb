@@ -149,7 +149,7 @@ describe('User Rights Management', () => {
                   } catch (e) {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
-                  expect(rootTestCollection()).to.equal(false, `${name} was able to create a collection with insufficent rights`);
+                  expect(rootTestCollection()).to.equal(false, `${name} was able to create a collection with insufficient rights`);
                 }
               });
             });
@@ -175,7 +175,7 @@ describe('User Rights Management', () => {
                   } catch (e) {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
-                  expect(rootTestCollection()).to.equal(true, `${name} was able to drop a collection with insufficent rights`);
+                  expect(rootTestCollection()).to.equal(true, `${name} was able to drop a collection with insufficient rights`);
                 }
               });
             });

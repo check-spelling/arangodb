@@ -80,7 +80,7 @@ struct TestAttributeX : public irs::attribute {
 };
 
 REGISTER_ATTRIBUTE(TestAttributeX);  // required to open reader on segments with
-                                     // analized fields
+                                     // analyzed fields
 
 struct TestAttributeY : public irs::attribute {
   static constexpr irs::string_ref type_name() noexcept {
@@ -89,7 +89,7 @@ struct TestAttributeY : public irs::attribute {
 };
 
 REGISTER_ATTRIBUTE(TestAttributeY);  // required to open reader on segments with
-                                     // analized fields
+                                     // analyzed fields
 
 class TestAnalyzer : public irs::analysis::analyzer {
  public:
@@ -545,7 +545,7 @@ TEST_F(IResearchIndexTest, test_async_index) {
     EXPECT_TRUE(viewImpl->properties(updateJson->slice(), true, false).ok());
   }
 
-  // `catch` doesn't support cuncurrent checks
+  // `catch` doesn't support concurrent checks
   bool resThread0 = false;
   bool resThread1 = false;
 

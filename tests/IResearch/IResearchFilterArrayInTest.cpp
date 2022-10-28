@@ -1705,8 +1705,8 @@ TEST_F(IResearchFilterArrayInTest, BinaryIn) {
                         expected);
   }
 
-  // Auxilary check lambdas. Need them to check root part of expected filterd
-  // direct == check is not possible as we will have byExpresssion filters
+  // Auxilary check lambdas. Need them to check root part of expected filtered
+  // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkAny = [](irs::Or& actual, irs::score_t boost) {
     EXPECT_EQ(1, actual.size());
@@ -1776,7 +1776,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryIn) {
     for (auto caseData : testCases) {
       const auto& queryString = caseData.first;
       SCOPED_TRACE(
-          testing::Message("Testing with non-determenistic value. Query: ")
+          testing::Message("Testing with non-deterministic value. Query: ")
           << queryString);
       std::string const refName = "d";
 
@@ -3715,8 +3715,8 @@ TEST_F(IResearchFilterArrayInTest, BinaryNotIn) {
         "analyzer(boost(x NONE != d.a.b.c.e.f, 3.5), 'test_analyzer') RETURN d",
         expected, &ctx);
   }
-  // Auxilary check lambdas. Need them to check root part of expected filterd
-  // direct == check is not possible as we will have byExpresssion filters
+  // Auxilary check lambdas. Need them to check root part of expected filtered
+  // direct == check is not possible as we will have byExpression filters
   // generated on the fly
   auto checkNotAny = [](irs::Or& actual, irs::score_t boost) {
     EXPECT_EQ(1, actual.size());

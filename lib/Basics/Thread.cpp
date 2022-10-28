@@ -263,7 +263,7 @@ void Thread::shutdown() {
       TRI_DetachThread(&_thread);
     } else {
 #ifdef __APPLE__
-      // MacOS does not provide an implemenation of pthread_timedjoin_np which
+      // MacOS does not provide an implementation of pthread_timedjoin_np which
       // is used in TRI_JoinThreadWithTimeout, so instead we simply wait for
       // _state to be set to STOPPED.
 

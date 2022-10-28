@@ -233,12 +233,12 @@ describe('User Rights Management', () => {
                     tasks.register(task);
                     wait(keySpaceId, name);
                     expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                    expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                    expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                    expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                    expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
                   } else {
                     tasks.register(task);
                     wait(keySpaceId, name);
-                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
                   }
                 } else {
                   try {
@@ -280,12 +280,12 @@ describe('User Rights Management', () => {
                     tasks.register(task);
                     wait(keySpaceId, `${name}_existing_collections`);
                     expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                    expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                    expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                    expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                    expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
                   } else {
                     tasks.register(task);
                     wait(keySpaceId, `${name}_existing_collections`);
-                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficent rights`);
+                    expect(rootTestGraph()).to.equal(false, `${name} was able to create a graph with insufficient rights`);
                   }
                 } else {
                   try {

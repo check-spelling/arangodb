@@ -84,7 +84,7 @@ struct PrototypeStateMethodsDBServer final : PrototypeStateMethods {
     if (stateMachine == nullptr) {
       THROW_ARANGO_EXCEPTION_MESSAGE(
           TRI_ERROR_INTERNAL, basics::StringUtils::concatT(
-                                  "Failed to get ProtoypeState with id ", id));
+                                  "Failed to get PrototypeState with id ", id));
     }
 
     if (readOptions.readFrom.has_value()) {
@@ -120,7 +120,7 @@ struct PrototypeStateMethodsDBServer final : PrototypeStateMethods {
     if (stateMachine == nullptr) {
       THROW_ARANGO_EXCEPTION_MESSAGE(
           TRI_ERROR_INTERNAL, basics::StringUtils::concatT(
-                                  "Failed to get ProtoypeState with id ", id));
+                                  "Failed to get PrototypeState with id ", id));
     }
     auto leader = stateMachine->getLeader();
     if (leader != nullptr) {
@@ -191,7 +191,7 @@ struct PrototypeStateMethodsDBServer final : PrototypeStateMethods {
       THROW_ARANGO_EXCEPTION_MESSAGE(
           TRI_ERROR_CLUSTER_NOT_LEADER,
           basics::StringUtils::concatT(
-              "Failed to get leader of ProtoypeState with id ", id));
+              "Failed to get leader of PrototypeState with id ", id));
     }
     return leader;
   }

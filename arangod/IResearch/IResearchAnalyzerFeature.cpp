@@ -239,7 +239,7 @@ aql::AqlValue aqlFnTokens(aql::ExpressionContext* expressionContext,
           THROW_ARANGO_EXCEPTION_MESSAGE(TRI_ERROR_INTERNAL, message);
         }
       }
-      // we read all numers as doubles because ArangoSearch indexes
+      // we read all numbers as doubles because ArangoSearch indexes
       // all numbers as doubles, so do we there, as our goal is to
       // return same tokens as will be in index for this specific number
       numeric_analyzer->reset(value.getNumber<double>());
@@ -405,7 +405,7 @@ bool equalAnalyzer(AnalyzerPool const& pool, irs::string_ref type,
     return false;
   }
 
-  // first check non-normalizeable portion of analyzer definition
+  // first check non-normalizable portion of analyzer definition
   // to rule out need to check normalization of properties
   if (type != pool.type() || features != pool.features()) {
     return false;
@@ -991,16 +991,16 @@ bool AnalyzerPool::init(irs::string_ref const& type,
     }
   } catch (basics::Exception& e) {
     LOG_TOPIC("62062", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "': " << e.code() << " "
         << e.what();
   } catch (std::exception& e) {
     LOG_TOPIC("a9196", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("7524a", WARN, iresearch::TOPIC)
-        << "caught exception while initializing an arangosearch analizer type '"
+        << "caught exception while initializing an arangosearch analyzer type '"
         << _type << "' properties '" << _properties << "'";
   }
 
@@ -1052,18 +1052,18 @@ AnalyzerPool::CacheType::ptr AnalyzerPool::get() const noexcept {
     return _cache.emplace(_type, _properties);
   } catch (basics::Exception const& e) {
     LOG_TOPIC("c9256", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "': " << e.code() << " "
         << e.what();
   } catch (std::exception& e) {
     LOG_TOPIC("93baf", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("08db9", WARN, iresearch::TOPIC)
-        << "caught exception while instantiating an arangosearch analizer type "
+        << "caught exception while instantiating an arangosearch analyzer type "
            "'"
         << _type << "' properties '" << _properties << "'";
   }
@@ -1787,15 +1787,15 @@ AnalyzerPool::ptr IResearchAnalyzerFeature::get(
     TRI_set_errno(TRI_ERROR_INTERNAL);
   } catch (basics::Exception const& e) {
     LOG_TOPIC("29eff", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "': " << e.code() << " " << e.what();
   } catch (std::exception const& e) {
     LOG_TOPIC("ce8d5", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "': " << e.what();
   } catch (...) {
     LOG_TOPIC("5505f", WARN, iresearch::TOPIC)
-        << "caught exception while retrieving an arangosearch analizer name '"
+        << "caught exception while retrieving an arangosearch analyzer name '"
         << normalizedName << "'";
   }
 
@@ -2312,7 +2312,7 @@ Result IResearchAnalyzerFeature::loadAnalyzers(
           equalAnalyzer(*(entry.second), itr->second->type(),
                         itr->second->properties(), itr->second->features())) {
         itr->second = entry.second;  // reuse old analyzer pool to avoid
-                                     // duplicates in memmory
+                                     // duplicates in memory
         const_cast<Analyzers::key_type&>(itr->first) =
             entry.first;  // point key at old pool
       } else if (itr->second->revision() == entry.second->revision()) {
@@ -2840,7 +2840,7 @@ Result IResearchAnalyzerFeature::storeAnalyzer(AnalyzerPool& pool) {
     if (!vocbase) {
       return {
           TRI_ERROR_INTERNAL,
-          "failure to find vocbase while persising arangosearch analyzer '" +
+          "failure to find vocbase while persisting arangosearch analyzer '" +
               pool.name() + "'"};
     }
 

@@ -55,7 +55,7 @@ struct ExecutionStats {
   /// @brief set the number of intermediate commits
   void setIntermediateCommits(uint64_t value);
 
-  /// @brief sumarize two sets of ExecutionStats
+  /// @brief summarize two sets of ExecutionStats
   void add(ExecutionStats const& summand);
   void addNode(aql::ExecutionNodeId id, ExecutionNodeStats const&);
   void addAlias(aql::ExecutionNodeId from, aql::ExecutionNodeId to) {

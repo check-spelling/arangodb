@@ -85,11 +85,11 @@ class ShardLocking {
   // @brief prepare a shardlocking for the new query.
   explicit ShardLocking(QueryContext& query) : _query(query) {}
 
-  // @brief Every ExectionNode that is send to a Database server needs to be
+  // @brief Every ExecutionNode that is send to a Database server needs to be
   // passed through this method this class will check if a collection (or more)
   // is used, and will adapt the locking. The given snippetId is used to
-  // determin in which snippet this node is used. This will also check for shard
-  // restrictions on the given node.
+  // determine in which snippet this node is used. This will also check for
+  // shard restrictions on the given node.
   void addNode(ExecutionNode const* node, size_t snippetId,
                bool pushToSingleServer);
 
@@ -102,7 +102,7 @@ class ShardLocking {
 
   // The list of servers that will participate in this query as leaders for at
   // least one shard. Only these servers need to be informed by the coordinator.
-  // Note: As a side effec this will create the ShardMapping on the first call.
+  // Note: As a side effect this will create the ShardMapping on the first call.
   // This function needs to be called before you can get any shardInformation
   // below.
   std::vector<ServerID> getRelevantServers();

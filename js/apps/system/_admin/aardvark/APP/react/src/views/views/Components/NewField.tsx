@@ -4,7 +4,7 @@ import { useRouteMatch } from "react-router-dom";
 import { useLinkState } from "../helpers";
 import Textbox from "../../../components/pure-css/form/Textbox";
 import Modal, { ModalBody, ModalFooter, ModalHeader } from "../../../components/modal/Modal";
-import ToolTip from "../../../components/arango/tootip";
+import ToolTippy from "../../../components/arango/tooltippy";
 
 const NewField = () => {
   const [show, setShow] = useState(false);
@@ -42,11 +42,11 @@ const NewField = () => {
   };
 
   return <>
-    <ToolTip title="Add field" setArrow={true}>
+    <ToolTippy title="Add field" setArrow={true}>
       <button className={'btn btn-link'} onClick={handleClick}>
         <i className="fa fa-plus-circle" id="addField"/>
       </button>
-    </ToolTip>
+    </ToolTippy>
     <Modal show={show} setShow={setShow} cid={'add-field'}>
       <ModalHeader title={'Add Field'} width={600} minWidth={'unset'}/>
       <ModalBody show={show} innerStyle={{

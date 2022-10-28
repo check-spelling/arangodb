@@ -1453,7 +1453,7 @@
 
         docs.forEach(function(element, i) { assertEqual(res[i].length, 1); });
       },
-      testArrayComparsionOperatorsInOnSimpleField : function () {
+      testArrayComparisonOperatorsInOnSimpleField : function () {
         {
           let result = db._query("FOR d IN UnitTestsView SEARCH  ['foo', 'bar'] ANY IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
           assertEqual(15, result.length);
@@ -1533,7 +1533,7 @@
           assertEqual(28, result.length);
         }
       },
-      testArrayComparsionOperatorsInOnSimpleFieldWitScopedValue : function () {
+      testArrayComparisonOperatorsInOnSimpleFieldWitScopedValue : function () {
         {
           let result = db._query("FOR a IN AuxUnitTestsCollection " + 
             "FOR d IN UnitTestsView SEARCH  a.foobar ANY IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
@@ -1628,7 +1628,7 @@
           assertEqual(28, result.length);
         }
       },
-      testArrayComparsionOperatorsInOnArrayField : function() {
+      testArrayComparisonOperatorsInOnArrayField : function() {
         {
           let result = db._query("FOR d IN UnitTestsWithArrayView SEARCH  ['foo', 'bar'] ALL IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
           assertEqual(1, result.length);
@@ -1686,7 +1686,7 @@
           assertEqual(0, result[0].c);
         }
       },
-      testArrayComparsionOperatorsGreaterOnSimpleField : function() {
+      testArrayComparisonOperatorsGreaterOnSimpleField : function() {
         {
           let result = db._query("FOR d IN UnitTestsView SEARCH [2, 3, 4] ALL > d.c OPTIONS { waitForSync : true } RETURN d").toArray();
           assertEqual(8, result.length);
@@ -1821,7 +1821,7 @@
           assertEqual(28, result.length);
         }
       },
-      testArrayComparsionOperatorsLessOnSimpleField : function() {
+      testArrayComparisonOperatorsLessOnSimpleField : function() {
         {
           let result = db._query("FOR d IN UnitTestsView SEARCH [2, 3] ALL < d.c OPTIONS { waitForSync : true } RETURN d").toArray();
           assertEqual(4, result.length);

@@ -1,6 +1,6 @@
 // you should be able to import networks consisting of one vertex collection
 // as well as one edge collection.
-// vertex documents need to be imported seperatly, if you want them to
+// vertex documents need to be imported separately, if you want them to
 // have some useful data
 //
 // http://snap.stanford.edu/data/egonets-Twitter.html

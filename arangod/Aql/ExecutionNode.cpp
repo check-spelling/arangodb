@@ -861,7 +861,7 @@ bool ExecutionNode::doWalk(WalkerWorkerBase<ExecutionNode>& worker,
               auto peek = n->getFirstDependency();
               if (peek->getType() == ASYNC) {
                 // Only Async nodes shall be flattened
-                // So yes we found the combination we want to falten here
+                // So yes we found the combination we want to flatten here
 
                 // Remember where we started the flattening process
                 parallelStarter.emplace_back(n);
@@ -1972,7 +1972,7 @@ CostEstimate LimitNode::estimateCost() const {
 
   // arbitrary cost value for skipping a single document
   // skipping over a document is not fully free, because in the RocksDB
-  // case, we need to move iterarors forward, invoke the comparator etc.
+  // case, we need to move iterators forward, invoke the comparator etc.
   double const skipCost = 0.000001;
 
   size_t estimatedNrItems = estimate.estimatedNrItems;
@@ -2144,7 +2144,7 @@ std::unique_ptr<ExecutionBlock> CalculationNode::createBlock(
                                                : RegIdSet{});
 
   if (_outVariable->type() == Variable::Type::Const) {
-    // we have a const variable, so we can simply use an IdExector to forward
+    // we have a const variable, so we can simply use an IdExecutor to forward
     // the rows.
     auto executorInfos = IdExecutorInfos(false, outputRegister);
     return std::make_unique<ExecutionBlockImpl<

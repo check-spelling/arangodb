@@ -73,7 +73,7 @@ void ServerSecurityFeature::collectOptions(
   options
       ->addOption(
           "--foxx.allow-install-from-remote",
-          "allow installing Foxx apps from remote URLs other than Github",
+          "allow installing Foxx apps from remote URLs other than GitHub",
           new BooleanParameter(&_foxxAllowInstallFromRemote),
           arangodb::options::makeFlags(
               arangodb::options::Flags::DefaultNoComponents,

@@ -19,7 +19,7 @@ The original code is ServiceControl.pas, released April 16, 2007.
 
 The initial developer of the original code is Rainer Budde (http://www.speed-soft.de).
 
-SimpleSC - NSIS Service Control Plugin is written, published and maintaned by
+SimpleSC - NSIS Service Control Plugin is written, published and maintained by
 Rainer Budde (rainer@speed-soft.de).
 }
 unit ServiceControl;
@@ -213,15 +213,15 @@ var
   ServiceArgVectors: TArguments;
   NumServiceArgs: DWORD;
 const
-  ArgDelimitterQuote: String = '"';
-  ArgDelimitterWhiteSpace: String = ' ';
+  ArgDelimiterQuote: String = '"';
+  ArgDelimiterWhiteSpace: String = ' ';
 
   procedure GetServiceArguments(ServiceArguments: String; var NumServiceArgs: DWORD; var ServiceArgVectors: TArguments);
   var
     Param: String;
     Split: Boolean;
     Quoted: Boolean;
-    CharIsDelimitter: Boolean;
+    CharIsDelimiter: Boolean;
   begin
     ServiceArgVectors := nil;
     NumServiceArgs := 0;
@@ -231,25 +231,25 @@ const
     while Length(ServiceArguments) > 0 do
     begin
       Split := False;
-      CharIsDelimitter := False;
+      CharIsDelimiter := False;
 
       if ServiceArguments[1] = ' ' then
         if not Quoted then
         begin
-          CharIsDelimitter := True;
+          CharIsDelimiter := True;
           Split := True;
         end;
 
       if ServiceArguments[1] = '"' then
       begin
         Quoted := not Quoted;
-        CharIsDelimitter := True;
+        CharIsDelimiter := True;
 
         if not Quoted then
           Split := True;
       end;
 
-      if not CharIsDelimitter then
+      if not CharIsDelimiter then
         Param := Param + ServiceArguments[1];
 
       if Split or (Length(ServiceArguments) = 1) then
@@ -1415,14 +1415,14 @@ var
   PUsername: PChar;
   PPassword: PChar;
 const
-  ReplaceDelimitter: String = '/';
+  ReplaceDelimiter: String = '/';
 
   function Replace(Value: String): String;
   begin
-    while Pos(ReplaceDelimitter, Value) <> 0 do
+    while Pos(ReplaceDelimiter, Value) <> 0 do
     begin
-      Result := Result + Copy(Value, 1, Pos(ReplaceDelimitter, Value) -1) + Chr(0);
-      Delete(Value, 1, Pos(ReplaceDelimitter, Value));
+      Result := Result + Copy(Value, 1, Pos(ReplaceDelimiter, Value) -1) + Chr(0);
+      Delete(Value, 1, Pos(ReplaceDelimiter, Value));
     end;
 
     Result := Result + Value + Chr(0) + Chr(0);

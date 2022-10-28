@@ -395,7 +395,7 @@ bool Cache::canMigrate() noexcept {
 /// should be achievable by picking a random start bucket S, and a suitably
 /// large number P co-prime to the size of the table N to use as a constant
 /// offset for each subsequent step. (The sequence of numbers S, ((S + P) % N)),
-/// ((S + 2P) % N)... (S + (N-1)P) % N should form a permuation of [1, N].
+/// ((S + 2P) % N)... (S + (N-1)P) % N should form a permutation of [1, N].
 /// That way we still visit the buckets in a sufficiently random order, but we
 /// are guaranteed to make progress in a finite amount of time.
 bool Cache::freeMemory() {

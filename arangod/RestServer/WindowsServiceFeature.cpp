@@ -552,7 +552,7 @@ void WindowsServiceFeature::collectOptions(
 
   options->addOption(
       "--uninstall-service-force",
-      "specify to ovrerride the protection to uninstall the service of another "
+      "specify to override the protection to uninstall the service of another "
       "installation",
       new BooleanParameter(&_forceUninstall),
       arangodb::options::makeFlags(arangodb::options::Flags::DefaultNoOs,

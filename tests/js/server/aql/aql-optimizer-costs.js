@@ -286,7 +286,7 @@ nodeTypes);
 
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief test that in spliced subquerys NoResult blocks ask their parent for
+/// @brief test that in spliced subqueries NoResult blocks ask their parent for
 ///        cost estimates. Otherwise the subquery end will pop from an empty stack
 ////////////////////////////////////////////////////////////////////////////////
 

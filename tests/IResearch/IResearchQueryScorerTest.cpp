@@ -365,7 +365,7 @@ class QueryScorer : public QueryTest {
       EXPECT_TRUE(expectedDocs.empty());
     }
 
-    // ensure subqueries outstide a loop work fine
+    // ensure subqueries outside a loop work fine
     {
       std::string const query =
           "LET x = (FOR j IN testView SEARCH j.name == 'A' SORT BM25(j) RETURN "

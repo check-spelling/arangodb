@@ -155,7 +155,7 @@ struct TRI_vocbase_t {
       _dataSourceLock;  // data-source iterator lock
   mutable std::atomic<std::thread::id>
       _dataSourceLockWriteOwner;  // current thread owning '_dataSourceLock'
-                                  // write lock (workaround for non-recusrive
+                                  // write lock (workaround for non-recursive
                                   // ReadWriteLock)
 
   std::unique_ptr<arangodb::aql::QueryList> _queries;
@@ -253,7 +253,7 @@ struct TRI_vocbase_t {
   void setIsOwnAppsDirectory(bool value) { _isOwnAppsDirectory = value; }
 
   /// @brief increase the reference counter for a database.
-  /// will return true if the refeence counter was increased, false otherwise
+  /// will return true if the reference counter was increased, false otherwise
   /// in case false is returned, the database must not be used
   bool use();
 

@@ -2187,7 +2187,7 @@ v8::Local<v8::Value> parseReplyBodyToV8(fu::Response const& response,
       response.contentEncoding() == fuerte::ContentEncoding::Gzip) {
     // TODO: working with the stringbuffer adds another alloc / copy.
     // translateResultBodyToV8 will probably decode once more.
-    // this uses more resources than neccessary; a better solution
+    // this uses more resources than necessary; a better solution
     // would implement this inside fuerte.
     auto responseBody = response.payload();
     VPackBuffer<uint8_t> inflateBuf;

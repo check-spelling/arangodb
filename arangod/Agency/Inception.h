@@ -45,7 +45,7 @@ class Inception : public Thread {
   /// @brief Construct with agent
   explicit Inception(Agent&);
 
-  /// @brief Defualt dtor
+  /// @brief Default dtor
   virtual ~Inception();
 
   /// @brief Report acknowledged version for peer id

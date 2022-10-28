@@ -34,7 +34,7 @@
 namespace {
 
 inline void normalizeExpansion(std::string& name) {
-  // remove the last expansion as it could be omitted accodring to our
+  // remove the last expansion as it could be omitted according to our
   // indicies behaviour
   if (name.ends_with("[*]")) {
     name.resize(name.size() - 3);

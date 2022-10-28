@@ -116,7 +116,7 @@
       }
 
       if (db === '_system') {
-        // special case, ask if user really want to revoke persmission here
+        // special case, ask if user really want to revoke permission here
         var buttons = []; var tableContent = [];
 
         tableContent.push(

@@ -213,7 +213,7 @@ class MerkleTree : public MerkleTreeBase {
    * @brief Chooses the default range width for a tree of a given depth.
    *
    * Most applications should use either this value or some power-of-two
-   * mulitple of this value. The default is chosen so that each leaf bucket
+   * multiple of this value. The default is chosen so that each leaf bucket
    * initially covers a range of 64 keys.
    *
    * @param depth The same depth value passed to the constructor
@@ -417,7 +417,7 @@ class MerkleTree : public MerkleTreeBase {
    * of keys in each partition is roughly the same.
    *
    * @param count The number of partitions to return
-   * @return Vector of (inclusive) ranges that partiion the keyspace
+   * @return Vector of (inclusive) ranges that partition the keyspace
    */
   std::vector<std::pair<std::uint64_t, std::uint64_t>> partitionKeys(
       std::uint64_t count) const;

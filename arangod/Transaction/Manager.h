@@ -142,12 +142,12 @@ class Manager final : public IManager {
   void registerAQLTrx(std::shared_ptr<TransactionState> const&);
   void unregisterAQLTrx(TransactionId tid) noexcept;
 
-  /// @brief create managed transaction, also generate a tranactionId
+  /// @brief create managed transaction, also generate a transactionId
   ResultT<TransactionId> createManagedTrx(TRI_vocbase_t& vocbase,
                                           velocypack::Slice trxOpts,
                                           bool allowDirtyReads);
 
-  /// @brief create managed transaction, also generate a tranactionId
+  /// @brief create managed transaction, also generate a transactionId
   ResultT<TransactionId> createManagedTrx(
       TRI_vocbase_t& vocbase, std::vector<std::string> const& readCollections,
       std::vector<std::string> const& writeCollections,
@@ -177,7 +177,7 @@ class Manager final : public IManager {
                                                         bool isSideUser);
   void returnManagedTrx(TransactionId, bool isSideUser) noexcept;
 
-  /// @brief get the meta transasction state
+  /// @brief get the meta transaction state
   transaction::Status getManagedTrxStatus(TransactionId,
                                           std::string const& database) const;
 
@@ -288,7 +288,7 @@ class Manager final : public IManager {
     // a lock protecting _managed
     mutable basics::ReadWriteLock _lock;
 
-    // managed transactions, seperate lifetime from above
+    // managed transactions, separate lifetime from above
     std::unordered_map<TransactionId, ManagedTrx> _managed;
   } _transactions[numBuckets];
 

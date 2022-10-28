@@ -251,7 +251,7 @@ TEST_F(ActiveFailover, server_is_healthy_again_job_finishes) {
   When(Method(mockAgent, waitFor))
       .AlwaysReturn(AgentInterface::raft_commit_t::OK);
   auto& agent = mockAgent.get();
-  Node snapshot = createNodeFromBuilder(mod);  // snapshort contains GOOD leader
+  Node snapshot = createNodeFromBuilder(mod);  // snapshot contains GOOD leader
 
   ActiveFailoverJob job(snapshot.getOrCreate(PREFIX), &agent, jobId, "unittest",
                         LEADER);
@@ -320,7 +320,7 @@ TEST_F(ActiveFailover, current_leader_is_different_from_server_in_job) {
       .AlwaysReturn(AgentInterface::raft_commit_t::OK);
   auto& agent = mockAgent.get();
   Node snapshot =
-      createNodeFromBuilder(mod);  // snapshort contains different leader
+      createNodeFromBuilder(mod);  // snapshot contains different leader
 
   ActiveFailoverJob job(snapshot.getOrCreate(PREFIX), &agent, jobId, "unittest",
                         LEADER);

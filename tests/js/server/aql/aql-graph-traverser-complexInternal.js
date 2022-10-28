@@ -218,7 +218,7 @@ function complexInternaSuite() {
 
     testTailRecursion: function () {
       // This test is to make sure their is no
-      // inifinite callstack in getSome() API
+      // infinite callstack in getSome() API
       let query = `
       WITH ${gh.vn}
       FOR id IN 0..100000
@@ -228,7 +228,7 @@ function complexInternaSuite() {
 
       let res = db._query(query);
       assertEqual(res.count(), 0);
-      // With inifinit callstack in getSome this
+      // With infinite callstack in getSome this
       // test will segfault
     },
 

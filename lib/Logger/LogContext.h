@@ -113,7 +113,7 @@ class LogContext {
     struct ScopedValue;
 
     // We intentionally use this Accessor class with RestHandler as friend to
-    // restrict usage of ScopedValues to certian classes in order to prevent
+    // restrict usage of ScopedValues to certain classes in order to prevent
     // ScopedValues to be created in some inner function where they might cause
     // significant performance overhead.
     friend class arangodb::rest::RestHandler;

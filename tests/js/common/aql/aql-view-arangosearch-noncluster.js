@@ -1312,7 +1312,7 @@ function iResearchAqlTestSuite () {
       });
     },
 
-    testMutlipleScorers : function() {
+    testMultipleScorers : function() {
       var result = db._query(
         "LET score = FIRST(FOR doc IN UnitTestsView SEARCH doc.a == 'foo' OPTIONS { waitForSync : true } RETURN BM25(doc)) " +
         "FOR doc IN UnitTestsView SEARCH doc.a == 'foo' FILTER BM25(doc) == score && BM25(doc, 1.2, 0.75) == score RETURN doc"
@@ -1461,7 +1461,7 @@ function iResearchAqlTestSuite () {
 
       docs.forEach(function(element, i) { assertEqual(res[i].length, 1); });
     },
-    testArrayComparsionOperatorsInOnSimpleField : function () {
+    testArrayComparisonOperatorsInOnSimpleField : function () {
       {
         let result = db._query("FOR d IN UnitTestsView SEARCH  ['foo', 'bar'] ANY IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
         assertEqual(15, result.length);
@@ -1541,7 +1541,7 @@ function iResearchAqlTestSuite () {
         assertEqual(28, result.length);
       }
     },
-    testArrayComparsionOperatorsInOnSimpleFieldWitScopedValue : function () {
+    testArrayComparisonOperatorsInOnSimpleFieldWitScopedValue : function () {
       {
         let result = db._query("FOR a IN AuxUnitTestsCollection " + 
           "FOR d IN UnitTestsView SEARCH  a.foobar ANY IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
@@ -1636,7 +1636,7 @@ function iResearchAqlTestSuite () {
         assertEqual(28, result.length);
       }
     },
-    testArrayComparsionOperatorsInOnArrayField : function() {
+    testArrayComparisonOperatorsInOnArrayField : function() {
       {
         let result = db._query("FOR d IN UnitTestsWithArrayView SEARCH  ['foo', 'bar'] ALL IN d.a OPTIONS { waitForSync : true } RETURN d").toArray();
         assertEqual(1, result.length);
@@ -1770,7 +1770,7 @@ function iResearchAqlTestSuite () {
         assertEqual(0, result.length);
       }
     },
-    testArrayComparsionOperatorsGreaterOnSimpleField : function() {
+    testArrayComparisonOperatorsGreaterOnSimpleField : function() {
       {
         let result = db._query("FOR d IN UnitTestsView SEARCH [2, 3, 4] ALL > d.c OPTIONS { waitForSync : true } RETURN d").toArray();
         assertEqual(8, result.length);
@@ -1905,7 +1905,7 @@ function iResearchAqlTestSuite () {
         assertEqual(28, result.length);
       }
     },
-    testArrayComparsionOperatorsLessOnSimpleField : function() {
+    testArrayComparisonOperatorsLessOnSimpleField : function() {
       {
         let result = db._query("FOR d IN UnitTestsView SEARCH [2, 3] ALL < d.c OPTIONS { waitForSync : true } RETURN d").toArray();
         assertEqual(4, result.length);

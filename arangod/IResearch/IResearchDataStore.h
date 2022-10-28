@@ -410,7 +410,7 @@ class IResearchDataStore {
   std::tuple<uint64_t, uint64_t, uint64_t> numFailed() const;
 
   ////////////////////////////////////////////////////////////////////////////////
-  /// @brief get average time of commit cleanuo consolidation
+  /// @brief get average time of commit cleanup consolidation
   ////////////////////////////////////////////////////////////////////////////////
   std::tuple<uint64_t, uint64_t, uint64_t> avgTime() const;
 

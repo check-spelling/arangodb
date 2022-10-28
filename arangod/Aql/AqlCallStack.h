@@ -112,7 +112,7 @@ class AqlCallStack {
   auto needToSkipSubquery() const noexcept -> bool;
   /**
    * @brief This is only valid if needToCountSubquery is true.
-   *        It will resolve to the heighest subquery level
+   *        It will resolve to the highest subquery level
    *        (outermost) that needs to be skipped.
    *
    *

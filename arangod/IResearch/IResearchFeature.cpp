@@ -716,7 +716,7 @@ void registerUpgradeTasks(ArangodServer& server) {
     task.description = "store collection name in ArangoSearch Link`s metadata";
     task.systemFlag = methods::Upgrade::Flags::DATABASE_ALL;
     // will be run only by cluster bootstrap and database init (latter case it
-    // will just do nothing but flags don`t allow to distinguih cases)
+    // will just do nothing but flags don`t allow to distinguish cases)
     task.clusterFlags = methods::Upgrade::Flags::CLUSTER_DB_SERVER_LOCAL |
                         methods::Upgrade::Flags::CLUSTER_LOCAL;  // db-server
     task.databaseFlags = methods::Upgrade::Flags::DATABASE_EXISTING |
@@ -1191,12 +1191,12 @@ bool IResearchFeature::queue(ThreadGroup id,
     }
   } catch (std::exception const& e) {
     LOG_TOPIC("c1b64", WARN, arangodb::iresearch::TOPIC)
-        << "Caught exception while sumbitting a task to thread group '"
+        << "Caught exception while submitting a task to thread group '"
         << std::to_string(std::underlying_type_t<ThreadGroup>(id))
         << "' error '" << e.what() << "'";
   } catch (...) {
     LOG_TOPIC("c1b65", WARN, arangodb::iresearch::TOPIC)
-        << "Caught an exception while sumbitting a task to thread group '"
+        << "Caught an exception while submitting a task to thread group '"
         << std::to_string(std::underlying_type_t<ThreadGroup>(id)) << "'";
   }
 

@@ -117,7 +117,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
   if (ADB_UNLIKELY(!slice.isObject())) {
     using namespace std::string_literals;
     return Result(TRI_ERROR_TYPE_ERROR,
-                  "When deserializating AqlCallList: Expected object, got "s +
+                  "When deserializing AqlCallList: Expected object, got "s +
                       slice.typeName());
   }
 
@@ -128,7 +128,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
   auto const readSpecific =
       [](velocypack::Slice slice) -> ResultT<std::vector<AqlCall>> {
     if (ADB_UNLIKELY(!slice.isArray())) {
-      auto message = std::string{"When deserializating AqlCall: When reading " +
+      auto message = std::string{"When deserializing AqlCall: When reading " +
                                  StaticStrings::AqlCallListSpecific +
                                  ": "
                                  "Unexpected type "};
@@ -155,7 +155,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
       [](velocypack::Slice slice) -> ResultT<std::optional<AqlCall>> {
     if (ADB_UNLIKELY(!slice.isObject() && !slice.isNull())) {
       auto message =
-          std::string{"When deserializating AqlCallList: When reading " +
+          std::string{"When deserializing AqlCallList: When reading " +
                       StaticStrings::AqlCallListDefault +
                       ": "
                       "Unexpected type "};
@@ -180,7 +180,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
     auto const keySlice = it.key;
     if (ADB_UNLIKELY(!keySlice.isString())) {
       return Result(TRI_ERROR_TYPE_ERROR,
-                    "When deserializating AqlCallList: Key is not a string");
+                    "When deserializing AqlCallList: Key is not a string");
     }
     auto const key = getStringView(keySlice);
 
@@ -189,7 +189,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
       if (ADB_UNLIKELY(propIt->second)) {
         return Result(
             TRI_ERROR_TYPE_ERROR,
-            "When deserializating AqlCallList: Encountered duplicate key");
+            "When deserializing AqlCallList: Encountered duplicate key");
       }
       propIt->second = true;
     }
@@ -208,7 +208,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
       result._defaultCall = maybeCall.get();
     } else {
       LOG_TOPIC("c30c1", WARN, Logger::AQL)
-          << "When deserializating AqlCallList: Encountered unexpected key "
+          << "When deserializing AqlCallList: Encountered unexpected key "
           << key;
       // If you run into this assertion during rolling upgrades after adding a
       // new attribute, remove it in the older version.
@@ -218,7 +218,7 @@ auto AqlCallList::fromVelocyPack(VPackSlice slice) -> ResultT<AqlCallList> {
 
   for (auto const& it : expectedPropertiesFound) {
     if (ADB_UNLIKELY(!it.second)) {
-      auto message = std::string{"When deserializating AqlCall: missing key "};
+      auto message = std::string{"When deserializing AqlCall: missing key "};
       message += it.first;
       return Result(TRI_ERROR_TYPE_ERROR, std::move(message));
     }

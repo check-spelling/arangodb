@@ -58,7 +58,7 @@ exports.setup = function (testFns, defaultFns, opts, fnDocs, optionsDoc, allTest
   Object.assign(allTestPaths, testPaths);
   // Register the testsuite itself
   testFns['shell_server'] = shellServer;
-  // enable it to be ran with `./scripts/unittest all` ; if not ommit - adds the [x] in help the list.
+  // enable it to be ran with `./scripts/unittest all` ; if not omit - adds the [x] in help the list.
   defaultFns.push('shell_server');
   // if your testsuite has CLI parameters, specify them including the default param here:
   opts['skipAql'] = false;
@@ -69,7 +69,7 @@ exports.setup = function (testFns, defaultFns, opts, fnDocs, optionsDoc, allTest
 };
 ```
 
-### Existing Javascript tests
+### Existing JavaScript tests
 
 #### [permission] => tests/js/client/permissions / [server_parameters] => tests/js/client/server_parameters / [server_permissions] => client/server_permissions
 This set of testsuites is here to revalidate startup parameters of arangod processes.

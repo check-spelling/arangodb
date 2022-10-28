@@ -45,7 +45,7 @@ function testSuite() {
       assertEqual(result.code, 201);
     },
 
-    testAnalyzerCreateRemoveIdentiy : function() {
+    testAnalyzerCreateRemoveIdentity : function() {
       let body = JSON.stringify({
         type : "identity",
         name : name,
@@ -274,7 +274,7 @@ function testSuite() {
         result = arango.DELETE("/_api/analyzer/" + name);
 
         assertTrue(result.error);
-        assertEqual(result.code, 409); // can not delete -- referencded by link
+        assertEqual(result.code, 409); // can not delete -- referenced by link
         assertEqual(result.errorNum, error.ERROR_ARANGO_CONFLICT.code);
 
         // delete with force - must succeed

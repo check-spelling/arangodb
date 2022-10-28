@@ -66,7 +66,7 @@ class GeneralResponse {
   // response code from integer error code
   static ResponseCode responseCode(ErrorCode code);
 
-  /// @brief set content-type this sets the contnt type like you expect it
+  /// @brief set content-type this sets the content type like you expect it
   void setContentType(ContentType type) { _contentType = type; }
   ContentType contentType() const { return _contentType; }
 

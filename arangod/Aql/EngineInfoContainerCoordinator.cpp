@@ -152,7 +152,7 @@ Result EngineInfoContainerCoordinator::buildEngines(
     return Result(TRI_ERROR_INTERNAL);
   }
 
-  // This deactivates the defered cleanup.
+  // This deactivates the deferred cleanup.
   // From here on we rely on the AQL shutdown mechanism.
   //  guard.cancel();
   return Result();

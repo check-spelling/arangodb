@@ -316,7 +316,7 @@ void BootstrapFeature::start() {
 
   if (ServerState::isRunningInCluster(role)) {
     // the coordinators will race to perform the cluster initialization.
-    // The coordinatpr who does it will create system collections and
+    // The coordinator who does it will create system collections and
     // the root user
     if (ServerState::isCoordinator(role)) {
       LOG_TOPIC("724e0", DEBUG, Logger::STARTUP)

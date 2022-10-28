@@ -337,7 +337,7 @@ auto SortingGatherExecutor::nextRow(MultiAqlItemBlockInputRange& input)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief Guarantees requiredby this this block:
+/// @brief Guarantees required by this block:
 ///        1) For every dependency the input is sorted, according to the same
 ///        strategy.
 ///
@@ -420,7 +420,7 @@ auto SortingGatherExecutor::skipRowsRange(typename Fetcher::DataRange& input,
 
   // skip offset
   while (!input.isDone() && call.getOffset() > 0) {
-    // During offset phase we have the guarntee
+    // During offset phase we have the guarantee
     // that the rows we need to skip have been fetched
     // We will fetch rows as data from upstream for
     // all rows we need to skip here.
@@ -517,7 +517,7 @@ auto SortingGatherExecutor::limitReached() const noexcept -> bool {
       upstreamCall.softLimit = clientCall.offset + clientCall.softLimit;
       if (rowsLeftToWrite() < upstreamCall.softLimit) {
         // Do not overfetch
-        // NOTE: We cannnot use std::min as the numbers have different types ;(
+        // NOTE: We cannot use std::min as the numbers have different types ;(
         upstreamCall.softLimit = rowsLeftToWrite();
       }
 
@@ -527,7 +527,7 @@ auto SortingGatherExecutor::limitReached() const noexcept -> bool {
     } else {
       if (rowsLeftToWrite() < upstreamCall.hardLimit) {
         // Do not overfetch
-        // NOTE: We cannnot use std::min as the numbers have different types ;(
+        // NOTE: We cannot use std::min as the numbers have different types ;(
         upstreamCall.hardLimit = rowsLeftToWrite();
       }
       // In case the client needs a fullCount we do it as well, for all rows

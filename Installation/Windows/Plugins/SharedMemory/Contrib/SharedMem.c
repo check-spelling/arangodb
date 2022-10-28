@@ -111,7 +111,7 @@ PUBLIC_FUNCTION(CreateSharedMemory)
     PushReturnValue(GetLastError()); // Could not create file mapping object
     return;
   }
-  // memory was created succefull
+  // memory was created successful
   // generate the buffer for input/output operatíons
   pBuf = (LPTSTR)MapViewOfFile(hMapFile,   // handle to map object
     FILE_MAP_ALL_ACCESS, // read/write permission

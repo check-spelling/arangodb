@@ -119,7 +119,7 @@ struct Field {
 };  // Field
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief allows to iterate over the provided VPack accoring the specified
+/// @brief allows to iterate over the provided VPack according the specified
 ///        IResearchLinkMeta
 ////////////////////////////////////////////////////////////////////////////////
 template<typename IndexMetaStruct>

@@ -163,7 +163,7 @@ class ClusterFeature : public ArangodFeature {
   containers::FlatHashSet<std::string> dirty();
 
   /**
-   * @brief Check database for dirtyness
+   * @brief Check database for dirtiness
    */
   bool isDirty(std::string const& database) const;
 

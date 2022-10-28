@@ -725,8 +725,8 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
           dt));
 
   result.add(VPackValue("bytesSentPercent"));
-  avgPercentDistributon(result, currentClient.get("bytesSent"),
-                        prevClient.get("bytesSent"), _bytesSentDistribution);
+  avgPercentDistribution(result, currentClient.get("bytesSent"),
+                         prevClient.get("bytesSent"), _bytesSentDistribution);
 
   // bytes received
   result.add(
@@ -737,9 +737,9 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
           dt));
 
   result.add(VPackValue("bytesReceivedPercent"));
-  avgPercentDistributon(result, currentClient.get("bytesReceived"),
-                        prevClient.get("bytesReceived"),
-                        _bytesReceivedDistribution);
+  avgPercentDistribution(result, currentClient.get("bytesReceived"),
+                         prevClient.get("bytesReceived"),
+                         _bytesReceivedDistribution);
 
   // total time
   auto d1 = currentClient.get("totalTime").get("count").getNumber<double>() -
@@ -757,8 +757,8 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
   }
 
   result.add(VPackValue("totalTimePercent"));
-  avgPercentDistributon(result, currentClient.get("totalTime"),
-                        prevClient.get("totalTime"), _requestTimeDistribution);
+  avgPercentDistribution(result, currentClient.get("totalTime"),
+                         prevClient.get("totalTime"), _requestTimeDistribution);
 
   // request time
   d1 = currentClient.get("requestTime").get("count").getNumber<double>() -
@@ -776,9 +776,9 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
   }
 
   result.add(VPackValue("requestTimePercent"));
-  avgPercentDistributon(result, currentClient.get("requestTime"),
-                        prevClient.get("requestTime"),
-                        _requestTimeDistribution);
+  avgPercentDistribution(result, currentClient.get("requestTime"),
+                         prevClient.get("requestTime"),
+                         _requestTimeDistribution);
 
   // queue time
   d1 = currentClient.get("queueTime").get("count").getNumber<double>() -
@@ -796,8 +796,8 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
   }
 
   result.add(VPackValue("queueTimePercent"));
-  avgPercentDistributon(result, currentClient.get("queueTime"),
-                        prevClient.get("queueTime"), _requestTimeDistribution);
+  avgPercentDistribution(result, currentClient.get("queueTime"),
+                         prevClient.get("queueTime"), _requestTimeDistribution);
 
   // io time
   d1 = currentClient.get("ioTime").get("count").getNumber<double>() -
@@ -814,8 +814,8 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
   }
 
   result.add(VPackValue("ioTimePercent"));
-  avgPercentDistributon(result, currentClient.get("ioTime"),
-                        prevClient.get("ioTime"), _requestTimeDistribution);
+  avgPercentDistribution(result, currentClient.get("ioTime"),
+                         prevClient.get("ioTime"), _requestTimeDistribution);
 
   result.close();
 
@@ -826,9 +826,9 @@ void StatisticsWorker::computePerSeconds(VPackBuilder& result,
   result.close();
 }
 
-void StatisticsWorker::avgPercentDistributon(VPackBuilder& builder,
-                                             VPackSlice now, VPackSlice last,
-                                             VPackBuilder const& cuts) const {
+void StatisticsWorker::avgPercentDistribution(VPackBuilder& builder,
+                                              VPackSlice now, VPackSlice last,
+                                              VPackBuilder const& cuts) const {
   uint32_t n = static_cast<uint32_t>(cuts.slice().length() + 1);
   double count = 0;
   std::vector<double> result(n, 0);
@@ -1085,8 +1085,8 @@ void StatisticsWorker::saveSlice(VPackSlice slice,
 
   arangodb::OperationResult result = trx.insert(collection, slice, opOptions);
 
-  // Will commit if no error occured.
-  // or abort if an error occured.
+  // Will commit if no error occurred.
+  // or abort if an error occurred.
   // result stays valid!
   res = trx.finish(result.result);
   if (res.fail()) {

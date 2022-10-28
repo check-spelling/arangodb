@@ -283,7 +283,7 @@ struct BaseOptions {
   /// Invariant: For every edge collection we read, there will be exactly
   /// one LookupInfo.
   /// These list is consulted only if there is no overwrite for a specific depth
-  /// so this resambles "ALL ==" parts of filters.
+  /// so this resembles "ALL ==" parts of filters.
   std::vector<LookupInfo> _baseLookupInfos;
 
   /// Reference to the query we are running in. Necessary for internal API

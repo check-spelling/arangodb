@@ -84,7 +84,7 @@ RestWalAccessHandler::RestWalAccessHandler(ArangodServer& server,
 RequestLane RestWalAccessHandler::lane() const {
   std::vector<std::string> suffixes = _request->decodedSuffixes();
   if (ServerState::instance()->isDBServer()) {
-    // If we are on a datqbase server this API can only be called internally.
+    // If we are on a database server this API can only be called internally.
     // Hence, we can give it a different priority. We do not want to do
     // this on a SingleServer as it is not necessary there.
     if (!suffixes.empty() && suffixes[0] == "tail") {
@@ -93,7 +93,7 @@ RequestLane RestWalAccessHandler::lane() const {
       if (_request->parsedValue("withHardLock", false)) {
         // We have the QueryParameter usingHardLock set to something that
         // evaluates to true. We need to push this onto HIGH priority lanes in
-        // order to unlock the hardlock we have accuired
+        // order to unlock the hardlock we have acquired
         return RequestLane::CLUSTER_INTERNAL;
       } else {
         return RequestLane::SERVER_REPLICATION_CATCHUP;

@@ -808,7 +808,7 @@ void ClusterFeature::startHeartbeatThread(
       std::chrono::microseconds(interval_ms * 1000), maxFailsBeforeWarning);
 
   if (!_heartbeatThread->init() || !_heartbeatThread->start()) {
-    // failure only occures in cluster mode.
+    // failure only occurs in cluster mode.
     LOG_TOPIC("7e050", FATAL, arangodb::Logger::CLUSTER)
         << "heartbeat could not connect to agency endpoints (" << endpoints
         << ")";

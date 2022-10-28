@@ -315,7 +315,7 @@ static ErrorCode V8ToVPackNoKeyRevId(v8::Isolate* isolate,
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief get all cluster collections cloned, caller needs to cleanupb
+/// @brief get all cluster collections cloned, caller needs to cleanup
 ////////////////////////////////////////////////////////////////////////////////
 
 std::vector<std::shared_ptr<LogicalCollection>> GetCollections(

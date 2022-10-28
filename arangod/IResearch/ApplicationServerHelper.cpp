@@ -32,7 +32,7 @@ namespace iresearch {
 
 bool addFunction(arangodb::aql::AqlFunctionFeature& functions,
                  arangodb::aql::Function const& function) {
-  // check that a function by the given name is not registred to avoid
+  // check that a function by the given name is not registered to avoid
   // triggering an assert inside AqlFunctionFeature::add(...)
   if (functions.exists(function.name)) {
     return false;

@@ -57,7 +57,7 @@ DropIndex::DropIndex(MaintenanceFeature& feature, ActionDescription const& d)
   TRI_ASSERT(d.has(DATABASE));
 
   if (!d.has(INDEX)) {
-    error << "index id must be stecified. ";
+    error << "index id must be specified. ";
   }
   TRI_ASSERT(d.has(INDEX));
 

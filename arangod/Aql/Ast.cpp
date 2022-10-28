@@ -411,7 +411,7 @@ AstNode* Ast::createNode(arangodb::velocypack::Slice slice) {
   return _resources.registerNode(this, slice);
 }
 
-/// @brief create an AST passhthru node
+/// @brief create an AST passthru node
 /// note: this type of node is only used during parsing and optimized away later
 AstNode* Ast::createNodePassthru(AstNode const* what) {
   AstNode* node = createNode(NODE_TYPE_PASSTHRU);
@@ -1824,7 +1824,7 @@ AstNode* Ast::createNodeAggregateFunctionCall(std::string_view functionName,
     }
   }
 
-  // TODO - we should consider to introduce a NODE_TYPE_AGGREATE_FCALL type
+  // TODO - we should consider to introduce a NODE_TYPE_AGGREGATE_FCALL type
   AstNode* node = createNode(NODE_TYPE_FCALL);
 
   // Register a pointer to the function.

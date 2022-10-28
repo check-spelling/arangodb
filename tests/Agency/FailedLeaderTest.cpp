@@ -255,7 +255,7 @@ class FailedLeaderTest
       ASSERT_FALSE(lastGenPlan.empty());
       ASSERT_FALSE(expectedServers.empty());
       // Old leader value is used for lock-checking on the Server
-      // This cannot be done with a resigend leader value
+      // This cannot be done with a resigned leader value
       auto const& oldLeader = unresign(lastGenPlan.front());
       auto const& newLeader = expectedServers.front();
       // Leader Shard is not locked
@@ -271,7 +271,7 @@ class FailedLeaderTest
         AssertOldEmptyObject(pre.get(path));
       }
       {
-        // New leader is healty
+        // New leader is healthy
         auto path = "/arango/Supervision/Health/" + newLeader + "/Status";
         ASSERT_TRUE(pre.hasKey(path));
         AssertOldIsString(pre.get(path), "GOOD");
@@ -479,7 +479,7 @@ class FailedLeaderTest
 
   void AssertOldEmptyObject(VPackSlice obj) {
     ASSERT_TRUE(obj.isObject());
-    // Will be set to false if ommited, or actively se t to false
+    // Will be set to false if omited, or actively se t to false
     bool oldEmpty = VelocyPackHelper::getBooleanValue(obj, "oldEmpty", false);
     // Required to be TRUE!
     EXPECT_TRUE(oldEmpty);
@@ -2551,7 +2551,7 @@ TEST_F(FailedLeaderTest,
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_all_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_all_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";
@@ -2615,7 +2615,7 @@ TEST_F(
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_leader_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_leader_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";
@@ -2680,7 +2680,7 @@ TEST_F(
 
 TEST_F(
     FailedLeaderTest,
-    failedleader_distribute_shards_like_resigned_leader_follower_repoted_in_current) {
+    failedleader_distribute_shards_like_resigned_leader_follower_reported_in_current) {
   std::string jobId = "1";
 
   std::string col1 = "shardLike1";

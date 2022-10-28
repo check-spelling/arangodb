@@ -1064,7 +1064,7 @@ MerkleTree<Hasher, BranchingBits>::partitionKeys(std::uint64_t count) const {
       result.emplace_back(rangeStart, rangeEnd);
       remaining -= rangeCount;
       if (remaining == 0 || result.size() == count) {
-        // if we just finished the last partiion, shortcut out
+        // if we just finished the last partition, shortcut out
         break;
       }
       rangeCount = 0;
@@ -1369,7 +1369,7 @@ void MerkleTree<Hasher, BranchingBits>::leftCombine(bool withShift) {
         // nothing is combined. This is OK, for the following reason:
         // The respective dst Node was a src in a previous loop
         // iteration. Either it was empty then, then it can stay empty
-        // in this case. If it wasn't empty, then the assignmend
+        // in this case. If it wasn't empty, then the assignment
         // `src // = { 0, 0 };` at the end of the loop has erased it, so
         // it is empty now, also good.
         Node& src = this->node(i);
@@ -1397,7 +1397,7 @@ void MerkleTree<Hasher, BranchingBits>::leftCombine(bool withShift) {
         // nothing is combined. This is OK, for the following reason:
         // The respective dst Node was a src in a previous loop
         // iteration. Either it was empty then, then it can stay empty
-        // in this case. If it wasn't empty, then the assignmend
+        // in this case. If it wasn't empty, then the assignment
         // `src // = { 0, 0 };` at the end of the loop has erased it, so
         // it is empty now, also good.
         Node& src = this->node(i);
@@ -1513,7 +1513,7 @@ void MerkleTree<Hasher, BranchingBits>::rightCombine(bool withShift) {
         // nothing is combined. This is OK, for the following reason:
         // The respective dst Node was a src in a previous loop
         // iteration. Either it was empty then, then it can stay empty
-        // in this case. If it wasn't empty, then the assignmend
+        // in this case. If it wasn't empty, then the assignment
         // `src // = { 0, 0 };` at the end of the loop has erased it, so
         // it is empty now, also good.
         Node& src = this->node(i);
@@ -1544,7 +1544,7 @@ void MerkleTree<Hasher, BranchingBits>::rightCombine(bool withShift) {
         // nothing is combined. This is OK, for the following reason:
         // The respective dst Node was a src in a previous loop
         // iteration. Either it was empty then, then it can stay empty
-        // in this case. If it wasn't empty, then the assignmend
+        // in this case. If it wasn't empty, then the assignment
         // `src // = { 0, 0 };` at the end of the loop has erased it, so
         // it is empty now, also good.
         Node& src = this->node(i);

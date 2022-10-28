@@ -36,7 +36,7 @@ struct AgencyState {
   arangodb::replication2::replicated_log::ParticipantsHealth health;
 
   // FIXME: strictly speaking this is a hack, as it does not form part of the
-  // agency's state; it is currently the simplest way to persist informatioon
+  // agency's state; it is currently the simplest way to persist information
   // for predicates to access;
   std::optional<size_t> logLeaderWriteConcern;
 

@@ -100,13 +100,13 @@ class WorkerConfig {
     return _globalShardIDs;
   }
 
-  // convenvience access without guaranteed order, same values as in
+  // convenience access without guaranteed order, same values as in
   // vertexCollectionShards
   inline std::vector<ShardID> const& localVertexShardIDs() const {
     return _localVertexShardIDs;
   }
 
-  // convenvience access without guaranteed order, same values as in
+  // convenience access without guaranteed order, same values as in
   // edgeCollectionShards
   inline std::vector<ShardID> const& localEdgeShardIDs() const {
     return _localEdgeShardIDs;

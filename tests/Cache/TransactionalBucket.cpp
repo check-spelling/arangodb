@@ -53,7 +53,7 @@ TEST(CacheTransactionalBucketTest, test_locking_behavior) {
   bucket->unlock();
   ASSERT_FALSE(bucket->isLocked());
 
-  // check that bnished term is updated appropriately
+  // check that banished term is updated appropriately
   ASSERT_EQ(0ULL, bucket->_banishTerm);
   bucket->lock(-1LL);
   bucket->updateBanishTerm(1ULL);

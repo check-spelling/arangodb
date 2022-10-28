@@ -97,7 +97,7 @@ std::initializer_list<irs::type_info::type_id> NumericStreamFeatures{
 
 // appends the specified 'value' to 'out'
 void append(std::string& out, size_t value) {
-  auto const size = out.size();  // intial size
+  auto const size = out.size();  // initial size
   out.resize(size + 21);         // enough to hold all numbers up to 64-bits
   auto const written = sprintf(&out[size], IR_SIZE_T_SPECIFIER, value);
   out.resize(size + written);
@@ -773,7 +773,7 @@ void FieldIterator<IndexMetaStruct>::next() {
       // Filter will add a new part. But even if filter decided
       // to skip field - we must track it as seen and not emit null
       // for explicitly discarded values. Like skipping non-array fields
-      // for expansion fields in the index as the field is definately not
+      // for expansion fields in the index as the field is definitely not
       // missing.
       fieldSeen(_nameBuffer);
       if (!filterRes) {

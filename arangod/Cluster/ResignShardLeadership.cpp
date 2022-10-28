@@ -92,7 +92,7 @@ bool ResignShardLeadership::first() {
   // problem, since similar problems can arise in failover scenarios anyway.
 
   try {
-    // Guard database againts deletion for now
+    // Guard database against deletion for now
     auto& df = _feature.server().getFeature<DatabaseFeature>();
     DatabaseGuard guard(df, database);
     auto vocbase = &guard.database();

@@ -281,7 +281,7 @@ function testSuite() {
   }
   function tryAppendAllowed(fn) {
     let rc = fs.append(fn, '1212 this is just a test');
-    assertTrue(rc, 'Expected ' + fn + ' to be appendeable');
+    assertTrue(rc, 'Expected ' + fn + ' to be appendable');
   }
 
   function tryChmodForbidden(fn) {
@@ -458,7 +458,7 @@ function testSuite() {
       fail();
     }
     catch (err) {
-      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'Temfile-access to ' + dn + ' wasn\'t forbidden');
+      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'Tempfile-access to ' + dn + ' wasn\'t forbidden');
     }
   }
   function tryGetTempFileAllowed(dn) {
@@ -500,7 +500,7 @@ function testSuite() {
       let absolute = fs.copyRecursive(sn, tn);
       fail();
     } catch (err) {
-      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'CopyRecursiveing of ' + sn + ' to ' + tn + ' wasn\'t forbidden: ' + err);
+      assertEqual(arangodb.ERROR_FORBIDDEN, err.errorNum, 'CopyRecursing of ' + sn + ' to ' + tn + ' wasn\'t forbidden: ' + err);
     }
   }
   function tryCopyRecursiveFileAllowed(sn, tn) {

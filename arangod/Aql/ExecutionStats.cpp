@@ -73,7 +73,7 @@ void ExecutionStats::toVelocyPack(VPackBuilder& builder,
   builder.close();
 }
 
-/// @brief sumarize two sets of ExecutionStats
+/// @brief summarize two sets of ExecutionStats
 void ExecutionStats::add(ExecutionStats const& summand) {
   writesExecuted += summand.writesExecuted;
   writesIgnored += summand.writesIgnored;

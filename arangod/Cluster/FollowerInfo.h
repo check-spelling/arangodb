@@ -80,7 +80,7 @@ class FollowerInfo {
   // if the latter is empty, then we are leading
   std::string _theLeader;
   bool _theLeaderTouched;
-  // flag if we have enough insnc followers and can pass through writes
+  // flag if we have enough insync followers and can pass through writes
   bool _canWrite;
 
  public:
@@ -167,7 +167,7 @@ class FollowerInfo {
   uint64_t getFollowingTermId(ServerID const& s) const noexcept;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief clear follower list, no changes in agency necesary
+  /// @brief clear follower list, no changes in agency necessary
   //////////////////////////////////////////////////////////////////////////////
 
   void clear();

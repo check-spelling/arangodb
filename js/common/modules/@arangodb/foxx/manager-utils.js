@@ -79,7 +79,7 @@ function compareMounts (l, r) {
 // / @brief builds a github repository URL
 // //////////////////////////////////////////////////////////////////////////////
 
-function buildGithubUrl (repository, version) {
+function buildGitHubUrl (repository, version) {
   if (version === undefined) {
     version = 'master';
   }
@@ -187,7 +187,7 @@ function updateService (mount, update) {
 }
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Joins the last two diretories to one subdir, removes the unwanted original
+// / @brief Joins the last two directories to one subdir, removes the unwanted original
 // //////////////////////////////////////////////////////////////////////////////
 function joinLastPath (tempPath) {
   var pathParts = tempPath.split(fs.pathSeparator).reverse();
@@ -249,7 +249,7 @@ exports.updateService = updateService;
 exports.getReadableName = getReadableName;
 exports.list = list;
 exports.listDevelopment = listDevelopment;
-exports.buildGithubUrl = buildGithubUrl;
+exports.buildGitHubUrl = buildGitHubUrl;
 exports.validateMount = validateMount;
 exports.zipDirectory = zipDirectory;
 exports.getStorage = getStorage;

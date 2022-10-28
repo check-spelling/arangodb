@@ -107,7 +107,7 @@ class ExecutionBlock {
   ///        offset, data and fullcount. The AqlCallStack is copied on purpose,
   ///        so this block can modify it. Will return
   ///        1. state:
-  ///          * WAITING: We have async operation going on, nothing happend,
+  ///          * WAITING: We have async operation going on, nothing happened,
   ///          please call again
   ///          * HASMORE: Here is some data in the request range, there is still
   ///          more, if required call again

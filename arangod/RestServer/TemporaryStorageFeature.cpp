@@ -183,7 +183,7 @@ void TemporaryStorageFeature::collectOptions(
           "use Intel intrinsics-based encryption, requiring a CPU with "
           "the AES-NI instruction set. "
           "If turned off, then OpenSSL is used, which may use "
-          "hardware-accelarated encryption too.",
+          "hardware-accelerated encryption too.",
           new BooleanParameter(&_allowHWAcceleration),
           arangodb::options::makeDefaultFlags(
               arangodb::options::Flags::Enterprise,

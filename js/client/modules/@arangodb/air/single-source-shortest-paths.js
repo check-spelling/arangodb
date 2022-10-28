@@ -173,7 +173,7 @@ function exec_test_shortest_path_impl(graphSpec) {
     const found_path_result = reconstruct_path(graphSpec, from_vertex, to_vertex);
 
     if ((found_path_result.length !== 0) !== (shortest_paths_result.length !== 0)) {
-      internal.print("\u001b[31mFAIL: did not agree on the existance of a shortest path to ", to_vertex, "\u001b[0m");
+      internal.print("\u001b[31mFAIL: did not agree on the existence of a shortest path to ", to_vertex, "\u001b[0m");
       return false;
     } else if (found_path_result.length === 0) {
       internal.print("\u001b[32mOK  : no path found to ", to_vertex, ", as expected", "\u001b[0m");

@@ -404,7 +404,7 @@ Result executeTransactionJS(v8::Isolate* isolate,
   trx.addHint(transaction::Hints::Hint::GLOBAL_MANAGED);
   if (ServerState::instance()->isCoordinator()) {
     // No one knows our Transaction ID yet, so we an run FAST_LOCK_ROUND and
-    // potentialy reroll it.
+    // potentially reroll it.
     trx.addHint(transaction::Hints::Hint::ALLOW_FAST_LOCK_ROUND_CLUSTER);
   }
 
@@ -438,8 +438,9 @@ Result executeTransactionJS(v8::Isolate* isolate,
         rv = std::get<2>(rvTuple);
       } else {
         // some general error we don't know about
-        rv = Result(TRI_ERROR_TRANSACTION_INTERNAL,
-                    "an unknown error occured while executing the transaction");
+        rv =
+            Result(TRI_ERROR_TRANSACTION_INTERNAL,
+                   "an unknown error occurred while executing the transaction");
       }
     }
   } catch (arangodb::basics::Exception const& ex) {

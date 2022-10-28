@@ -234,7 +234,7 @@ var moveAppToServer = function (serviceInfo) {
     filePath = serviceInfo;
   }
   if (!filePath) {
-    throwBadParameter('Invalid file: ' + serviceInfo + '. Has to be a direcotry or zip archive');
+    throwBadParameter('Invalid file: ' + serviceInfo + '. Has to be a directory or zip archive');
   }
   var response = arango.SEND_FILE('/_api/upload', filePath, {'content-type': 'application/zip'});
   if (shouldDelete) {
@@ -314,7 +314,7 @@ var uninstall = function (mount, options) {
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Replaces a Foxx service on the given mount point by an other one.
+// / @brief Replaces a Foxx service on the given mount point by another one.
 // /
 // / TODO: Long Documentation!
 // //////////////////////////////////////////////////////////////////////////////

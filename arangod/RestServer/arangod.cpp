@@ -70,7 +70,7 @@ static int runServer(int argc, char** argv, ArangoGlobalContext& context) {
     server.addReporter(
         {[&](ArangodServer::State state) {
            if (state == ArangodServer::State::IN_START) {
-             // drop priveleges before starting features
+             // drop privileges before starting features
              server.getFeature<PrivilegeFeature>().dropPrivilegesPermanently();
            }
          },

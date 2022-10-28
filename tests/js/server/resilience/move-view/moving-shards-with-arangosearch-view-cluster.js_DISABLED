@@ -526,7 +526,7 @@ function MovingShardsWithViewSuite (options) {
           // between the HTTP calls to `/_api/view` and
           // `/_api/view/<name>/properties`, and the second GET may fail because
           // the view disappeared between the calls.
-          // If that's the case, we treat the view as non-existent on this
+          // If that's the case, we treat the view as nonexistent on this
           // server.
 
           if (e instanceof arangodb.ArangoError

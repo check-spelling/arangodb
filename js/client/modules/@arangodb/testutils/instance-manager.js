@@ -278,7 +278,7 @@ class instanceManager {
 
   launchInstance() {
     if (this.options.hasOwnProperty('server')) {
-      print("external server configured - not testing readyness! " + this.options.server);
+      print("external server configured - not testing readiness! " + this.options.server);
       return;
     }
 
@@ -1120,7 +1120,7 @@ class instanceManager {
           return;
         }
         if (!this.options.noStartStopLogs) {
-          print(Date() + " tickeling cluster node " + arangod.url + " - " + arangod.name);
+          print(Date() + " tickling cluster node " + arangod.url + " - " + arangod.name);
         }
         let url = arangod.url;
         if (arangod.isRole(instanceRole.coordinator) && arangod.args["javascript.enabled"] !== "false") {
@@ -1303,7 +1303,7 @@ class instanceManager {
               print(Date() + " caught exception: " + e.message);
             }
           } else {
-            print(Date() + " tickeling " + arangod.url);
+            print(Date() + " tickling " + arangod.url);
             const reply = download(arangod.url + '/_api/version', '', httpOptions);
 
             if (!reply.error && reply.code === 200) {

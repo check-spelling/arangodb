@@ -912,7 +912,7 @@ find_vertex(typename BGL_NAMED_GRAPH::vertex_name_type const& name,
   }
 }
 
-/// meta-function helping in figuring out if the given VertextProerty belongs to 
+/// meta-function helping in figuring out if the given VertexProperty belongs to 
 /// a named graph
 template<typename VertexProperty>
 struct not_is_named_graph

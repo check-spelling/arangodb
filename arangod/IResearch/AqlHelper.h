@@ -341,7 +341,7 @@ class ScopedAqlValue : private irs::util::noncopyable {
     _node->isConstant()
         ? _node->toVelocyPackValue(builder)
         : _value.toVelocyPack(static_cast<velocypack::Options const*>(nullptr),
-                              builder, /*resoveExternals*/ false,
+                              builder, /*resolveExternals*/ false,
                               /*allowUnindexed*/ false);
   }
 
@@ -373,7 +373,7 @@ class ScopedAqlValue : private irs::util::noncopyable {
 ///          bool attributeAccess(AstNode const&) - attribute access
 ///          bool indexAccess(AstNode const&)     - index access
 ///          bool expansion(AstNode const&)       - expansion
-/// @return success and set head the the starting node of path (reference)
+/// @return success and set head the starting node of path (reference)
 ////////////////////////////////////////////////////////////////////////////////
 template<typename T>
 bool visitAttributeAccess(aql::AstNode const*& head, aql::AstNode const* node,
@@ -576,7 +576,7 @@ aql::AstNode const* checkAttributeAccess(aql::AstNode const* node,
                                          bool allowExpansion) noexcept;
 
 // checks a specified args to be deterministic
-// and retuns reference to a loop variable
+// and returns reference to a loop variable
 aql::Variable const* getSearchFuncRef(aql::AstNode const* args) noexcept;
 
 }  // namespace iresearch

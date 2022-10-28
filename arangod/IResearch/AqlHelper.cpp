@@ -636,7 +636,7 @@ bool attributeAccessEqual(aql::AstNode const* lhs, aql::AstNode const* rhs,
     aql::AstNode const* root = nullptr;
   } lhsValue, rhsValue;
 
-  // TODO: is the "&" intionally. If yes: why?
+  // TODO: is the "&" initially. If yes: why?
   // cppcheck-suppress uninitvar; false positive
   while (lhsValue.read(lhs, ctx) &
          static_cast<unsigned>(rhsValue.read(rhs, ctx))) {

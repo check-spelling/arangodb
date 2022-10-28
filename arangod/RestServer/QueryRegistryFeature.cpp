@@ -335,7 +335,7 @@ void QueryRegistryFeature::collectOptions(
 
   options->addOption(
       "--query.cache-entry-max-size",
-      "maximum size of an invidiual result entry in query result cache",
+      "maximum size of an individual result entry in query result cache",
       new UInt64Parameter(&_queryCacheMaxEntrySize));
 
   options->addOption("--query.cache-include-system-collections",

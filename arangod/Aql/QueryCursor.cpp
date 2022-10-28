@@ -162,7 +162,7 @@ QueryStreamCursor::QueryStreamCursor(std::shared_ptr<arangodb::aql::Query> q,
 
   // In all the following ASSERTs it is valid (though unlikely) that the query
   // is already killed In the cluster this kill operation will trigger cleanup
-  // side-effects, such as changing the STATE and commiting / aborting the
+  // side-effects, such as changing the STATE and committing / aborting the
   // transaction here
   TRI_ASSERT(_query->state() ==
                  aql::QueryExecutionState::ValueType::EXECUTION ||

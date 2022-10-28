@@ -64,7 +64,7 @@ class ReplicationApplier {
   /// @brief test if the replication applier is running
   bool isActive() const;
 
-  /// @brief test if the repication applier is performing initial sync
+  /// @brief test if the replication applier is performing initial sync
   bool isInitializing() const;
 
   /// @brief test if the replication applier is shutting down
@@ -76,7 +76,7 @@ class ReplicationApplier {
   /// @brief set the applier state to stopped
   void markThreadStopped();
 
-  /// @brief perform a complete replication dump and then tail continiously
+  /// @brief perform a complete replication dump and then tail continuously
   void startReplication();
 
   /// @brief switch to tailing mode, DO NOT USE EXTERNALLY

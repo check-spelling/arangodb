@@ -116,7 +116,7 @@ describe('User Rights Management', () => {
                   db._createDatabase(testDBName);
                 } catch (e) {
                 }
-                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficent rights`);
+                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficient rights`);
               }
             });
             it('create database with root user directly given', () => {
@@ -133,7 +133,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   //
                 }
-                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficent rights`);
+                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficient rights`);
               }
             });
             it('create database with user directly given', () => {
@@ -151,7 +151,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   //print(e);
                 }
-                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficent rights`);
+                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficient rights`);
               }
             });
             it('create database with multiple users directly given', () => {
@@ -169,7 +169,7 @@ describe('User Rights Management', () => {
                 } catch (e) {
                   //print(e);
                 }
-                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficent rights`);
+                expect(rootTestDB()).to.equal(false, `${name} was able to create a database with insufficient rights`);
               }
             });
           });

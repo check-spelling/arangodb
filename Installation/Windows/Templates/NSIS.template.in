@@ -735,7 +735,7 @@ Function skip_page
 FunctionEnd
 
 Function UpgradeExisting
-  ; Check whether we acutally should upgrade:
+  ; Check whether we actually should upgrade:
   !insertmacro StripBackslash DATADIR
   !insertmacro StripSlash DATADIR
   DetailPrint "Checking whether an existing database needs upgrade: "
@@ -862,7 +862,7 @@ Function un.unInstallOptionsPage1
 continueUI:
   call un.ReadSettings
 
-  !insertmacro MUI_HEADER_TEXT "Unnstall Options" "Choose options for uninstalling @CPACK_NSIS_PACKAGE_NAME@"
+  !insertmacro MUI_HEADER_TEXT "Uninstall Options" "Choose options for uninstalling @CPACK_NSIS_PACKAGE_NAME@"
 
   nsDialogs::Create 1018
   Pop $Dlg1_Dialog
@@ -907,7 +907,7 @@ continueBaseInstall:
   ;Use the entire tree produced by the INSTALL target.  Keep the
   ;list of directories here in sync with the RMDir commands below.
   SetOutPath "$INSTDIR"
-  ; SetRegView controlls where die regkeys are written to
+  ; SetRegView controls where die regkeys are written to
   ; SetRegView 32 writes the keys into Wow6432
   SetRegView ${BITS}
 
@@ -1124,7 +1124,7 @@ FunctionEnd
 
 Section "Uninstall"
   call un.ReadSettings
-  ; SetRegView controlls where die regkeys are written to
+  ; SetRegView controls where die regkeys are written to
   ; SetRegView 32 writes the keys into Wow6432
   ; this variable was defined by eld and included in NSIS.template.in
   ; we probably need this for the install/uninstall software list.
@@ -1216,7 +1216,7 @@ Done:
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Shell.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   startMenuDeleteLoop:
@@ -1229,7 +1229,7 @@ Done:
     StrCmp "$MUI_TEMP" "$SMPROGRAMS" startMenuDeleteLoopDone startMenuDeleteLoop
   startMenuDeleteLoopDone:
 
-  ; If the user changed the shortcut, then untinstall may not work. This should
+  ; If the user changed the shortcut, then uninstall may not work. This should
   ; try to fix it.
   StrCpy $MUI_TEMP "$START_MENU"
   Delete "$SMPROGRAMS\$MUI_TEMP\Uninstall.lnk"
@@ -1238,7 +1238,7 @@ Done:
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Shell.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   secondStartMenuDeleteLoop:

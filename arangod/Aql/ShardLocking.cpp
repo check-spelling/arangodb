@@ -63,7 +63,7 @@ void ShardLocking::addNode(ExecutionNode const* baseNode, size_t snippetId,
         auto errorCode = TRI_ERROR_NO_ERROR;
         if (col->isDisjoint()) {
           // if disjoint smart edge collection, we must insert an
-          // artifical key with two colons, to pretend it is a real
+          // artificial key with two colons, to pretend it is a real
           // smart graph key
           errorCode = col->getCollection()->getResponsibleShard(
               forceOneShardAttributeValue +
@@ -340,7 +340,7 @@ std::vector<ServerID> ShardLocking::getRelevantServers() {
 
 void ShardLocking::serializeIntoBuilder(
     ServerID const& server, arangodb::velocypack::Builder& builder) const {
-  // We NEED to have some lock infomration for every server, wo do not allow
+  // We NEED to have some lock information for every server, wo do not allow
   // servers that are basically not responsible for data here.
   auto lockInfo = _serverToLockTypeToShard.find(server);
   TRI_ASSERT(lockInfo != _serverToLockTypeToShard.end());

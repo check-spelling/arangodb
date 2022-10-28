@@ -275,7 +275,7 @@ describe('User Rights Management', () => {
                         checkError(e);
                         return;
                       } finally {
-                        expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficent rights`);
+                        expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficient rights`);
                       }
                       expect(false).to.equal(true, `${name} managed to register a task with insufficient rights`);
                     }
@@ -317,7 +317,7 @@ describe('User Rights Management', () => {
                           checkError(e);
                           return;
                         } finally {
-                          expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficent rights`);
+                          expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficient rights`);
                         }
                         expect(false).to.equal(true, `${name} managed to register a task with insufficient rights`);
                       }
@@ -366,7 +366,7 @@ describe('User Rights Management', () => {
                           checkError(e);
                           return;
                         } finally {
-                          expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficent rights`);
+                          expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficient rights`);
                         }
                         expect(false).to.equal(true, `${name} managed to register a task with insufficient rights`);
                       }
@@ -410,7 +410,7 @@ describe('User Rights Management', () => {
                             tasks.register(task);
                             wait(keySpaceId, key);
                             expect(getKey(keySpaceId, `${key}_status`)).to.equal(false, `${name} could drop the view with insufficient rights`);
-                            expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficent rights`);
+                            expect(rootTestView(testViewName)).to.equal(true, `${name} was able to drop a view with insufficient rights`);
                           }
                         } else {
                           try {

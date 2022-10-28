@@ -245,7 +245,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// @brief Check if everything up to a given index has been committed:
   bool isCommitted(index_t last_entry) const override;
 
-  /// @brief Convencience size of agency
+  /// @brief Convenience size of agency
   size_t size() const;
 
   Supervision& supervision() { return *_supervision; }
@@ -316,7 +316,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// @brief Are we ready for RAFT?
   bool ready() const;
 
-  /// @brief Set readyness for RAFT
+  /// @brief Set readiness for RAFT
   void ready(bool b);
 
   /// @brief Reset RAFT timeout intervals
@@ -450,7 +450,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// The following three members are protected by _tiLock:
 
   /// @brief stores for each follower the highest index log it has reported as
-  /// locally logged, and the timestamp we last recevied an answer to
+  /// locally logged, and the timestamp we last received an answer to
   /// sendAppendEntries
   std::unordered_map<std::string, std::pair<SteadyTimePoint, index_t>>
       _lastAckedIndex;
@@ -554,7 +554,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   //        The map holds all current poll promises.
   //        key,value: expiry time of this poll, the promise
   //        When expired or when any change to commitIndex, promise is
-  //        fullfilled All rest handlers will receive the same vpack, They need
+  //        fulfilled All rest handlers will receive the same vpack, They need
   //        to sort out, what is sent to client
   std::mutex _promLock;
   index_t _lowestPromise;

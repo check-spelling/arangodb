@@ -183,7 +183,7 @@ describe('User Rights Management', () => {
                   } catch (e) {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
-                  expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficent rights`);
+                  expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficient rights`);
                   expect(!rootTestCollection(testEdgeColName)).to.equal(false, 'Graph drop reported error, but edge collection was not found afterwards.');
                   expect(!rootTestCollection(testVertexColName)).to.equal(false, 'Graph drop reported error, but vertex collection was not found afterwards.');
                 }
@@ -218,7 +218,7 @@ describe('User Rights Management', () => {
                   } catch (e) {
                     expect(e.errorNum).to.equal(errors.ERROR_FORBIDDEN.code);
                   }
-                  expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficent rights`);
+                  expect(!rootTestGraph()).to.equal(false, `${name} was able to drop a graph with insufficient rights`);
                 }
               });
             });

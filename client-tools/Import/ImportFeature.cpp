@@ -498,7 +498,7 @@ void ImportFeature::start() {
                                     params, _chunkSize, _threadCount,
                                     _autoChunkSize);
 
-  // create colletion
+  // create collection
   if (_createCollection) {
     ih.setCreateCollection(true);
   }

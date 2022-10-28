@@ -21,7 +21,7 @@
 /// @author Simon Grätzer
 ////////////////////////////////////////////////////////////////////////////////
 
-// NOTE: this files exists primarily to include these algorithm specfic structs
+// NOTE: this files exists primarily to include these algorithm specific structs
 // in the
 // cpp files to do template specialization
 
@@ -36,7 +36,7 @@
 namespace arangodb {
 namespace pregel {
 
-// Speaker-listerner Label propagation
+// Speaker-listener Label propagation
 struct SLPAValue {
   // our own initialized id
   uint64_t nodeId = 0;

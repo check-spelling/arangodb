@@ -1096,7 +1096,7 @@ void RocksDBOptionFeature::prepare() {
   if (_enforceBlockCacheSizeLimit && _blockCacheSize > 0) {
     uint64_t shardSize =
         _blockCacheSize / (uint64_t(1) << _blockCacheShardBits);
-    // if we can't store a data block of the mininmum size in the block cache,
+    // if we can't store a data block of the minimum size in the block cache,
     // we may run into problems when trying to put a large data block into the
     // cache. in this case the block cache may return a Status::Incomplete()
     // or Status::MemoryLimit() error and fail the entire read.

@@ -50,7 +50,7 @@ namespace arangodb::tests::aql {
 using TestParam = std::tuple<size_t,         // The input data 0 -> number
                              ExecutorState,  // The upstream state
                              AqlCall,        // The client Call,
-                             bool  // flag to decide if we need to do couting
+                             bool  // flag to decide if we need to do counting
                              >;
 
 class IdExecutorTestCombiner : public AqlExecutorTestCaseWithParam<TestParam> {
@@ -245,7 +245,7 @@ TEST_P(IdExecutorTestCombiner, test_produce_datarange_singleRowFetcher) {
  * 4) Call limit == data, fullCount: true
  * 5) Unlimited call
  *
- * All other cases are excluded by Passhtrough.
+ * All other cases are excluded by Passthrough.
  *
  * This executor is templated by two fetcher types:
  *   ConstFetcher
@@ -254,7 +254,7 @@ TEST_P(IdExecutorTestCombiner, test_produce_datarange_singleRowFetcher) {
  * The output row has the following copy types
  *   DoNotCopy << This is actually used in production, however we cannot test
  * that we actually do something with it DoCopy  << This is to assert that
- * copying is performaed
+ * copying is performed
  */
 
 static auto inputs = testing::Values(0,  // Test empty input

@@ -1148,7 +1148,7 @@ function aqlUpsertOptionsSuite() {
       assertEqual(NEW.value2, {});
 
 
-      // now we update the exact doucment
+      // now we update the exact document
       let q2 = `UPSERT { "value1" : "find me", "value2" : {} }
                 INSERT { "value1" : "not gonna happen" }
                 UPDATE { "value1" : "update" }

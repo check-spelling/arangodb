@@ -313,7 +313,7 @@ TEST_F(V8ViewsTest, test_auth) {
       EXPECT_TRUE(vocbase.views().empty());
     }
 
-    // authorzed (RW user)
+    // authorized (RW user)
     {
       arangodb::auth::UserMap userMap;
       auto& user = userMap

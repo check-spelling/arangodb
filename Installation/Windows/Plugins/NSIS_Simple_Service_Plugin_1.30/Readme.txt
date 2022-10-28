@@ -88,7 +88,7 @@ service_status - one of the following codes
 
 binary_path - The path to the binary including all necessary parameters 
 
-dependencies - Needed services, controls which services have to be started before this one; use the forward slash "/" to add more more than one service
+dependencies - Needed services, controls which services have to be started before this one; use the forward slash "/" to add more than one service
 
 account - The username/account which should be used 
 

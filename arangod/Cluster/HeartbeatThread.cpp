@@ -1251,7 +1251,7 @@ bool HeartbeatThread::init() {
 }
 
 void HeartbeatThread::beginShutdown() {
-  // First shut down the maintenace thread:
+  // First shut down the maintenance thread:
   if (_maintenanceThread != nullptr) {
     _maintenanceThread->stop();
 

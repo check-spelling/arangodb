@@ -252,7 +252,7 @@ class Try {
   bool hasValue() const { return _content == Content::Value; }
   /// @return True if the Try contains an exception, false otherwise
   bool hasException() const { return _content == Content::Exception; }
-  /// @return true if the Try contains an exception or a vlaue
+  /// @return true if the Try contains an exception or a value
   bool valid() const { return _content != Content::None; }
 
   /// @throws std::logic_error if the Try doesn't contain an exception

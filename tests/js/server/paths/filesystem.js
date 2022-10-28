@@ -98,7 +98,7 @@ function testSuite() {
 
   function tryAppendAllowed(fn, text) {
     let rc = fs.append(fn, text);
-    assertTrue(rc, 'Expected ' + fn + ' to be appendeable');
+    assertTrue(rc, 'Expected ' + fn + ' to be appendable');
   }
 
   function tryChmodAllowed(fn) {

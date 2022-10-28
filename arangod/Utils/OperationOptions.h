@@ -34,7 +34,7 @@ class ExecContext;
 
 /// @brief Indicates whether we want to observe writes performed within the
 /// current (sub) transaction. This is only relevant for AQL queries.
-/// AQL queries are performed transcationally, i.e., either all changes are
+/// AQL queries are performed transactionally, i.e., either all changes are
 /// visible or none (ignoring intermediate commits). A query should observe
 /// (only) the state of the db/transaction at the time the query was started,
 /// e.g., documents that are inserted as part of the current query should not
@@ -163,7 +163,7 @@ struct OperationOptions {
   // header when putting together the requests for DB servers
   bool documentCallFromAql = false;
 
-  // whether or not indexing can be disabed. We must not disable indexing if we
+  // whether or not indexing can be disabled. We must not disable indexing if we
   // have to ensure that writes become visible to the current query. This is
   // necessary for UPSERTS where the subquery relies on a non-unique secondary
   // index.

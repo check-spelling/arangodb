@@ -82,8 +82,8 @@ void EdgeConditionBuilder::swapSides(AstNode* cond) {
   TRI_ASSERT(cond->type == NODE_TYPE_OPERATOR_BINARY_EQ);
   if (_containsCondition) {
 #ifdef ARANGODB_ENABLE_MAINTAINER_MODE
-    // If used correctly this class guarantuees that the last element
-    // of the nary-and is the _from or _to part and is exchangable.
+    // If used correctly this class guarantees that the last element
+    // of the nary-and is the _from or _to part and is exchangeable.
     TRI_ASSERT(_modCondition->numMembers() > 0);
     auto changeNode =
         _modCondition->getMemberUnchecked(_modCondition->numMembers() - 1);

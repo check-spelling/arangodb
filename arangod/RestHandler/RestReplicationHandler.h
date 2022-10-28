@@ -163,7 +163,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
   void handleCommandSync();
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief return the configuration of the the replication applier
+  /// @brief return the configuration of the replication applier
   //////////////////////////////////////////////////////////////////////////////
 
   void handleCommandApplierGetConfig();
@@ -307,7 +307,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
   uint64_t determineChunkSize() const;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief Get correct replication applier, based on global paramerter
+  /// @brief Get correct replication applier, based on global parameter
   //////////////////////////////////////////////////////////////////////////////
   ReplicationApplier* getApplier(bool& global);
 
@@ -533,7 +533,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
                                                  LogicalCollection* col) const;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief Cacnel the lock with the given id
+  /// @brief Cancel the lock with the given id
   ///        Will return true, if we did have the lock
   ///        Will return false, if we were still in the process of getting it.
   ///        Will return error if the lock has expired or is not found.

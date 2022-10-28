@@ -46,7 +46,7 @@
 
 namespace {
 
-// assume up to 2x machine epsilon in precision errors for signleton caps
+// assume up to 2x machine epsilon in precision errors for singleton caps
 constexpr auto SIGNLETON_CAP_EPS = 2 * std::numeric_limits<double_t>::epsilon();
 
 using namespace arangodb;

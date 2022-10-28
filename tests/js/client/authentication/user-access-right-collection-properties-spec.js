@@ -120,7 +120,7 @@ describe('User Rights Management', () => {
                   if (hasReadAccess) {
                     let col = db._collection(colName);
                     let origIdxCount = col.getIndexes().length;
-                    expect(col.getIndexes().length).to.equal(origIdxCount, `${name} was able to create a new index on the collection, with insufficent rights.`);
+                    expect(col.getIndexes().length).to.equal(origIdxCount, `${name} was able to create a new index on the collection, with insufficient rights.`);
                   }
                 }
               });
@@ -145,7 +145,7 @@ describe('User Rights Management', () => {
                   if (hasReadAccess) {
                     let col = db._collection(colName);
                     let wfs = col.properties().waitForSync;
-                    expect(col.properties().waitForSync).to.equal(wfs, `${name} was able to change properties of the collection, with insufficent rights.`);
+                    expect(col.properties().waitForSync).to.equal(wfs, `${name} was able to change properties of the collection, with insufficient rights.`);
                   }
                 }
               });

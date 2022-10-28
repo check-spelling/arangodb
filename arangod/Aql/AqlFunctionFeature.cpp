@@ -414,7 +414,7 @@ void AqlFunctionFeature::addGeoFunctions() {
   add({"GEO_AREA", ".|.", flags, &functions::GeoArea});
 
   // (point0, point1, lower, upper[, includeLower = true, includeUpper = true,
-  // ellipsoid = "shpere"])
+  // ellipsoid = "sphere"])
   add({"GEO_IN_RANGE", ".,.,.,.|.,.,.", flags, &functions::GeoInRange});
 }
 
@@ -563,7 +563,7 @@ void AqlFunctionFeature::addMiscFunctions() {
   // NEAR, WITHIN, WITHIN_RECTANGLE and FULLTEXT are replaced by the AQL
   // optimizer with collection-/index-based subqueries. they are all
   // marked as deterministic and cacheable here as they are just
-  // placeholders for collection/index accesses nowaways.
+  // placeholders for collection/index accesses nowadays.
   add({"NEAR", ".h,.,.|.,.", Function::makeFlags(FF::Cacheable),
        &functions::NotImplemented});
   add({"WITHIN", ".h,.,.,.|.", Function::makeFlags(FF::Cacheable),
@@ -595,7 +595,7 @@ void AqlFunctionFeature::addMiscFunctions() {
 #endif
 
   // this is an internal function that is only here for testing. it cannot
-  // be invoked by end users, because refering to internal functions from user
+  // be invoked by end users, because referring to internal functions from user
   // queries will pretend these functions do not exist.
   add({"INTERNAL", "", Function::makeFlags(FF::Internal),
        &functions::NotImplemented});

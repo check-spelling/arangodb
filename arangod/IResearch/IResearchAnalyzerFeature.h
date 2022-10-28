@@ -407,7 +407,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   /// @brief emplace an analyzer as per the specified parameters
   /// @param result the result of the successful emplacement (out-param)
   ///               first - the emplaced pool
-  ///               second - if an insertion of an new analyzer occured
+  ///               second - if an insertion of an new analyzer occurred
   /// @param name analyzer name (already normalized)
   /// @param type the underlying IResearch analyzer type
   /// @param properties the configuration for the underlying IResearch type
@@ -564,7 +564,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   //////////////////////////////////////////////////////////////////////////////
   /// @brief load the analyzers for the specific database, analyzers read from
   ///        the corresponding collection if they have not been loaded yet
-  /// @param database the database to load analizers for (nullptr == all)
+  /// @param database the database to load analyzers for (nullptr == all)
   /// @note on coordinator and db-server reload is also done if the database has
   ///       changed analyzers revision in agency
   //////////////////////////////////////////////////////////////////////////////
@@ -577,7 +577,7 @@ class IResearchAnalyzerFeature final : public ArangodFeature {
   void cleanupAnalyzers(irs::string_ref database);
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief store the definition for the speicifed pool in the corresponding
+  /// @brief store the definition for the specified pool in the corresponding
   ///        vocbase
   /// @note on success will modify the '_key' of the pool
   //////////////////////////////////////////////////////////////////////////////

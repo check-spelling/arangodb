@@ -102,7 +102,7 @@ class CreateDatabaseInfo {
 
   bool validId() const { return _validId; }
 
-  // shold be created with vaild id
+  // shold be created with valid id
   void setId(uint64_t id) {
     _id = id;
     _validId = true;
@@ -137,7 +137,7 @@ class CreateDatabaseInfo {
 
  private:
   Result extractUsers(VPackSlice const& users);
-  Result extractOptions(VPackSlice const& options, bool extactId = true,
+  Result extractOptions(VPackSlice const& options, bool extractId = true,
                         bool extractName = true);
   Result checkOptions();
 

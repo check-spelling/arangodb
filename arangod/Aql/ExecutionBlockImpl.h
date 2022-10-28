@@ -140,7 +140,7 @@ class ExecutionBlockImpl final : public ExecutionBlock {
   // Used in getSome/skipSome implementation. deprecated
   enum class InternalState { FETCH_DATA, FETCH_SHADOWROWS, DONE };
 
-  // Used in execute implmentation
+  // Used in execute implementation
   // Defines the internal state this executor is in.
   enum class ExecState {
     // We need to check the client call to define the next state (inital state)
@@ -174,7 +174,7 @@ class ExecutionBlockImpl final : public ExecutionBlock {
   /**
    * @brief Construct a new ExecutionBlock
    *        This API is subject to change, we want to make it as independent of
-   *        AQL / Query interna as possible.
+   *        AQL / Query internal as possible.
    *
    * @param engine The AqlExecutionEngine holding the query and everything
    *               required for the execution.
@@ -208,7 +208,7 @@ class ExecutionBlockImpl final : public ExecutionBlock {
   ///        offset, data and fullcount. The AqlCallStack is copied on purpose,
   ///        so this block can modify it. Will return
   ///        1. state:
-  ///          * WAITING: We have async operation going on, nothing happend,
+  ///          * WAITING: We have async operation going on, nothing happened,
   ///          please call again
   ///          * HASMORE: Here is some data in the request range, there is still
   ///          more, if required call again

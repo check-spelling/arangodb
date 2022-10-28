@@ -51,7 +51,7 @@ function aqlSkippingClusterTestsuite () {
      * In an AQL cluster query, when gathering unsorted data in combination with a LIMIT with non-zero offset,
      * if this offset exactly matches the number of documents in the first shards consumed, the rest of the documents
      * was not returned.
-     * The test is undeterministic, but has a high chance to detect this problem.
+     * The test is nondeterministic, but has a high chance to detect this problem.
      * This can only trigger when we skip a shard with the exact number of documents left in it,
      * AND the shard returning DONE with that skip.
      * Because of this, this problem didn't occur in 3.5, as the UnsortingGather dependencies were always RemoteNodes,
@@ -74,7 +74,7 @@ function aqlSkippingClusterTestsuite () {
     /**
      * Regression test for PR https://github.com/arangodb/arangodb/pull/14268
      * A query with LIMIT and fullCount on a sharded collection would hang indefinitely
-     * if the LIMIT is less then number of available documents.
+     * if the LIMIT is less than number of available documents.
      */
     testSkipWithFullCount: function () {
       const query = 'FOR doc IN @@col LIMIT 2 RETURN doc';

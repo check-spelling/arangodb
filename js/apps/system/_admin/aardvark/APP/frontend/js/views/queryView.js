@@ -1982,7 +1982,7 @@
               }
 
               if (geometry.type === 'Point' || geometry.type === 'MultiPoint') {
-                // reverse neccessary if we are using GeoJSON order
+                // reverse necessary if we are using GeoJSON order
                 // L.marker(geo.coordinates.reverse()).addTo(self.maps[counter]);
                 try {
                   geojson = new L.GeoJSON(geometry, {
@@ -2396,7 +2396,7 @@
             'query parsing',
             'abstract syntax tree optimizations',
             'loading collections',
-            'instanciation of initial execution plan',
+            'instantiation of initial execution plan',
             'execution plan optimization and permutation',
             'query execution',
             'query finalization'
@@ -2534,12 +2534,12 @@
             }
           });
 
-          var percentagea = 0;
+          var percentages = 0;
           if (totala > 0) {
-            percentagea = hitsa / totala * 100;
+            percentages = hitsa / totala * 100;
           }
 
-          if (percentagea >= 95) {
+          if (percentages >= 95) {
             found = true;
             toReturn.defaultType = 'graph';
             toReturn.graphInfo = 'object';
@@ -2584,7 +2584,7 @@
         if (check) {
           _.each(result, function (obj) {
             if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
-              // not a document and not suitable for tabluar display
+              // not a document and not suitable for tabular display
               return;
             }
 
@@ -2605,7 +2605,7 @@
                     }
                   }
                 } catch (err) {
-                 // happens e.g. if doc.geomotry === null
+                 // happens e.g. if doc.geometry === null
                 }
               }
             }

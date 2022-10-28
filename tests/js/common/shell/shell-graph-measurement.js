@@ -58,7 +58,7 @@ function measurementSuite() {
 
     setUp : function () {
       try {
-        // Drop the graph if it exsits
+        // Drop the graph if it exists
         if (Graph._exists(graph_name)) {
           Graph._drop(graph_name, true);
         }
@@ -229,7 +229,7 @@ function geodesicSuite() {
 
     setUp : function () {
       try {
-        // Drop the graph if it exsits
+        // Drop the graph if it exists
         if (Graph._exists(graph_name)) {
           Graph._drop(graph_name, true);
         }
@@ -395,7 +395,7 @@ function normalizedSuite() {
 
     setUp : function () {
       try {
-        // Drop the graph if it exsits
+        // Drop the graph if it exists
         if (Graph._exists(graph_name)) {
           Graph._drop(graph_name, true);
         }

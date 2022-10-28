@@ -1330,7 +1330,7 @@ void Supervision::run() {
           {
             MUTEX_LOCKER(locker, _lock);
 
-            // Only modifiy this condition with extreme care:
+            // Only modify this condition with extreme care:
             // Supervision needs to wait until the agent has finished leadership
             // preparation or else the local agency snapshot might be behind its
             // last state.
@@ -3329,7 +3329,7 @@ void Supervision::shrinkCluster() {
     /**
      * mop: TODO instead of using Plan/Collections we should watch out for
      * Plan/ReplicationFactor and Current...when the replicationFactor is not
-     * fullfilled we should add a follower to the plan
+     * fulfilled we should add a follower to the plan
      * When seeing more servers in Current than replicationFactor we should
      * remove a server.
      * RemoveServer then should be changed so that it really just kills a server

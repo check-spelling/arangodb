@@ -34,7 +34,7 @@
 namespace arangodb {
 namespace consensus {
 
-// The following are instanciated in Agent.cpp:
+// The following are instantiated in Agent.cpp:
 extern std::string const pubApiPrefix;
 extern std::string const privApiPrefix;
 extern std::string const NO_LEADER;

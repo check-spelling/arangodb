@@ -340,7 +340,7 @@ function aqlSkippingIndexTestsuite () {
 
       if (internal.isCluster()) {
         // In cluster we cannot identify how many documents
-        // are scanned as it depends on the ranomd distribution
+        // are scanned as it depends on the random distribution
         // of data, if the first shard or server can fulfill
         // this query, the other shard will never be asked
         return;
@@ -419,7 +419,7 @@ function aqlSkippingIndexTestsuite () {
       assertEqual(100, result.json.length);
       if (internal.isCluster()) {
         // In cluster we cannot identify how many documents
-        // are scanned as it depends on the ranomd distribution
+        // are scanned as it depends on the random distribution
         // of data, if the first shard or server can fulfill
         // this query, the other shard will never be asked
         return;

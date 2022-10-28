@@ -98,8 +98,8 @@ Report Execution::run() {
       return std::get<StoppingCriterion::Runtime>(stoppingCriterion).ms /
              sleeptimePerRound;
     } else {
-      // for stopping criteria based on number of operations we use an artifical
-      // time limit of one hour
+      // for stopping criteria based on number of operations we use an
+      // artificial time limit of one hour
       return 1000 * 60 * 60 / 100;
     }
   }();

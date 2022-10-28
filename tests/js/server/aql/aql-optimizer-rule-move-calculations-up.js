@@ -177,7 +177,7 @@ function optimizerRuleTestSuite () {
 /// @brief test that rule doesn't move subquery up because it has a dependency on the outer LOOP variable
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    testRuleNotMoveSubqueryWithDepencencyUp : function () {
+    testRuleNotMoveSubqueryWithDependencyUp : function () {
       const query = "FOR i IN 1..10 LET x = (FOR j IN 1..10 LET a = i * 2 LET b = j * 3 RETURN a + b) RETURN x";
       const resultEnabled = AQL_EXPLAIN(query, { }, paramEnabled);
       const nodesEnabled = filterOutRules(resultEnabled.plan.nodes);

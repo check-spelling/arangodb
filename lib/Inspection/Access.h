@@ -321,7 +321,7 @@ struct Access<VPackBuilder> : AccessBase<VPackBuilder> {
       return Status{};
     } else {
       if (!x.isClosed()) {
-        return Status{"Exected closed VPackBuilder"};
+        return Status{"Expected closed VPackBuilder"};
       }
       f.builder().add(x.slice());
       return Status{};

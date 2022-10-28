@@ -1068,7 +1068,7 @@ bool optimizeTraversalPathVariable(
     // order to not optimize away our path variable, and then being unable
     // to access the non-existing attribute, we simply activate the
     // production of vertices. this prevents us from running into errors
-    // trying to access an attribute of an optimzed-away variable later
+    // trying to access an attribute of an optimized-away variable later
     producePathsVertices = true;
   }
 
@@ -5051,7 +5051,7 @@ void arangodb::aql::distributeSortToClusterRule(
           break;
         }
         // late-materialization should be set only after sort nodes are
-        // distributed in cluster as it accounts this disctribution. So we
+        // distributed in cluster as it accounts this distribution. So we
         // should not encounter this kind of nodes for now
         case EN::MATERIALIZE:
         case EN::SUBQUERY_START:
@@ -5619,7 +5619,7 @@ void arangodb::aql::undistributeRemoveAfterEnumCollRule(
   opt->addPlan(std::move(plan), rule, modified);
 }
 
-/// @brief auxilliary struct for finding common nodes in OR conditions
+/// @brief auxiliary struct for finding common nodes in OR conditions
 struct CommonNodeFinder {
   std::vector<AstNode const*> possibleNodes;
 
@@ -5725,7 +5725,7 @@ struct CommonNodeFinder {
   }
 };
 
-/// @brief auxilliary struct for the OR-to-IN conversion
+/// @brief auxiliary struct for the OR-to-IN conversion
 struct OrSimplifier {
   Ast* ast;
   ExecutionPlan* plan;
@@ -7271,7 +7271,7 @@ static std::unique_ptr<Condition> buildGeoCondition(ExecutionPlan* plan,
   return cond;
 }
 
-// applys the optimization for a candidate
+// applies the optimization for a candidate
 static bool applyGeoOptimization(ExecutionPlan* plan, LimitNode* ln,
                                  GeoIndexInfo const& info) {
   TRI_ASSERT(info.collection != nullptr);
@@ -7443,7 +7443,7 @@ static bool isAllowedIntermediateSortLimitNode(ExecutionNode* node) {
       // sorting gather is allowed
       return ExecutionNode::castTo<GatherNode*>(node)->isSortingGather();
     case ExecutionNode::WINDOW:
-      // if we do not look at following rows we can appyly limit to sort
+      // if we do not look at following rows we can apply limit to sort
       return !ExecutionNode::castTo<WindowNode*>(node)->needsFollowingRows();
     case ExecutionNode::SINGLETON:
     case ExecutionNode::ENUMERATE_COLLECTION:
@@ -7471,7 +7471,7 @@ static bool isAllowedIntermediateSortLimitNode(ExecutionNode* node) {
     case ExecutionNode::SUBQUERY_START:
     case ExecutionNode::SUBQUERY_END:
     // TODO: As soon as materialize does no longer have to filter out
-    //  non-existent documents, move MATERIALIZE to the allowed nodes!
+    //  nonexistent documents, move MATERIALIZE to the allowed nodes!
     case ExecutionNode::MATERIALIZE:
     case ExecutionNode::MUTEX:
       return false;
@@ -7519,7 +7519,7 @@ void arangodb::aql::sortLimitRule(Optimizer* opt,
           if (firstSortNode) {
             auto& mainLimitNode = *ExecutionNode::castTo<LimitNode*>(limitNode);
             // if we don't have remote breaker we could just replace the limit
-            // node otherwise we must have new node to constrain accesss to the
+            // node otherwise we must have new node to constrain access to the
             // sort node with only offset+limit documents
             if (!hasRemoteBeforeSort) {
               plan->unlinkNode(limitNode);
@@ -8354,7 +8354,7 @@ void arangodb::aql::asyncPrefetchRule(Optimizer* opt,
   if (!checker.containsModificationNode) {
     // here we only set a flag that this plan should use async prefetching.
     // The actual prefetching is performed on node level and therefore also
-    // enbabled/disabled on the nodes. However, this is not done here but in
+    // enabled/disabled on the nodes. However, this is not done here but in
     // a post-processing step so we can operate on the finalized query (e.g.,
     // after subquery-splicing)
     plan->enableAsyncPrefetching();

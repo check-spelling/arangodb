@@ -96,7 +96,7 @@ TEST(PromiseTest, ctorPostconditionValid) {
 #undef DOIT
 }
 
-TEST(PromiseTest, ctorPostconditionInvali) {
+TEST(PromiseTest, ctorPostconditionInvalid) {
   // Ctors/factories that promise invalid -- postcondition: !valid()
 
 #define DOIT(CREATION_EXPR)    \

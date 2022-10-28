@@ -302,7 +302,7 @@ void AgencyFeature::validateOptions(std::shared_ptr<ProgramOptions> options) {
   }
 
   if (!V8DealerFeature::javascriptRequestedViaOptions(options)) {
-    // specifying --console requires JavaScript, so we can only turn Javascript
+    // specifying --console requires JavaScript, so we can only turn JavaScript
     // off if not requested
 
     // console mode inactive. so we can turn off V8

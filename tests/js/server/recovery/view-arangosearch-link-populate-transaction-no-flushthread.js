@@ -91,8 +91,8 @@ function recoverySuite () {
       assertTrue(p.UnitTestsRecoveryDummy.includeAllFields);
 
       var result = db._query("FOR doc IN UnitTestsRecoveryView SEARCH doc.c >= 0 OPTIONS {waitForSync: true} COLLECT WITH COUNT INTO length RETURN length").toArray();
-      var epxectedResult = db._query("FOR doc IN UnitTestsRecoveryDummy FILTER doc.c >= 0 COLLECT WITH COUNT INTO length RETURN length").toArray();
-      assertEqual(result[0], epxectedResult[0]);
+      var expectedResult = db._query("FOR doc IN UnitTestsRecoveryDummy FILTER doc.c >= 0 COLLECT WITH COUNT INTO length RETURN length").toArray();
+      assertEqual(result[0], expectedResult[0]);
     }
 
   };

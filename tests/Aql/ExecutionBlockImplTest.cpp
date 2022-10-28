@@ -248,7 +248,7 @@ class SharedExecutionBlockImplTest {
    *        In addition we have the following assertions:
    *        1. Whenever this produce is called, it asserts that is called with
    * the expectedCall
-   *        2. This call has been called less then 10 times (emergency bailout
+   *        2. This call has been called less than 10 times (emergency bailout
    * against infinite loop)
    *        3. If there is an input row, this row is valid.
    *        4. If called with empty input, we still have exactly
@@ -286,7 +286,7 @@ class SharedExecutionBlockImplTest {
       EXPECT_EQ(clientCall.hardLimit, expectedCall.hardLimit);
       EXPECT_EQ(clientCall.needsFullCount(), expectedCall.needsFullCount());
       if (input.hasDataRow()) {
-        // We expact only the empty initial row, so just consume it
+        // We expect only the empty initial row, so just consume it
         auto const [state, row] = input.nextDataRow();
         EXPECT_EQ(state, ExecutorState::DONE);
         EXPECT_TRUE(row.isInitialized());
@@ -313,7 +313,7 @@ class SharedExecutionBlockImplTest {
    *        In addition we have the following assertions:
    *        1. Whenever this produce is called, it asserts that is called with
    * the expectedCall
-   *        2. This call has been called less then 10 times (emergency bailout
+   *        2. This call has been called less than 10 times (emergency bailout
    * against infinite loop)
    *        3. If there is an input row, this row is valid.
    *
@@ -356,7 +356,7 @@ class SharedExecutionBlockImplTest {
   }
 
   /**
-   * @brief Generate a call that failes whenever it is actually called.
+   * @brief Generate a call that fails whenever it is actually called.
    *        Used to check that SKIP is not invoked
    *
    * @return SkipCall The always failing call to be used for the executor.
@@ -371,7 +371,7 @@ class SharedExecutionBlockImplTest {
   }
 
   /**
-   * @brief Generate a call that failes whenever it is actually called.
+   * @brief Generate a call that fails whenever it is actually called.
    *        Used to check that produce is not invoked
    *
    * @return ProduceCall The always failing call to be used for the executor.
@@ -453,7 +453,7 @@ class ExecutionBlockImplExecuteSpecificTest
    * ExecutionBlockImpl.execute(call),
    *
    * @param prod The Produce call that should be used within the Lambda Executor
-   * @param skip The Skip call that should be used wiithin the Lambda Executor
+   * @param skip The Skip call that should be used within the Lambda Executor
    * (only used for non-passthrough)
    * @param call The AqlCall that should be applied on the Executors.
    * @return std::tuple<ExecutionState, size_t, SharedAqlItemBlockPtr>  Response
@@ -633,7 +633,7 @@ TEST_P(ExecutionBlockImplExecuteSpecificTest, test_toplevel_offset_only_call) {
   AqlCall fullCall{};
   fullCall.offset = 20;
   // This test simulates a simple "skipSome" call on the old API.
-  // It is releveant in any intermediate state.
+  // It is relevant in any intermediate state.
   fullCall.softLimit = 0u;
   size_t nrCalls = 0;
 
@@ -1120,7 +1120,7 @@ struct CallAsserter : public BaseCallAsserter {
 /**
  * @brief Asserter used "above" an executor that implements
  *        skip and produce, and transforms everything to produce.
- *        Expects to be called twice for each sitation (with and without
+ *        Expects to be called twice for each situation (with and without
  * input). Expect up to three situations: SKIP, GET and FULLCOUNT.
  */
 struct GetOnlyCallAsserter : public BaseCallAsserter {
@@ -1311,10 +1311,10 @@ class ExecutionBlockImplExecuteIntegrationTest
    * @brief Create a Producing ExecutionBlock
    *        For every input row this block will write the array given in data
    *        into the output once.
-   *        Each entry in the array goes into one line and is writen into
+   *        Each entry in the array goes into one line and is written into
    * outReg.
    *
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param data The data to be written, needs to be an array.
    * @param outReg The register to be written to
    * @return std::unique_ptr<ExecutionBlock> ready to use ProducerBlock.
@@ -1402,7 +1402,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    *        It simply takes one input row and copies it into the output
    *
    * @param asserter A call asserter, that will invoke getCalled on every call
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param maxReg The number of registers in input and output. (required for
    * forwarding of data)
    * @return std::unique_ptr<ExecutionBlock> ready to use ForwardingBlock.
@@ -1440,7 +1440,7 @@ class ExecutionBlockImplExecuteIntegrationTest
    * produce call
    * @param skipAsserter A call asserter, that will invoke getCalled on every
    * skip call
-   * @param dependency The dependecy of this block (produces input)
+   * @param dependency The dependency of this block (produces input)
    * @param maxReg The number of registers in input and output. (required for
    * forwarding of data)
    * @return std::unique_ptr<ExecutionBlock> ready to use ForwardingBlock.
@@ -1460,7 +1460,7 @@ class ExecutionBlockImplExecuteIntegrationTest
         output.advanceRow();
       }
       // Do forward a softLimit call only.
-      // Do not oeverfetch here.
+      // Do not overfetch here.
       AqlCall request{};
       request.softLimit = output.getClientCall().getLimit();
       return {inputRange.upstreamState(), NoStats{}, request};
@@ -1537,7 +1537,7 @@ class ExecutionBlockImplExecuteIntegrationTest
   /**
    * @brief Helper method to validate the result
    *        It will take into account the call used as Parameter
-   *        and slice the expectated outcome to it.
+   *        and slice the expected outcome to it.
    *
    * It asserts the following:
    *   1. skipped == offset() + (data.length - hardLimit [fullcount])
@@ -1771,7 +1771,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest, test_produce_using_two) {
   ValidateResult(secondRegBuilder, skipped, block, outRegSecond);
 }
 
-// Explicitly test call forwarding, on exectors.
+// Explicitly test call forwarding, on executors.
 // We use two pass-through producers, that simply copy over input and assert an
 // calls. On top of them we have a 1000 line producer. We expect the result to
 // be identical to the 1000 line producer only.
@@ -1813,7 +1813,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
   ValidateResult(builder, skipped, block, outReg);
 }
 
-// Explicitly test call forwarding, on exectors.
+// Explicitly test call forwarding, on executors.
 // We use one pass-through producer, that simply copy over input and assert an
 // calls. And we have one non-passthrough below it, that requests all data from
 // upstream, and internally does skipping. On top of them we have a 1000 line
@@ -1864,7 +1864,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
       call.didSkip(1);
     }
     // Do forward a softLimit call only.
-    // Do not oeverfetch here.
+    // Do not overfetch here.
     AqlCall request;
     if (call.getOffset() > 0) {
       request.softLimit = call.getOffset();
@@ -1903,7 +1903,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
 TEST_P(ExecutionBlockImplExecuteIntegrationTest, test_multiple_upstream_calls) {
   // The WAITING block mock can only stop returning after a full block.
   // As the used calls have "random" sizes, we simply create 1 line blocks only.
-  // This is less then optimal, but we will have an easily predictable result,
+  // This is less than optimal, but we will have an easily predictable result,
   // with a complex internal structure
   std::deque<SharedAqlItemBlockPtr> blockDeque;
   auto builder = std::make_shared<VPackBuilder>();
@@ -1960,7 +1960,7 @@ TEST_P(ExecutionBlockImplExecuteIntegrationTest,
        test_multiple_upstream_calls_passthrough) {
   // The WAITING block mock can only stop returning after a full block.
   // As the used calls have "random" sizes, we simply create 1 line blocks only.
-  // This is less then optimal, but we will have an easily predictable result,
+  // This is less than optimal, but we will have an easily predictable result,
   // with a complex internal structure
   std::deque<SharedAqlItemBlockPtr> blockDeque;
   auto builder = std::make_shared<VPackBuilder>();

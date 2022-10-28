@@ -172,7 +172,7 @@ describe('User Rights Management', () => {
                 if (systemLevel['rw'].has(name)) {
                   expect(rootTestUser()).to.equal(true, 'User creation reported success, but User was not found afterwards.');
                 } else {
-                  expect(rootTestUser()).to.equal(false, `${name} was able to create a user with insufficent rights`);
+                  expect(rootTestUser()).to.equal(false, `${name} was able to create a user with insufficient rights`);
                 }
               } else {
                 try {

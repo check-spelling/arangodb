@@ -2,7 +2,7 @@
 
 import { cloneDeep } from 'lodash';
 import React, { useEffect, useReducer, useRef, useState } from 'react';
-import ToolTip from '../../components/arango/tootip';
+import ToolTippy from '../../components/arango/tooltippy';
 import Textbox from '../../components/pure-css/form/Textbox';
 import {
   getNumericFieldSetter, getNumericFieldValue, getReducer, isAdminUser as userIsAdmin,
@@ -83,12 +83,12 @@ const ViewSettingsReactView = ({ name }) => {
                          required={true} disabled={nameEditDisabled}/>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title={`The View name (string${nameEditDisabled ? ', immutable' : ''}).`}
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
 
@@ -102,12 +102,12 @@ const ViewSettingsReactView = ({ name }) => {
                          onChange={getNumericFieldSetter('cleanupIntervalStep', dispatch)}/>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title={`ArangoSearch waits at least this many commits between removing unused files in its data directory.`}
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
 
@@ -121,12 +121,12 @@ const ViewSettingsReactView = ({ name }) => {
                          onChange={getNumericFieldSetter('commitIntervalMsec', dispatch)}/>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Wait at least this many milliseconds between committing View data store changes and making documents visible to queries."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
 
@@ -140,12 +140,12 @@ const ViewSettingsReactView = ({ name }) => {
                          onChange={getNumericFieldSetter('consolidationIntervalMsec', dispatch)}/>
               </th>
               <th className="collectionTh">
-                <ToolTip
+                <ToolTippy
                   title="Wait at least this many milliseconds between index segments consolidations."
                   setArrow={true}
                 >
                   <span className="arangoicon icon_arangodb_info"></span>
-                </ToolTip>
+                </ToolTippy>
               </th>
             </tr>
             </tbody>

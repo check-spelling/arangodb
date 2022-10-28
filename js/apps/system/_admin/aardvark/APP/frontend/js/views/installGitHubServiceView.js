@@ -31,7 +31,7 @@
     checkValidators: function () {
       if (window.modalView._validators.length !== 1) {
         window.modalView.clearValidators();
-        this.setGithubValidators();
+        this.setGitHubValidators();
       }
     },
 
@@ -42,7 +42,7 @@
       }));
 
       this.breadcrumb();
-      this.setGithubValidators();
+      this.setGitHubValidators();
       arangoHelper.createTooltips('.modalTooltips');
 
       return this;
@@ -68,10 +68,10 @@
     },
 
     installGitHubService: function () {
-      arangoHelper.createMountPointModal(this.installFoxxFromGithub.bind(this));
+      arangoHelper.createMountPointModal(this.installFoxxFromGitHub.bind(this));
     },
 
-    installFoxxFromGithub: function () {
+    installFoxxFromGitHub: function () {
       if (window.modalView.modalTestAll()) {
         var mount, info, options, url, version;
         if (this._upgrade) {
@@ -111,14 +111,14 @@
       window.App.applicationsView.installCallback(result);
     },
 
-    setGithubValidators: function () {
+    setGitHubValidators: function () {
       window.modalView.modalBindValidation({
         id: 'repository',
         validateInput: function () {
           return [
             {
               rule: Joi.string().required().regex(/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+$/),
-              msg: 'No valid Github account and repository.'
+              msg: 'No valid GitHub account and repository.'
             }
           ];
         }

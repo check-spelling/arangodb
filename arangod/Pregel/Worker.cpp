@@ -205,7 +205,7 @@ template<typename V, typename E, typename M>
 void Worker<V, E, M>::prepareGlobalStep(VPackSlice const& data,
                                         VPackBuilder& response) {
   // Only expect serial calls from the conductor.
-  // Lock to prevent malicous activity
+  // Lock to prevent malicious activity
   MUTEX_LOCKER(guard, _commandMutex);
   if (_state != WorkerState::IDLE) {
     LOG_PREGEL("b8506", ERR)
@@ -309,7 +309,7 @@ void Worker<V, E, M>::receivedMessages(VPackSlice const& data) {
 template<typename V, typename E, typename M>
 void Worker<V, E, M>::startGlobalStep(VPackSlice const& data) {
   // Only expect serial calls from the conductor.
-  // Lock to prevent malicous activity
+  // Lock to prevent malicious activity
   MUTEX_LOCKER(guard, _commandMutex);
   if (_state != WorkerState::PREPARING) {
     THROW_ARANGO_EXCEPTION_MESSAGE(
@@ -606,7 +606,7 @@ void Worker<V, E, M>::_continueAsync() {
         _writeCache->containedMessageCount() == 0) {
       return;
     }
-    // avoid calling this method accidentially
+    // avoid calling this method accidentally
     _state = WorkerState::COMPUTING;
   }
 

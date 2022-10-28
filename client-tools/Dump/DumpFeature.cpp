@@ -915,8 +915,8 @@ Result DumpFeature::runDump(httpclient::SimpleHttpClient& client,
   std::map<std::string, arangodb::velocypack::Slice> restrictList;
   for (auto const& name : _options.collections) {
     if (!name.empty() && name[0] == '_') {
-      // if the user explictly asked for dumping certain collections, toggle the
-      // system collection flag automatically
+      // if the user explicitly asked for dumping certain collections, toggle
+      // the system collection flag automatically
       _options.includeSystemCollections = true;
     }
 

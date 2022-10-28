@@ -192,7 +192,7 @@ bool Agent::id(std::string const& id) {
   return success;
 }
 
-/// Merge command line and persisted comfigurations
+/// Merge command line and persisted configurations
 bool Agent::mergeConfiguration(VPackSlice persisted) {
   auto res = _config.merge(persisted);  // Concurrency managed in merge
   syncActiveAndAcknowledged();
@@ -740,7 +740,7 @@ void Agent::sendAppendEntriesRPC() {
           continue;
         }
         if (snapshotTerm == 0) {
-          // No shapshot yet
+          // No snapshot yet
           needSnapshot = false;
         }
       }
@@ -959,14 +959,14 @@ void Agent::advanceCommitIndex() {
     if (index > ci) {
       CONDITION_LOCKER(guard, _waitForCV);
       LOG_TOPIC("e24a9", TRACE, Logger::AGENCY)
-          << "Critical mass for commiting " << ci + 1 << " through " << index
+          << "Critical mass for committing " << ci + 1 << " through " << index
           << " to read db";
 
       // Change _readDB and _commitIndex atomically together:
       _readDB.applyLogEntries(slices, ci, t, true);
 
       LOG_TOPIC("e24aa", DEBUG, Logger::AGENCY)
-          << "Critical mass for commiting " << ci + 1 << " through " << index
+          << "Critical mass for committing " << ci + 1 << " through " << index
           << " to read db, done";
 
       _commitIndex = index;
@@ -2522,7 +2522,7 @@ std::vector<log_t> Agent::logs(index_t begin, index_t end) const {
 void Agent::syncActiveAndAcknowledged() {
   // We reset the list of last Acknowledged indexes, to contain
   // at least every peer. If there is a new peer it will be inserted
-  // with lastAckknowledged NOW for index 0.
+  // with lastAcknowledged NOW for index 0.
   {
     _tiLock.assertNotLockedByCurrentThread();
     MUTEX_LOCKER(tiLocker, _tiLock);

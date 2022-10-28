@@ -401,19 +401,19 @@ exports.waitForShardsInSync = function (cn, timeout, minimumRequiredFollowers = 
   }
 };
 
-exports.getControleableServers = function (role) {
+exports.getControllableServers = function (role) {
   return global.theInstanceManager.arangods.filter((instance) => instance.isRole(role));
 };
 
 // These functions lean on special runners to export the actual instance object into the global namespace.
 exports.getCtrlAgents = function() {
-  return exports.getControleableServers(inst.instanceRole.agent);
+  return exports.getControllableServers(inst.instanceRole.agent);
 };
 exports.getCtrlDBServers = function() {
-  return exports.getControleableServers(inst.instanceRole.dbServer);
+  return exports.getControllableServers(inst.instanceRole.dbServer);
 };
 exports.getCtrlCoordinators = function() {
-  return exports.getControleableServers(inst.instanceRole.coordinator);
+  return exports.getControllableServers(inst.instanceRole.coordinator);
 };
 
 exports.getServers = function (role) {

@@ -183,7 +183,7 @@ function analyzeCoreDumpMac (instanceInfo, options, storeArangodPath, pid) {
   let command;
   command = '(';
   command += 'printf \'bt \n\n';
-  // LLDB doesn't have an equivilant of `bt full` so we try to show the upper
+  // LLDB doesn't have an equivalent of `bt full` so we try to show the upper
   // most 5 frames with all variables
   for (var i = 0; i < 5; i++) {
     command += 'frame variable\\n up \\n';
@@ -230,7 +230,7 @@ function generateCoreDumpMac (instanceInfo, options, storeArangodPath, pid, gene
   let command;
   command = '(';
   command += 'printf \'bt \n\n';
-  // LLDB doesn't have an equivilant of `bt full` so we try to show the upper
+  // LLDB doesn't have an equivalent of `bt full` so we try to show the upper
   // most 5 frames with all variables
   for (var i = 0; i < 5; i++) {
     command += 'frame variable\\n up \\n';
@@ -617,12 +617,12 @@ function aggregateDebugger(instanceInfo, options) {
     }
   }
   if (tearDownTimeout <= 0) {
-    print(RED+"killing debugger since it did not finish its busines in 180s"+RESET);
+    print(RED+"killing debugger since it did not finish its business in 180s"+RESET);
     killExternal(instanceInfo.debuggerInfo.pid.pid, termSignal);
     print(statusExternal(instanceInfo.debuggerInfo.pid.pid, false));
   }
   if (!fs.exists(instanceInfo.debuggerInfo.file)) {
-    print("Failed to generate the debbugers output file for " +
+    print("Failed to generate the debuggers output file for " +
           JSON.stringify(instanceInfo.getStructure()) + '\n');
     return "";
   }

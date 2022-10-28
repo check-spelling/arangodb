@@ -165,7 +165,7 @@ class QueryTestMulti
           return params[0];
         }});
 
-    // external function names must be registred in upper-case
+    // external function names must be registered in upper-case
     // user defined functions have ':' in the external function name
     // function arguments string format:
     // requiredArg1[,requiredArg2]...[|optionalArg1[,optionalArg2]...]

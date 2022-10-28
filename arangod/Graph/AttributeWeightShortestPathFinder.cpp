@@ -325,7 +325,7 @@ void AttributeWeightShortestPathFinder::inserter(
                                 return result.size() - 1;
                               }));
   if (emplaced) {
-    // new candidate created. now candiates are responsible for memory usage
+    // new candidate created. now candidates are responsible for memory usage
     // tracking
     guard.steal();
   } else {

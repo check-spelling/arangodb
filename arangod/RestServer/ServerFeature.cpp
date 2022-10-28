@@ -285,7 +285,7 @@ void ServerFeature::beginShutdown() { _isStopping = true; }
 
 void ServerFeature::waitForHeartbeat() {
   if (!ServerState::instance()->isCoordinator()) {
-    // waiting for the heartbeart thread is necessary on coordinator only
+    // waiting for the heartbeat thread is necessary on coordinator only
     return;
   }
 

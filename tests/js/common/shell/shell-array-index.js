@@ -94,7 +94,7 @@ function arrayIndexSuite () {
 
       collection.save({a: [1, 2], b: ["a", "b"]});
 
-      // It should be possible to insert arbitarary null values
+      // It should be possible to insert arbitrary null values
       
       // This should be insertable
       collection.save({a: ["duplicate", null, "duplicate"], b: ["duplicate", null, "duplicate"]});

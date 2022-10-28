@@ -727,7 +727,7 @@ void MockClusterServer::injectCollectionToAgency(
         current.add(StaticStrings::Error, VPackValue(false));
         current.add(StaticStrings::ErrorMessage, VPackValue(std::string()));
         current.add(StaticStrings::ErrorNum, VPackValue(0));
-        // NOTE: we omited Indexes
+        // NOTE: we omitted Indexes
       }
     }
     agencyTrx("/arango/Current/Collections/" + dbName + "/" +

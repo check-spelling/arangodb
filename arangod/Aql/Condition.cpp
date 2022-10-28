@@ -818,7 +818,7 @@ void Condition::normalize(
 /// @brief normalize the condition
 /// this will convert the condition into its disjunctive normal form
 /// in this case we don't re-run the optimizer. Its expected that you
-/// don't want to remove eventually unneccessary filters.
+/// don't want to remove eventually unnecessary filters.
 void Condition::normalize() {
   if (_isNormalized) {
     // already normalized
@@ -1139,7 +1139,7 @@ void Condition::deduplicateJunctionNode(AstNode* unlockedNode) {
         auto const& positions = it2.second;
 
         if (positions.size() <= 1) {
-          // none or only one occurence of the attribute
+          // none or only one occurrence of the attribute
           continue;
         }
         // multiple occurrences of the same attribute
@@ -1346,7 +1346,7 @@ void Condition::optimize(ExecutionPlan* plan, bool multivalued) {
         auto const& positions = it2.second;
 
         if (positions.size() <= 1) {
-          // none or only one occurence of the attribute
+          // none or only one occurrence of the attribute
           continue;
         }
 

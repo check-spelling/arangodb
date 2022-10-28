@@ -60,7 +60,7 @@
              "#aa90bd", "#e1811d", "#c7d4b2", "#d0b2d4"],
 
 
-    // figure dependend options
+    // figure dependent options
     figureDependedOptions: {
       clusterRequestsPerSecond: {
         showLabelsOnHighlight: true,

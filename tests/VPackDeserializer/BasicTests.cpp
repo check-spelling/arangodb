@@ -346,7 +346,7 @@ TEST_F(VPackDeserializerBasicTest, test_ignore_unknown_hint) {
           vPackWithUnknown->slice());
       ASSERT_FALSE(res.ok());
     }
-    // missing of optionsl parameter should be ok
+    // missing of optional parameter should be ok
     {
       auto vPackWithUnknown = arangodb::velocypack::Parser::fromJson(
           "{\"unknown\":true, \"field1\":2}");

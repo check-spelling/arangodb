@@ -260,7 +260,7 @@
           }
           nodeDependency = node; // as we walk the plan this will be next node dependency
         });
-        // materilizer should be there
+        // materializer should be there
         assertTrue(materializeNodeFound);
         let result = AQL_EXECUTE(query, {}, diabledRules);
         assertEqual(4, result.json.length);
@@ -439,7 +439,7 @@
         assertEqual(-1, plan.rules.indexOf(ruleName));
         let materializeNodeFound = false;
         plan.nodes.forEach(function (node) {
-          // should be no redundand calculation nodes for single or oneshard server
+          // should be no redundant calculation nodes for single or oneshard server
           if (!isCluster) {
             assertNotEqual(node.type, "CalculationNode");
           }

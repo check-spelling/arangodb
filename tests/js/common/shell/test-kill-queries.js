@@ -38,7 +38,7 @@ function GenericQueryKillSuite() { // can be either default or stream
   const databaseName = "UnitTestsDBTemp";
   const collectionName = "UnitTests" + require("@arangodb/crypto").md5(internal.genRandomAlphaNumbers(32));
   const docsPerWrite = 5;
-  const exlusiveWriteQueryString = `FOR x IN 1..${docsPerWrite} INSERT {} INTO ${collectionName} OPTIONS {exclusive: true} RETURN NEW`;
+  const exclusiveWriteQueryString = `FOR x IN 1..${docsPerWrite} INSERT {} INTO ${collectionName} OPTIONS {exclusive: true} RETURN NEW`;
 
   let executeDefaultCursorQuery = (reportKilled) => {
     // default execution
@@ -46,7 +46,7 @@ function GenericQueryKillSuite() { // can be either default or stream
     let stateForBoth = false; // marker that we expect either a kill or a result
 
     try {
-      localQuery = db._query(exlusiveWriteQueryString);
+      localQuery = db._query(exclusiveWriteQueryString);
       if (reportKilled === 'on') {
         fail();
       }
@@ -73,7 +73,7 @@ function GenericQueryKillSuite() { // can be either default or stream
     let stateForBoth = false; // marker that we expect either a kill or a result
 
     try {
-      localQuery = db._query(exlusiveWriteQueryString, null, null, {stream: true});
+      localQuery = db._query(exclusiveWriteQueryString, null, null, {stream: true});
       // Make sure we free the local instance of the cursor.
       // Just to avoid that we depend on the eventual garbage collection in V8
       // to clear up our references to the cursor.
@@ -260,13 +260,13 @@ function GenericQueryKillSuite() { // can be either default or stream
 
   // add two regular tests (one default, one stream) without breakpoint activation
   testSuite["test_positiveStreamQueryExecution"] = function () {
-    let localQuery = db._query(exlusiveWriteQueryString, null, null, {stream: true});
+    let localQuery = db._query(exclusiveWriteQueryString, null, null, {stream: true});
     assertTrue(localQuery);
     localQuery.dispose();
   };
 
   testSuite["test_positiveDefaultQueryExecution"] = function () {
-    let localQuery = db._query(exlusiveWriteQueryString);
+    let localQuery = db._query(exclusiveWriteQueryString);
     assertTrue(localQuery);
   };
 

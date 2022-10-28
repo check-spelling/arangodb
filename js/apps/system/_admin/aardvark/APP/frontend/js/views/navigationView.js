@@ -403,7 +403,7 @@
         menuItem = menuItem.substr(1, menuItem.length - 1);
       }
 
-      // Location for selecting MainView Primary Navigaation Entry
+      // Location for selecting MainView Primary Navigation Entry
       if (menuItem === '') {
         if (window.App.isCluster) {
           menuItem = 'cluster';

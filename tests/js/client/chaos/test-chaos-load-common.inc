@@ -297,7 +297,7 @@ function BaseChaosSuite(testOpts) {
             log(`ABORTING`);
             trx.abort();
           } else {
-            log(`COMMITING`);
+            log(`COMMITTING`);
             trx.commit();
           }
         }

@@ -33,7 +33,7 @@
 #include <string>
 #include <vector>
 
-namespace aragndob::velocypack {
+namespace arangodb::velocypack {
 class Builder;
 }
 

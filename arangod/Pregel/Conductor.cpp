@@ -393,7 +393,7 @@ void Conductor::finishedWorkerStartup(VPackSlice const& data) {
 
 /// Will optionally send a response, to notify the worker of converging
 /// aggregator
-/// values which can be coninually updated (in async mode)
+/// values which can be continually updated (in async mode)
 VPackBuilder Conductor::finishedWorkerStep(VPackSlice const& data) {
   MUTEX_LOCKER(guard, _callbackMutex);
   // this method can be called multiple times in a superstep depending on
@@ -555,7 +555,7 @@ void Conductor::startRecovery() {
     return;
   }
 
-  // we lost a DBServer, we need to reconfigure all remainging servers
+  // we lost a DBServer, we need to reconfigure all remaining servers
   // so they load the data for the lost machine
   updateState(ExecutionState::RECOVERING);
   _statistics.reset();
@@ -924,7 +924,7 @@ void Conductor::finishedWorkerFinalize(VPackSlice data) {
 
 bool Conductor::canBeGarbageCollected() const {
   // we don't want to block other operations for longer, so if we can't
-  // immediately acuqire the mutex here, we assume a conductor cannot be
+  // immediately acquire the mutex here, we assume a conductor cannot be
   // garbage-collected. the same conductor will be probed later anyway, so we
   // should be fine
   TRY_MUTEX_LOCKER(guard, _callbackMutex);

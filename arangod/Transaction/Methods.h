@@ -134,8 +134,8 @@ class Methods {
   /// @brief definition from TransactionState::StatusChangeCallback
   /// @param status the new status of the transaction
   ///               will match trx.state()->status() for top-level transactions
-  ///               may not match trx.state()->status() for embeded transactions
-  ///               since their staus is not updated from RUNNING
+  ///               may not match trx.state()->status() for embedded
+  ///               transactions since their staus is not updated from RUNNING
   typedef std::function<void(transaction::Methods& trx,
                              transaction::Status status)>
       StatusChangeCallback;
@@ -147,7 +147,7 @@ class Methods {
       DataSourceRegistrationCallback const& callback);
 
   /// @brief add a callback to be called for state change events
-  /// @param callback nullptr and empty functers are ignored, treated as success
+  /// @param callback nullptr and empty functors are ignored, treated as success
   /// @return success
   bool addStatusChangeCallback(StatusChangeCallback const* callback);
   bool removeStatusChangeCallback(StatusChangeCallback const* callback);

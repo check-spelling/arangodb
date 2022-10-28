@@ -43,7 +43,7 @@ struct field_name_deserializer_pair {
   using deserializer = D;
 };
 
-// TODO add static_asserts like for field_value_depenent
+// TODO add static_asserts like for field_value_dependent
 
 template<typename... NDs>
 struct field_name_dependent {

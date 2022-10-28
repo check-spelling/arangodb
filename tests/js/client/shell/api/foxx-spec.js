@@ -184,7 +184,7 @@ describe('FoxxApi commit', function () {
   });
 
   it('should deliver compressed files according to accept-encoding', function() {
-    // TODO: decompress body (if) and check for its content, so double-compression can be eradicted.
+    // TODO: decompress body (if) and check for its content, so double-compression can be eradicated.
     let result;
 
     result = arango.GET_RAW('/_db/_system/_admin/aardvark/index.html', {'accept-encoding': 'identity'});

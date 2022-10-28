@@ -117,7 +117,7 @@ struct WCCComputation
       }
 
       // remember the value we send
-      // NOTE: I have done refactroing of the algorithm
+      // NOTE: I have done refactoring of the algorithm
       // the original variant saved this, i do not know
       // if it is actually relevant for anything.
       edge->data() = myData.component;

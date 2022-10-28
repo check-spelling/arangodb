@@ -53,7 +53,7 @@ function multiEdgeCollectionGraphSuite() {
    *               |
    *         D<----A----<C
    *               |
-   *               +----<E <- D & E via edge colltion B
+   *               +----<E <- D & E via edge collection B
    *
    ***********************************************************************/
   const gn = 'UnitTestGraph';

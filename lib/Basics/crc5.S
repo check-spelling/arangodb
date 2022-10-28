@@ -149,7 +149,7 @@ x8:     crc32q  -8(%rsi),%rax
 x0:     ret
 
 /* The following code starts off by doing up to 120 bytes   */
-/* inline (branch to one of the yNN lables) in a simple way */
+/* inline (branch to one of the yNN labels) in a simple way */
 /* (it then drops into main triple-stream loop)             */
 
         .align 32
@@ -240,7 +240,7 @@ lp128:
         crc32q  288(%rsi),%r11
         crc32q  296(%rsi),%r11
 
-/*  Next chunk muliplies %eax by X^1024 mod poly by looking */
+/*  Next chunk multiplies %eax by X^1024 mod poly by looking */
 /* up each byte in the table crct2 pointed to by %rcx       */
 
         movzx   %al,%edx

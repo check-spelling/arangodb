@@ -158,7 +158,7 @@ class Condition {
 
   /// @brief normalize the condition
   /// this will convert the condition into its disjunctive normal form
-  /// @param mutlivalued attributes may have more than one value
+  /// @param multivalued attributes may have more than one value
   ///                    (ArangoSearch view case)
   /// @param conditionOptimization  allowed condition optimizations
   void normalize(ExecutionPlan*, bool multivalued = false,
@@ -168,7 +168,7 @@ class Condition {
   /// @brief normalize the condition
   /// this will convert the condition into its disjunctive normal form
   /// in this case we don't re-run the optimizer. Its expected that you
-  /// don't want to remove eventually unneccessary filters.
+  /// don't want to remove eventually unnecessary filters.
   void normalize();
 
   /// @brief removes condition parts from another

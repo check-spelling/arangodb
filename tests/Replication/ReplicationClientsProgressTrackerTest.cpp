@@ -76,7 +76,7 @@ static void sleepUntilAfter(double timestamp) {
 
 enum class RetryRv { RETRY, DONE };
 
-// Allows to retry undeterministic code.
+// Allows to retry nondeterministic code.
 static void retryUpTo(int const maxTries,
                       std::function<RetryRv(void)> const& callback) {
   int failures;

@@ -108,10 +108,10 @@ function WindowTestSuite() {
     testVerifyRowBasedInvalidBoundAttributes: function () {
       let query = `
       FOR doc IN ${collection}
-        WINDOW {preceding: 1, folowing: 2} AGGREGATE av = AVG(doc.value)
+        WINDOW {preceding: 1, following: 2} AGGREGATE av = AVG(doc.value)
         RETURN av
       `;
-      checkQueryError(query, `Invalid WINDOW attribute 'folowing'; only "preceding" and "following" are supported`);
+      checkQueryError(query, `Invalid WINDOW attribute 'following'; only "preceding" and "following" are supported`);
     },
     
     testVerifyRowBasedAtLeastOneBoundAttributeSpecified: function () {
@@ -181,9 +181,9 @@ function WindowTestSuite() {
     testVerifyRangeBasedInvalidBoundAttributes: function () {
       let query = `
       FOR doc IN ${collection}
-        WINDOW doc.value WITH {preceding: 1, folowing: 2} AGGREGATE av = AVG(doc.value)
+        WINDOW doc.value WITH {preceding: 1, following: 2} AGGREGATE av = AVG(doc.value)
         RETURN av`;
-      checkQueryError(query, `Invalid WINDOW attribute 'folowing'; only "preceding" and "following" are supported`);
+      checkQueryError(query, `Invalid WINDOW attribute 'following'; only "preceding" and "following" are supported`);
     },
     
     testVerifyRangeBasedAtLeastOneBoundAttributeSpecified: function () {

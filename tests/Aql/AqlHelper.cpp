@@ -66,7 +66,7 @@ bool arangodb::aql::operator==(arangodb::aql::ExecutionStats const& left,
   // They are not included on purpose as they will never be equal.
   // * nodes
   // * executionTime
-  // * peakMemeoryUsage
+  // * peakMemoryUsage
 
   // clang-format off
   return left.writesExecuted == right.writesExecuted

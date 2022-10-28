@@ -71,7 +71,7 @@ class AqlCallList {
    * defaultCall,...] calls. Whenever a subquery run is done the executor will
    * have a new call and can continue with the next run
    * @param specificCall The call of the current subquery run. This call can be
-   * different from a defaultCall, but it must be producable by the defaultCall
+   * different from a defaultCall, but it must be producible by the defaultCall
    * using only didSkip() and didProduce(). Simply put: the specificCall is a
    * defaultCall that has already applied some productions of aql rows.
    * @param defaultCall The call to be used whenever a new SubqueryRun is

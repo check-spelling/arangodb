@@ -114,7 +114,7 @@ template<class Key>
  * Applies any buffered updates and updates the "committed" seq/tick state.
  *
  * @param  serialized String for output
- * @param  commitSeq  Above that are still uncommited operations
+ * @param  commitSeq  Above that are still uncommitted operations
  */
 template<class Key>
 void RocksDBCuckooIndexEstimator<Key>::serialize(
@@ -122,7 +122,7 @@ void RocksDBCuckooIndexEstimator<Key>::serialize(
     SerializeFormat format) {
   // We always have to start with the commit seq, type and then the length
 
-  // commit seq, above that is an uncommited operations
+  // commit seq, above that is an uncommitted operations
   //    rocksdb::SequenceNumber commitSeq = committableSeq();
   // must apply updates first to be valid, WAL needs to preserve
   rocksdb::SequenceNumber appliedSeq = applyUpdates(maxCommitSeq);

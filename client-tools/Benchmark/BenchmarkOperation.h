@@ -73,7 +73,7 @@ struct BenchmarkOperation {
   using BenchmarkFactory =
       std::function<std::unique_ptr<BenchmarkOperation>(BenchFeature&)>;
 
-  /// @brief return the the map of all available benchmarks
+  /// @brief return the map of all available benchmarks
   static std::map<std::string, BenchmarkFactory>& allBenchmarks();
 
   /// @brief register a benchmark with the given name and factory function

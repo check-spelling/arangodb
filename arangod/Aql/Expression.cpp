@@ -1054,7 +1054,7 @@ AqlValue Expression::executeSimpleExpressionPlus(ExpressionContext& ctx,
       // can use uint64
       return AqlValue(AqlValueHintUInt(s.getUInt()));
     }
-    // fallthrouh intentional
+    // fallthrough intentional
   }
 
   // use a double value for all other cases

@@ -156,7 +156,7 @@ function ClusterCollectionSuite () {
 
     testCreateValidReplicationFactor : function () {
       let c;
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 1; i < 3; i++) {
         c = db._create("UnitTestsClusterCrud", {
@@ -178,7 +178,7 @@ function ClusterCollectionSuite () {
 
     testCreateValidMinReplicationFactor : function () {
       let c;
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 1; i < 3; i++) {
         c = db._create("UnitTestsClusterCrud", {
@@ -203,7 +203,7 @@ function ClusterCollectionSuite () {
 ////////////////////////////////////////////////////////////////////////////////
 
     testCreateValidMinReplicationFactorSmaller : function () {
-      // would like to test replication to the allowd maximum, but testsuite is
+      // would like to test replication to the allowed maximum, but testsuite is
       // starting 2 dbservers, so setting to > 2 is currently not possible
       for ( let i = 2; i < 3; i++) {
         let c = db._create("UnitTestsClusterCrud", {
@@ -681,7 +681,7 @@ function ClusterCollectionSuite () {
           assertTrue(e instanceof ArangoError);
           assertEqual(503, e.errorNum);
         } finally {
-          // we need to wait for the collecion to show up before the drop can work.
+          // we need to wait for the collection to show up before the drop can work.
           while (!db._collection(colName)) {
             require("internal").sleep(0.1);
           }

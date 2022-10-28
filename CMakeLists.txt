@@ -426,7 +426,7 @@ else ()
   set(HAVE_ENTERPRISE_BUILD_REPOSITORY "0")
 endif()
 
-if (DEFINED OSKAR_BUILD_REPOSITITORY)
+if (DEFINED OSKAR_BUILD_REPOSITORY)
   set(HAVE_OSKAR_BUILD_REPOSITORY "1")
 else ()
   set(OSKAR_BUILD_REPOSITORY "")
@@ -650,7 +650,7 @@ if (CMAKE_COMPILER_IS_CLANG AND NOT MSVC) # exclude clang-cl
 endif ()
 
 # need c++20
-# XXX this should really be set on a per target level using cmake compile_features capabilties
+# XXX this should really be set on a per target level using cmake compile_features capabilities
 set(CMAKE_CXX_STANDARD 20)
 # turn off compiler language extensions (e.g. don't use -std=gnu++20, but
 # -std=c++20).
@@ -874,7 +874,7 @@ if (NOT WINDOWS)
 endif ()
 
 # ------------------------------------------------------------------------------
-# IMPLICIT INCLUDES AND LIBIRARY DIRECTORIES
+# IMPLICIT INCLUDES AND LIBRARY DIRECTORIES
 # ------------------------------------------------------------------------------
 
 function(CREATE_FLAGS OUTPUT GLUE)

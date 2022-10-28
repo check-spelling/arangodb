@@ -44,7 +44,7 @@
 //     must have an empty() method to indicate that the instance is
 //     empty.
 //     If using fasthash64 on all bytes of the object is not
-//     a suitable hash function, one has to instanciate the template
+//     a suitable hash function, one has to instantiate the template
 //     with two hash function types as 3rd and 4th argument. If
 //     std::equal_to<Key> is not implemented or does not behave correctly,
 //     one has to supply a comparison class as well.
@@ -199,7 +199,7 @@ class RocksDBCuckooIndexEstimator {
    * Applies any buffered updates and updates the "committed" seq/tick state.
    *
    * @param  serialized String for output
-   * @param  commitSeq  Above that are still uncommited operations
+   * @param  commitSeq  Above that are still uncommitted operations
    * @param  format     The serialization format to use
    */
   void serialize(std::string& serialized, rocksdb::SequenceNumber maxCommitSeq,
@@ -330,7 +330,7 @@ class RocksDBCuckooIndexEstimator {
   // This function guarantees the following:
   // If this fingerprint is stored already, the slot will be
   // pointing to this fingerprint.
-  // If this fingerprint is NOT storead already the returned slot
+  // If this fingerprint is NOT stored already the returned slot
   // will be empty and can be filled with the fingerprint
   // In order to create an empty slot this function tries to
   // cuckoo neighboring elements, if that does not succeed
@@ -444,7 +444,7 @@ class RocksDBCuckooIndexEstimator {
       }
     }
     // If we get here we had to remove one of the elements.
-    // Let's increas the cuckoo counter
+    // Let's increase the cuckoo counter
     _nrCuckood++;
     // and let's decrease the total so we don't have to recalculate later
     _nrTotal = (_nrTotal >= counter) ? (_nrTotal - counter) : 0;

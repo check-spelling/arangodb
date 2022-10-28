@@ -188,7 +188,7 @@ void QueryList::remove(Query& query) {
       _queryRegistryFeature.trackSlowQuery(elapsed);
 
       // we calculate the query start timestamp as the current time minus
-      // the elapsed time since query start. this is not 100% accurrate, but
+      // the elapsed time since query start. this is not 100% accurate, but
       // best effort, and saves us from bookkeeping the start timestamp of the
       // query inside the Query object.
       double const now = TRI_microtime();
@@ -328,7 +328,7 @@ std::vector<QueryEntryCopy> QueryList::listCurrent() {
       double const elapsed = elapsedSince(query.startTime());
 
       // we calculate the query start timestamp as the current time minus
-      // the elapsed time since query start. this is not 100% accurrate, but
+      // the elapsed time since query start. this is not 100% accurate, but
       // best effort, and saves us from bookkeeping the start timestamp of the
       // query inside the Query object.
       result.emplace_back(

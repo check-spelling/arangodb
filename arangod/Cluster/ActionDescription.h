@@ -62,7 +62,7 @@ enum ActionState {
 struct ActionDescription final {
   /**
    * @brief Construct with properties
-   * @param  desc  Descriminatory properties, which are considered for hash
+   * @param  desc  Discriminatory properties, which are considered for hash
    * @param  properties  Non discriminatory properties
    */
   ActionDescription(std::map<std::string, std::string> description,
@@ -137,19 +137,19 @@ struct ActionDescription final {
 
   /**
    * @brief Dump to JSON(vpack)
-   * @return       JSON Velocypack of all paramters
+   * @return       JSON Velocypack of all parameters
    */
   VPackBuilder toVelocyPack() const;
 
   /**
    * @brief Dump to JSON(vpack)
-   * @return       JSON Velocypack of all paramters
+   * @return       JSON Velocypack of all parameters
    */
   void toVelocyPack(VPackBuilder&) const;
 
   /**
    * @brief Dump to JSON(string)
-   * @return       JSON string of all paramters
+   * @return       JSON string of all parameters
    */
   std::string toJson() const;
 

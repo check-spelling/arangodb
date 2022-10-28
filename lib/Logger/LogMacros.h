@@ -80,7 +80,7 @@
 
 #else
 // outside of maintainer mode, we check if the log message should be emitted,
-// and only then build the log log message. this is a performance optimization
+// and only then build the log message. this is a performance optimization
 // so we can save constructing log messages which will not be emitted anyway.
 #define ARANGO_INTERNAL_LOG_STREAM(level, topic, cond)                       \
   !(::arangodb::Logger::isEnabled((::arangodb::LogLevel::level), (topic)) && \

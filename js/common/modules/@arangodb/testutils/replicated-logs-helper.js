@@ -127,7 +127,7 @@ const coordinators = (function () {
  *         }>,
  *         config: {
  *           writeConcern: number,
- *           softWriteConern: number,
+ *           softWriteConcern: number,
  *           replicationFactor: number,
  *           waitForSync: boolean
  *         },

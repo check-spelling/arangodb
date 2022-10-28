@@ -542,12 +542,12 @@ v8::Handle<v8::Object> TRI_RequestCppToV8(v8::Isolate* isolate,
 
   auto setRequestBodyJsonOrVPack = [&]() {
     if (rest::ContentType::UNSET == request->contentType()) {
-      bool digestable = false;
+      bool digestible = false;
       try {
         auto parsed = request->payload(true);
         if (parsed.isObject() || parsed.isArray()) {
           request->setDefaultContentType();
-          digestable = true;
+          digestible = true;
         }
       } catch (...) {
       }
@@ -561,7 +561,7 @@ v8::Handle<v8::Object> TRI_RequestCppToV8(v8::Isolate* isolate,
       req->Set(context, RequestBodyKey,
                TRI_V8_PAIR_STRING(isolate, raw.data(), raw.size()))
           .FromMaybe(false);
-      if (!digestable) {
+      if (!digestible) {
         return;
       }
     }

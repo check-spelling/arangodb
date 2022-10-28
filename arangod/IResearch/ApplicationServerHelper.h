@@ -43,7 +43,7 @@ bool addFunction(arangodb::aql::AqlFunctionFeature& functions,
 arangodb::aql::Function const* getFunction(
     arangodb::aql::AqlFunctionFeature& functions, std::string const& name);
 
-// FIXME: remove this overload after C++20 and use heterogenious lookup in
+// FIXME: remove this overload after C++20 and use heterogeneous lookup in
 // functions Feature
 inline arangodb::aql::Function const* getFunction(
     arangodb::aql::AqlFunctionFeature& functions, std::string_view name) {

@@ -83,7 +83,7 @@ function connectToServer(leader) {
   db._flushCache();
 };
 
-// getEndponts works with any server
+// getEndpoints works with any server
 function getClusterEndpoints() {
   //let jwt = crypto.jwtEncode(options['server.jwt-secret'], {'server_id': 'none', 'iss': 'arangodb'}, 'HS256');
   var res = request.get({
@@ -247,7 +247,7 @@ function checkForFailover(leader) {
     internal.wait(5.0);
   } while (i-- > 0);
   print("Timing out, current leader value: ", nextLeaderUUID);
-  throw "No failover occured";
+  throw "No failover occurred";
 }
 
 function setReadOnly(endpoint, ro) {

@@ -482,7 +482,7 @@ ExecutionState Query::execute(QueryResult& queryResult) {
           if (cacheEntry != nullptr) {
             if (cacheEntry->currentUserHasPermissions()) {
               // we don't have yet a transaction when we're here, so let's
-              // create a mimimal context to build the result
+              // create a minimal context to build the result
               queryResult.context =
                   transaction::StandaloneContext::Create(_vocbase);
               TRI_ASSERT(cacheEntry->_queryResult != nullptr);
@@ -706,7 +706,7 @@ QueryResultV8 Query::executeV8(v8::Isolate* isolate) {
       if (cacheEntry != nullptr) {
         if (cacheEntry->currentUserHasPermissions()) {
           // we don't have yet a transaction when we're here, so let's create
-          // a mimimal context to build the result
+          // a minimal context to build the result
           queryResult.context =
               transaction::StandaloneContext::Create(_vocbase);
           v8::Handle<v8::Value> values =
@@ -948,7 +948,7 @@ ExecutionState Query::finalize(VPackBuilder& extras) {
 
 /// @brief parse an AQL query
 QueryResult Query::parse() {
-  // only used in case case of failure
+  // only used in case of failure
   QueryResult result;
 
   try {

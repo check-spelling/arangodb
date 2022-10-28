@@ -753,7 +753,7 @@ CostEstimate GraphNode::estimateCost() const {
         incoming * _options->estimateCost(estimate.estimatedNrItems);
   } else {
     // Some hard-coded value, this is identical to build lookupInfos
-    // if no index estimate is availble (and it is not as long as the options
+    // if no index estimate is available (and it is not as long as the options
     // are not built)
     double baseCost = 1;
     size_t baseNumItems = 0;

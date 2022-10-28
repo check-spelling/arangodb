@@ -777,7 +777,7 @@ void extractScorers(IResearchViewNode const& viewNode, DedupSearchFuncs& dedup,
 
           THROW_ARANGO_EXCEPTION_FORMAT(
               TRI_ERROR_BAD_PARAMETER,
-              "Inaccesible non-ArangoSearch view variable '%s' is used in "
+              "Inaccessible non-ArangoSearch view variable '%s' is used in "
               "search function '%s'",
               v->name.c_str(), funcName.c_str());
         }

@@ -43,7 +43,7 @@ v1.0.5.0 - 25th January 2012 - Afrow UK
 23rd January 2008 - Afrow UK
 * Added function IsUserTheAdministrator.
 * Cleaned up code. Rebuilt as pure cpp, decreasing DLL size.
-* No longer using gobal temp variable for strings.
+* No longer using global temp variable for strings.
 
 7th January 2008 - Afrow UK
 * Fixed registry instructions.

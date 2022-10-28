@@ -315,7 +315,7 @@
    *   {?number}            scaleNodes          The ratio to scale nodes by - a larger ratio will lead to more space around larger nodes
    *   {?number}            nodeMargin          A fixed margin to apply around nodes regardless of size
    *   {?number}            maxIterations       The maximum number of iterations to perform before the layout completes.
-   *   {?integer}           gridSize            The number of rows and columns to use when partioning nodes into a grid for efficient computation
+   *   {?integer}           gridSize            The number of rows and columns to use when partitioning nodes into a grid for efficient computation
    *   {?number}            permittedExpansion  A permitted expansion factor to the overall size of the network applied at each iteration
    *   {?integer}           rendererIndex       The index of the renderer to use for node co-ordinates. Defaults to zero.
    *   {?(function|string)} easing              Either the name of an easing in the sigma.utils.easings package or a function. If not specified, the
@@ -366,7 +366,7 @@
    *   {?number}            scaleNodes          The ratio to scale nodes by - a larger ratio will lead to more space around larger nodes
    *   {?number}            nodeMargin          A fixed margin to apply around nodes regardless of size
    *   {?number}            maxIterations       The maximum number of iterations to perform before the layout completes.
-   *   {?integer}           gridSize            The number of rows and columns to use when partioning nodes into a grid for efficient computation
+   *   {?integer}           gridSize            The number of rows and columns to use when partitioning nodes into a grid for efficient computation
    *   {?number}            permittedExpansion  A permitted expansion factor to the overall size of the network applied at each iteration
    *   {?integer}           rendererIndex       The index of the renderer to use for node co-ordinates. Defaults to zero.
    *   {?(function|string)} easing              Either the name of an easing in the sigma.utils.easings package or a function. If not specified, the

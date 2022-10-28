@@ -416,7 +416,7 @@ std::unique_ptr<ExecutionBlock> EnumeratePathsNode::createBlock(
           reversedUsedIndexes{};
       reversedUsedIndexes.first = buildReverseUsedIndexes();
 
-      // TODO [GraphRefactor]: Clean this up (de-dupllicate with
+      // TODO [GraphRefactor]: Clean this up (de-duplicate with
       // SmartGraphEngine)
       SingleServerBaseProviderOptions forwardProviderOptions(
           opts->tmpVar(), std::move(usedIndexes), opts->getExpressionCtx(), {},

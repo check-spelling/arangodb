@@ -171,7 +171,7 @@ class AsyncValue {
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief a wrapper around a type, placing the value on the heap to allow
-///        declaration of map member variables whos' values are of the type
+///        declaration of map member variables whose values are of the type
 ///        being declared
 ////////////////////////////////////////////////////////////////////////////////
 template<typename T>
@@ -266,7 +266,7 @@ struct UnorderedRefKeyMapBase {
 /// @brief a map whose key is an irs::hashed_basic_string_ref and the actual
 ///        key memory is in an std::pair beside the value
 ///        allowing the use of the map with an irs::basic_string_ref without
-///        the need to allocaate memmory during find(...)
+///        the need to allocate memory during find(...)
 ////////////////////////////////////////////////////////////////////////////////
 template<typename CharType, typename V>
 class UnorderedRefKeyMap

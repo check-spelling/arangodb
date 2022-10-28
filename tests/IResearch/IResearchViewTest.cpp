@@ -1727,7 +1727,7 @@ TEST_F(IResearchViewTest, test_vocbase_inventory) {
       "{ \"name\": \"testView\", \"type\": \"arangosearch\", \"id\": 101, "
       "  \"links\": { "
       "    \"testCollection\": { "
-      "      \"incudeAllFields\":true, "
+      "      \"includeAllFields\":true, "
       "      \"analyzers\": [\"inPlace\"], "
       "      \"analyzerDefinitions\": [ { \"name\" : \"inPlace\", "
       "\"type\":\"identity\", \"properties\":{}, \"features\":[] } ]"
@@ -2596,7 +2596,7 @@ TEST_F(IResearchViewTest, test_instantiate) {
     EXPECT_TRUE((false == !view));
   }
 
-  // intantiate view from old version
+  // instantiate view from old version
   {
     auto json = arangodb::velocypack::Parser::fromJson(
         "{ \"name\": \"testView\", \"type\": \"arangosearch\", \"version\": 0 "
@@ -5079,7 +5079,7 @@ TEST_F(IResearchViewTest, test_unregister_link) {
             dynamic_cast<arangodb::iresearch::IResearchLink*>(index.get());
         ASSERT_NE(nullptr, link);
         auto resource = link->self()->lock();
-        ASSERT_TRUE((!resource));  // check that link is unregistred from view
+        ASSERT_TRUE((!resource));  // check that link is unregistered from view
       }
     }
   }

@@ -45,7 +45,7 @@ using ActionContext =
     ModifyContext<LogPlanSpecification, LogCurrentSupervision>;
 
 /* The empty action signifies that no action has been put
- * into an action context yet; we use a seprarte action
+ * into an action context yet; we use a separate action
  * instead of a std::optional<Action>, because it is less
  * prone to crashes and undefined behaviour
  */

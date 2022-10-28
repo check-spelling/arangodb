@@ -521,7 +521,7 @@ class Graph {
      * Performs BFS from source, calls cbOnFindVertex on a vertex when the vertex is reached and cbOnPopVertex
      * when the vertex is popped from the queue.
      * @param source The key of the vertex to start the search from
-     * @param cbOnFindVertex Either undefiend or the callback function to run on a vertex
+     * @param cbOnFindVertex Either undefined or the callback function to run on a vertex
      *              that is being pushed on the queue. The function can have one or two arguments:
      *              the vertex being pushed and its parent in the search. The second argument can be undefined.
      * @param cbOnPopVertex Either undefined or the callback function to run on a vertex

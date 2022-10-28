@@ -260,7 +260,7 @@ Result CreateDatabaseInfo::extractOptions(VPackSlice const& options,
     auto idSlice = options.get(StaticStrings::DatabaseId);
     if (idSlice.isString()) {
       // improve once it works
-      // look for some nice internal helper this has proably been done before
+      // look for some nice internal helper this has probably been done before
       auto idStr = idSlice.copyString();
       _id = basics::StringUtils::uint64(idSlice.stringView().data(),
                                         idSlice.stringView().size());

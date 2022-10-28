@@ -31,7 +31,7 @@ class QueryExists : public QueryTest {
  protected:
   void queryTests() {
     std::vector<velocypack::Slice> empty;
-    // test non-existent (any)
+    // test nonexistent (any)
     {
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH EXISTS(d.missing) SORT BM25(d) ASC, "
@@ -39,126 +39,126 @@ class QueryExists : public QueryTest {
           "DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (any) via []
+    // test nonexistent (any) via []
     {
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH EXISTS(d['missing']) SORT BM25(d) ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (bool)
+    // test nonexistent (bool)
     {
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH EXISTS(d.name, 'bool') SORT BM25(d) ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (bool) via []
+    // test nonexistent (bool) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['name'], 'bool')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (boolean)
+    // test nonexistent (boolean)
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d.name, 'boolean')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (boolean) via []
+    // test nonexistent (boolean) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['name'], 'boolean')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (numeric)
+    // test nonexistent (numeric)
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d.name, 'numeric')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (numeric) via []
+    // test nonexistent (numeric) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['name'], 'numeric')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (null)
+    // test nonexistent (null)
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d.name, 'null')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (null) via []
+    // test nonexistent (null) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['name'], 'null')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (string)
+    // test nonexistent (string)
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d.seq, 'string')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (string) via []
+    // test nonexistent (string) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['seq'], 'string')"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (text analyzer)
+    // test nonexistent (text analyzer)
     {
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH EXISTS(d.seq, 'analyzer', 'text_en')"
           " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (text analyzer)
+    // test nonexistent (text analyzer)
     if (type() == ViewType::kArangoSearch) {  // TODO kSearch check error
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH ANALYZER(EXISTS(d.seq, 'analyzer'), "
           "'text_en') SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (analyzer) via []
+    // test nonexistent (analyzer) via []
     if (type() == ViewType::kArangoSearch) {  // TODO kSearch check error
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH ANALYZER(EXISTS(d['seq'], 'analyzer'), "
           "'text_en') SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (array)
+    // test nonexistent (array)
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d.value[2])"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (array) via []
+    // test nonexistent (array) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['value'][2])"
                    " SORT BM25(d) ASC, TFIDF(d) DESC, d.seq RETURN d",
                    empty));
     }
-    // test non-existent (object)
+    // test nonexistent (object)
     {
       EXPECT_TRUE(runQuery(
           "FOR d IN testView SEARCH EXISTS(d.value.d) SORT BM25(d) ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           empty));
     }
-    // test non-existent (object) via []
+    // test nonexistent (object) via []
     {
       EXPECT_TRUE(
           runQuery("FOR d IN testView SEARCH EXISTS(d['value']['d'])"
@@ -280,7 +280,7 @@ class QueryExists : public QueryTest {
           "ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           VPackParser::fromJson(
-              "{ \"type\" : \"bool\", \"@testView\": \"invlaidViewName\" }"));
+              "{ \"type\" : \"bool\", \"@testView\": \"invalidViewName\" }"));
 
       ASSERT_TRUE(result.result.is(TRI_ERROR_ARANGO_DATA_SOURCE_NOT_FOUND));
     }
@@ -841,7 +841,7 @@ class QueryExists : public QueryTest {
   }
 
   void queryTests2() {
-    // test non-existent (any)
+    // test nonexistent (any)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -862,7 +862,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (any) via []
+    // test nonexistent (any) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -883,7 +883,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (bool)
+    // test nonexistent (bool)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -904,7 +904,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (bool) via []
+    // test nonexistent (bool) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -925,7 +925,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (boolean)
+    // test nonexistent (boolean)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -946,7 +946,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (boolean) via []
+    // test nonexistent (boolean) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -967,7 +967,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (numeric)
+    // test nonexistent (numeric)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -988,7 +988,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (numeric) via []
+    // test nonexistent (numeric) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1009,7 +1009,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (null)
+    // test nonexistent (null)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1030,7 +1030,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (null) via []
+    // test nonexistent (null) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -1051,7 +1051,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (string)
+    // test nonexistent (string)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1072,7 +1072,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (string) via []
+    // test nonexistent (string) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -1093,7 +1093,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (text analyzer)
+    // test nonexistent (text analyzer)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1114,7 +1114,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (text analyzer)
+    // test nonexistent (text analyzer)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1135,7 +1135,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (analyzer) via []
+    // test nonexistent (analyzer) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1156,7 +1156,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (array)
+    // test nonexistent (array)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1177,7 +1177,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (array) via []
+    // test nonexistent (array) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1198,7 +1198,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (object)
+    // test nonexistent (object)
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(_vocbase,
@@ -1219,7 +1219,7 @@ class QueryExists : public QueryTest {
       EXPECT_EQ(i, expected.size());
     }
 
-    // test non-existent (object) via []
+    // test nonexistent (object) via []
     {
       std::vector<velocypack::Slice> expected = {};
       auto result = executeQuery(
@@ -1351,7 +1351,7 @@ class QueryExists : public QueryTest {
           "ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           VPackParser::fromJson(
-              "{ \"type\" : \"bool\", \"@testView\": \"invlaidViewName\" }"));
+              "{ \"type\" : \"bool\", \"@testView\": \"invalidViewName\" }"));
 
       ASSERT_TRUE(result.result.is(TRI_ERROR_ARANGO_DATA_SOURCE_NOT_FOUND));
     }

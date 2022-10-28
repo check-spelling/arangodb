@@ -51,7 +51,7 @@ class TraverserEngineShardLists {
 
   bool hasShard() const { return _hasShard; }
 
-  /// inaccessible edge and verte collection names
+  /// inaccessible edge and vertex collection names
 #ifdef USE_ENTERPRISE
   std::set<CollectionID> inaccessibleCollNames() const { return _inaccessible; }
 #endif

@@ -1588,7 +1588,7 @@ Result IResearchDataStore::insert(transaction::Methods& trx,
 
     // FIXME try to preserve optimization
     //    // optimization for single-document insert-only transactions
-    //    if (trx.isSingleOperationTransaction() // only for single-docuemnt
+    //    if (trx.isSingleOperationTransaction() // only for single-document
     //    transactions
     //        && !_dataStore._inRecovery) {
     //      auto ctx = _dataStore._writer->documents();

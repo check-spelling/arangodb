@@ -131,7 +131,7 @@ template<class StepImpl>
 void ClusterProvider<StepImpl>::fetchVerticesFromEngines(
     std::vector<Step*> const& looseEnds, std::vector<Step*>& result) {
   auto const* engines = _opts.engines();
-  // slow path, sharding not deducable from _id
+  // slow path, sharding not deductible from _id
   transaction::BuilderLeaser leased(trx());
   leased->openObject();
   leased->add("keys", VPackValue(VPackValueType::Array));

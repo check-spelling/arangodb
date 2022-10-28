@@ -359,7 +359,7 @@ Index::IndexType Index::type(std::string_view type) {
 }
 
 bool Index::onlyHintForced(IndexType type) {
-  // inverted index is eventually consistent, so usage must be explicilty
+  // inverted index is eventually consistent, so usage must be explicitly
   // permitted by the user
   return type == TRI_IDX_TYPE_INVERTED_INDEX;
 }
@@ -746,7 +746,7 @@ bool Index::canUseConditionPart(
 
       if (op->type == aql::NODE_TYPE_OPERATOR_BINARY_GT) {
         // > anything also excludes "null". now note that this attribute cannot
-        // become null range definitely exludes the "null" value
+        // become null range definitely excludes the "null" value
         ::markAsNonNull(op, access, nonNullAttributes);
       } else if (op->type == aql::NODE_TYPE_OPERATOR_BINARY_LT ||
                  op->type == aql::NODE_TYPE_OPERATOR_BINARY_LE) {
@@ -756,7 +756,7 @@ bool Index::canUseConditionPart(
           return false;
         }
 
-        // range definitely exludes the "null" value
+        // range definitely excludes the "null" value
         ::markAsNonNull(op, access, nonNullAttributes);
       }
 
@@ -803,7 +803,7 @@ bool Index::canUseConditionPart(
           return false;
         }
 
-        // range definitely exludes the "null" value
+        // range definitely excludes the "null" value
         ::markAsNonNull(op, access, nonNullAttributes);
       }
     }

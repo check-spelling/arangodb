@@ -153,7 +153,7 @@ TEST_P(SubqueryStartExecutorTest,
       .run();
 }
 
-// NOTE: As soon as the single_pass test is enabled this test is superflous.
+// NOTE: As soon as the single_pass test is enabled this test is superfluous.
 // It will be identical to the one above
 TEST_P(SubqueryStartExecutorTest, adds_a_shadowrow_after_every_input_line) {
   makeExecutorTestHelper<1, 1>()

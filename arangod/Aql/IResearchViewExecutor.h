@@ -664,7 +664,7 @@ class IResearchViewMergeExecutor
     irs::score const* score{};
     size_t numScores{};
     arangodb::LogicalCollection const*
-        collection{};                   // collecton associated with a segment
+        collection{};                   // collection associated with a segment
     ColumnIterator pkReader;            // primary key reader
     size_t segmentIndex;                // first stored values index
     irs::doc_iterator* sortReaderRef;   // pointer to sort column reader

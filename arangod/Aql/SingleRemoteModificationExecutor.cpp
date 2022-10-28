@@ -186,7 +186,7 @@ auto SingleRemoteModificationExecutor<
          (isReplace && _info._replaceIndex))) {
       // document not there is not an error in this situation.
       // FOR ... FILTER ... REMOVE wouldn't invoke REMOVE in first place, so
-      // don't throw an excetpion.
+      // don't throw an exception.
       return result;
     } else if (!_info._ignoreErrors) {  // TODO remove if
       THROW_ARANGO_EXCEPTION_MESSAGE(result.errorNumber(),

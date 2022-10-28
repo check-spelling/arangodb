@@ -33,7 +33,7 @@ var jsunity = require('jsunity');
 
 function runSetup () {
   'use strict';
-  // intentionall do nothing, so we will see a normal shutdown!
+  // intentionally do nothing, so we will see a normal shutdown!
 }
 
 // //////////////////////////////////////////////////////////////////////////////

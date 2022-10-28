@@ -1168,7 +1168,7 @@ class QueryJoin : public QueryTest {
           "TFIDF(c) ASC, c.seq DESC LIMIT 5 RETURN c) FOR x IN @@collection "
           "SEARCH d.seq == x.seq RETURN d",
           VPackParser::fromJson(
-              "{ \"@collection\": \"invlaidCollectionName\" }"));
+              "{ \"@collection\": \"invalidCollectionName\" }"));
 
       ASSERT_TRUE(
           queryResult.result.is(TRI_ERROR_ARANGO_DATA_SOURCE_NOT_FOUND));

@@ -61,7 +61,7 @@ list(APPEND CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
 )
 
 ################################################################################
-# specify which target archcitecture the package is going to be:
+# specify which target architecture the package is going to be:
 ################################################################################
 
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE ${ARANGODB_PACKAGE_ARCHITECTURE})

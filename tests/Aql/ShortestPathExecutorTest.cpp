@@ -77,7 +77,7 @@ class TokenTranslator : public TraverserCache {
     vertex.add(
         StaticStrings::KeyString,
         VPackValue(
-            id));  // This is not corect but nevermind we fake it anyways.
+            id));  // This is not correct but nevermind we fake it anyways.
     vertex.add(StaticStrings::RevString,
                VPackValue("123"));  // just to have it there
     vertex.close();

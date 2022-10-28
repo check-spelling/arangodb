@@ -27,7 +27,7 @@
 const functionsDocumentation = {
   'fail'   : 'this job will always produce a failed result',
   'fail2'  : 'this job will always produce a failed result',
-  'success': 'this job will always produce a sucessfull result'
+  'success': 'this job will always produce a successful result'
 };
 
 const optionsDocumentation = [
@@ -65,12 +65,12 @@ function fail (options) {
     successSuite: {
       status: true,
       total: 1,
-      message: 'this suite will always be successfull',
+      message: 'this suite will always be successful',
       duration: 1,
       failed: 0,
       success: {
         status: true,
-        message: 'this testcase will always be successfull',
+        message: 'this testcase will always be successful',
         duration: 1
       }
     }
@@ -100,12 +100,12 @@ function fail2 (options) {
     successSuite: {
       status: true,
       total: 1,
-      message: 'this suite will always be successfull',
+      message: 'this suite will always be successful',
       duration: 1,
       failed: 0,
       success: {
         status: true,
-        message: 'this testcase will always be successfull',
+        message: 'this testcase will always be successful',
         duration: 1
       }
     }
@@ -135,12 +135,12 @@ function success (options) {
     successSuite3: {
       status: true,
       total: 1,
-      message: 'this suite will always be successfull',
+      message: 'this suite will always be successful',
       duration: 1,
       failed: 0,
       success: {
         status: true,
-        message: 'this testcase will always be successfull',
+        message: 'this testcase will always be successful',
         duration: 1
       }
     }

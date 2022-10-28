@@ -317,7 +317,7 @@ auto ConstrainedSortExecutor::skipRowsRange(AqlItemBlockInputRange& inputRange,
   // We have totalRows at most available.
   // adn we have _returnNext many of them already returned
   // from the first data-rows block.
-  // In unlucky case we overestumate here, if we get called
+  // In unlucky case we overestimate here, if we get called
   // while operating on any other data-row block then the first.
   if (input.countShadowRows() == 0) {
     return std::min(call.getLimit(), totalRows - _returnNext);

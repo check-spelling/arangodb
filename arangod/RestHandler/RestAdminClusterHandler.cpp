@@ -296,7 +296,7 @@ std::string const RestAdminClusterHandler::ShardStatistics = "shardStatistics";
 std::string const RestAdminClusterHandler::FailureOracle = "failureOracle";
 
 RestStatus RestAdminClusterHandler::execute() {
-  // here we first do a glboal check, which is based on the setting in startup
+  // here we first do a global check, which is based on the setting in startup
   // option
   // `--cluster.api-jwt-policy`:
   // - "jwt-all"    = JWT required to access all operations
@@ -713,7 +713,7 @@ RestStatus RestAdminClusterHandler::handleMoveShard() {
                          auth::Level::RW;
     if (!canAccess) {
       generateError(rest::ResponseCode::FORBIDDEN, TRI_ERROR_HTTP_FORBIDDEN,
-                    "insufficent permissions on database to move shard");
+                    "insufficient permissions on database to move shard");
       return RestStatus::DONE;
     }
 
@@ -1050,7 +1050,7 @@ RestStatus RestAdminClusterHandler::handleCancelJob() {
           return RestStatus::DONE;
         }
 
-        // This tranaction aims at killing a job that is todo or pending.
+        // This transaction aims at killing a job that is todo or pending.
         // A todo job could be pending in the meantime however a pending
         // job can never be todo again. Response ist evaluated in 412 result
         // below.
@@ -2345,7 +2345,7 @@ RestStatus RestAdminClusterHandler::handleRebalanceShards() {
   ExecContext const& exec = ExecContext::current();
   if (!exec.canUseDatabase(auth::Level::RW)) {
     generateError(rest::ResponseCode::FORBIDDEN, TRI_ERROR_HTTP_FORBIDDEN,
-                  "insufficent permissions");
+                  "insufficient permissions");
     return RestStatus::DONE;
   }
 

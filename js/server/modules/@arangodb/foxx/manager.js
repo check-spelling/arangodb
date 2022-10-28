@@ -280,7 +280,7 @@ function startup () {
     selfHealAll();
   } else {
     let offset = 1; // start selfheal in x seconds
-    const period = 5 * 60; // repeat sealfheal all x seconds
+    const period = 5 * 60; // repeat selfheal all x seconds
     if (global.FOXX_STARTUP_WAIT_FOR_SELF_HEAL) {
       // Enforce a selfheal now.
       selfHealAll();

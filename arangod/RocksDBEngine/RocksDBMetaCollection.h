@@ -235,7 +235,7 @@ class RocksDBMetaCollection : public PhysicalCollection {
     ///_compressed
     std::unique_ptr<containers::RevisionTree> mutable _tree;
 
-    /// @brief collecion object, used only for context in log messages
+    /// @brief collection object, used only for context in log messages
     LogicalCollection const& _logicalCollection;
 
     /// @brief depth of tree. supposed to never change

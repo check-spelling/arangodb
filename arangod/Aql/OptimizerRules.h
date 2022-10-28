@@ -183,9 +183,9 @@ void distributeOffsetInfoToClusterRule(aql::Optimizer* opt,
                                        std::unique_ptr<aql::ExecutionPlan> plan,
                                        aql::OptimizerRule const& rule);
 
-void lateMaterialiationOffsetInfoRule(aql::Optimizer* opt,
-                                      std::unique_ptr<aql::ExecutionPlan> plan,
-                                      aql::OptimizerRule const& rule);
+void lateMaterializationOffsetInfoRule(aql::Optimizer* opt,
+                                       std::unique_ptr<aql::ExecutionPlan> plan,
+                                       aql::OptimizerRule const& rule);
 
 ExecutionNode* distributeInClusterRuleSmart(ExecutionPlan*, SubqueryNode* snode,
                                             ExecutionNode* node,

@@ -117,7 +117,7 @@ class StaticStrings {
 
   // LogicalDataSource definition fields
   static std::string const DataSourceDeleted;  // data-source deletion marker
-  static std::string const DataSourceGuid;     // data-source globaly-unique id
+  static std::string const DataSourceGuid;     // data-source globally-unique id
   static std::string const DataSourceId;       // data-source id
   static std::string const DataSourceCid;      // data-source collection id
   static std::string const DataSourceName;     // data-source name

@@ -58,7 +58,7 @@ class DistributeExecutorInfos : public ClientsExecutorInfos {
  private:
   RegisterId _regId;
 
-  /// @brief _colectionName: the name of the sharded collection
+  /// @brief _collectionName: the name of the sharded collection
   Collection const* _collection;
 
   /// @brief Cache for the Logical Collection. This way it is not refetched

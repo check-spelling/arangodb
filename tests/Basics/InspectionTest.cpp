@@ -2783,17 +2783,17 @@ TEST_F(VPackInspectionTest, StructIncludingVPackBuilder) {
 
 TEST_F(VPackInspectionTest, Result) {
   arangodb::Result result = {TRI_ERROR_INTERNAL, "some error message"};
-  VPackBuilder expectedSerlized;
+  VPackBuilder expectedSerialized;
   {
-    VPackObjectBuilder ob(&expectedSerlized);
-    expectedSerlized.add("number", TRI_ERROR_INTERNAL);
-    expectedSerlized.add("message", "some error message");
+    VPackObjectBuilder ob(&expectedSerialized);
+    expectedSerialized.add("number", TRI_ERROR_INTERNAL);
+    expectedSerialized.add("message", "some error message");
   }
 
   VPackBuilder serialized;
   arangodb::velocypack::serialize(serialized, result);
   auto slice = serialized.slice();
-  EXPECT_EQ(expectedSerlized.toJson(), serialized.toJson());
+  EXPECT_EQ(expectedSerialized.toJson(), serialized.toJson());
 
   auto deserialized =
       arangodb::velocypack::deserialize<arangodb::Result>(slice);
@@ -2803,21 +2803,21 @@ TEST_F(VPackInspectionTest, Result) {
 TEST_F(VPackInspectionTest, ResultTWithResultInside) {
   arangodb::ResultT<uint64_t> result =
       arangodb::Result{TRI_ERROR_INTERNAL, "some error message"};
-  VPackBuilder expectedSerlized;
+  VPackBuilder expectedSerialized;
   {
-    VPackObjectBuilder ob(&expectedSerlized);
-    expectedSerlized.add(VPackValue("error"));
+    VPackObjectBuilder ob(&expectedSerialized);
+    expectedSerialized.add(VPackValue("error"));
     {
-      VPackObjectBuilder ob2(&expectedSerlized);
-      expectedSerlized.add("number", TRI_ERROR_INTERNAL);
-      expectedSerlized.add("message", "some error message");
+      VPackObjectBuilder ob2(&expectedSerialized);
+      expectedSerialized.add("number", TRI_ERROR_INTERNAL);
+      expectedSerialized.add("message", "some error message");
     }
   }
 
   VPackBuilder serialized;
   arangodb::velocypack::serialize(serialized, result);
   auto slice = serialized.slice();
-  EXPECT_EQ(expectedSerlized.toJson(), serialized.toJson());
+  EXPECT_EQ(expectedSerialized.toJson(), serialized.toJson());
 
   auto deserialized =
       arangodb::velocypack::deserialize<arangodb::ResultT<uint64_t>>(slice);
@@ -2826,16 +2826,16 @@ TEST_F(VPackInspectionTest, ResultTWithResultInside) {
 
 TEST_F(VPackInspectionTest, ResultTWithTInside) {
   arangodb::ResultT<uint64_t> result = 45;
-  VPackBuilder expectedSerlized;
+  VPackBuilder expectedSerialized;
   {
-    VPackObjectBuilder ob(&expectedSerlized);
-    expectedSerlized.add("value", 45);
+    VPackObjectBuilder ob(&expectedSerialized);
+    expectedSerialized.add("value", 45);
   }
 
   VPackBuilder serialized;
   arangodb::velocypack::serialize(serialized, result);
   auto slice = serialized.slice();
-  EXPECT_EQ(expectedSerlized.toJson(), serialized.toJson());
+  EXPECT_EQ(expectedSerialized.toJson(), serialized.toJson());
 
   auto deserialized =
       arangodb::velocypack::deserialize<arangodb::ResultT<uint64_t>>(slice);
@@ -3063,7 +3063,7 @@ TEST(VPackWithStatus, statust_test_deserialize_fail) {
 
   auto res = deserializeWithErrorT<ErrorTTest>(testSlice);
 
-  ASSERT_FALSE(res.ok()) << fmt::format("Did not detect the error we exepct");
+  ASSERT_FALSE(res.ok()) << fmt::format("Did not detect the error we expect");
 
   EXPECT_EQ(res.error().error(), "Found unexpected attribute 'fehler'");
 }

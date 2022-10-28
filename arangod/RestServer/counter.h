@@ -233,7 +233,7 @@ ATOMICITY
 
 In the course of program evolution, debugging and tuning,
 a counter may desire implementation with weaker concurrency requirements.
-That is accomplished by explicitly specifing the atomicity.
+That is accomplished by explicitly specifying the atomicity.
 For example, suppose it is discovered that a counter
 
     counter::simplex<int> red_count;
@@ -255,7 +255,7 @@ counter::atomicity::full // multiple readers and writers
 Buffers have two template parameters for atomicity,
 one for the atomicity of the counter it is modifying,
 and one for atomicity of the buffer itself.
-By exlicitly specifying this atomicity,
+By explicitly specifying this atomicity,
 one can build unusual configurations of buffers for unusual situations.
 For example, suppose increments of red_count
 tend to cluster in tasks with high processor affinity.

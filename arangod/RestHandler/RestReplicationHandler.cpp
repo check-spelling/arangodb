@@ -199,7 +199,7 @@ static Result restoreDataParser(char const* ptr, char const* pos,
     // compact format
     type = REPLICATION_MARKER_DOCUMENT;
     // for a valid document marker without envelope, doc points to the actual
-    // docuemnt
+    // document
     doc = slice;
   } else {
     // enveloped (old) format. each document is wrapped into a
@@ -220,7 +220,7 @@ static Result restoreDataParser(char const* ptr, char const* pos,
         if (!value.isObject()) {
           type = REPLICATION_INVALID;
         } else {
-          // for a valid document marker, doc points to the actual docuemnt
+          // for a valid document marker, doc points to the actual document
           doc = value;
         }
       } else if (type == REPLICATION_MARKER_REMOVE) {
@@ -1182,7 +1182,7 @@ Result RestReplicationHandler::processRestoreCollection(
                     VPackValue(_vocbase.shardingPrototypeName()));
       }
     } else {
-      // Number of shards. Will be overwritten if not existent
+      // Number of shards. Will be overwritten if nonexistent
       VPackSlice const numberOfShardsSlice =
           parameters.get(StaticStrings::NumberOfShards);
       if (!numberOfShardsSlice.isInteger()) {
@@ -1213,7 +1213,7 @@ Result RestReplicationHandler::processRestoreCollection(
       }
     }
 
-    // Replication Factor. Will be overwritten if not existent
+    // Replication Factor. Will be overwritten if nonexistent
     VPackSlice const replicationFactorSlice =
         parameters.get(StaticStrings::ReplicationFactor);
     // not an error: for historical reasons the write concern is read from the
@@ -1341,7 +1341,7 @@ Result RestReplicationHandler::processRestoreCollection(
       toMerge.add(StaticStrings::UsesRevisionsAsDocumentIds, VPackValue(true));
     }
 
-    // Always ignore `shadowCollections` they were accidentially dumped in
+    // Always ignore `shadowCollections` they were accidentally dumped in
     // arangodb versions earlier than 3.3.6
 #ifdef USE_ENTERPRISE
     LogicalCollection::addEnterpriseShardingStrategy(toMerge, parameters);

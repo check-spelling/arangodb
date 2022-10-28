@@ -740,7 +740,7 @@ void CrashHandler::crash(std::string_view context) {
                                                  char const* func,
                                                  char const* context,
                                                  const char* message) {
-  // assemble an "assertion failured in file:line: message" string
+  // assemble an "assertion failed in file:line: message" string
   char buffer[4096];
   memset(&buffer[0], 0, sizeof(buffer));
 

@@ -42,7 +42,7 @@ let didRegex = /^([0-9a-zA-Z]+)\/([0-9a-zA-Z\-_]+)/;
 ////////////////////////////////////////////////////////////////////////////////;
 function error_handlingSuite () {
   return {
-    test_returns_an_error_if_collection_idenifier_is_missing: function() {
+    test_returns_an_error_if_collection_identifier_is_missing: function() {
       let cmd = "/_api/document";
       let body = "{}";
       let doc = arango.POST_RAW(cmd, body);

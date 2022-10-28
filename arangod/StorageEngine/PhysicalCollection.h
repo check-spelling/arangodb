@@ -180,7 +180,7 @@ class PhysicalCollection {
                       IndexIterator::DocumentCallback const& cb,
                       ReadOwnWrites readOwnWrites) const = 0;
 
-  /// @brief read a documument referenced by token (internal method)
+  /// @brief read a document referenced by token (internal method)
   virtual Result read(transaction::Methods* trx, LocalDocumentId const& token,
                       IndexIterator::DocumentCallback const& cb,
                       ReadOwnWrites readOwnWrites) const = 0;
@@ -191,7 +191,7 @@ class PhysicalCollection {
                                 bool fillCache,
                                 ReadOwnWrites readOwnWrites) const = 0;
 
-  /// @brief read a documument referenced by token (internal method)
+  /// @brief read a document referenced by token (internal method)
   virtual bool readDocument(transaction::Methods* trx,
                             LocalDocumentId const& token,
                             ManagedDocumentResult& result,

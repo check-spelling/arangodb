@@ -82,7 +82,7 @@ class UnsortedGatherExecutor {
    * @param output place to write rows to
    * @return std::tuple<ExecutorState, Stats, AqlCall, size_t>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   AqlCallSet: Request to upstream
    */
   [[nodiscard]] auto produceRows(typename Fetcher::DataRange& input,
@@ -96,7 +96,7 @@ class UnsortedGatherExecutor {
    * @param call skip request form consumer
    * @return std::tuple<ExecutorState, Stats, AqlCall, size_t>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   size_t: Number of rows skipped
    *   AqlCallSet: Request to upstream
    */

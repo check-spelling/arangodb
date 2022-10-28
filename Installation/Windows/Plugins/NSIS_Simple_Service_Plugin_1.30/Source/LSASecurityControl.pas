@@ -19,7 +19,7 @@ The original code is LSASecurityControl.pas, released April 16, 2007.
 
 The initial developer of the original code is Rainer Budde (http://www.speed-soft.de).
 
-SimpleSC - NSIS Service Control Plugin is written, published and maintaned by
+SimpleSC - NSIS Service Control Plugin is written, published and maintained by
 Rainer Budde (rainer@speed-soft.de).
 }
 unit LSASecurityControl;

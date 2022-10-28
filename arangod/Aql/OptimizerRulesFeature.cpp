@@ -291,7 +291,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::removeUnnecessaryFiltersRule2,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // try to find sort blocks which are superseeded by indexes
+  // try to find sort blocks which are superseded by indexes
   registerRule("use-index-for-sort", useIndexForSortRule,
                OptimizerRule::useIndexForSortRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
@@ -307,7 +307,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::optimizeTraversalsRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // optimize unneccessary filters already applied by the traversal
+  // optimize unnecessary filters already applied by the traversal
   registerRule("remove-filter-covered-by-traversal",
                removeFiltersCoveredByTraversal,
                OptimizerRule::removeFiltersCoveredByTraversal,
@@ -330,7 +330,7 @@ void OptimizerRulesFeature::addRules() {
                OptimizerRule::removeUnnecessaryCalculationsRule2,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled));
 
-  // optimize unneccessary filters already applied by the traversal. Only ever
+  // optimize unnecessary filters already applied by the traversal. Only ever
   // does something if previous rules remove all filters using the path variable
   registerRule("remove-redundant-path-var", removeTraversalPathVariable,
                OptimizerRule::removeTraversalPathVariable,
@@ -500,8 +500,8 @@ void OptimizerRulesFeature::addRules() {
 #ifdef USE_ENTERPRISE
   // apply late materialization for offset infos
   registerRule("late-materialization-offset-info",
-               lateMaterialiationOffsetInfoRule,
-               OptimizerRule::lateMaterialiationOffsetInfoRule,
+               lateMaterializationOffsetInfoRule,
+               OptimizerRule::lateMaterializationOffsetInfoRule,
                OptimizerRule::makeFlags(OptimizerRule::Flags::CanBeDisabled,
                                         OptimizerRule::Flags::EnterpriseOnly));
 #endif

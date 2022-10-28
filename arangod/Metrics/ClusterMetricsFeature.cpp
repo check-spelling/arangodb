@@ -146,7 +146,7 @@ void ClusterMetricsFeature::rescheduleUpdate(uint32_t timeoutMs) noexcept {
         }
         if (_count.exchange(kUpdate) % 2 == kStop) {
           // If someone call more than billion update(TriggerGlobal)
-          // before we execute execute store we defer Stop to next try.
+          // before we execute store we defer Stop to next try.
           // But it's impossible, so it's valid optimization:
           // exchange + store instead of cas loop
           _count.store(kStop);

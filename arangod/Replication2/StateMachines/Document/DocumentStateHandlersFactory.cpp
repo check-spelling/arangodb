@@ -37,11 +37,11 @@ namespace arangodb::replication2::replicated_state::document {
 DocumentStateHandlersFactory::DocumentStateHandlersFactory(
     ArangodServer& server, AgencyCache& agencyCache,
     network::ConnectionPool* connectionPool,
-    MaintenanceFeature& maintenaceFeature, DatabaseFeature& databaseFeature)
+    MaintenanceFeature& maintenanceFeature, DatabaseFeature& databaseFeature)
     : _server(server),
       _agencyCache(agencyCache),
       _connectionPool(connectionPool),
-      _maintenanceFeature(maintenaceFeature),
+      _maintenanceFeature(maintenanceFeature),
       _databaseFeature(databaseFeature) {}
 
 auto DocumentStateHandlersFactory::createAgencyHandler(GlobalLogIdentifier gid)

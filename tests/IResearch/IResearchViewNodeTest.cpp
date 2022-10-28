@@ -3741,7 +3741,7 @@ TEST_F(IResearchViewNodeTest, createBlockCoordinatorLateMaterialize) {
           emptyBlock.get()));
 }
 
-class IResearchViewVolatitlityTest
+class IResearchViewVolatilityTest
     : public ::testing::Test,
       public arangodb::tests::LogSuppressor<arangodb::Logger::AUTHENTICATION,
                                             arangodb::LogLevel::ERR> {
@@ -3749,7 +3749,7 @@ class IResearchViewVolatitlityTest
   arangodb::tests::mocks::MockAqlServer server;
   TRI_vocbase_t* vocbase{nullptr};
 
-  IResearchViewVolatitlityTest() : server(false) {
+  IResearchViewVolatilityTest() : server(false) {
     arangodb::tests::init(true);
 
     server.addFeature<arangodb::FlushFeature>(false);
@@ -3845,7 +3845,7 @@ class IResearchViewVolatitlityTest
   }
 };
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterSubqueryWithVar) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterSubqueryWithVar) {
   std::string const queryString =
       "FOR s IN testView0 LET kk = s.key "
       "FOR d IN testView1 SEARCH d.key == kk RETURN d";
@@ -3877,7 +3877,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterSubqueryWithVar) {
   EXPECT_EQ(1, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterSubquery) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterSubquery) {
   std::string const queryString =
       "FOR s IN testView0 "
       "FOR d IN testView1 SEARCH d.key == s.key RETURN d";
@@ -3909,7 +3909,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterSubquery) {
   EXPECT_EQ(1, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterNonDetVar) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterNonDetVar) {
   std::string const queryString =
       "FOR s IN testView0 LET kk = NOOPT(s.key) "
       "FOR d IN testView1 SEARCH d.key == kk RETURN d";
@@ -3941,7 +3941,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterNonDetVar) {
   EXPECT_EQ(1, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterListWithVar) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterListWithVar) {
   std::string const queryString =
       "FOR s IN 1..2 LET kk = s "
       "FOR d IN testView1 SEARCH d.key == kk RETURN d";
@@ -3970,7 +3970,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterListWithVar) {
   EXPECT_EQ(1, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterList) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterList) {
   std::string const queryString =
       "FOR s IN 1..2 "
       "FOR d IN testView1 SEARCH d.key == s RETURN d";
@@ -3999,7 +3999,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterList) {
   EXPECT_EQ(1, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterListNonVolatile) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterListNonVolatile) {
   std::string const queryString =
       "FOR s IN 1..20 LET kk = NOEVAL(1) "
       "FOR d IN testView1 SEARCH d.key == kk RETURN d";
@@ -4028,7 +4028,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterListNonVolatile) {
   EXPECT_EQ(20, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterQueryNonVolatile) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterQueryNonVolatile) {
   std::string const queryString =
       "FOR s IN testView0 COLLECT WITH COUNT INTO c LET kk = NOEVAL(c) "
       "FOR d IN testView1 SEARCH d.key == kk RETURN d";
@@ -4060,7 +4060,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterQueryNonVolatile) {
   EXPECT_EQ(0, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilityFilterListSubquery) {
+TEST_F(IResearchViewVolatilityTest, volatilityFilterListSubquery) {
   std::string const queryString =
       "FOR s IN 1..20 LET kk = (FOR v IN testView0 SEARCH v.key == 1 RETURN "
       "v.key)[0] "
@@ -4093,7 +4093,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilityFilterListSubquery) {
   EXPECT_EQ(20, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilitySortFilterListSubquery) {
+TEST_F(IResearchViewVolatilityTest, volatilitySortFilterListSubquery) {
   std::string const queryString =
       "FOR s IN 1..20 LET kk = (FOR v IN testView0 SEARCH v.key == 1 RETURN "
       "v.key)[0] "
@@ -4126,7 +4126,7 @@ TEST_F(IResearchViewVolatitlityTest, volatilitySortFilterListSubquery) {
   EXPECT_EQ(20, res.data->slice().length());
 }
 
-TEST_F(IResearchViewVolatitlityTest, volatilitySortNonVolatileFilter) {
+TEST_F(IResearchViewVolatilityTest, volatilitySortNonVolatileFilter) {
   std::string const queryString =
       "FOR s IN 1..20 LET kk = (FOR v IN testView0 SEARCH v.key == 1 RETURN "
       "v.key)[0] "

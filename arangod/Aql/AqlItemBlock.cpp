@@ -788,7 +788,7 @@ void AqlItemBlock::toVelocyPack(size_t from, size_t to,
     startColumn = 0;
   }
 
-  // we start the serializaton at the fake register, which may then overflow to
+  // we start the serialization at the fake register, which may then overflow to
   // 0...
   for (RegisterId::value_t column = startColumn;
        column < _numRegisters || column == subqueryDepthColumn; column++) {
@@ -942,7 +942,7 @@ void AqlItemBlock::validateShadowRowConsistency() const {
         TRI_ASSERT(isShadowRow(r - 1));
 
         size_t compDepth = static_cast<uint64_t>(getShadowRowDepth(r - 1));
-        // The row before can only be one less then d (result of subquery)
+        // The row before can only be one less than d (result of subquery)
         // Or greater or equal to d. (The subquery either has no result or is
         // skipped)
         TRI_ASSERT(depth - 1 <= compDepth);
@@ -1312,7 +1312,7 @@ void AqlItemBlock::ShadowRows::make(size_t row, size_t depth) {
 
   if (_depths.size() <= row) {
     // allocate enough space for all rows at once. the goal here
-    // is to minmize the number of allocations.
+    // is to minimize the number of allocations.
     _depths.resize(_numRows);
   }
   TRI_ASSERT(row < _depths.size());

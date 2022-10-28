@@ -1,7 +1,7 @@
 /* jshint globalstrict:false, strict:false, unused : false */
 /* global assertEqual, assertTrue, assertFalse, assertNull, fail, AQL_EXECUTE */
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief tests for truncate operation over aragosearch link
+/// @brief tests for truncate operation over arangosearch link
 ///
 /// @file
 ///

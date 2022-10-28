@@ -1144,7 +1144,7 @@ function CollectionDocumentSuite () {
       assertEqual({ first: "foo", last: "bar", middle: "baz" }, doc.name);
       assertEqual({ evilCellPhone: [ 1 ], schabernack: true, pileOfBones: null }, doc.owns);
 
-      // explicitly specifiy mergeObjects
+      // explicitly specify mergeObjects
       var doc2 = collection.save({ name: { first: "foo", last: "bar" }, owns: { evilCellPhone: [ 1 ] } });
       collection.update(doc2, { name: { middle: "baz" }, owns: { schabernack: true, pileOfBones: null } }, { mergeObjects: true });
 
@@ -1599,7 +1599,7 @@ function DatabaseDocumentSuite () {
       assertTrue(db._exists(d3));
 
 
-      // non existing collection
+      // nonexistent collection
       try {
         db._exists("UnitTestsNonExistingCollection/1");
       }

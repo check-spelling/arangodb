@@ -366,7 +366,7 @@ function optimizerRuleTestSuite() {
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief test that rule has an effect, the filter can be removed, but the sort
-/// is kept in place since the index can't fullfill all the sorting.
+/// is kept in place since the index can't fulfill all the sorting.
 ////////////////////////////////////////////////////////////////////////////////
 
     testRuleHasEffectCombineSortNoFilter : function () {

@@ -125,7 +125,7 @@ class SortingGatherExecutor {
    * @param output place to write rows to
    * @return std::tuple<ExecutorState, Stats, AqlCall, size_t>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   AqlCallSet: Request to specific upstream dependency
    */
   [[nodiscard]] auto produceRows(MultiAqlItemBlockInputRange& input,
@@ -139,7 +139,7 @@ class SortingGatherExecutor {
    * @param call skip request form consumer
    * @return std::tuple<ExecutorState, Stats, AqlCallSet>
    *   ExecutorState: DONE or HASMORE (only within a subquery)
-   *   Stats: Stats gerenated here
+   *   Stats: Stats generated here
    *   size_t: Number of rows skipped
    *   AqlCallSet: Request to specific upstream dependency
    */
@@ -166,7 +166,7 @@ class SortingGatherExecutor {
    *
    * @param inputRange Range of all input dependencies
    * @return std::optional<std::tuple<AqlCall, size_t>>  optional call for the
-   * dependnecy requiring input
+   * dependency requiring input
    */
   [[nodiscard]] auto requiresMoreInput(
       MultiAqlItemBlockInputRange const& inputRange, AqlCall const& clientCall)

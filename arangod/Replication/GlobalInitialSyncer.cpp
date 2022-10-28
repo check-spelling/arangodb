@@ -319,7 +319,7 @@ Result GlobalInitialSyncer::updateServerInventory(
                                       arangodb::LogicalCollection* collection) {
         if (survivingCollections.find(collection->guid()) !=
             survivingCollections.end()) {
-          // collection should surive
+          // collection should survive
           return;
         }
         if (!collection

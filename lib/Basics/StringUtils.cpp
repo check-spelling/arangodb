@@ -579,7 +579,7 @@ std::vector<std::string> wrap(std::string_view sourceStr, size_t size,
 }
 
 /// replaces the contents of the sourceStr = "aaebbbbcce" where ever the
-/// occurence of
+/// occurrence of
 /// fromStr = "bb" exists with the toStr = "dd". No recursion performed on the
 /// replaced string
 /// e.g. replace("aaebbbbcce","bb","dd") = "aaeddddcce"
@@ -1926,7 +1926,7 @@ std::string encodeHex(std::string_view value) {
 
 std::string decodeHex(char const* value, size_t length) {
   std::string result;
-  // input string length should be divisable by 2
+  // input string length should be divisible by 2
   // but we do not assert for this here, because it might
   // be an end user error
   if ((length & 1) != 0 || length == 0) {

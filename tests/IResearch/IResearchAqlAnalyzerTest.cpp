@@ -531,7 +531,7 @@ TEST_F(IResearchAqlAnalyzerTest, test_create_invalid) {
   ASSERT_FALSE(irs::analysis::analyzers::get(
       AQL_ANALYZER_NAME, irs::type<irs::text_format::vpack>::get(),
       arangodb::iresearch::ref<char>(
-          VPackParser::fromJson("{\"queryString\": \"RETAURN 1\"}")->slice()),
+          VPackParser::fromJson("{\"queryString\": \"RETURN_ 1\"}")->slice()),
       false));
   // Collection access
   ASSERT_FALSE(irs::analysis::analyzers::get(

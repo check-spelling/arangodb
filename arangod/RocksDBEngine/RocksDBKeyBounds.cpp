@@ -148,14 +148,14 @@ RocksDBKeyBounds RocksDBKeyBounds::FulltextIndexPrefix(uint64_t objectId,
   internals.reserve(2 * (sizeof(uint64_t) + word.size()) + 1);
   uint64ToPersistent(internals.buffer(), objectId);
   internals.buffer().append(word.data(), word.length());
-  // no sperator byte, so we match all suffixes
+  // no separator byte, so we match all suffixes
 
   internals.separate();
 
   uint64ToPersistent(internals.buffer(), objectId);
   internals.buffer().append(word.data(), word.length());
   internals.push_back(static_cast<char>(0xFFU));
-  // 0xFF is higher than any valud utf-8 character
+  // 0xFF is higher than any valid utf-8 character
   return b;
 }
 

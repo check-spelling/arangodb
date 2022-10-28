@@ -406,7 +406,7 @@ std::vector<bool> Store::applyLogEntries(
   return applied;
 }
 
-/// Check precodition object
+/// Check precondition object
 check_ret_t Store::check(VPackSlice slice, CheckMode mode) const {
   TRI_ASSERT(slice.isObject());
   check_ret_t ret;

@@ -126,7 +126,7 @@ class Worker : public IWorker {
   InCache<M>* _writeCacheNextGSS = nullptr;
   // preallocated incoming caches
   std::vector<InCache<M>*> _inCaches;
-  // preallocated ootgoing caches
+  // preallocated outgoing caches
   std::vector<OutCache<M>*> _outCaches;
 
   GssObservables _currentGssObservables;
@@ -141,7 +141,7 @@ class Worker : public IWorker {
   size_t _runningThreads = 0;
   /// During async mode this should keep track of the send messages
   std::atomic<uint64_t> _nextGSSSendMessageCount;
-  /// if the worker has started sendng messages to the next GSS
+  /// if the worker has started sending messages to the next GSS
   std::atomic<bool> _requestedNextGSS;
   Scheduler::WorkHandle _workHandle;
 

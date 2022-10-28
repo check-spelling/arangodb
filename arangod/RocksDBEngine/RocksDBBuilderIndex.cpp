@@ -179,7 +179,7 @@ Result fillIndexSingleThreaded(
     }
   }
 
-  // if an error occured drop() will be called
+  // if an error occurred drop() will be called
   LOG_TOPIC("dfa3b", DEBUG, Logger::ENGINES)
       << "snapshot captured " << numDocsWritten << " " << res.errorMessage();
   return res;

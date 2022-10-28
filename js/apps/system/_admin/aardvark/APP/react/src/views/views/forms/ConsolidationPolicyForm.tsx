@@ -5,7 +5,7 @@ import { get } from "lodash";
 import Select from "../../../components/pure-css/form/Select";
 import Textbox from "../../../components/pure-css/form/Textbox";
 import { getNumericFieldSetter } from "../../../utils/helpers";
-import ToolTip from "../../../components/arango/tootip";
+import ToolTippy from "../../../components/arango/tooltippy";
 
 const BytesAccumConsolidationPolicyForm = ({
                                              formState,
@@ -23,12 +23,12 @@ const BytesAccumConsolidationPolicyForm = ({
                onChange={getNumericFieldSetter('consolidationPolicy.threshold', dispatch)}/>
     </th>
     <th className="collectionTh">
-      <ToolTip
+      <ToolTippy
         title="Consolidation is performed on segments which accumulated size in bytes is less than all segments’ byte size multiplied by the threshold."
         setArrow={true}
       >
         <span className="arangoicon icon_arangodb_info"></span>
-      </ToolTip>
+      </ToolTippy>
     </th>
   </tr>;
 };
@@ -53,12 +53,12 @@ const TierConsolidationPolicyForm = ({
                  onChange={getNumericFieldSetter('consolidationPolicy.segmentsMin', dispatch)}/>
       </th>
       <th className="collectionTh">
-        <ToolTip
+        <ToolTippy
           title="The minimum number of segments that will be evaluated as candidates for consolidation."
           setArrow={true}
         >
           <span className="arangoicon icon_arangodb_info"></span>
-        </ToolTip>
+        </ToolTippy>
       </th>
     </tr>
 
@@ -71,12 +71,12 @@ const TierConsolidationPolicyForm = ({
                  onChange={getNumericFieldSetter('consolidationPolicy.segmentsMax', dispatch)}/>
       </th>
       <th className="collectionTh">
-        <ToolTip
+        <ToolTippy
           title="The maximum number of segments that will be evaluated as candidates for consolidation."
           setArrow={true}
         >
           <span className="arangoicon icon_arangodb_info"></span>
-        </ToolTip>
+        </ToolTippy>
       </th>
     </tr>
     <tr className="tableRow" id="row_change-view-segmentsBytesMax">
@@ -88,12 +88,12 @@ const TierConsolidationPolicyForm = ({
                  onChange={getNumericFieldSetter('consolidationPolicy.segmentsBytesMax', dispatch)}/>
       </th>
       <th className="collectionTh">
-        <ToolTip
+        <ToolTippy
           title="Maximum allowed size of all consolidated segments in bytes."
           setArrow={true}
         >
           <span className="arangoicon icon_arangodb_info"></span>
-        </ToolTip>
+        </ToolTippy>
       </th>
     </tr>
 
@@ -106,12 +106,12 @@ const TierConsolidationPolicyForm = ({
                  onChange={getNumericFieldSetter('consolidationPolicy.segmentsBytesFloor', dispatch)}/>
       </th>
       <th className="collectionTh">
-        <ToolTip
+        <ToolTippy
           title="Defines the value (in bytes) to treat all smaller segments as equal for consolidation selection."
           setArrow={true}
         >
           <span className="arangoicon icon_arangodb_info"></span>
-        </ToolTip>
+        </ToolTippy>
       </th>
     </tr>
   </>;
@@ -143,12 +143,12 @@ const ConsolidationPolicyForm = ({ formState, dispatch, disabled }: FormProps<Vi
         </Select>
       </th>
       <th className="collectionTh">
-        <ToolTip
+        <ToolTippy
           title="Represents the type of policy."
           setArrow={true}
         >
           <span className="arangoicon icon_arangodb_info"></span>
-        </ToolTip>
+        </ToolTippy>
       </th>
     </tr>
 

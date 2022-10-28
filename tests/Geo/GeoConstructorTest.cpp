@@ -190,7 +190,7 @@ TEST_F(GeoPointTest, checking_two_negative_double_values) {
   }
 }
 
-TEST_F(GeoPointTest, checking_two_postive_integer_and_positive_double_values) {
+TEST_F(GeoPointTest, checking_two_positive_integer_and_positive_double_values) {
   VPackBuilder foo;
   foo.openArray();
   foo.add(VPackValue(1));

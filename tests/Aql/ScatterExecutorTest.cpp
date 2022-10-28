@@ -170,7 +170,8 @@ namespace {
 template<typename T>
 auto ArrayPermutations(std::vector<T> base) -> std::vector<std::vector<T>> {
   std::vector<std::vector<T>> res;
-  // This is not corect we would need faculity of base, but we are in a test...
+  // This is not correct we would need the factorial of the base, but we are in
+  // a test...
   res.reserve(base.size());
   do {
     res.emplace_back(base);
@@ -453,7 +454,7 @@ TEST_P(RandomOrderTest, handling_of_consecutive_shadow_rows) {
   testee.addDependency(&producer);
 
   // First call. actually there are only shadowRows following, we would be able
-  // to plainly forward everything, however this is not suppoert yet
+  // to plainly forward everything, however this is not support yet
   // so we need to ask once for every relevant shadow row (depth 0)
   for (auto const& client : getCallOrder()) {
     SCOPED_TRACE("Testing client " + client);
@@ -595,7 +596,7 @@ TEST_P(RandomOrderTest, shadowrows_with_different_call_types) {
 class ScatterExecutionBlockTest : public SharedScatterExecutionBlockTest,
                                   public ::testing::Test {};
 
-// Here we do a more specific ordering of calls, as we need to rearange
+// Here we do a more specific ordering of calls, as we need to rearrange
 // multidepthCalls
 
 TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
@@ -636,7 +637,7 @@ TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
   }
   // Every client will ask every block alone.
   ASSERT_EQ(callOrder.size(), clientIds.size() * blockDeque.size());
-  // Now we do all permuation of potentiall call ordering
+  // Now we do all permutation of potentially call ordering
   do {
     auto producer = createProducer(blockDeque);
     ExecutionBlockImpl<ScatterExecutor> testee{
@@ -673,6 +674,6 @@ TEST_F(ScatterExecutionBlockTest, any_ordering_of_calls_is_fine) {
   } while (std::next_permutation(callOrder.begin(), callOrder.end()));
 }
 
-// TODO add test for initilaize cursor
+// TODO add test for initialize cursor
 
 }  // namespace arangodb::tests::aql

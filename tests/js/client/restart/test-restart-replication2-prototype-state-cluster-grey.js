@@ -84,7 +84,7 @@ function testSuite() {
         assertEqual(state.read("foo"), "bar");
       });
 
-      // we expect the snapshost status to be unchanged
+      // we expect the snapshot status to be unchanged
       assertEqual(sstatus, getSnapshotStatus(state.id()));
     },
   };

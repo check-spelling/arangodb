@@ -5,7 +5,7 @@ project(PACKAGE-DBG)
 cmake_minimum_required(VERSION 2.8)
 
 ################################################################################
-# variables from the main build have to be explicitely forwarded:
+# variables from the main build have to be explicitly forwarded:
 ################################################################################
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "@PROJECT_BINARY_DIR@/bin/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_X ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
@@ -96,7 +96,7 @@ file(READ "${PROJECT_SOURCE_DIR}/Installation/debian/dbg_packagedesc.txt"
   CPACK_DEBIAN_PACKAGE_DESCRIPTION)
 
 ################################################################################
-# specify which target archcitecture the package is going to be:
+# specify which target architecture the package is going to be:
 ################################################################################
 
 if(CMAKE_TARGET_ARCHITECTURES MATCHES ".*x86_64.*")

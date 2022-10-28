@@ -95,7 +95,7 @@ RestAqlHandler::RestAqlHandler(ArangodServer& server, GeneralRequest* request,
 //  }
 void RestAqlHandler::setupClusterQuery() {
   // We should not intentionally call this method
-  // on the wrong server. So fail during maintanence.
+  // on the wrong server. So fail during maintenance.
   // On user setup reply gracefully.
   TRI_ASSERT(ServerState::instance()->isDBServer());
   if (ADB_UNLIKELY(!ServerState::instance()->isDBServer())) {
@@ -596,10 +596,9 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
     -> ResultT<AqlExecuteCall> {
   if (ADB_UNLIKELY(!slice.isObject())) {
     using namespace std::string_literals;
-    return Result(
-        TRI_ERROR_CLUSTER_AQL_COMMUNICATION,
-        "When deserializating AqlExecuteCall: Expected object, got "s +
-            slice.typeName());
+    return Result(TRI_ERROR_CLUSTER_AQL_COMMUNICATION,
+                  "When deserializing AqlExecuteCall: Expected object, got "s +
+                      slice.typeName());
   }
 
   auto expectedPropertiesFound = std::map<std::string_view, bool>{};
@@ -611,7 +610,7 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
     auto const keySlice = it.key;
     if (ADB_UNLIKELY(!keySlice.isString())) {
       return Result(TRI_ERROR_CLUSTER_AQL_COMMUNICATION,
-                    "When deserializating AqlExecuteCall: Key is not a string");
+                    "When deserializing AqlExecuteCall: Key is not a string");
     }
     auto const key = getStringView(keySlice);
 
@@ -620,7 +619,7 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
       if (ADB_UNLIKELY(propIt->second)) {
         return Result(
             TRI_ERROR_CLUSTER_AQL_COMMUNICATION,
-            "When deserializating AqlExecuteCall: Encountered duplicate key");
+            "When deserializing AqlExecuteCall: Encountered duplicate key");
       }
       propIt->second = true;
     }
@@ -629,7 +628,7 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
       auto maybeCallStack = AqlCallStack::fromVelocyPack(it.value);
       if (ADB_UNLIKELY(maybeCallStack.fail())) {
         auto message = std::string{
-            "When deserializating AqlExecuteCall: failed to deserialize "};
+            "When deserializing AqlExecuteCall: failed to deserialize "};
         message += StaticStrings::AqlRemoteCallStack;
         message += ": ";
         message += maybeCallStack.errorMessage();
@@ -639,7 +638,7 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
       callStack = maybeCallStack.get();
     } else {
       LOG_TOPIC("0dd42", WARN, Logger::AQL)
-          << "When deserializating AqlExecuteCall: Encountered unexpected key "
+          << "When deserializing AqlExecuteCall: Encountered unexpected key "
           << key;
       // If you run into this assertion during rolling upgrades after adding a
       // new attribute, remove it in the older version.
@@ -650,7 +649,7 @@ auto AqlExecuteCall::fromVelocyPack(VPackSlice const slice)
   for (auto const& it : expectedPropertiesFound) {
     if (ADB_UNLIKELY(!it.second)) {
       auto message =
-          std::string{"When deserializating AqlExecuteCall: missing key "};
+          std::string{"When deserializing AqlExecuteCall: missing key "};
       message += it.first;
       return Result(TRI_ERROR_CLUSTER_AQL_COMMUNICATION, std::move(message));
     }

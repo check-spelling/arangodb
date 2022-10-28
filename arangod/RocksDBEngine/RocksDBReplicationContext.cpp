@@ -231,7 +231,7 @@ void RocksDBReplicationContext::releaseIterators(TRI_vocbase_t& vocbase,
     }
   } else {
     LOG_TOPIC("5a0a1", ERR, Logger::REPLICATION)
-        << "trying to delete non-existent iterator";
+        << "trying to delete nonexistent iterator";
   }
 }
 
@@ -1191,7 +1191,7 @@ RocksDBReplicationContext::CollectionIterator::CollectionIterator(
       velocypack::Options::PaddingBehavior::UsePadding;
   setSorted(sorted);
 
-  if (!vocbase.use()) {  // false if vobase was deleted
+  if (!vocbase.use()) {  // false if vocbase was deleted
     THROW_ARANGO_EXCEPTION(TRI_ERROR_ARANGO_DATABASE_NOT_FOUND);
   }
   try {
