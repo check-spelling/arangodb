@@ -77,7 +77,7 @@ auto ConstFetcher::execute(AqlCallStack& stack)
             // we cannot jump over relevant shadow rows.
             // Unfortunately we need to stop including rows here.
             // NOTE: As all blocks have this behavior anyway
-            // this is not cirtical.
+            // this is not critical.
             break;
           }
           toShadowRow++;
