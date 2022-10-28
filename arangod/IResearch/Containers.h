@@ -171,7 +171,7 @@ class AsyncValue {
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief a wrapper around a type, placing the value on the heap to allow
-///        declaration of map member variables whos' values are of the type
+///        declaration of map member variables whose values are of the type
 ///        being declared
 ////////////////////////////////////////////////////////////////////////////////
 template<typename T>
