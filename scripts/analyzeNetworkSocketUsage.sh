@@ -2,7 +2,7 @@
 # we first count open sockets in total on the system:
 echo "open sockets: "
 F="/tmp/$$_netstat.log"
-# we store it in a temporary file, since gatherng this information may become expensive if
+# we store it in a temporary file, since gathering this information may become expensive if
 # its more then some thousand connections:
 netstat -n |grep ^tcp > $F
 C=$(wc -l < "$F")
