@@ -477,7 +477,7 @@ ResultT<std::shared_ptr<Node>> Node::handle<SET>(VPackSlice const& slice) {
                               ? static_cast<long>(ttl_v.getNumber<double>())
                               : static_cast<long>(ttl_v.getNumber<int>()));
 
-      // calclate expiry time
+      // calculate expiry time
       auto const expires =
           slice.hasKey("epoch_millis")
               ? time_point<system_clock>(milliseconds(
