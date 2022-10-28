@@ -501,7 +501,7 @@ void MultiDependencySingleRowFetcher::reportSubqueryFullCounts(
   }
 
   // This code can only run AFTER the skip has already been consumed, otherwise
-  // the calling SubqueryEnd cannot take the decission to revert to a
+  // the calling SubqueryEnd cannot take the decision to revert to a
   // hardLimit/fullCount without having the former limit fulfilled.
   // _maximumReport needs to contain maximum values
   TRI_ASSERT(_maximumSkipReport.getFullCount(subqueryDepth) ==
