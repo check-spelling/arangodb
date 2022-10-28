@@ -311,7 +311,7 @@ class QueryOptions : public QueryTest {
       EXPECT_TRUE(expectedDocs.empty());
     }
 
-    // boound option
+    // bound option
     {
       std::string const query =
           "FOR d IN testView SEARCH d.name == 'A' OPTIONS { collections : [ "
@@ -356,7 +356,7 @@ class QueryOptions : public QueryTest {
       EXPECT_TRUE(expectedDocs.empty());
     }
 
-    // boound options
+    // bound options
     {
       std::string const query =
           "FOR d IN testView SEARCH d.name == 'A' OPTIONS { collections : "
