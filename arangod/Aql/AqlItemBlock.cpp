@@ -788,7 +788,7 @@ void AqlItemBlock::toVelocyPack(size_t from, size_t to,
     startColumn = 0;
   }
 
-  // we start the serializaton at the fake register, which may then overflow to
+  // we start the serialization at the fake register, which may then overflow to
   // 0...
   for (RegisterId::value_t column = startColumn;
        column < _numRegisters || column == subqueryDepthColumn; column++) {
