@@ -146,7 +146,7 @@ struct TransactionalBucket {
                       std::size_t keySize) noexcept;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief Banishs a key and removes it if it exists. Requires state to
+  /// @brief Banishes a key and removes it if it exists. Requires state to
   /// be locked.
   ///
   /// Search for a matching key. If one exists, remove it. Then banish the
