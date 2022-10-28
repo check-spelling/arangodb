@@ -533,7 +533,7 @@ class RestReplicationHandler : public RestVocbaseBaseHandler {
                                                  LogicalCollection* col) const;
 
   //////////////////////////////////////////////////////////////////////////////
-  /// @brief Cacnel the lock with the given id
+  /// @brief Cancel the lock with the given id
   ///        Will return true, if we did have the lock
   ///        Will return false, if we were still in the process of getting it.
   ///        Will return error if the lock has expired or is not found.
