@@ -274,7 +274,7 @@ function testSuite() {
         result = arango.DELETE("/_api/analyzer/" + name);
 
         assertTrue(result.error);
-        assertEqual(result.code, 409); // can not delete -- referencded by link
+        assertEqual(result.code, 409); // can not delete -- referenced by link
         assertEqual(result.errorNum, error.ERROR_ARANGO_CONFLICT.code);
 
         // delete with force - must succeed
