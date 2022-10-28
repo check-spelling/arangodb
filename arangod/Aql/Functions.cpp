@@ -2125,7 +2125,7 @@ AqlValue functions::FindLast(ExpressionContext* expressionContext,
   }
 
   maxEnd = uBuf.length();
-  int emptySearchCludge = 0;
+  int emptySearchKludge = 0;
   if (parameters.size() == 4) {
     AqlValue const& optionalEndMax =
         extractFunctionParameterValue(parameters, 3);
@@ -2134,12 +2134,12 @@ AqlValue functions::FindLast(ExpressionContext* expressionContext,
       if ((maxEnd < startOffset) || (maxEnd < 0)) {
         return AqlValue(AqlValueHintInt(-1));
       }
-      emptySearchCludge = 1;
+      emptySearchKludge = 1;
     }
   }
 
   if (searchLen == 0) {
-    return AqlValue(AqlValueHintInt(maxEnd + emptySearchCludge));
+    return AqlValue(AqlValueHintInt(maxEnd + emptySearchKludge));
   }
   if (uBuf.length() == 0) {
     return AqlValue(AqlValueHintInt(-1));
