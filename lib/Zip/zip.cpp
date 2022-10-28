@@ -177,7 +177,7 @@ typedef struct {
   curfile64_info ci;           /* info on the file currently writing */
 
   ZPOS64_T begin_pos; /* position of the beginning of the zipfile */
-  ZPOS64_T add_position_when_writting_offset;
+  ZPOS64_T add_position_when_writing_offset;
   ZPOS64_T number_entry;
 
 #ifndef NO_ADDFILEINEXISTINGZIP
@@ -805,7 +805,7 @@ int LoadCentralDirectoryRecord(zip64_internal* pziinit) {
 
   byte_before_the_zipfile =
       central_pos - (offset_central_dir + size_central_dir);
-  pziinit->add_position_when_writting_offset = byte_before_the_zipfile;
+  pziinit->add_position_when_writing_offset = byte_before_the_zipfile;
 
   {
     ZPOS64_T size_central_dir_to_read = size_central_dir;
@@ -880,7 +880,7 @@ zipOpen3(const void* pathname, int append, zipcharpc* globalcomment,
   ziinit.in_opened_file_inzip = 0;
   ziinit.ci.stream_initialised = 0;
   ziinit.number_entry = 0;
-  ziinit.add_position_when_writting_offset = 0;
+  ziinit.add_position_when_writing_offset = 0;
   init_linkedlist(&(ziinit.central_dir));
 
   zi = (zip64_internal*)ALLOC(sizeof(zip64_internal));
@@ -1185,7 +1185,7 @@ extern int ZEXPORT zipOpenNewFileInZip4_64(
   else
     zip64local_putValue_inmemory(
         zi->ci.central_header + 42,
-        (uLong)zi->ci.pos_local_header - zi->add_position_when_writting_offset,
+        (uLong)zi->ci.pos_local_header - zi->add_position_when_writing_offset,
         4);
 
   for (i = 0; i < size_filename; i++)
@@ -1723,7 +1723,7 @@ extern int ZEXPORT zipCloseFileInZip(zipFile file) {
 int Write_Zip64EndOfCentralDirectoryLocator(zip64_internal* zi,
                                             ZPOS64_T zip64eocd_pos_inzip) {
   int err = ZIP_OK;
-  ZPOS64_T pos = zip64eocd_pos_inzip - zi->add_position_when_writting_offset;
+  ZPOS64_T pos = zip64eocd_pos_inzip - zi->add_position_when_writing_offset;
 
   err = zip64local_putValue(&zi->z_filefunc, zi->filestream,
                             (uLong)ZIP64ENDLOCHEADERMAGIC, 4);
@@ -1789,7 +1789,7 @@ int Write_Zip64EndOfCentralDirectoryRecord(zip64_internal* zi,
   if (err == ZIP_OK) /* offset of start of central directory with respect to the
                         starting disk number */
   {
-    ZPOS64_T pos = centraldir_pos_inzip - zi->add_position_when_writting_offset;
+    ZPOS64_T pos = centraldir_pos_inzip - zi->add_position_when_writing_offset;
     err =
         zip64local_putValue(&zi->z_filefunc, zi->filestream, (ZPOS64_T)pos, 8);
   }
@@ -1841,14 +1841,14 @@ int Write_EndOfCentralDirectoryRecord(zip64_internal* zi, uLong size_centraldir,
   if (err == ZIP_OK) /* offset of start of central directory with respect to the
                         starting disk number */
   {
-    ZPOS64_T pos = centraldir_pos_inzip - zi->add_position_when_writting_offset;
+    ZPOS64_T pos = centraldir_pos_inzip - zi->add_position_when_writing_offset;
     if (pos >= 0xffffffff) {
       err = zip64local_putValue(&zi->z_filefunc, zi->filestream,
                                 (uLong)0xffffffff, 4);
     } else
       err = zip64local_putValue(
           &zi->z_filefunc, zi->filestream,
-          (uLong)(centraldir_pos_inzip - zi->add_position_when_writting_offset),
+          (uLong)(centraldir_pos_inzip - zi->add_position_when_writing_offset),
           4);
   }
 
@@ -1909,7 +1909,7 @@ extern int ZEXPORT zipClose(zipFile file, char const* global_comment) {
   }
   free_linkedlist(&(zi->central_dir));
 
-  pos = centraldir_pos_inzip - zi->add_position_when_writting_offset;
+  pos = centraldir_pos_inzip - zi->add_position_when_writing_offset;
   if (pos >= 0xffffffff || zi->number_entry > 0xFFFF) {
     ZPOS64_T Zip64EOCDpos = ZTELL64(zi->z_filefunc, zi->filestream);
     Write_Zip64EndOfCentralDirectoryRecord(zi, size_centraldir,
