@@ -254,7 +254,7 @@ class KShortestPathsFinder : public KShortestPathsFinderInterface {
   };
 
   // A vertex that was discovered while computing
-  // a shortest path. Used for caching neightbours
+  // a shortest path. Used for caching neighbours
   // and path information
   struct FoundVertex {
     VertexRef _vertex;
