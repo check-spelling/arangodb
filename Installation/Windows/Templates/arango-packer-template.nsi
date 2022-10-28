@@ -40,7 +40,7 @@ Section "" ;No components page, name is not important
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR
 
-  ; examinates if installation program exists and it is running
+  ; examines if installation program exists and it is running
   IfFileExists "$INSTDIR\@INSTALLERNAME@-internal.exe" 0 install_files
   Fileopen $0 "$INSTDIR\@INSTALLERNAME@-internal.exe" "w"
   IfErrors 0 install_files
