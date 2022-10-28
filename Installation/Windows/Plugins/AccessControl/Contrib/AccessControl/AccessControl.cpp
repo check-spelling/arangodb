@@ -467,7 +467,7 @@ static PSID ParseSid(TCHAR* trustee)
   return pSid;
 }
 
-/* i know: this function is far to generious in accepting strings. 
+/* i know: this function is far to generous in accepting strings. 
  * but hey: this all is about code size, isn't it? 
  * so i can live with that pretty well.
  */
