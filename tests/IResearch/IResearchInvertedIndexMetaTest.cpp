@@ -357,7 +357,7 @@ TEST_F(IResearchInvertedIndexMetaTest, testWrongDefinitions) {
       ]
   })";
 
-  // wrong verison
+  // wrong version
   constexpr std::string_view kWrongDefinition17 = R"(
   {
       "fields": [
