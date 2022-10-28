@@ -5051,7 +5051,7 @@ void arangodb::aql::distributeSortToClusterRule(
           break;
         }
         // late-materialization should be set only after sort nodes are
-        // distributed in cluster as it accounts this disctribution. So we
+        // distributed in cluster as it accounts this distribution. So we
         // should not encounter this kind of nodes for now
         case EN::MATERIALIZE:
         case EN::SUBQUERY_START:

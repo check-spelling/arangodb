@@ -65,9 +65,9 @@ class StatisticsWorker final : public ServerThread<ArangodServer> {
   std::shared_ptr<arangodb::velocypack::Builder> lastEntry(
       std::string const& collection, double start) const;
 
-  void avgPercentDistributon(velocypack::Builder& result, velocypack::Slice now,
-                             velocypack::Slice last,
-                             velocypack::Builder const&) const;
+  void avgPercentDistribution(velocypack::Builder& result,
+                              velocypack::Slice now, velocypack::Slice last,
+                              velocypack::Builder const&) const;
 
   // save one statistics object
   void saveSlice(velocypack::Slice slice, std::string const& collection) const;
