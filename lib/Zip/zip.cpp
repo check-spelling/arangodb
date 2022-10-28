@@ -144,7 +144,7 @@ typedef struct {
   uInt pos_in_buffered_data; /* last written byte in buffered_data */
 
   ZPOS64_T pos_local_header; /* offset of the local header of the file
-                               currenty writing */
+                               currently writing */
   char* central_header;      /* central header data for the current file */
   uLong size_centralExtra;
   uLong size_centralheader;    /* size of the central header for cur file */
@@ -152,7 +152,7 @@ typedef struct {
                                   that are not used */
   uLong flag;                  /* flag of the file currently writing */
 
-  int method;                    /* compression method of file currenty wr.*/
+  int method;                    /* compression method of file currently wr.*/
   int raw;                       /* 1 for directly writing raw data */
   Byte buffered_data[Z_BUFSIZE]; /* buffer contain compressed data to be writ*/
   uLong dosDate;
@@ -174,7 +174,7 @@ typedef struct {
   voidpf filestream;           /* io structore of the zipfile */
   linkedlist_data central_dir; /* datablock with central dir in construction*/
   int in_opened_file_inzip;    /* 1 if a file in the zip is currently writ.*/
-  curfile64_info ci;           /* info on the file curretly writing */
+  curfile64_info ci;           /* info on the file currently writing */
 
   ZPOS64_T begin_pos; /* position of the beginning of the zipfile */
   ZPOS64_T add_position_when_writting_offset;
