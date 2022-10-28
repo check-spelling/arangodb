@@ -2123,7 +2123,7 @@ ExecutionBlockImpl<Executor>::ExecutionContext::ExecutionContext(
     ExecutionBlockImpl& block, AqlCallStack const& callstack)
     : stack(callstack), clientCallList(this->stack.popCall()) {
   if constexpr (std::is_same_v<Executor, SubqueryEndExecutor>) {
-    // In subqeryEndExecutor we actually manage two calls.
+    // In subqueryEndExecutor we actually manage two calls.
     // The clientCall defines what will go into the Executor.
     // on SubqueryEnd this call is generated based on the call from downstream
 
