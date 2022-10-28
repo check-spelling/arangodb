@@ -2850,7 +2850,7 @@ AqlValue functions::Substitute(ExpressionContext* expressionContext,
     // lastStart is the place up to we searched the source string
     lastStart = pos + mLen;
 
-    // we try to search the next occurance of this string
+    // we try to search the next occurrence of this string
     auto& search = searchVec[which];
     pos = search->next(status);
     if (U_FAILURE(status)) {

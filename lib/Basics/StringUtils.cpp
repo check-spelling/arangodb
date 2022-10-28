@@ -579,7 +579,7 @@ std::vector<std::string> wrap(std::string_view sourceStr, size_t size,
 }
 
 /// replaces the contents of the sourceStr = "aaebbbbcce" where ever the
-/// occurence of
+/// occurrence of
 /// fromStr = "bb" exists with the toStr = "dd". No recursion performed on the
 /// replaced string
 /// e.g. replace("aaebbbbcce","bb","dd") = "aaeddddcce"

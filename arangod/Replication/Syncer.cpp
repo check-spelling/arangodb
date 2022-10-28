@@ -723,7 +723,7 @@ Result Syncer::createCollection(TRI_vocbase_t& vocbase,
       VPackCollection::merge(slice, s.slice(), /*mergeValues*/ true,
                              /*nullMeansRemove*/ true);
 
-  // we need to remove every occurence of objectId as a key
+  // we need to remove every occurrence of objectId as a key
   auto stripped = rocksutils::stripObjectIds(merged.slice());
 
   try {

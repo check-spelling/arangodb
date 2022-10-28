@@ -751,7 +751,7 @@ ExecutionNode* ExecutionPlan::createCalculation(Variable* out,
 
   // cppcheck-suppress knownConditionTrueFalse
   if (containsCollection) {
-    // we found at least one occurence of NODE_TYPE_COLLECTION
+    // we found at least one occurrence of NODE_TYPE_COLLECTION
     // now replace them with proper (FOR doc IN collection RETURN doc)
     // subqueries
     auto visitor = [this, &previous](AstNode* node) {

@@ -1139,7 +1139,7 @@ void Condition::deduplicateJunctionNode(AstNode* unlockedNode) {
         auto const& positions = it2.second;
 
         if (positions.size() <= 1) {
-          // none or only one occurence of the attribute
+          // none or only one occurrence of the attribute
           continue;
         }
         // multiple occurrences of the same attribute
@@ -1346,7 +1346,7 @@ void Condition::optimize(ExecutionPlan* plan, bool multivalued) {
         auto const& positions = it2.second;
 
         if (positions.size() <= 1) {
-          // none or only one occurence of the attribute
+          // none or only one occurrence of the attribute
           continue;
         }
 
