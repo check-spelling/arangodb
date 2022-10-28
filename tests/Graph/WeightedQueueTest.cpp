@@ -159,7 +159,7 @@ TEST_F(WeightedQueueTest, it_should_order_by_asc_weight) {
                  }},
                 {"RandomOrder", [](Step const& a, Step const& b) -> bool {
                    // RandomWeightOrder, first inject all uneven Steps, sort
-                   // each "package" by ASC weight There is no specicial plan
+                   // each "package" by ASC weight There is no special plan
                    // behind this, it is to stable "non"-sort by weight
                    auto modA = a.id() % 2;
                    auto modB = a.id() % 2;
