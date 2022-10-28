@@ -120,8 +120,8 @@ class PatternTestWrapper {
 /// Where to split is defined by the piecesBitMap handed it.
 /// If the `n-th` bit piecesBitMap is set, we will add a split after Row `n`.
 /// e.g. we will now have a block from 0 -> n and a block from n+1 -> end
-/// we can apply multiple of these splits, ulimate case, split block into single
-/// line blocks.
+/// we can apply multiple of these splits, ultimate case, split block into
+/// single line blocks.
 static std::vector<std::pair<arangodb::aql::ExecutionState,
                              arangodb::aql::SharedAqlItemBlockPtr>>
 CutMyBlockIntoPieces(SharedAqlItemBlockPtr baseBlock, uint64_t piecesBitMap) {
