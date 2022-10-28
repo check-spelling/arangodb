@@ -430,7 +430,7 @@ function ValidationBasicsSuite () {
       }
     },
 
-    testLevelStict: () => {
+    testLevelStrict: () => {
       validatorJson.level = "strict";
       testCollection.properties({ "schema": validatorJson });
       sleepInCluster();
