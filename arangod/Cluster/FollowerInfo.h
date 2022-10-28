@@ -80,7 +80,7 @@ class FollowerInfo {
   // if the latter is empty, then we are leading
   std::string _theLeader;
   bool _theLeaderTouched;
-  // flag if we have enough insnc followers and can pass through writes
+  // flag if we have enough insync followers and can pass through writes
   bool _canWrite;
 
  public:
