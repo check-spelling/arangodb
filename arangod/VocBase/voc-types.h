@@ -65,7 +65,7 @@ enum TRI_vocbase_type_e {
 };
 
 /// @brief status of a collection
-/// note: the following status existed before, but are now obosolete:
+/// note: the following status existed before, but are now obsolete:
 /// - TRI_VOC_COL_STATUS_NEW_BORN = 1
 /// - TRI_VOC_COL_STATUS_UNLOADED = 2
 /// - TRI_VOC_COL_STATUS_UNLOADING = 4
