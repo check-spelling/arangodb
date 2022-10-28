@@ -278,7 +278,7 @@ class instanceManager {
 
   launchInstance() {
     if (this.options.hasOwnProperty('server')) {
-      print("external server configured - not testing readyness! " + this.options.server);
+      print("external server configured - not testing readiness! " + this.options.server);
       return;
     }
 

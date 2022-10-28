@@ -316,7 +316,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// @brief Are we ready for RAFT?
   bool ready() const;
 
-  /// @brief Set readyness for RAFT
+  /// @brief Set readiness for RAFT
   void ready(bool b);
 
   /// @brief Reset RAFT timeout intervals
