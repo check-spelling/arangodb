@@ -79,7 +79,7 @@ const InSync = styled(CheckCircle as any)`
   padding: 0 5px;
 `;
 
-const IsColapsed = styled(ArrowRight as any)`
+const IsCollapsed = styled(ArrowRight as any)`
   width: 12pt;
   padding: 0 5px;
 `;
@@ -149,7 +149,7 @@ class Specifics extends Component<Props, IState> {
             select();
           }} columns={2}>
             <LeftAlign>{name}</LeftAlign>
-            <RightAlign><InSync/><IsColapsed/></RightAlign>
+            <RightAlign><InSync/><IsCollapsed/></RightAlign>
           </Name>
         </List>
       );
