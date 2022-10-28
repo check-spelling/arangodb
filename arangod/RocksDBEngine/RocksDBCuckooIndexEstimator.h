@@ -444,7 +444,7 @@ class RocksDBCuckooIndexEstimator {
       }
     }
     // If we get here we had to remove one of the elements.
-    // Let's increas the cuckoo counter
+    // Let's increase the cuckoo counter
     _nrCuckood++;
     // and let's decrease the total so we don't have to recalculate later
     _nrTotal = (_nrTotal >= counter) ? (_nrTotal - counter) : 0;
