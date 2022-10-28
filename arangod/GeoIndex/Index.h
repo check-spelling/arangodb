@@ -56,7 +56,7 @@ struct Index {
     NONE = 0,
     /// two distinct fields representing GeoJSON Point
     INDIVIDUAL_LAT_LON,
-    /// pair [<latitude>, <longitude>] eqvivalent to GeoJSON Point
+    /// pair [<latitude>, <longitude>] equivalent to GeoJSON Point
     COMBINED_LAT_LON,
     // geojson object or legacy coordinate
     // pair [<longitude>, <latitude>]. Should also support
