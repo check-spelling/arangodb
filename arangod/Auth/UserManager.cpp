@@ -361,7 +361,7 @@ Result auth::UserManager::storeUserInternal(auth::User const& entry,
 // -- SECTION --                                                          public
 // -----------------------------------------------------------------------------
 
-// only call from the boostrap feature, must be sure to be the only one
+// only call from the bootstrap feature, must be sure to be the only one
 void auth::UserManager::createRootUser() {
   loadFromDB();
 
