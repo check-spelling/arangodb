@@ -36,7 +36,7 @@
 namespace arangodb {
 namespace pregel {
 
-// Speaker-listerner Label propagation
+// Speaker-listener Label propagation
 struct SLPAValue {
   // our own initialized id
   uint64_t nodeId = 0;
