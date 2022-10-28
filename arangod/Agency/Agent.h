@@ -450,7 +450,7 @@ class Agent final : public arangodb::ServerThread<ArangodServer>,
   /// The following three members are protected by _tiLock:
 
   /// @brief stores for each follower the highest index log it has reported as
-  /// locally logged, and the timestamp we last recevied an answer to
+  /// locally logged, and the timestamp we last received an answer to
   /// sendAppendEntries
   std::unordered_map<std::string, std::pair<SteadyTimePoint, index_t>>
       _lastAckedIndex;

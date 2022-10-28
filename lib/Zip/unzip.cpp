@@ -60,7 +60,7 @@
                                 should only read the compressed/uncompressed
   size from the Zip64 format if
                                 the size from normal header was 0xFFFFFFFF
-  Oct-2009 - Mathias Svensson - Applied some bug fixes from paches recived from
+  Oct-2009 - Mathias Svensson - Applied some bug fixes from paches received from
   Gilles Vollant
         Oct-2009 - Mathias Svensson - Applied support to unzip files with
   compression method BZIP2 (bzip2 lib is required)
