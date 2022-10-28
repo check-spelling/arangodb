@@ -2664,7 +2664,7 @@ const executeParallelQuery = (makeQuery, expectedTotalNumberOfNodes = -1) => {
   }
   assertTrue(expectedResults.size > 0, `Test setup error, non-multithreaded query did not yield any results`);
 
-  // By this time the expected results contains all allowed results, each with an assigend counter of 0.
+  // By this time the expected results contains all allowed results, each with an assigned counter of 0.
   // The target is to assert later, that only those allowed results are seen, and each is seen exactly ${numberOfStartNodes} many times.
   const res = db._query(query);
 
