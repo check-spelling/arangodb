@@ -334,7 +334,7 @@ for (let testViewType of ["arangosearch", "search-alias"]) {
         helper.switchUser('root', dbName);
       };
 
-      suite.testAnalyzerPermisssions = function() {
+      suite.testAnalyzerPermissions = function() {
         assertTrue(rootTestView(testViewName),
           'Precondition failed, view was not found');
 
