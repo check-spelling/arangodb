@@ -2605,7 +2605,7 @@
                     }
                   }
                 } catch (err) {
-                 // happens e.g. if doc.geomotry === null
+                 // happens e.g. if doc.geometry === null
                 }
               }
             }
