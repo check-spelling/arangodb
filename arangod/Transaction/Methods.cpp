@@ -3038,7 +3038,7 @@ Future<Result> Methods::replicateOperations(
             opName = "insert w/ overwriteMode replace";
           } else if (options.overwriteMode ==
                      OperationOptions::OverwriteMode::Ignore) {
-            opName = "insert w/ overwriteMode ingore";
+            opName = "insert w/ overwriteMode ignore";
           }
         }
         if (options.overwriteMode == OperationOptions::OverwriteMode::Update) {
