@@ -58,7 +58,7 @@ exports.setup = function (testFns, defaultFns, opts, fnDocs, optionsDoc, allTest
   Object.assign(allTestPaths, testPaths);
   // Register the testsuite itself
   testFns['shell_server'] = shellServer;
-  // enable it to be ran with `./scripts/unittest all` ; if not ommit - adds the [x] in help the list.
+  // enable it to be ran with `./scripts/unittest all` ; if not omit - adds the [x] in help the list.
   defaultFns.push('shell_server');
   // if your testsuite has CLI parameters, specify them including the default param here:
   opts['skipAql'] = false;

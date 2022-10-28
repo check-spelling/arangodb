@@ -479,7 +479,7 @@ class FailedLeaderTest
 
   void AssertOldEmptyObject(VPackSlice obj) {
     ASSERT_TRUE(obj.isObject());
-    // Will be set to false if ommited, or actively se t to false
+    // Will be set to false if omited, or actively se t to false
     bool oldEmpty = VelocyPackHelper::getBooleanValue(obj, "oldEmpty", false);
     // Required to be TRUE!
     EXPECT_TRUE(oldEmpty);
