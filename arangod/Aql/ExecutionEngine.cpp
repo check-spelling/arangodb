@@ -713,7 +713,7 @@ std::pair<ExecutionState, size_t> ExecutionEngine::skipSome(size_t atMost) {
       AqlCallList{AqlCall::SimulateSkipSome(atMost)}};
   auto const [state, skipped, block] = execute(std::move(compatibilityStack));
   // We cannot be triggered within a subquery from earlier versions.
-  // Also we cannot produce anything ourselfes here.
+  // Also we cannot produce anything ourselves here.
   TRI_ASSERT(block == nullptr);
   return {state, skipped.getSkipCount()};
 }
