@@ -244,7 +244,7 @@ void DatabaseManagerThread::run() {
 
         // directly start next iteration
       } else {  // if (database != nullptr)
-        // perfom some cleanup tasks
+        // perform some cleanup tasks
         if (isStopping()) {
           // done
           break;
