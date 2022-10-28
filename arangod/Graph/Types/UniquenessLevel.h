@@ -30,7 +30,7 @@ namespace graph {
 
 // Note: These two enums are identical.
 // We just use different enums here to make the usage code
-// easier to reason about, and to avoid accidential missuse of
+// easier to reason about, and to avoid accidential misuse of
 // any of them.
 enum class VertexUniquenessLevel { NONE, PATH, GLOBAL };
 enum class EdgeUniquenessLevel {
