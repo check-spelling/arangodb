@@ -568,7 +568,7 @@ function TtlSuite () {
         docs.push({ dateCreated: dt, value: i });
       }
       c.insert(docs);
-      // insert a date in the futue
+      // insert a date in the future
       const dt2 = new Date((new Date()).getTime() + 1000 * 60).toISOString();
       c.insert({ dateCreated: dt2 });
 
