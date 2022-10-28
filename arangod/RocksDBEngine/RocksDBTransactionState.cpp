@@ -121,7 +121,7 @@ Result RocksDBTransactionState::beginTransaction(transaction::Hints hints) {
     res = useCollections();
   } else {
     // measure execution time of "useCollections" operation, which is
-    // responsible for acquring locks as well
+    // responsible for acquiring locks as well
     double start = TRI_microtime();
     res = useCollections();
 
