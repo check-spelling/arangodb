@@ -30,7 +30,7 @@ const functionsDocumentation = {
 };
 const optionsDocumentation = [
   '   - `gosource`: directory of the go driver',
-  '   - `goOptions`: additional argumnets to pass via the `TEST_OPTIONS` environment, i.e. ` -timeout 180m` (prepend blank!)'
+  '   - `goOptions`: additional arguments to pass via the `TEST_OPTIONS` environment, i.e. ` -timeout 180m` (prepend blank!)'
 ];
 
 const internal = require('internal');
