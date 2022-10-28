@@ -1120,7 +1120,7 @@ struct CallAsserter : public BaseCallAsserter {
 /**
  * @brief Asserter used "above" an executor that implements
  *        skip and produce, and transforms everything to produce.
- *        Expects to be called twice for each sitation (with and without
+ *        Expects to be called twice for each situation (with and without
  * input). Expect up to three situations: SKIP, GET and FULLCOUNT.
  */
 struct GetOnlyCallAsserter : public BaseCallAsserter {
