@@ -145,7 +145,7 @@ class Vertex {
 
   // adds an edge for the vertex. returns the number of edges
   // after the addition. note that the caller must make sure that
-  // we don't end up with more than 4GB edges per verte.
+  // we don't end up with more than 4GB edges per vertex.
   size_t addEdge(Edge<E>* edge) noexcept {
     // must only be called during initial vertex creation
     TRI_ASSERT(active());

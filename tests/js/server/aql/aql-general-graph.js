@@ -312,7 +312,7 @@ function ahuacatlQueryGeneralEdgesTestSuite() {
       assertEqual(actual.length, 5);
     },
 
-    testEdgesOutboundStartExampleRestrictedLoadVertextByDocument: function() {
+    testEdgesOutboundStartExampleRestrictedLoadVertexByDocument: function() {
       var query = `
         ${AQL_PICK_START_EXAMPLE}
         FOR v, edge IN 1..2 OUTBOUND start @@collection SORT edge.what
