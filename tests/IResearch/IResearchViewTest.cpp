@@ -5079,7 +5079,7 @@ TEST_F(IResearchViewTest, test_unregister_link) {
             dynamic_cast<arangodb::iresearch::IResearchLink*>(index.get());
         ASSERT_NE(nullptr, link);
         auto resource = link->self()->lock();
-        ASSERT_TRUE((!resource));  // check that link is unregistred from view
+        ASSERT_TRUE((!resource));  // check that link is unregistered from view
       }
     }
   }
