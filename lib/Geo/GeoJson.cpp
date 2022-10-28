@@ -356,9 +356,9 @@ Result parsePolygon(VPackSlice const& vpack, ShapeContainer& region,
 
     // Note that we are using InitNested for S2Polygon below.
     // Therefore, we are supposed to deliver all our loops in CCW
-    // convention (aka right hand rule, interiour is to the left of
+    // convention (aka right hand rule, interior is to the left of
     // the polyline).
-    // Since we want to allow for loops, whose interiour covers
+    // Since we want to allow for loops, whose interior covers
     // more than half of the earth, we must not blindly "Normalize"
     // the loops, as we did in earlier versions, although RFC7946
     // says "parsers SHOULD NOT reject Polygons that do not follow
@@ -481,9 +481,9 @@ Result parseMultiPolygon(velocypack::Slice const& vpack, ShapeContainer& region,
       }
       // Note that we are using InitNested for S2Polygon below.
       // Therefore, we are supposed to deliver all our loops in CCW
-      // convention (aka right hand rule, interiour is to the left of
+      // convention (aka right hand rule, interior is to the left of
       // the polyline).
-      // Since we want to allow for loops, whose interiour covers
+      // Since we want to allow for loops, whose interior covers
       // more than half of the earth, we must not blindly "Normalize"
       // the loops, as we did in earlier versions, although RFC7946
       // says "parsers SHOULD NOT reject Polygons that do not follow
