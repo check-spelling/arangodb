@@ -192,7 +192,7 @@ bool Agent::id(std::string const& id) {
   return success;
 }
 
-/// Merge command line and persisted comfigurations
+/// Merge command line and persisted configurations
 bool Agent::mergeConfiguration(VPackSlice persisted) {
   auto res = _config.merge(persisted);  // Concurrency managed in merge
   syncActiveAndAcknowledged();
