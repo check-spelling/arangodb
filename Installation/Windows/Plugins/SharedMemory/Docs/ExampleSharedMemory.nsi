@@ -33,7 +33,7 @@ sharedmem::WriteIntoSharedMem "This is written into shared memory segment"
 pop $0
 MessageBox MB_OK "sharedmem::WriteIntoSharedMem  $0"
 
-; reads the containt of the mem segment. it is saved into $1
+; reads the constraint of the mem segment. it is saved into $1
 ; $0 similar to functions above
 sharedmem::ReadIntoSharedMem
 pop $0
