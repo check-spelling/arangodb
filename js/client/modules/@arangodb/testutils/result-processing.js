@@ -554,7 +554,7 @@ function unitTestTabularPrintResults (options, results, otherResults) {
   let tableColumns = [];
   let tableColumnVectors = [];
   let tableColumnHeaders = ['suite name'];
-  let tableFormaters = [formatNone];
+  let tableFormatters = [formatNone];
   let timeFormatColumns = [
     'duration',
     'total',
@@ -567,11 +567,11 @@ function unitTestTabularPrintResults (options, results, otherResults) {
   }
   tableColumns.forEach(colName => {
     if (timeFormatColumns.find(val => {return val === colName; })) {
-      tableFormaters.push(fancyTimeFormat);
+      tableFormatters.push(fancyTimeFormat);
     } else if (colName === 'netstat') {
-      tableFormaters.push(formatNetStat);
+      tableFormatters.push(formatNetStat);
     } else {
-      tableFormaters.push(formatNone);
+      tableFormatters.push(formatNone);
     }
     let vec = colName.split(".");
     tableColumnVectors.push(vec);
@@ -649,7 +649,7 @@ function unitTestTabularPrintResults (options, results, otherResults) {
         if (Array.isArray(layer)) {
           resultLine.push('n/a');
         } else {
-          resultLine.push(tableFormaters[count](layer));
+          resultLine.push(tableFormatters[count](layer));
         }
         count += 1;
       });
