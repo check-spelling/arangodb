@@ -606,7 +606,7 @@ void Worker<V, E, M>::_continueAsync() {
         _writeCache->containedMessageCount() == 0) {
       return;
     }
-    // avoid calling this method accidentially
+    // avoid calling this method accidentally
     _state = WorkerState::COMPUTING;
   }
 

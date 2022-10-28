@@ -24,7 +24,7 @@
 /// Google offers a way to run a death test against the system.
 /// e.g. define  set of cade that causes the process to crash.
 /// this could be used to validate that certain states are considered
-/// invalid in production code and not accidentially removed on refactorings.
+/// invalid in production code and not accidentally removed on refactorings.
 /// However every such death test will generate a core-dump, even if the test is
 /// successful This is inconvenient as it unnecessarily bloats up HDD usage and
 /// hides releveant coredumps So this thin macro wraps around the GTEST ::
