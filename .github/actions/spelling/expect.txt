@@ -194,14 +194,13 @@ aqltemplates
 aqltrx
 aqlvalue
 arangoadmin
+arangob
 arangobackup
 arangobench
 arangod
 arangodb
 arangodbaaa
-arangodbackup
 arangodbdeveloper
-arangodbench
 arangodbtests
 arangodump
 Arangoerror
@@ -2107,8 +2106,8 @@ ldapfirstldap
 ldaprole
 ldaprolesimple
 ldapsearch
-ldapsearchesimple
 ldapsearchplaceholder
+ldapsearchsimple
 ldapsecondldap
 ldapserver
 ldb
@@ -2302,6 +2301,7 @@ maxed
 MAXFILENAMEINZIP
 MAXHEAP
 maxind
+maxit
 maxp
 maxtick
 MAXU
@@ -2847,6 +2847,7 @@ overfetches
 overfetching
 Oversampling
 overw
+overwright
 ovi
 owasp
 OWBu
@@ -3069,7 +3070,6 @@ projectnumber
 promtool
 propput
 prototypestateurl
-prunning
 prv
 psalp
 Psapi
@@ -3226,6 +3226,7 @@ replicator
 replutils
 reponse
 reportfn
+repositorys
 REPSERT
 reqx
 rescans
@@ -3396,8 +3397,8 @@ sdj
 sdomg
 searchalias
 searchdata
-searchestring
 searchparse
+searchstring
 searchvalue
 seb
 secapp
@@ -3729,7 +3730,6 @@ subseed
 subtable
 subthread
 suc
-successfull
 suche
 sudo'ed
 suitiable
@@ -4243,7 +4243,6 @@ vimoji
 virtualenv
 visibile
 Visistor
-visituation
 Vku
 vlast
 vldb
