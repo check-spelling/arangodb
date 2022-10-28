@@ -1776,7 +1776,7 @@ TEST_F(IResearchFilterArrayInTest, BinaryIn) {
     for (auto caseData : testCases) {
       const auto& queryString = caseData.first;
       SCOPED_TRACE(
-          testing::Message("Testing with non-determenistic value. Query: ")
+          testing::Message("Testing with non-deterministic value. Query: ")
           << queryString);
       std::string const refName = "d";
 
