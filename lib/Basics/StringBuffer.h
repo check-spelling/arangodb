@@ -218,7 +218,7 @@ ErrorCode TRI_AppendDoubleStringBuffer(TRI_string_buffer_t* self, double attr);
 /// @brief appends csv 32-bit integer
 ErrorCode TRI_AppendCsvInt32StringBuffer(TRI_string_buffer_t* self, int32_t i);
 
-/// @brief appends csv unisgned 32-bit integer
+/// @brief appends csv unsigned 32-bit integer
 ErrorCode TRI_AppendCsvUInt32StringBuffer(TRI_string_buffer_t* self,
                                           uint32_t i);
 
@@ -557,7 +557,7 @@ class StringBuffer {
     return *this;
   }
 
-  /// @brief appends csv unisgned 32-bit integer
+  /// @brief appends csv unsigned 32-bit integer
   StringBuffer& appendCsvInteger(uint32_t i) {
     TRI_AppendCsvUInt32StringBuffer(&_buffer, i);
     return *this;

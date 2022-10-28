@@ -626,7 +626,7 @@ ErrorCode TRI_AppendCsvInt32StringBuffer(TRI_string_buffer_t* self, int32_t i) {
   return TRI_ERROR_NO_ERROR;
 }
 
-/// @brief appends csv unisgned 32-bit integer
+/// @brief appends csv unsigned 32-bit integer
 ErrorCode TRI_AppendCsvUInt32StringBuffer(TRI_string_buffer_t* self,
                                           uint32_t i) {
   auto res = TRI_AppendUInt32StringBuffer(self, i);
