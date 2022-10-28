@@ -17,9 +17,9 @@
  * Convert ANSI text to UTF-8 text in the installer or uninstaller.
  *
  * Usage:
- * StrCpy $0 "Belarussian text: ÐŸÑ€Ñ‹Ð²iÑ‚Ð°Ð½Ð½Ðµ, Ð¡Ð²ÐµÑ‚!"
+ * StrCpy $0 "Belarusian text: ÐŸÑ€Ñ‹Ð²iÑ‚Ð°Ð½Ð½Ðµ, Ð¡Ð²ÐµÑ‚!"
  * ${AnsiToUtf8} $0 $1
- * DetailPrint "'$1' == 'Belarussian text: Ð ÑŸÐ¡Ð‚Ð¡â€¹Ð Ð†iÐ¡â€šÐ Â°Ð Ð…Ð Ð…Ð Âµ, Ð ÐŽÐ Ð†Ð ÂµÐ¡â€š!'"   ;UTF-8 text
+ * DetailPrint "'$1' == 'Belarusian text: Ð ÑŸÐ¡Ð‚Ð¡â€¹Ð Ð†iÐ¡â€šÐ Â°Ð Ð…Ð Ð…Ð Âµ, Ð ÐŽÐ Ð†Ð ÂµÐ¡â€š!'"   ;UTF-8 text
  */
 !define AnsiToUtf8 '!insertmacro AnsiToUtf8Macro'
 !macro AnsiToUtf8Macro SOURCE_STRING OUTPUT_STRING
@@ -34,9 +34,9 @@
  * Convert UTF-8 text to ANSI text in the installer or uninstaller.
  *
  * Usage:
- * StrCpy $0 "Belarussian text: Ð ÑŸÐ¡Ð‚Ð¡â€¹Ð Ð†iÐ¡â€šÐ Â°Ð Ð…Ð Ð…Ð Âµ, Ð ÐŽÐ Ð†Ð ÂµÐ¡â€š!"
+ * StrCpy $0 "Belarusian text: Ð ÑŸÐ¡Ð‚Ð¡â€¹Ð Ð†iÐ¡â€šÐ Â°Ð Ð…Ð Ð…Ð Âµ, Ð ÐŽÐ Ð†Ð ÂµÐ¡â€š!"
  * ${Utf8ToAnsi} $0 $1
- * DetailPrint "'$1' == 'Belarussian text: ÐŸÑ€Ñ‹Ð²iÑ‚Ð°Ð½Ð½Ðµ, Ð¡Ð²ÐµÑ‚!'"   ;UTF-8 text
+ * DetailPrint "'$1' == 'Belarusian text: ÐŸÑ€Ñ‹Ð²iÑ‚Ð°Ð½Ð½Ðµ, Ð¡Ð²ÐµÑ‚!'"   ;UTF-8 text
  */
 !define Utf8ToAnsi '!insertmacro Utf8ToAnsiMacro'
 !macro Utf8ToAnsiMacro SOURCE_STRING OUTPUT_STRING
