@@ -452,7 +452,7 @@ LRESULT CALLBACK OuterWndProc(HWND hwnd,UINT msg,WPARAM wp,LPARAM lp)
 		case SOSI_PROCESSDUPHANDLE:
 			if (!OG().hInnerProcess && lp)
 			{
-				//TODO: Verfiy that this handle has the correct PID?
+				//TODO: Verify that this handle has the correct PID?
 				TRACEF("OWM_SETOUTERSTATE:SOSI_PROCESSDUPHANDLE got %X\n",lp);
 				OG().hInnerProcess=(HANDLE)lp;
 				return 0x666;

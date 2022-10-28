@@ -372,7 +372,7 @@ TEST(EngineInfoContainerTest, snippets_are_a_stack_insert_node_always_into_top_s
   // Insert Node -> (B)
   // Close (B)
   // Insert Node -> Base
-  // Verfiy on Engines
+  // Verify on Engines
 
   // ------------------------------
   // Section: Create Mock Instances
