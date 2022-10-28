@@ -3409,7 +3409,7 @@ TEST_F(IResearchViewCoordinatorTest, test_update_links_partial_remove) {
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   // remove testCollection2 link
   // simulate heartbeat thread (create index in current)
@@ -4007,7 +4007,7 @@ TEST_F(IResearchViewCoordinatorTest, test_update_links_partial_add) {
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   // remove testCollection2 link
   // simulate heartbeat thread (create index in current)
@@ -4315,7 +4315,7 @@ TEST_F(IResearchViewCoordinatorTest, test_update_links_partial_add) {
             .ok());  // empty properties -> should not affect plan version
     EXPECT_TRUE(planVersion ==
                 arangodb::tests::getCurrentPlanVersion(
-                    server.server()));  // plan did't change version
+                    server.server()));  // plan didn't change version
   }
 
   // drop view
@@ -4751,13 +4751,13 @@ TEST_F(IResearchViewCoordinatorTest, test_update_links_replace) {
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   EXPECT_TRUE(view->properties(linksJson->slice(), true, true)
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   // replace links with testCollection2 link
   // simulate heartbeat thread (create index in current)
@@ -5527,13 +5527,13 @@ TEST_F(IResearchViewCoordinatorTest, test_update_links_clear) {
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   EXPECT_TRUE(view->properties(linksJson->slice(), true, true)
                   .ok());  // same properties -> should not affect plan version
   EXPECT_TRUE(planVersion ==
               arangodb::tests::getCurrentPlanVersion(
-                  server.server()));  // plan did't change version
+                  server.server()));  // plan didn't change version
 
   // remove all links
   // simulate heartbeat thread (create index in current)
@@ -5849,7 +5849,7 @@ TEST_F(IResearchViewCoordinatorTest, test_drop_link) {
             .ok());  // same properties -> should not affect plan version
     EXPECT_TRUE(planVersion ==
                 arangodb::tests::getCurrentPlanVersion(
-                    server.server()));  // plan did't change version
+                    server.server()));  // plan didn't change version
 
     // simulate heartbeat thread (drop index from current)
     {
