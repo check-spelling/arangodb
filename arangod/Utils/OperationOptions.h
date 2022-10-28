@@ -163,7 +163,7 @@ struct OperationOptions {
   // header when putting together the requests for DB servers
   bool documentCallFromAql = false;
 
-  // whether or not indexing can be disabed. We must not disable indexing if we
+  // whether or not indexing can be disabled. We must not disable indexing if we
   // have to ensure that writes become visible to the current query. This is
   // necessary for UPSERTS where the subquery relies on a non-unique secondary
   // index.
