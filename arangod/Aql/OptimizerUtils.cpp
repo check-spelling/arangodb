@@ -507,7 +507,7 @@ bool accessesVariable(AstNode const* node, Variable const* var) {
   }
 
   for (size_t i = 0; i < node->numMembers(); i++) {
-    // Recursivley test if one of our subtrees accesses the variable
+    // Recursively test if one of our subtrees accesses the variable
     if (accessesVariable(node->getMemberUnchecked(i), var)) {
       // One of them is enough
       return true;
@@ -524,7 +524,7 @@ bool accessesNonRegisterVariable(AstNode const* node) {
     return var && !var->needsRegister();
   }
   for (size_t i = 0; i < node->numMembers(); i++) {
-    // Recursivley test if one of our subtrees accesses the variable
+    // Recursively test if one of our subtrees accesses the variable
     if (accessesNonRegisterVariable(node->getMemberUnchecked(i))) {
       // One of them is enough
       return true;
