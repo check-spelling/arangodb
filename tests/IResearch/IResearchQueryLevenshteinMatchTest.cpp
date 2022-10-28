@@ -40,7 +40,7 @@
 namespace arangodb::tests {
 namespace {
 
-class QueryLevenhsteinMatch : public QueryTest {
+class QueryLevenshteinMatch : public QueryTest {
  protected:
   void create() {
     // create collection1
@@ -935,7 +935,7 @@ class QueryLevenhsteinMatch : public QueryTest {
   }
 };
 
-class QueryLevenhsteinMatchView : public QueryLevenhsteinMatch {
+class QueryLevenshteinMatchView : public QueryLevenshteinMatch {
  protected:
   ViewType type() const final { return arangodb::ViewType::kArangoSearch; }
 
@@ -974,7 +974,7 @@ class QueryLevenhsteinMatchView : public QueryLevenhsteinMatch {
   }
 };
 
-class QueryLevenhsteinMatchSearch : public QueryLevenhsteinMatch {
+class QueryLevenshteinMatchSearch : public QueryLevenshteinMatch {
  protected:
   ViewType type() const final { return arangodb::ViewType::kSearchAlias; }
 
@@ -1016,24 +1016,24 @@ class QueryLevenhsteinMatchSearch : public QueryLevenhsteinMatch {
   }
 };
 
-TEST_P(QueryLevenhsteinMatchView, Test) {
+TEST_P(QueryLevenshteinMatchView, Test) {
   create();
   createView();
   populateData();
   queryTests();
 }
 
-TEST_P(QueryLevenhsteinMatchSearch, Test) {
+TEST_P(QueryLevenshteinMatchSearch, Test) {
   create();
   createSearch();
   populateData();
   queryTests();
 }
 
-INSTANTIATE_TEST_CASE_P(IResearch, QueryLevenhsteinMatchView,
+INSTANTIATE_TEST_CASE_P(IResearch, QueryLevenshteinMatchView,
                         GetLinkVersions());
 
-INSTANTIATE_TEST_CASE_P(IResearch, QueryLevenhsteinMatchSearch,
+INSTANTIATE_TEST_CASE_P(IResearch, QueryLevenshteinMatchSearch,
                         GetIndexVersions());
 
 }  // namespace
