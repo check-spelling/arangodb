@@ -62,7 +62,7 @@ enum ActionState {
 struct ActionDescription final {
   /**
    * @brief Construct with properties
-   * @param  desc  Descriminatory properties, which are considered for hash
+   * @param  desc  Discriminatory properties, which are considered for hash
    * @param  properties  Non discriminatory properties
    */
   ActionDescription(std::map<std::string, std::string> description,
