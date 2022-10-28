@@ -39,7 +39,7 @@ const helper = require('@arangodb/test-helper');
  *         id: number,
  *         config: {
  *           writeConcern: number,
- *           softWriteConern: number,
+ *           softWriteConcern: number,
  *           replicationFactor: number,
  *           waitForSync: boolean
  *         }
