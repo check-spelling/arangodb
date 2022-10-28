@@ -71,7 +71,7 @@ void FoxxFeature::collectOptions(std::shared_ptr<ProgramOptions> options) {
   options
       ->addOption("--foxx.force-update-on-startup",
                   "ensure all Foxx services are synchronized before "
-                  "completeing the boot sequence",
+                  "completing the boot sequence",
                   new BooleanParameter(&_startupWaitForSelfHeal),
                   arangodb::options::makeFlags(
                       arangodb::options::Flags::DefaultNoComponents,
