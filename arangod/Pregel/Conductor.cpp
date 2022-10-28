@@ -555,7 +555,7 @@ void Conductor::startRecovery() {
     return;
   }
 
-  // we lost a DBServer, we need to reconfigure all remainging servers
+  // we lost a DBServer, we need to reconfigure all remaining servers
   // so they load the data for the lost machine
   updateState(ExecutionState::RECOVERING);
   _statistics.reset();
