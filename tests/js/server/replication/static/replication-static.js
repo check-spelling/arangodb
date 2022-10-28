@@ -167,7 +167,7 @@ const compare = function(leaderFunc, followerFunc, applierConfiguration) {
 };
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Base Test Config. Identitical part for _system and other DB
+// / @brief Base Test Config. Identical part for _system and other DB
 // //////////////////////////////////////////////////////////////////////////////
 
 function BaseTestConfig() {
