@@ -280,7 +280,7 @@ class QueryExists : public QueryTest {
           "ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           VPackParser::fromJson(
-              "{ \"type\" : \"bool\", \"@testView\": \"invlaidViewName\" }"));
+              "{ \"type\" : \"bool\", \"@testView\": \"invalidViewName\" }"));
 
       ASSERT_TRUE(result.result.is(TRI_ERROR_ARANGO_DATA_SOURCE_NOT_FOUND));
     }
@@ -1351,7 +1351,7 @@ class QueryExists : public QueryTest {
           "ASC, "
           "TFIDF(d) DESC, d.seq RETURN d",
           VPackParser::fromJson(
-              "{ \"type\" : \"bool\", \"@testView\": \"invlaidViewName\" }"));
+              "{ \"type\" : \"bool\", \"@testView\": \"invalidViewName\" }"));
 
       ASSERT_TRUE(result.result.is(TRI_ERROR_ARANGO_DATA_SOURCE_NOT_FOUND));
     }

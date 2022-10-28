@@ -670,7 +670,7 @@ TEST_F(IResearchInvertedIndexIteratorSortedTest, test_nextCovering_full) {
                            arangodb::IndexIteratorCoveringData& data) {
       docs.push_back(token);
       EXPECT_TRUE(data.isArray());
-      // sort columns counts also as stored so ivalid index is not 5 but 7
+      // sort columns counts also as stored so invalid index is not 5 but 7
       auto invalid = data.at(7);
       EXPECT_TRUE(invalid.isNone());
       auto invalid2 = data.at(1000);
