@@ -777,7 +777,7 @@ void RocksDBRestReplicationHandler::handleCommandDump() {
   bool const useEnvelope = _request->parsedValue("useEnvelope", true);
 
   // "array" URL parameter supported from >= 3.10 onwards. it defaults to
-  // "false" if not set. when explictly set to "true", we can get away with
+  // "false" if not set. when explicitly set to "true", we can get away with
   // sending all documents as one big velocypack array, instead of sending
   // multiple velocypack documents one following another. this has the advantage
   // that on the client side we will receive a velocypack array which is ready

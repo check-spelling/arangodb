@@ -5,7 +5,7 @@ project(PACKAGE-CLIENT)
 cmake_minimum_required(VERSION 2.8)
 
 ################################################################################
-# variables from the main build have to be explicitely forwarded:
+# variables from the main build have to be explicitly forwarded:
 ################################################################################
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "@PROJECT_BINARY_DIR@/bin/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_X ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})

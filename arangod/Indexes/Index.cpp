@@ -359,7 +359,7 @@ Index::IndexType Index::type(std::string_view type) {
 }
 
 bool Index::onlyHintForced(IndexType type) {
-  // inverted index is eventually consistent, so usage must be explicilty
+  // inverted index is eventually consistent, so usage must be explicitly
   // permitted by the user
   return type == TRI_IDX_TYPE_INVERTED_INDEX;
 }

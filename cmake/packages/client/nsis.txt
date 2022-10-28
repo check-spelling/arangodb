@@ -6,7 +6,7 @@ project(arangodb3-client)
 cmake_minimum_required(VERSION 2.8)
 
 ################################################################################
-# variables from the main build have to be explicitely forwarded:
+# variables from the main build have to be explicitly forwarded:
 ################################################################################
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "@CMAKE_BINARY_DIR@/bin")
