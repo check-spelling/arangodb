@@ -595,7 +595,7 @@ DWORD Inner_InitSharedData()
 		EnablePrivilege(SE_DEBUG_NAME,HadDbgPriv,NULL);
 
 		
-		//The handle we get from ShExecEx can only be syncronized with (NT6+), so we give the outer process a handle with DUP_HANDLE rights so it can give us access to its shared memory
+		//The handle we get from ShExecEx can only be synchronized with (NT6+), so we give the outer process a handle with DUP_HANDLE rights so it can give us access to its shared memory
 		if (0x666!=SendMessage(G().hwndOuter,OWM_SETOUTERSTATE,SOSI_PROCESSDUPHANDLE,(LPARAM)hOuterProcess))return ERROR_INVALID_WINDOW_HANDLE;
 		//Wait for a very unlikely racecond.
 		while(SendMessage(G().hwndOuter,OWM_ISREADYFORINIT,0,0)!=0x666)Sleep(50);

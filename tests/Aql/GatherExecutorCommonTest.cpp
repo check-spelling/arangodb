@@ -47,7 +47,7 @@ using namespace arangodb::aql;
  * Those executors have the very special case that they have more then 1
  * dependency so those dependencies can be asked in any order, and it is unclear
  * at which state which dependency returns.
- * They all need to be syncronized in subquery situations.
+ * They all need to be synchronized in subquery situations.
  *
  * This test will combine over all GATHER types that we have.
  * It will NOT check if the returned Rows are correct by the definition
