@@ -389,7 +389,7 @@ class QueryOr : public QueryTest {
           velocypack::Slice(_insertedDocs[3]->data()),
 
           // Less relevant documents (satisfied STARTS_WITH condition only, has
-          // unqiue term in 'prefix' field)
+          // unique term in 'prefix' field)
 
           // {"name":"Z","seq":25,"same":"xyz", "prefix":"abcdrer" }
           velocypack::Slice(_insertedDocs[25]->data()),
@@ -426,7 +426,7 @@ class QueryOr : public QueryTest {
           velocypack::Slice(_insertedDocs[3]->data()),
 
           // Less relevant documents (satisfied STARTS_WITH condition only, has
-          // unqiue term in 'prefix' field)
+          // unique term in 'prefix' field)
 
           // {"name":"Z","seq":25,"same":"xyz", "prefix":"abcdrer" }
           velocypack::Slice(_insertedDocs[25]->data()),
@@ -464,7 +464,7 @@ class QueryOr : public QueryTest {
           velocypack::Slice(_insertedDocs[3]->data()),
 
           // Less relevant documents (satisfied STARTS_WITH condition only, has
-          // unqiue term in 'prefix' field)
+          // unique term in 'prefix' field)
 
           // {"name":"Z","seq":25,"same":"xyz", "prefix":"abcdrer" }
           velocypack::Slice(_insertedDocs[25]->data()),
