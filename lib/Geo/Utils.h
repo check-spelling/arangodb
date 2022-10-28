@@ -55,7 +55,7 @@ struct Interval {
 
 class Ellipsoid;
 
-/// Utilitiy methods to construct S2Region objects from various definitions,
+/// Utility methods to construct S2Region objects from various definitions,
 /// construct coverings for regions with S2RegionCoverer and generate
 /// search intervals for use in an iterator
 namespace utils {
