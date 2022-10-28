@@ -1312,7 +1312,7 @@ void AqlItemBlock::ShadowRows::make(size_t row, size_t depth) {
 
   if (_depths.size() <= row) {
     // allocate enough space for all rows at once. the goal here
-    // is to minmize the number of allocations.
+    // is to minimize the number of allocations.
     _depths.resize(_numRows);
   }
   TRI_ASSERT(row < _depths.size());
