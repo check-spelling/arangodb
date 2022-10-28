@@ -155,7 +155,7 @@ struct TRI_vocbase_t {
       _dataSourceLock;  // data-source iterator lock
   mutable std::atomic<std::thread::id>
       _dataSourceLockWriteOwner;  // current thread owning '_dataSourceLock'
-                                  // write lock (workaround for non-recusrive
+                                  // write lock (workaround for non-recursive
                                   // ReadWriteLock)
 
   std::unique_ptr<arangodb::aql::QueryList> _queries;
