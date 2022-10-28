@@ -393,7 +393,7 @@ void Conductor::finishedWorkerStartup(VPackSlice const& data) {
 
 /// Will optionally send a response, to notify the worker of converging
 /// aggregator
-/// values which can be coninually updated (in async mode)
+/// values which can be continually updated (in async mode)
 VPackBuilder Conductor::finishedWorkerStep(VPackSlice const& data) {
   MUTEX_LOCKER(guard, _callbackMutex);
   // this method can be called multiple times in a superstep depending on
