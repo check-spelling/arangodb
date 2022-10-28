@@ -825,7 +825,7 @@ arangodb::Result TRI_vocbase_t::loadCollection(
   }
 
   TRI_ASSERT(false);
-  return {TRI_ERROR_INTERNAL, "unknwon collection status"};
+  return {TRI_ERROR_INTERNAL, "unknown collection status"};
 }
 
 /// @brief drops a collection, worker function
