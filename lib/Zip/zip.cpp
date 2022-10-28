@@ -54,7 +54,7 @@ extern int errno;
 /* compile with -Dlocal if your debugger can't find static symbols */
 
 #ifndef VERSIONMADEBY
-#define VERSIONMADEBY (0x0) /* platform depedent */
+#define VERSIONMADEBY (0x0) /* platform dependent */
 #endif
 
 #ifndef Z_BUFSIZE
