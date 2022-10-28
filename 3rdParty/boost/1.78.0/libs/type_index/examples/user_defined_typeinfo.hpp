@@ -162,7 +162,7 @@ namespace my_namespace { namespace detail {
 
 //] [/type_index_my_type_index_register_class]
 
-//[type_index_my_type_index_type_id_runtime_implmentation
+//[type_index_my_type_index_type_id_runtime_implementation
 /*`
     Now when we have a MY_TYPEINDEX_REGISTER_CLASS, let's implement a `my_type_index::type_id_runtime` method:
 */
@@ -174,7 +174,7 @@ namespace my_namespace {
         return variable.type_id_runtime();
     }
 }
-//] [/type_index_my_type_index_type_id_runtime_implmentation]
+//] [/type_index_my_type_index_type_id_runtime_implementation]
 
 //[type_index_my_type_index_type_id_runtime_classes
 /*`
