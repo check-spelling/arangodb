@@ -187,7 +187,7 @@ function updateService (mount, update) {
 }
 
 // //////////////////////////////////////////////////////////////////////////////
-// / @brief Joins the last two diretories to one subdir, removes the unwanted original
+// / @brief Joins the last two directories to one subdir, removes the unwanted original
 // //////////////////////////////////////////////////////////////////////////////
 function joinLastPath (tempPath) {
   var pathParts = tempPath.split(fs.pathSeparator).reverse();

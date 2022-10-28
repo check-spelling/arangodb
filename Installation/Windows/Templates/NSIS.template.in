@@ -1216,7 +1216,7 @@ Done:
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Shell.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   startMenuDeleteLoop:
@@ -1238,7 +1238,7 @@ Done:
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Shell.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   secondStartMenuDeleteLoop:

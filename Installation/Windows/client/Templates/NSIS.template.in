@@ -730,7 +730,7 @@ Section "Uninstall"
   ; they are deleted from '$SMPROGRAMS\$MUI_TEMP'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   startMenuDeleteLoop:
@@ -751,7 +751,7 @@ Section "Uninstall"
   ; they are deleted from '$SMPROGRAMS\$MUI_TEMP'
   Delete  '$SMPROGRAMS\$MUI_TEMP\Arango Server.lnk'
 
-  ;Delete empty start menu parent diretories
+  ;Delete empty start menu parent directories
   StrCpy $MUI_TEMP "$SMPROGRAMS\$MUI_TEMP"
 
   secondStartMenuDeleteLoop:
