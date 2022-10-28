@@ -145,7 +145,7 @@ void waitImpl(Future<T>& f) {
   std::move(f).thenFinal([p(std::move(p)), &cv, &m](Try<T>&& t) mutable {
     // We need to hold this mutex, while sending the notify.
     // Otherwise the future ret may be ready and thereby leaving this function
-    // which would free the condtion variable, before sending notify.
+    // which would free the condition variable, before sending notify.
     // This is one of the rare cases where notify without lock would cause
     // undefined behaviour.
     std::lock_guard<std::mutex> guard(m);

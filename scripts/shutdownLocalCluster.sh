@@ -113,7 +113,7 @@ for p in $(seq $DB_BASE $PORTHIDB) ; do
 done
 
 # Currently the agency does not wait for all servers to shutdown
-# This causes a race condisiton where all servers wait to tell the agency
+# This causes a race condition where all servers wait to tell the agency
 # they are shutting down
 
 echo
