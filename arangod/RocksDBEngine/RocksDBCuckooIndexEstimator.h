@@ -199,7 +199,7 @@ class RocksDBCuckooIndexEstimator {
    * Applies any buffered updates and updates the "committed" seq/tick state.
    *
    * @param  serialized String for output
-   * @param  commitSeq  Above that are still uncommited operations
+   * @param  commitSeq  Above that are still uncommitted operations
    * @param  format     The serialization format to use
    */
   void serialize(std::string& serialized, rocksdb::SequenceNumber maxCommitSeq,
