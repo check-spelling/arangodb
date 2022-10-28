@@ -263,7 +263,7 @@ class ShardDistributionReporterTest
 TEST_F(
     ShardDistributionReporterTest,
     a_healthy_instance_a_single_collection_of_three_shards_and_three_replicas) {
-  // Simlated situation:
+  // Simulated situation:
   // s1 is in-sync: DBServer1 <- DBServer2, DBServer3
 
   // s2 is off-sync: DBServer2 <- DBServer1, DBServer3
