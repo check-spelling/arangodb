@@ -155,7 +155,7 @@ RocksDBKeyBounds RocksDBKeyBounds::FulltextIndexPrefix(uint64_t objectId,
   uint64ToPersistent(internals.buffer(), objectId);
   internals.buffer().append(word.data(), word.length());
   internals.push_back(static_cast<char>(0xFFU));
-  // 0xFF is higher than any valud utf-8 character
+  // 0xFF is higher than any valid utf-8 character
   return b;
 }
 
