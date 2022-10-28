@@ -89,7 +89,7 @@ static std::string const RESTART_COUNTER_AGG = "aggRestart";
 /** Maximum steps for the random walk, corresponds to t*. Default = 1000 */
 static uint64_t const RW_ITERATIONBOUND = 10;
 
-static const float PROFTIABILITY_DELTA = 0.1f;
+static const float PROFITABILITY_DELTA = 0.1f;
 
 static const bool LOG_AGGS = false;
 
@@ -707,7 +707,7 @@ struct DMIDMasterContext : public MasterContext {
          * RESTART Cascading Behavior with lower profitability threshold
          */
 
-        float newThreshold = 1.05f - (PROFTIABILITY_DELTA * (restartCount + 1));
+        float newThreshold = 1.05f - (PROFITABILITY_DELTA * (restartCount + 1));
         newThreshold = std::max(0.05f, std::min(newThreshold, 0.95f));
         setAggregatedValue<int64_t>(RESTART_COUNTER_AGG, restartCount + 1);
         setAggregatedValue<float>(PROFITABILITY_AGG, newThreshold);
