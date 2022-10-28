@@ -45,7 +45,7 @@ using namespace arangodb::aql;
  * This test class is supposed to test
  * the data flow in gather executors.
  * Those executors have the very special case that they have more then 1
- * dependency so those dependencies can be asekd in any order, and it is unclear
+ * dependency so those dependencies can be asked in any order, and it is unclear
  * at which state which dependency returns.
  * They all need to be syncronized in subquery situations.
  *
