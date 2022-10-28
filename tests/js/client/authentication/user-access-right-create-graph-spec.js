@@ -172,8 +172,8 @@ describe('User Rights Management', () => {
                   'to': [ testVertexColName ]
                 }]);
                 expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
               } else {
                 try {
                   graphModule._create(testGraphName, [{
@@ -203,8 +203,8 @@ describe('User Rights Management', () => {
                   'to': [ testVertexColName ]
                 }]);
                 expect(rootTestGraph()).to.equal(true, 'Graph creation reported success, but graph was not found afterwards.');
-                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge colleciton was not found afterwards.');
-                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex colleciton was not found afterwards.');
+                expect(rootTestCollection(testEdgeColName)).to.equal(true, 'Graph creation reported success, but edge collection was not found afterwards.');
+                expect(rootTestCollection(testVertexColName)).to.equal(true, 'Graph creation reported success, but vertex collection was not found afterwards.');
               } else {
                 try {
                   graphModule._create(testGraphName, [{

@@ -882,7 +882,7 @@ class ClusterInfo final {
                                    std::string const& collectionID, IndexId iid,
                                    double endTime);
 
-  /// @brief create a new collecion object from the data, using the cache if
+  /// @brief create a new collection object from the data, using the cache if
   /// possible
   CollectionWithHash buildCollection(
       bool isBuilding, AllCollections::const_iterator existingCollections,

@@ -449,7 +449,7 @@ describe('_api/gharial', () => {
           expect(db._collection(vName)).to.not.be.null;
         });
 
-        it('_from && _to definitions are valid, but colletions are not available', () => {
+        it('_from && _to definitions are valid, but collections are not available', () => {
           expect(db._collection(eName)).to.be.null; // edgec
           expect(db._collection(vName)).to.be.null; // vertexc
           const g = examples.loadGraph(exampleGraphName);

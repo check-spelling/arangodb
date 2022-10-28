@@ -357,7 +357,7 @@ TEST_F(RemoveFollowerTest,
 
 TEST_F(
     RemoveFollowerTest,
-    compute_the_list_all_shards_of_colleciton_pairs_that_correspond_to_distributeshardslike_attributes) {
+    compute_the_list_all_shards_of_collection_pairs_that_correspond_to_distributeshardslike_attributes) {
   TestStructType createTestStructure = [&](Slice const& s,
                                            std::string const& path) {
     std::unique_ptr<Builder> builder = std::make_unique<Builder>();

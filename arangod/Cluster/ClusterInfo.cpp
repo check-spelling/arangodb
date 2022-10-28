@@ -896,7 +896,7 @@ void ClusterInfo::loadClusterId() {
   }
 }
 
-/// @brief create a new collecion object from the data, using the cache if
+/// @brief create a new collection object from the data, using the cache if
 /// possible
 ClusterInfo::CollectionWithHash ClusterInfo::buildCollection(
     bool isBuilding, AllCollections::const_iterator existingCollections,

@@ -681,7 +681,7 @@ function ClusterCollectionSuite () {
           assertTrue(e instanceof ArangoError);
           assertEqual(503, e.errorNum);
         } finally {
-          // we need to wait for the collecion to show up before the drop can work.
+          // we need to wait for the collection to show up before the drop can work.
           while (!db._collection(colName)) {
             require("internal").sleep(0.1);
           }
