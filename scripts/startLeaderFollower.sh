@@ -42,7 +42,7 @@ if [[ -f active/startup_parameters ]];then
         fi
     fi
 else
-    #store parmeters
+    #store parameters
     if [[ -n "${params[@]}" ]]; then
       echo "${params[@]}" > active/startup_parameters
     fi

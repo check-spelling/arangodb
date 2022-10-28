@@ -46,7 +46,7 @@ if [[ -f cluster/startup_parameters ]];then
         fi
     fi
 else
-  #store parmeters
+  #store parameters
   if [[ -n "${params[@]}" ]]; then
     echo "${params[@]}" > cluster/startup_parameters
   fi

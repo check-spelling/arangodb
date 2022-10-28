@@ -31,7 +31,7 @@ const functionsDocumentation = {
   'authentication_parameters': 'authentication parameters tests'
 };
 const optionsDocumentation = [
-  '   - `skipAuthentication : testing authentication and authentication_paramaters will be skipped.'
+  '   - `skipAuthentication : testing authentication and authentication_parameters will be skipped.'
 ];
 
 const fs = require('fs');
