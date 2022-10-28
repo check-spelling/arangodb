@@ -55,7 +55,7 @@ class ReplicationTimeoutFeature : public ArangodFeature {
   double _timeoutPer4k;
   // mininum wait time for sync replication (default: 900 seconds)
   double _lowerLimit;
-  // maxinum wait time for sync replication (default: 3600 seconds)
+  // maximum wait time for sync replication (default: 3600 seconds)
   double _upperLimit;
 
   // timeout (in seconds) for shard synchronization attempts.
