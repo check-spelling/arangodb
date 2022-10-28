@@ -508,7 +508,7 @@ struct DistributedQueryInstanciator final
   /// @brief Builds the Engines necessary for the query execution
   ///        For Coordinator Parts:
   ///        * Creates the ExecutionBlocks
-  ///        * Injects all Parts but the First one into QueryRegistery
+  ///        * Injects all Parts but the First one into QueryRegistry
   ///        For DBServer Parts
   ///        * Creates one Query-Entry for each Snippet per Shard (multiple on
   ///        the same DB) Each Snippet knows all details about locking.
