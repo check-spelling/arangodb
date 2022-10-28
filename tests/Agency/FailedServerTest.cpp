@@ -163,7 +163,7 @@ TEST_F(FailedServerTest, creating_a_job_should_create_a_job_in_todo) {
 
 TEST_F(
     FailedServerTest,
-    the_state_is_still_bad_and_faileservers_is_still_in_snapshot_violate_good) {
+    the_state_is_still_bad_and_failed_servers_is_still_in_snapshot_violate_good) {
   TestStructureType createTestStructure = [&](Slice const& s,
                                               std::string const& path) {
     std::unique_ptr<Builder> builder;
@@ -239,7 +239,7 @@ TEST_F(
 
 TEST_F(
     FailedServerTest,
-    the_state_is_still_bad_and_faileservers_is_still_in_snapshot_violate_failed) {
+    the_state_is_still_bad_and_failed_servers_is_still_in_snapshot_violate_failed) {
   TestStructureType createTestStructure = [&](Slice const& s,
                                               std::string const& path) {
     std::unique_ptr<Builder> builder;
@@ -312,7 +312,7 @@ TEST_F(
 }
 
 TEST_F(FailedServerTest,
-       the_state_is_still_bad_and_faileservers_is_still_in_snapshot) {
+       the_state_is_still_bad_and_failed_servers_is_still_in_snapshot) {
   TestStructureType createTestStructure = [&](Slice const& s,
                                               std::string const& path) {
     std::unique_ptr<Builder> builder;
@@ -379,7 +379,7 @@ TEST_F(FailedServerTest,
 }
 
 TEST_F(FailedServerTest,
-       the_state_is_still_bad_and_faileservers_is_still_in_snapshot_2) {
+       the_state_is_still_bad_and_failed_servers_is_still_in_snapshot_2) {
   TestStructureType createTestStructure = [&](Slice const& s,
                                               std::string const& path) {
     std::unique_ptr<Builder> builder;
