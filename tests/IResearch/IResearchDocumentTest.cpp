@@ -1601,7 +1601,7 @@ TEST_F(IResearchDocumentTest,
   ++it;
   ASSERT_TRUE(it.valid());
 
-  // fields.fieldA (with IdenityAnalyzer)
+  // fields.fieldA (with IdentityAnalyzer)
   {
     auto& value = *it;
     EXPECT_EQ(mangleStringIdentity("fields.fieldA.name"), value.name());
@@ -1637,7 +1637,7 @@ TEST_F(IResearchDocumentTest,
   ++it;
   ASSERT_TRUE(it.valid());
 
-  // listValuation (with IdenityAnalyzer)
+  // listValuation (with IdentityAnalyzer)
   {
     auto& value = *it;
     EXPECT_EQ(mangleStringIdentity("listValuation"), value.name());

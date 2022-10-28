@@ -45,7 +45,7 @@ function testSuite() {
       assertEqual(result.code, 201);
     },
 
-    testAnalyzerCreateRemoveIdentiy : function() {
+    testAnalyzerCreateRemoveIdentity : function() {
       let body = JSON.stringify({
         type : "identity",
         name : name,
