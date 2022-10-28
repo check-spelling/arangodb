@@ -780,7 +780,7 @@ arangodb::Result arangodb::maintenance::diffPlanLocal(
     ReplicatedLogStatusMapByDatabase const& localLogsByDatabase,
     ReplicatedStateStatusMapByDatabase const& localStatesByDatabase) {
   // You are entering the functional sector.
-  // Vous entrez dans le secteur fonctionel.
+  // Vous entrez dans le secteur fonctionnel.
   // Sie betreten den funktionalen Sektor.
   arangodb::Result result;
   containers::FlatHashSet<std::string>
