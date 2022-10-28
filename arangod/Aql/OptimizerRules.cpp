@@ -5619,7 +5619,7 @@ void arangodb::aql::undistributeRemoveAfterEnumCollRule(
   opt->addPlan(std::move(plan), rule, modified);
 }
 
-/// @brief auxilliary struct for finding common nodes in OR conditions
+/// @brief auxiliary struct for finding common nodes in OR conditions
 struct CommonNodeFinder {
   std::vector<AstNode const*> possibleNodes;
 
@@ -5725,7 +5725,7 @@ struct CommonNodeFinder {
   }
 };
 
-/// @brief auxilliary struct for the OR-to-IN conversion
+/// @brief auxiliary struct for the OR-to-IN conversion
 struct OrSimplifier {
   Ast* ast;
   ExecutionPlan* plan;
