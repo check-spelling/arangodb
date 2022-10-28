@@ -239,7 +239,7 @@ struct config_t {
   /// @brief
   std::string startup() const;
 
-  /// @brief Update an indivdual uuid's endpoint
+  /// @brief Update an individual uuid's endpoint
   bool updateEndpoint(std::string const&, std::string const&);
 
   /// @brief Update configuration with another
