@@ -21,7 +21,7 @@
 /// @author Simon Grätzer
 ////////////////////////////////////////////////////////////////////////////////
 
-// NOTE: this files exists primarily to include these algorithm specfic structs
+// NOTE: this files exists primarily to include these algorithm specific structs
 // in the
 // cpp files to do template specialization
 

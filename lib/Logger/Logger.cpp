@@ -849,7 +849,7 @@ void Logger::append(LogGroup& group, std::unique_ptr<LogMessage> msg,
   }
 
   // first log to all "global" appenders, which are the in-memory ring buffer
-  // logger plus some Windows-specifc appenders for the debug output window
+  // logger plus some Windows-specific appenders for the debug output window
   // and the Windows event log. note that these loggers do not require any
   // configuration so we can always and safely invoke them.
   LogAppender::logGlobal(group, *msg);
