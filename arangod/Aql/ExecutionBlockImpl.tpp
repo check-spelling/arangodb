@@ -2109,7 +2109,7 @@ auto ExecutionBlockImpl<Executor>::testInjectInputRange(DataRange range,
   _lastRange = std::move(range);
   _skipped = skipped;
   if constexpr (std::is_same_v<Fetcher, MultiDependencySingleRowFetcher>) {
-    // Make sure we have initialized the Fetcher / Dependencides properly
+    // Make sure we have initialized the Fetcher / Dependencies properly
     initOnce();
     // Now we need to initialize the SkipCounts, to simulate that something
     // was skipped.
