@@ -229,7 +229,7 @@ TEST_F(IndexEstimatorTest, test_serialize_deserialize) {
     coin = !coin;
   }
 
-  // We cannot relibly check inserts because the cuckoo has a random factor
+  // We cannot reliably check inserts because the cuckoo has a random factor
   // Still all values have to be identical
 
   EXPECT_EQ(est.nrUsed(), copy.nrUsed());
@@ -500,7 +500,7 @@ TEST_F(IndexEstimatorTest, test_serialize_compression) {
       coin = !coin;
     }
 
-    // We cannot relibly check inserts because the cuckoo has a random factor
+    // We cannot reliably check inserts because the cuckoo has a random factor
     // Still all values have to be identical
 
     EXPECT_EQ(est.nrUsed(), copy.nrUsed());
