@@ -526,7 +526,7 @@ Result EngineInfoContainerDBServerServerBased::buildEngines(
     // fallback routine, use synchronous requests (slowPath)
     for (auto& [server, buffer, didCreateEngine] : engineInformation) {
 #ifdef ARANGODB_ENABLE_MAINTAINER_MODE
-      // If the serverBefore has a smaller ID we allways contact by increasing
+      // If the serverBefore has a smaller ID we always contact by increasing
       // ID here.
       TRI_ASSERT(TransactionState::ServerIdLessThan(serverBefore, server));
       serverBefore = server;
