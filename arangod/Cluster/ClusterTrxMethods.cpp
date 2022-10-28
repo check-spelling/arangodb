@@ -169,7 +169,7 @@ Future<network::Response> beginTransactionRequest(TransactionState& state,
                                    reqOpts, std::move(headers));
 }
 
-/// check the transaction cluster response with desited TID and status
+/// check the transaction cluster response with desired TID and status
 Result checkTransactionResult(TransactionId desiredTid,
                               transaction::Status desStatus,
                               network::Response const& resp) {
