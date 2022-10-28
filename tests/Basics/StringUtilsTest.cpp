@@ -57,7 +57,7 @@ class StringUtilsTest : public ::testing::Test {
 // --SECTION--                                                        test suite
 // -----------------------------------------------------------------------------
 
-TEST_F(StringUtilsTest, test_SplitEmptyness) {
+TEST_F(StringUtilsTest, test_SplitEmptiness) {
   EXPECT_EQ(StringUtils::split("", '\0'), (std::vector<std::string>{}));
   EXPECT_EQ(StringUtils::split({"a\0b\0c", 5}, '\0'),
             (std::vector<std::string>{"a", "b", "c"}));
