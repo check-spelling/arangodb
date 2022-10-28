@@ -281,7 +281,7 @@ function testSuite() {
   }
   function tryAppendAllowed(fn) {
     let rc = fs.append(fn, '1212 this is just a test');
-    assertTrue(rc, 'Expected ' + fn + ' to be appendeable');
+    assertTrue(rc, 'Expected ' + fn + ' to be appendable');
   }
 
   function tryChmodForbidden(fn) {
