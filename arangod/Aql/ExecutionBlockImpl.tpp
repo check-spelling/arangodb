@@ -1265,10 +1265,10 @@ auto ExecutionBlockImpl<Executor>::executeFastForward(
  *
  * We progress within the states in the following way:
  *   There is a nextState method that determines the next state based on the
- * call, it can only lead to: SKIP, PRODUCE, FASTFORWAD, DONE
+ * call, it can only lead to: SKIP, PRODUCE, FASTFORWARD, DONE
  *
  *   On the first call we will use nextState to get to our starting point.
- *   After any of SKIP, PRODUCE,, FASTFORWAD, DONE We either go to
+ *   After any of SKIP, PRODUCE,, FASTFORWARD, DONE We either go to
  *   1. FASTFORWARD (if executor is done)
  *   2. DONE (if output is full)
  *   3. UPSTREAM if executor has More, (Invariant: input fully consumed)
