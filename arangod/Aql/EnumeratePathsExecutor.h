@@ -195,9 +195,9 @@ class EnumeratePathsExecutor {
   /// @brief the shortest path finder.
   FinderType& _finder;
 
-  /// @brief temporary memory mangement for source id
+  /// @brief temporary memory management for source id
   arangodb::velocypack::Builder _sourceBuilder;
-  /// @brief temporary memory mangement for target id
+  /// @brief temporary memory management for target id
   arangodb::velocypack::Builder _targetBuilder;
 };
 }  // namespace aql
