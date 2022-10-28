@@ -812,7 +812,7 @@ class instance {
     while (count > 0) {
       try {
         if(this.options.extremeVerbosity) {
-          print('tickeling ' + this.endpoint);
+          print('tickling ' + this.endpoint);
         }
         arango.reconnect(this.endpoint, '_system', 'root', '', false, this.JWT);
         return;
